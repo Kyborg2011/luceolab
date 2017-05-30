@@ -1,0 +1,4 @@
+/* About :global read, please, webpack css-loader docs: https://github.com/webpack-contrib/css-loader */
+:global(.wrapper) {
+  display: flex;
+}
