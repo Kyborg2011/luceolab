@@ -11,4 +11,4 @@ module.exports = ( ctx ) => ({
     'autoprefixer': {},
     'cssnano': ctx.env === 'production' ? {} : false
   }
-})
+});

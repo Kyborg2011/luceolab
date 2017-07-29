@@ -2,6 +2,6 @@ html, body {
   display: flex;
 }
 .block {
-  border-radius: 5px;
   transform: scale(0.5);
+  display: flex;
 }
