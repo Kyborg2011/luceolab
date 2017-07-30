@@ -4,8 +4,8 @@
   "description": "HTML5/CSS3 full markup for the https://luceolab.com",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack --watch"
+    "build": "NODE_ENV=production webpack && open index.html",
+    "start": "NODE_ENV=development webpack --watch && open index.html"
   },
   "author": "Anton Babinin <wkyborgw@gmail.com> (https://luceolab.com)",
   "license": "MIT",
