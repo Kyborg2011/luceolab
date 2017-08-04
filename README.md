@@ -2,7 +2,7 @@
 
 ### Technology stack:
 
-- HTML5/CSS3;
+- **HTML5/CSS3**;
 
 - **NodeJS**, **ExpressJS** (as a webserver and framework);
 
@@ -10,11 +10,9 @@
 
 - **React**, **JSX** (UI library realising a website as SPA);
 
-- using **BEM** and **Flexbox** (front-end methodologies);
+- using **Flexbox** (front-end methodology);
 
-- **CSS modules** (front-end methodology).
-
-  ​
+- using **CSS modules** (front-end methodology).​
 
   ------
 
