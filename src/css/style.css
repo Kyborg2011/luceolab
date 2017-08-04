@@ -1,7 +1,0 @@
-html, body {
-  display: flex;
-}
-.block {
-  transform: scale(0.5);
-  display: flex;
-}

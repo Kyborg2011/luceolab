@@ -10,7 +10,9 @@
 
 - **React**, **JSX** (UI library realising a website as SPA);
 
-- using **BEM** and **Flexbox** (front-end methodologies).
+- using **BEM** and **Flexbox** (front-end methodologies);
+
+- **CSS modules** (front-end methodology).
 
   ​
 

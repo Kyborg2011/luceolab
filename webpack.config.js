@@ -6,7 +6,7 @@ var webpack = require( 'webpack' ),
 const env = process.env.NODE_ENV;
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/components/app.js',
   output: {
     filename: 'index.js',
     path: path.resolve( './dist' ),
