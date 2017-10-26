@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 43px;
+    overflow: hidden;
+    user-select: none;
+    justify-content: space-between;
+}
+
+.headerLogo {
+    display: flex;
+    height: 43px;
+    width: 43px;
+    background-image: url('../../assets/img/logo-ic.png');
+    background-size: 100%;
+}
+
+.primaryNav {
+    align-self: baseline;
+    display: flex;
+}
+
+.primaryNav a {
+    line-height: 43px;
+    margin: 0 10px;
+    color: #000;
+}
+
+.primaryNav a.requestBtn {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 37px;
+    text-decoration: none;
+    background-color: #fbbd63;
+    margin-right: 0;
+}

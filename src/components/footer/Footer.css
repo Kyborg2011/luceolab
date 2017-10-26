@@ -1,0 +1,7 @@
+.footer {
+    height: 43px;
+    overflow: hidden;
+    user-select: none;
+    background: #4c4c4c;
+    opacity: 0.8;
+}
