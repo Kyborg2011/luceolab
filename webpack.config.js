@@ -4,13 +4,17 @@ var webpack = require( 'webpack' ),
   path = require( 'path' );
 
 const env = process.env.NODE_ENV;
+const indexHtml = path.join(__dirname, "src", "index.html");
 
 module.exports = {
-  entry: './src/components/App.js',
+  entry: [
+    './src/components/App.js',
+    indexHtml,
+  ],
   output: {
-    filename: 'index.js',
+    filename: 'js/index.js',
     path: path.resolve( './dist' ),
-    libraryTarget: 'umd'
+    publicPath: "dist/",
   },
   module: {
     loaders: [ {
@@ -35,13 +39,33 @@ module.exports = {
       ]
     },
     {
+        test: indexHtml,
+        use: [
+            {
+                loader: "file-loader",
+                options: {
+                    name: "[name].[ext]",
+                },
+            },
+            {
+                loader: "extract-loader",
+            },
+            {
+                loader: "html-loader",
+                options: {
+                    attrs: ["img:src"],
+                    interpolate: true,
+                },
+            },
+        ],
+    },
+    {
       test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-      loader: 'url-loader',
+      loader: 'file-loader',
       options: {
-        limit: 10000
+        publicPath: 'assets/',
       }
-    }
-    ]
+    }]
   },
   devtool: 'inline-source-map',
   devServer: {
