@@ -1,0 +1,36 @@
+.btn {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    width: 189px;
+    text-decoration: none;
+    background-color: #fbbd63;
+    border-color: #fbbd63;
+    border-style: solid;
+    border-width: 2px;
+    margin-right: 0;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+
+.reverse,
+.btn:hover {
+    background-color: transparent;
+    border-color: #464c4d;
+    border-style: solid;
+    border-width: 2px;
+    color: #212121;
+}
+
+.reverse:hover {
+    background-color: #fbbd63;
+    border-color: #fbbd63;
+    border-style: solid;
+    border-width: 2px;
+    color: #fff;
+}

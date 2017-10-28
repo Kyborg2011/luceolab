@@ -1,0 +1,108 @@
+/* The animation code */
+@keyframes menulineappear {
+    0%   {width: 0;}
+    100% {width: 45px;}
+}
+
+@keyframes secondarynavappear {
+    0%   {right: -196px;}
+    100% {right: 0;}
+}
+
+.secondaryNavigation {
+    position: fixed;
+    top: 0;
+    right: -196px;
+    height: 100%;
+    display: flex;
+    z-index: 100;
+    transition: right 0.75s;
+    user-select: none;
+}
+
+.secondaryNavigation:hover {
+    right: 0;
+}
+
+.secondaryNavigation .visibleColumn {
+    width: 50px;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.secondaryNavigation nav {
+    width: 174px;
+    background-color: #fff;
+    z-index: 200;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-left: 22px;
+}
+
+.secondaryNavigation nav > a {
+    display: flex;
+    position: relative;
+    color: #212121;
+    font-size: 14.5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.secondaryNavigation nav > a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: -52px;
+    width: 8px;
+    height: 8px;
+    background-image: url('../../assets/img/menu-element-circle.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: background-image 0s 0.5s, width 0.25s 0.5s, height 0.25s 0.5s;
+}
+
+.secondaryNavigation nav > a.active:before,
+.secondaryNavigation nav > a:hover::before {
+    background-image: url('../../assets/img/menu-element-active-circle.png');
+    width: 12px;
+    height: 12px;
+    left: -52px;
+    transition: background-image 0.25s 0s, width 0.25s 0s, height 0.25s 0s;
+}
+
+.secondaryNavigation nav > a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -42px;
+    height: 7.5px;
+    width: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #fdd7a1;
+    transition: width 0.5s;
+}
+
+.secondaryNavigation nav > a.active:after,
+.secondaryNavigation nav > a:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -42px;
+    height: 7.5px;
+    width: 40px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #fbbd63;
+}
+
+.secondaryNavigation nav > a.active,
+.secondaryNavigation nav > a:hover {
+    color: #fbbd63;
+}

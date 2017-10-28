@@ -1,3 +1,39 @@
 .mainContent {
     flex: 2;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    user-select: none;
+}
+
+.largeLogo {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+}
+
+.largeLogo img {
+    max-width: 355px;
+    display: flex;
+}
+
+.homepageLine {
+    background-color: #484949;
+    width: 95px;
+    height: 1px;
+    margin-top: 28px;
+    display: flex;
+    border: none;
+}
+
+.homepageMainPhrase {
+    display: flex;
+    margin-top: 24px;
+    font-size: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    color: #212121;
+    justify-content: center;
+    text-align: center;
+    line-height: 50px;
 }

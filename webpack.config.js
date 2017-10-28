@@ -63,7 +63,8 @@ module.exports = {
       test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
       loader: 'file-loader',
       options: {
-        publicPath: 'assets/',
+        outputPath: 'assets/',
+        publicPath: '',
       }
     }]
   },

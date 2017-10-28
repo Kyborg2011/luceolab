@@ -1,7 +1,21 @@
 .footer {
+    display: flex;
+    align-items: center;
     height: 43px;
     overflow: hidden;
     user-select: none;
-    background: #4c4c4c;
-    opacity: 0.8;
+    background: #000;
+    opacity: 0.7;
+}
+
+.footer p {
+    font-size: 10.5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    width: 50%;
+    margin: 0;
+    text-transform: uppercase;
 }

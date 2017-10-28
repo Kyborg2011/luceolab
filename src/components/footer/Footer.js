@@ -7,7 +7,12 @@ class Footer extends React.Component {
   render() {
     return (
         <footer className={styles.footer}>
-            FUTER!
+            <p>
+                &copy; 2016 – 2017 «LuceoLab»
+            </p>
+            <p>
+                All rights reserved
+            </p>
         </footer>
     );
   }

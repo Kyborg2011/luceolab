@@ -16,9 +16,10 @@ body, html, :global(#root) {
 .backgroundWrapper {
     flex: 2;
     display: flex;
-    flex-flow: column wrap;  
+    flex-flow: column wrap;
     align-items: stretch;
     background-image: url('../assets/img/home-page-bg.png');
     background-size: 100%;
+    background-position: center;
     background-repeat: no-repeat;
 }

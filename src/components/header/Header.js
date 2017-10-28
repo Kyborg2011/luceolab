@@ -9,9 +9,10 @@ class Header extends React.Component {
         <header className={styles.header}>
             <a className={styles.headerLogo} href="/" alt="LuceoLab"></a>
             <nav className={styles.primaryNav}>
-                <a href="#" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
                 <a href="#" target="_blank"><i className="fa fa-facebook-square" aria-hidden="true"></i>
 </a>
+                <a href="#" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" target="_blank"><i className="fa fa-telegram" aria-hidden="true"></i></a>
                 <a href="mailto:info@luceolab.com" target="_blank"><i className="fa fa-envelope-open" aria-hidden="true"></i>
 </a>
                 <a href="#" className={styles.requestBtn}>send a request</a>

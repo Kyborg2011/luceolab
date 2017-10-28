@@ -5,6 +5,7 @@ import 'normalize.css';
 import styles from './App.css';
 import Header from './header/Header';
 import Content from './content/Content';
+import Navigation from './aside/Navigation';
 import Footer from './footer/Footer';
 
 class App extends React.Component {
@@ -12,6 +13,7 @@ class App extends React.Component {
     return (
         <div className={styles.wrapper}>
             <Header />
+            <Navigation />
             <div className={styles.backgroundWrapper}>
                 <Content />
                 <Footer />
