@@ -9,15 +9,20 @@ class Button extends React.Component {
         this.state = {
             label: props.label,
             reverse: typeof props.reverse !== 'undefined' ? true : false,
-            onClick: props.onClick,
         };
     }
 
     render() {
-        const { label, reverse, onClick } = this.state;
+        const { label, reverse } = this.state;
 
         return (
-            <a href="#" title={label} className={classNames(styles.btn, (reverse) ? styles.reverse : null)}>{label}</a>
+            <a href="#"
+                title={label}
+                className={classNames(styles.btn, (reverse) ? styles.reverse : null)}
+                onClick={this.props.onClick}
+            >
+                {label}
+            </a>
         );
     }
 }

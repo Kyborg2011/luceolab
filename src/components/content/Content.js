@@ -1,26 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 
 import styles from './Content.css';
 import largeLogo from '../../assets/img/homepage-logo-large.png';
-import Button from '../Button/Button';
+import Button from '../button/Button';
 import SwingingLogo from './SwingingLogo';
 
 class Content extends React.Component {
+    handleClick(e) {
+        e.preventDefault();
+        console.log(this.props);
+    }
   render() {
-      var back = (<div className={styles.largeLogo}>
-          <img src={largeLogo} alt="LuceoLab" />
-      </div>);
-      
     return (
         <div className={styles.mainContent}>
             <SwingingLogo />
-
-            <hr className={styles.homepageLine} />
-            <h1 className={styles.homepageMainPhrase}>
-                The digital agency that<br />makes things clear
-            </h1>
-            <Button label="How we work" reverse={true} />
+            <div className={'blurred'}>
+                <h1 className={classNames(styles.homepageMainPhrase)}>
+                    The digital agency that<br />makes things clear
+                </h1>
+                <Button label="How we work" reverse={true} onClick={this.handleClick.bind(this)} />
+            </div>
         </div>
     );
   }

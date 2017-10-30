@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import styles from './SwingingLogo.css';
+import largeLogo from '../../assets/img/homepage-logo-large.png';
 import offLamp from '../../assets/img/logo-lamp-off-large.png';
 import onLamp from '../../assets/img/logo-lamp-on-large.png';
 import logoWithoutLamp from '../../assets/img/logo-without-lamp.png';
 
 class SwingingLogo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            overlay: true,
+        };
+    }
+
     componentDidMount() {
+        var that = this;
+
         function PendulumSim(length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback) {
             var stops = [-60, 50, -40, 30, -20, 10, 5, 0];
           var velocity = 0;
@@ -39,7 +49,8 @@ class SwingingLogo extends React.Component {
                     var imgLetters = new Image();
                     imgLetters.src = logoWithoutLamp;
                     imgLetters.onload = () => {
-                        context.drawImage(imgLetters, 100, 185, 357, 100);
+                        context.drawImage(imgLetters, 100, 180, 357, 100);
+                        that.setState({ overlay: false })
                     };
                     clearInterval(refreshIntervalId);
                 }
@@ -82,8 +93,24 @@ class SwingingLogo extends React.Component {
 
             context.translate(canvas.width/2, 0);
             context.rotate(angle);
+
             if (lightOn && img.src != onLamp) {
                 img.src = onLamp;
+                var elements = document.getElementsByClassName('unblur');
+                if (elements.length == 0) {
+                    var elements = document.getElementsByClassName('blurred');
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].className += ' unblur';
+                    }
+                    var elements = document.getElementsByClassName('blurred_before');
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].className += ' unblur';
+                    }
+                    var elements = document.getElementsByClassName(styles.overlay);
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].className += ' fade-overlay';
+                    }
+                }
             }
             context.drawImage(img, -60, rPend, 120, 143);
 
@@ -95,9 +122,11 @@ class SwingingLogo extends React.Component {
     render() {
         return (
             <div>
-                <div className={styles.overlay}></div>
+                {(this.state.overlay) && <div className={styles.overlay} />}
                 <canvas className={styles.canvas} width="700" height="300" id="canvas">
-                  <p>Sorry, your browser does not support the &lt;canvas&gt; used to display the pendulum animation.</p>
+                    <div className={styles.largeLogo}>
+                        <img src={largeLogo} alt="LuceoLab" />
+                    </div>
                 </canvas>
             </div>
         );

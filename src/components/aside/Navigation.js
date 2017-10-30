@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 
 import styles from './Navigation.css';
 
 class Navigation extends React.Component {
   render() {
     return (
-        <aside className={styles.secondaryNavigation}>
+        <aside className={classNames(styles.secondaryNavigation, 'blurred')}>
             <div className={styles.visibleColumn} />
             <nav>
                 <a className={styles.active} href="#">Home</a>

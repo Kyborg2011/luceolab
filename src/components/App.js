@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 
 import 'normalize.css';
 import styles from './App.css';
@@ -14,7 +15,7 @@ class App extends React.Component {
         <div className={styles.wrapper}>
             <Header />
             <Navigation />
-            <div className={styles.backgroundWrapper}>
+            <div className={classNames(styles.backgroundWrapper, 'blurred_before')}>
                 <Content />
                 <Footer />
             </div>

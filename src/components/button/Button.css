@@ -1,6 +1,6 @@
 .btn {
     text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     color: #FFF;
     font-size: 14px;
     font-weight: 600;
@@ -15,7 +15,8 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding: 12px 0;
+    padding: 0;
+    line-height: 39px !important;
 }
 
 .reverse,
@@ -32,5 +33,5 @@
     border-color: #fbbd63;
     border-style: solid;
     border-width: 2px;
-    color: #fff;
+    color: #000;
 }

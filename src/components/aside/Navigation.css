@@ -11,7 +11,7 @@
 
 .secondaryNavigation {
     position: fixed;
-    top: 0;
+    top: 43px;
     right: -196px;
     height: 100%;
     display: flex;
