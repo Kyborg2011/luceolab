@@ -17,7 +17,7 @@
     "brace-style": [2, "1tbs"],
     "comma-style": 2,
     "eol-last": 0,
-    "indent": ["error", 2],
+    "indent": ["error", 4],
     "jsx-quotes": 2,
     "strict": 0,
     "one-var": [2, {

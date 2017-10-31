@@ -10,18 +10,18 @@ import Navigation from './aside/Navigation';
 import Footer from './footer/Footer';
 
 class App extends React.Component {
-  render() {
-    return (
+    render() {
+        return (
         <div className={styles.wrapper}>
             <Header />
             <Navigation />
-            <div className={classNames(styles.backgroundWrapper, 'blurred_before')}>
+            <div className={classNames( styles.backgroundWrapper, 'blurred_before' )}>
                 <Content />
                 <Footer />
             </div>
         </div>
-    );
-  }
+        );
+    }
 }
 
 ReactDOM.render( <App />, document.getElementById( 'root' ));

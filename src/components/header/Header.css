@@ -29,7 +29,7 @@
     opacity: 0.6;
     text-transform: uppercase;
     text-decoration: none;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .primaryNav a:hover {
@@ -41,7 +41,7 @@
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 300;
     padding: 0 37px;
     text-decoration: none;
     background-color: #fbbd63;
@@ -60,4 +60,8 @@
     padding-right: 10px;
     position: relative;
     z-index: 150;
+}
+
+.primaryNav a.languageBtn:hover {
+    color: #fbbd63;
 }

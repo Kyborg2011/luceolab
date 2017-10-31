@@ -5,9 +5,9 @@ import classNames from 'classnames';
 import styles from './Navigation.css';
 
 class Navigation extends React.Component {
-  render() {
-    return (
-        <aside className={classNames(styles.secondaryNavigation, 'blurred')}>
+    render() {
+        return (
+        <aside className={classNames( styles.secondaryNavigation, 'blurred' )}>
             <div className={styles.visibleColumn} />
             <nav>
                 <a className={styles.active} href="#">Home</a>
@@ -19,8 +19,8 @@ class Navigation extends React.Component {
                 <a href="#">Contact</a>
             </nav>
         </aside>
-    );
-  }
+        );
+    }
 }
 
 export default Navigation;

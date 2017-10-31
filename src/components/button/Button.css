@@ -1,9 +1,9 @@
 .btn {
     text-transform: uppercase;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #FFF;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     width: 189px;
     text-decoration: none;
     background-color: #fbbd63;
@@ -17,6 +17,10 @@
     margin: 0 auto;
     padding: 0;
     line-height: 39px !important;
+}
+
+.reverse {
+    font-weight: 600;
 }
 
 .reverse,
