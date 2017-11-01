@@ -18,7 +18,7 @@ class Button extends React.Component {
         return (
             <a href="#"
               title={label}
-              className={classNames( styles.btn, ( reverse ) ? styles.reverse : null )}
+              className={classNames( styles.btn, this.props.className, ( reverse ) ? styles.reverse : null )}
               onClick={this.props.onClick}
             >
                 {label}

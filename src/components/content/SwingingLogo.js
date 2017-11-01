@@ -19,7 +19,7 @@ class SwingingLogo extends React.Component {
         var that = this;
 
         function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
-            var stops = [ -60, 50, -40, 30, -20, 10, 5, 0 ];
+            var stops = [ -60, 40, -30, 30, 10, 0 ];
             var velocity = 0;
             var angle = initialAngle_rad;
             var k = -gravity_mps2 / length_m;
@@ -34,13 +34,13 @@ class SwingingLogo extends React.Component {
                 var degrees = angle * 180 / Math.PI;
                 degrees = Math.round( degrees % 360 );
                 if ( degrees == stops[ 0 ]) {
-                    if ( stops[ 0 ] === -20 ) {
+                    if ( stops[ 0 ] === 30 ) {
                         lightOn = true;
                     }
                     if ( stops[ 0 ] === 0 ) {
                         zeroCount++;
                     } else {
-                        velocity = velocity * 0.7;
+                        velocity = velocity * 0.6;
                         stops.shift();
                     }
                     if ( zeroCount > 5 ) {
@@ -66,7 +66,7 @@ class SwingingLogo extends React.Component {
         var img = new Image();
         img.src = offLamp;
         var prev = 0;
-        var sim = PendulumSim( 2, 7, Math.PI * 70 / 100, 10, function( angle, lightOn ) {
+        var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, function( angle, lightOn ) {
 
 
             var rPend = 150;
@@ -96,7 +96,9 @@ class SwingingLogo extends React.Component {
 
             if ( lightOn && img.src != onLamp ) {
                 img.src = onLamp;
-                var elements = document.getElementsByClassName( 'unblur' );
+                $( '.blurred, .blurred_before' ).addClass( 'unblur' );
+                $( '.' + styles.overlay ).addClass( 'fade-overlay' );
+                /*var elements = document.getElementsByClassName( 'unblur' );
                 if ( elements.length == 0 ) {
                     var elements = document.getElementsByClassName( 'blurred' );
                     for ( var i = 0; i < elements.length; i++ ) {
@@ -110,7 +112,7 @@ class SwingingLogo extends React.Component {
                     for ( var i = 0; i < elements.length; i++ ) {
                         elements[ i ].className += ' fade-overlay';
                     }
-                }
+                }*/
             }
             context.drawImage( img, -60, rPend, 120, 143 );
 
@@ -121,13 +123,9 @@ class SwingingLogo extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ display: 'flex' }}>
                 {( this.state.overlay ) && <div className={styles.overlay} />}
-                <canvas className={styles.canvas} width="700" height="300" id="canvas">
-                    <div className={styles.largeLogo}>
-                        <img src={largeLogo} alt="LuceoLab" />
-                    </div>
-                </canvas>
+                <canvas className={styles.canvas} width="700" height="300" id="canvas" />
             </div>
         );
     }

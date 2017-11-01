@@ -6,17 +6,6 @@
     z-index: 2000;
 }
 
-.largeLogo {
-    display: flex;
-    justify-content: center;
-    flex-flow: row;
-}
-
-.largeLogo img {
-    max-width: 355px;
-    display: flex;
-}
-
 .overlay {
     position: fixed;
     top: 43px;
@@ -26,4 +15,10 @@
     z-index: 1000;
     background-color: #000;
     opacity: 0.8;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .canvas, .overlay {
+        display: none;
+    }
 }

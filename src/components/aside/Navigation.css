@@ -12,7 +12,7 @@
 .secondaryNavigation {
     position: fixed;
     top: 43px;
-    right: -196px;
+    right: -176px;
     height: 100%;
     display: flex;
     z-index: 100;
@@ -105,4 +105,10 @@
 .secondaryNavigation nav > a.active,
 .secondaryNavigation nav > a:hover {
     color: #fbbd63;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .secondaryNavigation {
+        display: none;
+    }
 }

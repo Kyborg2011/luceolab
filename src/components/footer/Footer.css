@@ -19,3 +19,9 @@
     margin: 0;
     text-transform: uppercase;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .footer {
+        display: none;
+    }
+}
