@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV,
 
 module.exports = {
     entry: [
-        './src/components/App.js',
+        './src/Startup.js',
         indexHtml,
     ],
     output: {
