@@ -1,0 +1,50 @@
+.mainHeadingWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: baseline;
+    height: 58px;
+    margin: 59px 0 44px 94px;
+}
+
+.h1 {
+    display: flex;
+    margin: 0;
+    padding: 0 0 0 21px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 600;
+    font-size: 35.5px;
+    color: #f1f1f1;
+    background-image: url('../../../assets/img/main-heading-circle.png');
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: left center;
+    letter-spacing: 3.5px;
+}
+
+.mainHeadingWrapper:before {
+    content: '';
+    position: absolute;
+    display: flex;
+    align-self: center;
+    left: 0;
+    height: 0px;
+    width: 246px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #fff;
+    opacity: 0.6;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .mainHeadingWrapper {
+        margin: 30px 0 20px 0;
+        height: 45px;
+    }
+    .mainHeadingWrapper:before {
+        width: 15px;
+    }
+    .h1 {
+        font-size: 30px;
+        letter-spacing: 2.5px;
+    }
+}

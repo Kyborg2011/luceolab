@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import styles from './ResponsiveNavigation.css';
 import Button from '../button/Button';
@@ -39,8 +40,8 @@ class ResponsiveNavigation extends React.Component {
                     <div className={styles.navicon} />
                 </a>
                 <nav className={open}>
-                    <a className={styles.active} href="#">Home</a>
-                    <a href="#">How we work</a>
+                    <Link className={styles.active} to="/">Home</Link>
+                    <Link to="/how-we-work">How we work</Link>
                     <a href="#">Services</a>
                     <a href="#">Selected works</a>
                     <a href="#">About us</a>

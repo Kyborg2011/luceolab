@@ -7,48 +7,16 @@
     display: flex;
 }
 
-.homepageMainPhrase {
+.mainContent > div {
     display: flex;
-    margin-top: 24px;
-    font-size: 35px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    color: #212121;
-    justify-content: center;
-    text-align: center;
-    line-height: 50px;
-    padding: 0 15px;
-}
-
-.largeLogo {
-    display: none;
-    justify-content: center;
-    flex-flow: row;
-}
-
-.largeLogo img {
-    max-height: 250px;
-    display: flex;
-}
-
-.homepageMainContent {
-    display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
+    align-self: stretch;
+    margin: 0 152px;
+    height: 100%;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-    .largeLogo {
-        display: flex;
-    }
-
-    .homepageMainPhrase {
-        font-size: 25px;
-        line-height: 40px;
-    }
-
-    .homepageMainContent {
-        flex: 2;
-        justify-content: space-between;
-        margin-bottom: 30px;
+    .mainContent > div {
+        margin: 0 15px;
     }
 }

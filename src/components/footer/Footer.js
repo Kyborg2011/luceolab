@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import {
+  withRouter
+} from 'react-router-dom';
 
 import styles from './Footer.css';
 
 class Footer extends React.Component {
     render() {
         return (
-        <footer className={classNames( styles.footer, 'blurred' )}>
+        <footer className={classNames( styles.footer, { 'blurred': this.props.location.pathname === '/' })}>
             <p>
                 &copy; 2016 – 2017 «LuceoLab»
             </p>
@@ -19,4 +22,4 @@ class Footer extends React.Component {
     }
 }
 
-export default Footer;
+export default withRouter( Footer );

@@ -13,6 +13,7 @@ import Header from './header/Header';
 import Content from './content/Content';
 import Navigation from './aside/Navigation';
 import Footer from './footer/Footer';
+import VerticalButton from './vertical-button/VerticalButton';
 
 class App extends React.Component {
     static propTypes = {
@@ -28,6 +29,12 @@ class App extends React.Component {
         };
     }
 
+    componentWillReceiveProps( nextProps ) {
+        this.setState({
+            pageClassName: ClassesOfPages[ nextProps.location.pathname ]
+        });
+    }
+
     render() {
         const { pageClassName } = this.state;
 
@@ -38,6 +45,7 @@ class App extends React.Component {
                 <div className={classNames( styles.backgroundWrapper, styles[ pageClassName ])}>
                     <Content />
                     <Footer />
+                    <VerticalButton />
                 </div>
             </div>
         );

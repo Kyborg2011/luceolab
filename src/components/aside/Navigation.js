@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import { Link, withRouter } from 'react-router-dom';
 
 import styles from './Navigation.css';
 
 class Navigation extends React.Component {
     render() {
         return (
-        <aside className={classNames( styles.secondaryNavigation, 'blurred' )}>
+        <aside className={classNames( styles.secondaryNavigation, { 'blurred': this.props.location.pathname === '/' })}>
             <div className={styles.visibleColumn} />
             <nav>
-                <a className={styles.active} href="#">Home</a>
-                <a href="#">How we work</a>
+                <Link className={styles.active} to="/">Home</Link>
+                <Link to="/how-we-work">How we work</Link>
                 <a href="#">Services</a>
                 <a href="#">Selected works</a>
                 <a href="#">About us</a>
@@ -23,4 +24,4 @@ class Navigation extends React.Component {
     }
 }
 
-export default Navigation;
+export default withRouter( Navigation );
