@@ -2,8 +2,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: baseline;
-    height: 58px;
-    margin: 59px 0 44px 94px;
+    height: 55px;
+    margin: 59px 0 0 94px;
 }
 
 .h1 {
@@ -19,6 +19,7 @@
     background-size: 8px;
     background-position: left center;
     letter-spacing: 3.5px;
+    text-transform: uppercase;
 }
 
 .mainHeadingWrapper:before {

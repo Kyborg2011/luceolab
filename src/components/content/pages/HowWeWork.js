@@ -14,7 +14,7 @@ class HowWeWork extends React.Component {
     render() {
         return (
             <div>
-                <MainHeading text="HOW WE WORK" />
+                <MainHeading text="how we work" />
                 <div className={styles.videoContainer} />
             </div>
         );

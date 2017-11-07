@@ -17,7 +17,7 @@ class Navigation extends React.Component {
                 <a href="#">Selected works</a>
                 <a href="#">About us</a>
                 <a href="#">Our team</a>
-                <a href="#">Contact</a>
+                <Link to="/contacts">Contact</Link>
             </nav>
         </aside>
         );

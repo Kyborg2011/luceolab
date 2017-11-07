@@ -19,6 +19,29 @@ body, html, :global(#root) {
     font-size: 100%;
 }
 
+:global(::placeholder) {
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:global(input), :global(textarea) {
+    display: flex;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    padding: 14px 0;
+    max-width: 357px;
+    width: 100%;
+}
+
+:global(input:focus), :global(textarea:focus) {
+    outline: none;
+}
+
 .wrapper {
     width: 100%;
     height: 100%;
@@ -45,7 +68,7 @@ body, html, :global(#root) {
 
     display: block;
     background-size: 100%;
-    background-position: center;
+    background-position: 0 0;
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
@@ -57,6 +80,10 @@ body, html, :global(#root) {
 
 .backgroundWrapper.howWeWork:before {
     background-image: url('../assets/img/how-we-work-bg.png');
+}
+
+.backgroundWrapper.contacts:before {
+    background-image: url('../assets/img/contacts-bg.png');
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
