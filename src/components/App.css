@@ -11,6 +11,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body, html, :global(#root) {
@@ -23,6 +24,16 @@ body, html, :global(#root) {
     color: #fff;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
+}
+
+:global(h2) {
+    margin: 0;
+}
+
+:global(p) {
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 27px;
 }
 
 :global(input), :global(textarea) {
@@ -84,6 +95,10 @@ body, html, :global(#root) {
 
 .backgroundWrapper.contacts:before {
     background-image: url('../assets/img/contacts-bg.png');
+}
+
+.backgroundWrapper.selectedWorks:before {
+    background-image: url('../assets/img/selected-works-bg.png');
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

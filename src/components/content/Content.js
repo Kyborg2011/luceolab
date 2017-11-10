@@ -7,6 +7,7 @@ import styles from './Content.css';
 import Homepage from './pages/Homepage';
 import HowWeWork from './pages/HowWeWork';
 import Contact from './pages/Contact';
+import SelectedWorks from './pages/SelectedWorks';
 
 class Content extends React.Component {
     handleClick( e ) {
@@ -18,6 +19,7 @@ class Content extends React.Component {
                 <Route exact path="/" component={Homepage}/>
                 <Route path="/how-we-work" component={HowWeWork}/>
                 <Route path="/contacts" component={Contact}/>
+                <Route path="/selected-works" component={SelectedWorks}/>
             </div>
         );
     }

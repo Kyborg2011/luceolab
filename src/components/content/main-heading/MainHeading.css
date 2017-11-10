@@ -36,6 +36,15 @@
     opacity: 0.6;
 }
 
+:global(.dark-style-header) .h1 {
+    background-image: url('../../../assets/img/main-heading-circle-dark.png');
+    color: #212121;
+}
+
+:global(.dark-style-header:before) {
+    border-bottom-color: #212121;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
     .mainHeadingWrapper {
         margin: 30px 0 20px 0;
