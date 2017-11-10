@@ -1,5 +1,6 @@
 .contactsWrapper {
     display: flex;
+    flex: 2;
     height: 100%;
     margin: 73px 0 0 117px;
     justify-content: space-between;
@@ -32,8 +33,24 @@
 }
 
 .info p span {
-    padding-right: 19px;
+    padding-right: 10px;
     min-width: 35px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.info p span:before {
+    align-self: center;
+    font-size: 17px;
+}
+
+.info p:first-child span {
+    margin-top: -28px;
+}
+
+.info p:nth-child(3) span:before {
+    font-size: 13px;
 }
 
 .formWrapper form {

@@ -34,3 +34,53 @@
     width: 100%;
     height: 100%;
 }
+
+.sliderImageWrapper {
+    display: flex;
+    justify-content: center;
+    width: 365px;
+    height: 363px;
+    position: relative;
+    top: 15px;
+    left: 148px;
+}
+
+.sliderImageWrapper:before {
+    content: '';
+    display: flex;
+    position: absolute;
+    align-self: center;
+    width: 350px;
+    height: 348px;
+    border-radius: 50%;
+    border: 1px solid #fbfdfc;
+}
+
+.sliderImageWrapper img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.sliderPrevBtn {
+    width: 15px;
+    height: 24px;
+    display: flex;
+    align-self: center;
+    position: absolute;
+    left: -45px;
+}
+
+.sliderNextBtn {
+    width: 15px;
+    height: 24px;
+    display: flex;
+    align-self: center;
+    position: absolute;
+    right: -45px;
+}
+
+.sliderPrevBtn img, .sliderNextBtn img {
+    width: 100%;
+    height: 100%;
+}

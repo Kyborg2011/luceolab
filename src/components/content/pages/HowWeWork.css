@@ -1,5 +1,6 @@
 .videoContainer {
     display: flex;
+    flex: 2;
     align-self: stretch;
     border-style: solid;
     border-width: 1px;

@@ -5,6 +5,9 @@ import classNames from 'classnames';
 import styles from './SelectedWorks.css';
 import Button from '../../button/Button';
 import MainHeading from '../main-heading/MainHeading';
+import sliderImageTest from '../../../assets/img/slider-image-test.png';
+import sliderPrevBtnBg from '../../../assets/img/slider-prev-btn.png';
+import sliderNextBtnBg from '../../../assets/img/slider-next-btn.png';
 
 class SelectedWorks extends React.Component {
     handleClick( e ) {
@@ -24,7 +27,11 @@ class SelectedWorks extends React.Component {
                         <Button className={styles.visitBtn} label="visit website" reverse />
                     </div>
                     <div className={styles.lensSlider}>
-                        test
+                        <div className={styles.sliderImageWrapper}>
+                            <a className={styles.sliderPrevBtn} href="#"><img src={sliderPrevBtnBg} /></a>
+                            <img className={'img-circle'} src={sliderImageTest} />
+                            <a className={styles.sliderNextBtn} href="#"><img src={sliderNextBtnBg} /></a>
+                        </div>
                     </div>
                 </div>
             </div>
