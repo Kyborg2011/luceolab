@@ -28,18 +28,138 @@ class OurTeam extends React.Component {
                     </div>
                     <div className={styles.teamMember}>
                         <img src={MemberPhoto1} />
+                        <div className={styles.hidden}>
+                            <div className={styles.memberInfoWrap}>
+                                <span className={styles.memberName}>Ivanov Ivan</span>
+                                <span className={styles.memberPosition}>web-developer</span>
+                                <ul className={styles.memberSocialLinks}>
+                                    <li>
+                                        <a href="mailto:example@example.net" title="Mail" target="_blank">
+                                            <i className="fa fa-envelope-o" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Instagram" target="_blank">
+                                            <i className="fa fa-instagram" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Linkedin" target="_blank">
+                                            <i className="fa fa-linkedin" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="GitHub" target="_blank">
+                                            <i className="fa fa-github" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Telegram" target="_blank">
+                                            <i className="fa fa-telegram" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.teamMember}>
                         <img src={MemberPhoto2} />
+                        <div className={styles.hidden}>
+                            <div className={styles.memberInfoWrap}>
+                                <span className={styles.memberName}>Shever Marina</span>
+                                <span className={styles.memberPosition}>account manager</span>
+                                <ul className={styles.memberSocialLinks}>
+                                    <li>
+                                        <a href="mailto:example@example.net" title="Mail">
+                                            <i className="fa fa-envelope-o" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Instagram">
+                                            <i className="fa fa-instagram" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Linkedin">
+                                            <i className="fa fa-linkedin" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.teamMember}>
                         <img src={MemberPhoto3} />
+                        <div className={styles.hidden}>
+                            <div className={styles.memberInfoWrap}>
+                                <span className={styles.memberName}>Shever Marina</span>
+                                <span className={styles.memberPosition}>graphic designer</span>
+                                <ul className={styles.memberSocialLinks}>
+                                    <li>
+                                        <a href="mailto:example@example.net" title="Mail">
+                                            <i className="fa fa-envelope-o" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Instagram">
+                                            <i className="fa fa-instagram" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Linkedin" target="_blank">
+                                            <i className="fa fa-linkedin" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.teamMember}>
                         <img src={MemberPhoto4} />
+                        <div className={styles.hidden}>
+                            <div className={styles.memberInfoWrap}>
+                                <span className={styles.memberName}>Shever Marina</span>
+                                <span className={styles.memberPosition}>co-founder</span>
+                                <ul className={styles.memberSocialLinks}>
+                                    <li>
+                                        <a href="mailto:example@example.net" title="Mail" target="_blank">
+                                            <i className="fa fa-envelope-o" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Instagram" target="_blank">
+                                            <i className="fa fa-instagram" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Linkedin" target="_blank">
+                                            <i className="fa fa-linkedin" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.teamMember}>
                         <img src={MemberPhoto5} />
+                        <div className={styles.hidden}>
+                            <div className={styles.memberInfoWrap}>
+                                <span className={styles.memberName}>Hren Znaet</span>
+                                <span className={styles.memberPosition}>content strategy</span>
+                                <ul className={styles.memberSocialLinks}>
+                                    <li>
+                                        <a href="mailto:example@example.net" title="Mail" target="_blank">
+                                            <i className="fa fa-envelope-o" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Linkedin" target="_blank">
+                                            <i className="fa fa-linkedin" aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.teamMember}>test</div>
                 </div>
