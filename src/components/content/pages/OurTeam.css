@@ -1,0 +1,27 @@
+.pageWrapper {
+    composes: pageWrapper from "../../shared/styles/Layout.css";
+    padding: 0 117px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inner {
+    composes: inner from "../../shared/styles/Layout.css";
+    width: 50%;
+    height: 198px;
+    margin-left: 0;
+}
+
+.teamMember {
+    display: flex;
+    width: 25%;
+    height: 50%;
+    position: relative;
+    justify-content: center;
+}
+
+.teamMember > img {
+    position: absolute;
+    height: 100%;
+    display: flex;
+}

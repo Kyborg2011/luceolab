@@ -105,6 +105,10 @@ body, html, :global(#root) {
     background-image: url('../assets/img/selected-works-bg.png');
 }
 
+.backgroundWrapper.ourTeam:before {
+    background-image: url('../assets/img/our-team-bg.png');
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
     .backgroundWrapper:before {
         background-size: cover;

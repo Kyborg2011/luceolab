@@ -4,15 +4,16 @@
   "description": "HTML5/CSS3 full markup for the https://luceolab.com",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack --watch",
     "start-server": "node server.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=development webpack --watch",
     "lint": "eslint -c .eslintrc --fix src"
   },
   "author": "Anton Babinin <wkyborgw@gmail.com> (https://luceolab.com)",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "cross-env": "^5.1.1",
     "eslint": "^3.19.0",
     "eslint-config-idiomatic": "^3.1.0",
     "eslint-plugin-jsx": "0.0.2",

@@ -10,11 +10,12 @@ import styles from './VerticalButton.css';
 class VerticalButton extends React.Component {
     render() {
         return (
-            this.props.location.pathname !== '/' && (
-                <div className={styles.verticalBtn}>
-                    <Link to="/">luceolab</Link>
-                </div>
-            )
+            <div className={classNames(
+                styles.verticalBtn,
+                ( this.props.darkstyle ) ? styles.darkstyle : null )}
+            >
+                <Link to="/">luceolab</Link>
+            </div>
         );
     }
 }

@@ -45,7 +45,12 @@ class App extends React.Component {
                 <div className={classNames( styles.backgroundWrapper, styles[ pageClassName ])}>
                     <Content />
                     <Footer />
-                    <VerticalButton />
+                    {this.props.location.pathname !== '/' &&
+                        <VerticalButton darkstyle={([
+                            '/our-team',
+                            '/selected-works',
+                        ].indexOf( this.props.location.pathname ) !== -1 )} />
+                    }
                 </div>
             </div>
         );

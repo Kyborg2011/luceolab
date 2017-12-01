@@ -26,12 +26,28 @@
     text-transform: uppercase;
 }
 
+.verticalBtn.darkstyle a {
+    color: #212121;
+}
+
+.verticalBtn.darkstyle a:before {
+    border-bottom-color: #212121;
+}
+
 .verticalBtn a:hover {
     color: #fbbd63;
 }
 
 .verticalBtn a:hover::before {
     border-bottom-color: #fbbd63;
+}
+
+.verticalBtn.darkstyle a:hover {
+    color: #76A6B1;
+}
+
+.verticalBtn.darkstyle a:hover::before {
+    border-bottom-color: #76A6B1;
 }
 
 .verticalBtn a:before {
