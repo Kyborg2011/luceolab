@@ -21,9 +21,9 @@
     "jsx-quotes": 2,
     "strict": 0,
     "one-var": [2, {
-      "var": "always",
-      "let": "always",
-      "const": "always"
+      "var": "never",
+      "let": "never",
+      "const": "never"
     }],
     "func-names": 0,
     "vars-on-top": 0,

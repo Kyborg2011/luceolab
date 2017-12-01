@@ -1,5 +1,5 @@
-var express = require( 'express' ),
-    app = express();
+var express = require( 'express' );
+var app = express();
 
 app.use( '/assets', express.static( 'dist/assets' ));
 app.use( '/css', express.static( 'dist/css' ));
@@ -10,10 +10,8 @@ app.get( '/*', function( req, res ) {
 });
 
 var server = app.listen( 80, function() {
-
-    var host = server.address().address,
-        port = server.address().port;
+    var host = server.address().address;
+    var port = server.address().port;
 
     console.log( 'Express app listening at http://%s:%s', host, port );
-
 });
