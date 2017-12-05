@@ -24,7 +24,12 @@ class OurTeam extends React.Component {
                 <MainHeading darkstyle text="our best team" />
                 <div className={styles.pageWrapper}>
                     <div className={styles.inner}>
-                        <h2 className={layout.subTitle}>We create only successful digital progects.</h2>
+                        <h2 className={layout.subTitle}>
+                            Success of your business is the only acceptable result for us!
+                        </h2>
+                        <p className={styles.description}>
+                            Open-mindedness, creativity, incessant self-development - that's what unites us in a single team LuceoLab. We adore new challenges, time after time we fearlessly rush to new heights in the business that we have chosen for ourselves. So, dear friend, let's get acquainted?!
+                        </p>
                     </div>
                     <div className={styles.teamMember}>
                         <img src={MemberPhoto1} />
@@ -161,7 +166,17 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.teamMember}>test</div>
+                    <div className={classNames( styles.teamMember, styles.joinUsBox )}>
+                        <Button
+                          label="join us"
+                          onClick={this.handleClick.bind( this )}
+                          dataTooltip={
+                                'We are always looking for new talents, so if you know something about projects development and promotion in web - it\'s time to apply, buddy!'
+                            }
+                          iconOnHover={'fa-suitcase'}
+                          reverse
+                        />
+                    </div>
                 </div>
             </div>
         );

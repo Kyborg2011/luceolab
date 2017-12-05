@@ -5,7 +5,6 @@ import {
   withRouter
 } from 'react-router-dom';
 import classNames from 'classnames';
-import ClassesOfPages from '../configs/ClassesOfPages';
 
 import 'normalize.css';
 import styles from './App.css';
@@ -25,13 +24,13 @@ class App extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
-            pageClassName: ClassesOfPages[ props.location.pathname ],
+            pageClassName: styles[ props.location.pathname.replace( '/', 'll_' ) ],
         };
     }
 
     componentWillReceiveProps( nextProps ) {
         this.setState({
-            pageClassName: ClassesOfPages[ nextProps.location.pathname ]
+            pageClassName: styles[ nextProps.location.pathname.replace( '/', 'll_' ) ]
         });
     }
 
@@ -42,7 +41,7 @@ class App extends React.Component {
             <div className={styles.wrapper}>
                 <Header />
                 <Navigation />
-                <div className={classNames( styles.backgroundWrapper, styles[ pageClassName ])}>
+                <div className={classNames( styles.backgroundWrapper, pageClassName )}>
                     <Content />
                     <Footer />
                     {this.props.location.pathname !== '/' &&

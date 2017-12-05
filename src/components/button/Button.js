@@ -9,13 +9,15 @@ class Button extends React.Component {
         this.state = {
             label: props.label,
             reverse: typeof props.reverse !== 'undefined' ? true : false,
+            dataTooltip: props.dataTooltip,
+            iconOnHover: props.iconOnHover,
         };
     }
 
     render() {
-        const { label, reverse } = this.state;
+        const { label, reverse, dataTooltip, iconOnHover } = this.state;
 
-        return (
+        let btnEl = (
             <a href="#"
               title={label}
               className={classNames( styles.btn, this.props.className, ( reverse ) ? styles.reverse : null )}
@@ -24,6 +26,26 @@ class Button extends React.Component {
                 {label}
             </a>
         );
+
+        if ( typeof dataTooltip !== 'undefined' ) {
+            btnEl = (
+                <a href="#"
+                  title={label}
+                  className={classNames( styles.btn, styles.withTooltip, this.props.className, ( reverse ) ? styles.reverse : null )}
+                  onClick={this.props.onClick}
+                  data-tooltip={dataTooltip}
+                >
+                    <span className={styles.textWrapper}>
+                        <span className={styles.btnTextValue}>{label}</span>
+                        <span className={styles.btnIcon}>
+                            <i className={classNames( 'fa', iconOnHover )} aria-hidden="true" />
+                        </span>
+                    </span>
+                </a>
+            );
+        }
+
+        return btnEl;
     }
 }
 

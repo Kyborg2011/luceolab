@@ -89,23 +89,23 @@ body, html, :global(#root) {
     height: 100%;
 }
 
-.backgroundWrapper.homepage:before {
+.backgroundWrapper.ll_:before {
     background-image: url('../assets/img/home-page-bg.png');
 }
 
-.backgroundWrapper.howWeWork:before {
+.backgroundWrapper.ll_how-we-work:before {
     background-image: url('../assets/img/how-we-work-bg.png');
 }
 
-.backgroundWrapper.contacts:before {
+.backgroundWrapper.ll_contacts:before {
     background-image: url('../assets/img/contacts-bg.png');
 }
 
-.backgroundWrapper.selectedWorks:before {
+.backgroundWrapper.ll_selected-works:before {
     background-image: url('../assets/img/selected-works-bg.png');
 }
 
-.backgroundWrapper.ourTeam:before {
+.backgroundWrapper.ll_our-team:before {
     background-image: url('../assets/img/our-team-bg.png');
 }
 
