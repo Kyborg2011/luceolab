@@ -28,7 +28,7 @@ class OurTeam extends React.Component {
                             Success of your business is the only acceptable result for us!
                         </h2>
                         <p className={styles.description}>
-                            Open-mindedness, creativity, incessant self-development - that's what unites us in a single team LuceoLab. We adore new challenges, time after time we fearlessly rush to new heights in the business that we have chosen for ourselves. So, dear friend, let's get acquainted?!
+                            Open-mindedness, creativity, incessant self-development &mdash; that's what unites us in a single team LuceoLab. We adore new challenges, time after time we fearlessly rush to new heights in the business that we have chosen for ourselves. So, dear friend, let's get acquainted?!
                         </p>
                     </div>
                     <div className={styles.teamMember}>

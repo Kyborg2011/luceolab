@@ -31,9 +31,9 @@ body, html, :global(#root) {
 }
 
 :global(p) {
-    font-size: 15.5px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 27px;
+    line-height: 23px;
 }
 
 :global(input), :global(textarea) {
@@ -110,6 +110,8 @@ body, html, :global(#root) {
 
 .backgroundWrapper.ll_services:before {
     background-image: url('../assets/img/services-page-bg.jpg');
+    background-size: 100% auto;
+    background-position: 100% -70px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

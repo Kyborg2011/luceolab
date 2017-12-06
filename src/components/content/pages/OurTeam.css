@@ -16,7 +16,7 @@
 
 .description {
     composes: description from "../../shared/styles/Layout.css";
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     line-height: 23px;
     margin-top: 10px;
