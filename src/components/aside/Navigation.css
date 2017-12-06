@@ -12,7 +12,7 @@
 .secondaryNavigation {
     position: fixed;
     top: 43px;
-    right: -176px;
+    right: -189px;
     height: 100%;
     display: flex;
     z-index: 100;
@@ -32,7 +32,7 @@
 }
 
 .secondaryNavigation nav {
-    width: 174px;
+    width: 189px;
     background-color: #fff;
     z-index: 200;
     display: flex;

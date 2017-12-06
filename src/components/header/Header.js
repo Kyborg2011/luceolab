@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.css';
 import Button from '../button/Button';
@@ -9,7 +9,7 @@ class Header extends React.Component {
     render() {
         return (
         <header className={styles.header}>
-            <a className={styles.headerLogo} href="/" alt="LuceoLab" />
+            <Link className={styles.headerLogo} to="/" alt="LuceoLab digital agency" />
             <nav className={styles.primaryNav}>
                 <a href="#" target="_blank"><i className="fa fa-facebook-square" aria-hidden="true" />
 </a>

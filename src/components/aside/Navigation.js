@@ -13,7 +13,7 @@ class Navigation extends React.Component {
             <nav>
                 <Link className={styles.active} to="/">Home</Link>
                 <Link to="/how-we-work">How we work</Link>
-                <a href="#">Services</a>
+                <Link to="/services">Services</Link>
                 <Link to="/selected-works">Selected works</Link>
                 <Link to="/our-team">Our team</Link>
                 <a href="#">Our beliefs</a>

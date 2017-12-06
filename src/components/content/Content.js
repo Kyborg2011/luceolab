@@ -9,6 +9,7 @@ import HowWeWork from './pages/HowWeWork';
 import Contact from './pages/Contact';
 import SelectedWorks from './pages/SelectedWorks';
 import OurTeam from './pages/OurTeam';
+import Services from './pages/Services';
 
 class Content extends React.Component {
     handleClick( e ) {
@@ -17,11 +18,12 @@ class Content extends React.Component {
     render() {
         return (
             <div className={styles.mainContent}>
-                <Route exact path="/" component={Homepage}/>
-                <Route path="/how-we-work" component={HowWeWork}/>
-                <Route path="/contacts" component={Contact}/>
-                <Route path="/selected-works" component={SelectedWorks}/>
-                <Route path="/our-team" component={OurTeam}/>
+                <Route exact path="/" component={Homepage} />
+                <Route path="/how-we-work" component={HowWeWork} />
+                <Route path="/contacts" component={Contact} />
+                <Route path="/selected-works" component={SelectedWorks} />
+                <Route path="/our-team" component={OurTeam} />
+                <Route path="/services" component={Services} />
             </div>
         );
     }

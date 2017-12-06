@@ -48,6 +48,7 @@ class App extends React.Component {
                         <VerticalButton darkstyle={([
                             '/our-team',
                             '/selected-works',
+                            '/services',
                         ].indexOf( this.props.location.pathname ) !== -1 )} />
                     }
                 </div>

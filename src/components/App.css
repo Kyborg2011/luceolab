@@ -80,7 +80,6 @@ body, html, :global(#root) {
     position: absolute;
     left: 0;
     right: 0;
-
     display: block;
     background-size: 100%;
     background-position: 0 0;
@@ -90,23 +89,27 @@ body, html, :global(#root) {
 }
 
 .backgroundWrapper.ll_:before {
-    background-image: url('../assets/img/home-page-bg.png');
+    background-image: url('../assets/img/home-page-bg.jpg');
 }
 
 .backgroundWrapper.ll_how-we-work:before {
-    background-image: url('../assets/img/how-we-work-bg.png');
+    background-image: url('../assets/img/how-we-work-bg.jpg');
 }
 
 .backgroundWrapper.ll_contacts:before {
-    background-image: url('../assets/img/contacts-bg.png');
+    background-image: url('../assets/img/contacts-bg.jpg');
 }
 
 .backgroundWrapper.ll_selected-works:before {
-    background-image: url('../assets/img/selected-works-bg.png');
+    background-image: url('../assets/img/selected-works-bg.jpg');
 }
 
 .backgroundWrapper.ll_our-team:before {
-    background-image: url('../assets/img/our-team-bg.png');
+    background-image: url('../assets/img/our-team-bg.jpg');
+}
+
+.backgroundWrapper.ll_services:before {
+    background-image: url('../assets/img/services-page-bg.jpg');
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

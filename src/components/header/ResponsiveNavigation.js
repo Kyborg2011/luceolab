@@ -42,11 +42,11 @@ class ResponsiveNavigation extends React.Component {
                 <nav className={open}>
                     <Link className={styles.active} to="/">Home</Link>
                     <Link to="/how-we-work">How we work</Link>
-                    <a href="#">Services</a>
-                    <a href="#">Selected works</a>
-                    <a href="#">About us</a>
-                    <a href="#">Our team</a>
-                    <a href="#">Contact</a>
+                    <Link to="/services">Services</Link>
+                    <Link to="/selected-works">Selected works</Link>
+                    <Link to="/our-team">Our team</Link>
+                    <a href="#">Our beliefs</a>
+                    <Link to="/contacts">Contact</Link>
                     <Button className={styles.requestMobBtn} label="send a request" />
                 </nav>
             </div>
