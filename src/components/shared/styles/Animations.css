@@ -1,0 +1,29 @@
+@keyframes service-open {
+    0%   {
+        position: absolute;
+        bottom: 0;
+        width: 237px;
+        height: 154px;
+    }
+
+    50% {
+        position: absolute;
+        bottom: 0;
+        width: 500px;
+        height: 154px;
+    }
+
+    100% {
+        position: absolute;
+        bottom: 0;
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.serviceOpen {
+    animation-duration: 2s;
+    animation-name: service-open;
+    animation-fill-mode: forwards;
+    display: flex !important;
+}

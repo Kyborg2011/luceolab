@@ -34,8 +34,8 @@ class Contact extends React.Component {
                         <p><span className="fa fa-envelope-o" /><a href="mailto:info@luceolab.com">info@luceolab.com</a></p>
                         <ul className={styles.socialNetworks}>
                             <li><a href="#" target="_blank"><span className="fa fa-instagram" /></a></li>
-                            <li><a href="#" target="_blank"><span className="fa fa-facebook" /></a></li>
-                            <li><a href="#" target="_blank"><span className="fa fa-telegram" /></a></li>
+                            <li className={styles.facebookBtn}><a href="#" target="_blank"><span className="fa fa-facebook" /></a></li>
+                            <li className={styles.telegramBtn}><a href="#" target="_blank" /></li>
                         </ul>
                     </div>
                 </div>

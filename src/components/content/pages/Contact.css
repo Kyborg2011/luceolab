@@ -117,3 +117,26 @@
     border: 1px solid #f9bb69;
     color: #fff;
 }
+
+.socialNetworks li.facebookBtn a {
+    font-size: 21px;
+    line-height: 21px;
+}
+
+.socialNetworks li.facebookBtn a span {
+    top: 0;
+}
+
+.telegramBtn a {
+    background: url('../../../assets/img/icons/telegram-logo.png') #ffffff;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.telegramBtn a:hover {
+    background: url('../../../assets/img/icons/telegram-logo-white.png') #f9bb69;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}

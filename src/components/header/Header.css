@@ -70,6 +70,23 @@
     color: #fbbd63;
 }
 
+.facebookIcon {
+    font-size: 15px;
+}
+
+.telegramIcon {
+    width: 16px;
+    height: 16px;
+    background: url('../../assets/img/icons/telegram-logo.png');
+    background-size: 100%;
+    align-self: center;
+}
+
+.telegramIcon:hover {
+    background: url('../../assets/img/icons/telegram-logo-hover.png');
+    background-size: 100%;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
     .primaryNav a.requestBtn,
     .primaryNav a.languageBtn {

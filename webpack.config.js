@@ -1,10 +1,10 @@
 /* Webpack main config file */
-var webpack = require( 'webpack' ),
-    ExtractTextPlugin = require( 'extract-text-webpack-plugin' ),
-    path = require( 'path' );
+let webpack = require( 'webpack' );
+let ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+let path = require( 'path' );
 
-const env = process.env.NODE_ENV,
-    indexHtml = path.join( __dirname, 'src', 'index.html' );
+const env = process.env.NODE_ENV;
+const indexHtml = path.join( __dirname, 'src', 'index.html' );
 
 module.exports = {
     entry: [
@@ -24,15 +24,15 @@ module.exports = {
         },
         {
             test: /\.css$/,
-            loader: env === 'production' ?
-          ExtractTextPlugin.extract({
-              fallback: 'style-loader',
-              use: [
-                  'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-                  'postcss-loader'
-              ]
-          }) :
-            [
+            loader: ( env === 'production' )
+            ? ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [
+                    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+                    'postcss-loader'
+                ]
+            })
+            : [
                 'style-loader',
                 'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
                 'postcss-loader'

@@ -11,12 +11,16 @@ class Header extends React.Component {
         <header className={styles.header}>
             <Link className={styles.headerLogo} to="/" alt="LuceoLab digital agency" />
             <nav className={styles.primaryNav}>
-                <a href="#" target="_blank"><i className="fa fa-facebook-square" aria-hidden="true" />
-</a>
-                <a href="#" target="_blank"><i className="fa fa-instagram" aria-hidden="true" /></a>
-                <a href="#" target="_blank"><i className="fa fa-telegram" aria-hidden="true" /></a>
-                <a href="mailto:info@luceolab.com" target="_blank"><i className="fa fa-envelope-open" aria-hidden="true" />
-</a>
+                <a href="mailto:info@luceolab.com" target="_blank">
+                    <i className="fa fa-envelope-open-o" aria-hidden="true" />
+                </a>
+                <a href="#" target="_blank" className={styles.telegramIcon} />
+                <a href="#" target="_blank">
+                    <i className="fa fa-instagram" aria-hidden="true" />
+                </a>
+                <a className={styles.facebookIcon} href="#" target="_blank">
+                    <i className="fa fa-facebook" aria-hidden="true" />
+                </a>
                 <Button className={styles.requestBtn} label="send a request" />
                 <a className={styles.languageBtn} href="#" target="_blank">ru</a>
             </nav>
