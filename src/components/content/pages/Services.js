@@ -45,73 +45,103 @@ class Services extends React.Component {
                 <div className={styles.pageWrapper}>
                     <div className={styles.inner}>
                         <p className={styles.description}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in Ut enim ad minim veniam, quis nostrud Lorem ipsum dolor sit amet,  dolor Lorem ipsum dolor r                        </p>
+                            LuceoLab is a middle-sized digital agency from Ukraine.
+                            What are we doing? We craft digital experiences.
+                            With the most top-notch technologies, LuceoLab offers
+                            a robust suite of digital services, including inventive
+                            web design and development. We driven by top world standards
+                            in web. <span style={{ fontWeight: 600 }}>Our products create immediate marketing impact
+                            and increases your business revenue.</span>
+                        </p>
                     </div>
                     <ul className={styles.list}>
-                        <li>
-                            <div className={styles.icon}>
-                                <img src={webdevIcon} alt="Web development" />
-                            </div>
-                            <h4>web development</h4>
-                            <div className={styles.details}>
-                                Lorem ipsum dolor sit amet, consectetur<br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                        <li className={openServiceAnimation( 0 )} onClick={() => {
+                            this.setState({ opennedServiceIndex: 0 })
+                        }}>
+                            <div className={styles.listInnerWrapper}>
+                                <p className={styles.icon}>
+                                    <img src={webdevIcon} alt="Web development" />
                                 </p>
-                                <Button label="request" />
+                                <h4>web development</h4>
+                                <div className={styles.details}>
+                                    <p>
+                                        According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
+                                        about web-development: 76% of consumers say the most important factor in a website's
+                                        design is "the website makes it easy for me to find what I want."<br/>
+                                        The main principle by which LuceoLab is guided is the clarity of vision.
+                                        Therefore, we consider the main criteria for the quality of our work:
+                                        <ul>
+                                            <li>Simplicity of the UI (user interface)</li>
+                                            <li>Сlear UX (user experience)</li>
+                                            <li>Maximum accessibility of the web content</li>
+                                            <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
+                                        </ul>
+                                        We continually improve our skills,
+                                        that's why we are not afraid to use the
+                                        latest trends in the world of web developing:
+                                    </p>
+                                    <Button label="request" />
+                                </div>
                             </div>
                         </li>
-                        <li onClick={() => {
+                        <li className={openServiceAnimation( 1 )} onClick={() => {
                             this.setState({ opennedServiceIndex: 1 })
                         }}>
-                            <div className={styles.icon}>
-                                <img src={designBrandingIcon} alt="Design & Branding" />
-                            </div>
-                            <h4>design & branding</h4>
-                            <div className={classNames( styles.details, openServiceAnimation( 1 ))}>
-                                Lorem ipsum dolor sit amet, consectetur<br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                            <div className={styles.listInnerWrapper}>
+                                <p className={styles.icon}>
+                                    <img src={designBrandingIcon} alt="Design & Branding" />
                                 </p>
-                                <Button label="request" />
+                                <h4>design & branding</h4>
+                                <div className={classNames( styles.details )}>
+                                    Lorem ipsum dolor sit amet, consectetur<br />
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                    </p>
+                                    <Button label="request" />
+                                </div>
                             </div>
                         </li>
-                        <li>
-                            <div className={styles.icon}>
-                                <img src={marketingIcon} alt="Digital marketing" />
-                            </div>
-                            <h4>digital marketing</h4>
-                            <div className={styles.details}>
-                                Lorem ipsum dolor sit amet, consectetur<br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                        <li className={openServiceAnimation( 2 )} onClick={() => {
+                            this.setState({ opennedServiceIndex: 2 })
+                        }}>
+                            <div className={styles.listInnerWrapper}>
+                                <p className={styles.icon}>
+                                    <img src={marketingIcon} alt="Digital marketing" />
                                 </p>
-                                <Button label="request" />
+                                <h4>digital marketing</h4>
+                                <div className={styles.details}>
+                                    Lorem ipsum dolor sit amet, consectetur<br />
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                    </p>
+                                    <Button label="request" />
+                                </div>
                             </div>
                         </li>
-                        <li>
-                            <div className={styles.icon}>
-                                <img src={itConsultingIcon} alt="IT consulting" />
-                            </div>
-                            <h4>it consulting</h4>
-                            <div className={styles.details}>
-                                Lorem ipsum dolor sit amet, consectetur<br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                        <li className={openServiceAnimation( 3 )} onClick={() => {
+                            this.setState({ opennedServiceIndex: 3 })
+                        }}>
+                            <div className={styles.listInnerWrapper}>
+                                <p className={styles.icon}>
+                                    <img src={itConsultingIcon} alt="IT consulting" />
                                 </p>
-                                <Button label="request" />
+                                <h4>it consulting</h4>
+                                <div className={styles.details}>
+                                    Lorem ipsum dolor sit amet, consectetur<br />
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                    </p>
+                                    <Button label="request" />
+                                </div>
                             </div>
                         </li>
                     </ul>

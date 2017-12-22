@@ -14,7 +14,6 @@ class Navigation extends React.Component {
                 <Link className={styles.active} to="/">Home</Link>
                 <Link to="/how-we-work">How we work</Link>
                 <Link to="/services">Services</Link>
-                <Link to="/selected-works">Selected works</Link>
                 <Link to="/our-team">Our team</Link>
                 <a href="#">Our beliefs</a>
                 <Link to="/contacts">Contact</Link>

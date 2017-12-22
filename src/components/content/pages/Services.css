@@ -12,6 +12,7 @@
 .description {
     composes: description from "../../shared/styles/Layout.css";
     line-height: 27px;
+    font-weight: 400;
 }
 
 .list {
@@ -32,8 +33,6 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    top: 0;
-    transition: top 0.5s;
     position: relative;
 }
 
@@ -47,6 +46,7 @@
     justify-content: center;
     align-items: center;
     transition: background 0.5s, border-color 0.5s;
+    margin: 0;
 }
 
 .icon img {
@@ -143,26 +143,33 @@
     max-width: 195px;
 }
 
-.list li:hover {
-    height: 260px;
-    top: -75px;
-    transition: top 0.5s;
-}
-
 .list li .details {
-    height: 10px;
     display: none;
-    transition: visibility 2s;
 }
 
 .list li:hover .details {
     display: flex;
-    height: 154px;
-    transition: display 0.75s, height 2s;
+    flex: 2;
 }
 
 .details > a {
     line-height: 30px !important;
     font-weight: 600;
     width: 100%;
+}
+
+.listInnerWrapper {
+    display: flex;
+    flex: 2;
+    position: absolute;
+    bottom: 0;
+    flex-direction: column;
+    height: 196px;
+    transition: height 0.5s, top 0.5s;
+    align-items: center;
+}
+
+.list li:hover .listInnerWrapper {
+    height: 260px;
+    transition: height 0.5s, top 0.5s;
 }

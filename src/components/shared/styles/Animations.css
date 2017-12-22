@@ -3,14 +3,14 @@
         position: absolute;
         bottom: 0;
         width: 237px;
-        height: 154px;
+        height: 260px;
     }
 
     50% {
         position: absolute;
         bottom: 0;
         width: 500px;
-        height: 154px;
+        height: 260px;
     }
 
     100% {
@@ -21,9 +21,13 @@
     }
 }
 
-.serviceOpen {
+.serviceOpen > div {
     animation-duration: 2s;
     animation-name: service-open;
     animation-fill-mode: forwards;
+}
+
+.serviceOpen > div > div {
     display: flex !important;
+    flex: 2;
 }
