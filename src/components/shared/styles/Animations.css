@@ -17,7 +17,7 @@
         position: absolute;
         bottom: 0;
         width: 500px;
-        height: 500px;
+        height: 550px;
     }
 }
 
@@ -30,4 +30,22 @@
 .serviceOpen > div > div {
     display: flex !important;
     flex: 2;
+}
+
+.serviceOpen h4 {
+    color: #212121 !important;
+    margin: 12px 0 0 0 !important;
+}
+
+.serviceOpen > div > p {
+    background: #212121 !important;
+    border-color: #212121 !important;
+}
+
+.serviceOpen > div > p img {
+    filter: invert(100%) !important;
+}
+
+.serviceOpen > div {
+    z-index: 400;
 }
