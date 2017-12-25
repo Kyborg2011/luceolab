@@ -15,7 +15,9 @@ class HowWeWork extends React.Component {
         return (
             <div>
                 <MainHeading text="how we work" />
-                <div className={styles.videoContainer} />
+                <div className={styles.pageWrapper}>
+                    <div className={styles.videoContainer} />
+                </div>
             </div>
         );
     }

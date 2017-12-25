@@ -47,6 +47,7 @@ body, html, :global(#root) {
     padding: 14px 0;
     max-width: 357px;
     width: 100%;
+    overflow: hidden;
 }
 
 :global(input:focus), :global(textarea:focus) {
