@@ -1,4 +1,7 @@
 .header {
+    position: relative;
+    z-index: 200;
+    background: #fff;
     display: flex;
     flex-flow: row nowrap;
     height: 43px;

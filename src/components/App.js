@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import {
   withRouter
 } from 'react-router-dom';
@@ -41,7 +41,7 @@ class App extends React.Component {
             <div className={styles.wrapper}>
                 <Header />
                 <Navigation />
-                <div className={classNames( styles.backgroundWrapper, pageClassName )}>
+                <div className={classNames( styles.innerWrapper )}>
                     <Content />
                     <Footer />
                     {this.props.location.pathname !== '/' &&

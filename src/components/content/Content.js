@@ -21,23 +21,23 @@ function mapStyles( styles ) {
 
 function bounce( val ) {
     return spring( val, {
-        damping: 30,
-        precision: 0.01,
-        stiffness: 135,
+        damping: 10,
+        precision: 0.1,
+        stiffness: 175,
     });
 }
 
 const bounceTransition = {
     atEnter: {
         opacity: 0,
-        offset: 50,
+        offset: 25,
     },
     atLeave: {
-        opacity: bounce( 0 ),
-        offset: bounce( -50 ),
+        opacity: 0,
+        offset: bounce( -25 ),
     },
     atActive: {
-        opacity: bounce( 1 ),
+        opacity: 1,
         offset: bounce( 0 ),
     },
 };

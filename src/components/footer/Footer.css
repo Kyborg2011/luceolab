@@ -1,7 +1,10 @@
 .footer {
+    position: fixed;
+    bottom: 0;
     display: flex;
     align-items: center;
     height: 43px;
+    width: 100%;
     overflow: hidden;
     user-select: none;
     background: #000;
