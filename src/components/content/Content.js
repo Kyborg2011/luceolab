@@ -22,9 +22,8 @@ function mapStyles( styles ) {
 
 function bounce( val ) {
     return spring( val, {
-        damping: 10,
-        precision: 0.1,
-        stiffness: 175,
+        precision: 0.01,
+        stiffness: 100,
     });
 }
 
@@ -34,11 +33,11 @@ const bounceTransition = {
         offset: 25,
     },
     atLeave: {
-        opacity: 0,
+        opacity: bounce( 0 ),
         offset: bounce( -25 ),
     },
     atActive: {
-        opacity: 1,
+        opacity: bounce( 1 ),
         offset: bounce( 0 ),
     },
 };
@@ -55,7 +54,7 @@ class Content extends React.Component {
                   atLeave={bounceTransition.atLeave}
                   atActive={bounceTransition.atActive}
                   mapStyles={mapStyles}
-                  className={styles.mainContent}
+                  className={classNames( styles.mainContent, 'main-content' )}
                  >
                     <Route exact path="/" component={Homepage} />
                     <Route path="/how-we-work" component={HowWeWork} />

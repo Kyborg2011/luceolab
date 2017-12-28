@@ -52,7 +52,7 @@
 .background.ll_services:before {
     background-image: url('../../../assets/img/services-page-bg.jpg');
     background-size: 100% auto;
-    background-position: 100% -70px;
+    background-position: 100% -50px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

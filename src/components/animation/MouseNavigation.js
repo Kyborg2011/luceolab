@@ -52,9 +52,9 @@ class MouseNavigation extends React.Component {
                     let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                     let nextRouteId = routeId;
                     if ( delta > 0 ) {
-                        nextRouteId = routeId + 1;
-                    } else {
                         nextRouteId = routeId - 1;
+                    } else {
+                        nextRouteId = routeId + 1;
                     }
                     if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 ) {
                         clearTimeout( redirectTimeoutId );

@@ -2,23 +2,14 @@
     display: flex;
     margin: 0 auto;
     position: relative;
+    top: 0;
     left: 75px;
     z-index: 2000;
-}
-
-.overlay {
-    position: fixed;
-    top: 43px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    background-color: #000;
-    opacity: 0.8;
+    filter: none;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-    .canvas, .overlay {
+    .canvas {
         display: none;
     }
 }

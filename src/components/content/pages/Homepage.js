@@ -39,8 +39,8 @@ class Homepage extends React.Component {
                     <div className={styles.largeLogo}>
                         <img src={largeLogo} alt="LuceoLab" />
                     </div>
-                    <SwingingLogo />
-                    <div className={classNames( 'blurred', styles.homepageMainHomepage )}>
+                    <SwingingLogo blur={'homepage-blurred'} />
+                    <div id="homepage-blurred" className="blurred">
                         <h1 className={classNames( styles.homepageMainPhrase )}>
                             The digital agency that<br />makes things clear
                         </h1>

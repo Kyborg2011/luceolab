@@ -10,7 +10,7 @@ import styles from './Footer.css';
 class Footer extends React.Component {
     render() {
         return (
-        <footer className={classNames( styles.footer, { 'blurred': this.props.location.pathname === '/' })}>
+        <footer className={classNames( styles.footer )}>
             <p>
                 &copy; 2016 – 2017 «LuceoLab»
             </p>
