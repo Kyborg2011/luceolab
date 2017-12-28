@@ -4,7 +4,7 @@
   "description": "HTML5/CSS3 full markup for the https://luceolab.com",
   "main": "index.js",
   "scripts": {
-    "start-server": "node server.js",
+    "start-server": "node www/server.js",
     "build": "cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=development webpack --watch",
     "lint": "eslint -c .eslintrc --fix src"

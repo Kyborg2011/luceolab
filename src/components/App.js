@@ -41,17 +41,19 @@ class App extends React.Component {
             <div className={styles.wrapper}>
                 <Header />
                 <Navigation />
+
                 <div className={classNames( styles.innerWrapper )}>
                     <Content />
-                    <Footer />
-                    {this.props.location.pathname !== '/' &&
-                        <VerticalButton darkstyle={([
-                            '/our-team',
-                            '/selected-works',
-                            '/services',
-                        ].indexOf( this.props.location.pathname ) !== -1 )} />
-                    }
                 </div>
+
+                {this.props.location.pathname !== '/' &&
+                    <VerticalButton darkstyle={([
+                        '/our-team',
+                        '/selected-works',
+                        '/services',
+                    ].indexOf( this.props.location.pathname ) !== -1 )} />
+                }
+                <Footer />
             </div>
         );
     }
