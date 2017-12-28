@@ -58,6 +58,11 @@ body, html, :global(#root) {
     border-radius: 50%;
 }
 
+:global(.mouse-navigation-wrapper) {
+    display: flex;
+    flex: 2;
+}
+
 .wrapper {
     width: 100%;
     height: 100%;

@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import { spring, AnimatedSwitch } from 'react-router-transition';
 
 import styles from './Content.css';
+import MouseNavigation from '../animation/MouseNavigation';
 import Homepage from './pages/Homepage';
 import HowWeWork from './pages/HowWeWork';
 import Contact from './pages/Contact';
@@ -48,20 +49,22 @@ class Content extends React.Component {
     }
     render() {
         return (
-            <AnimatedSwitch
-              atEnter={bounceTransition.atEnter}
-              atLeave={bounceTransition.atLeave}
-              atActive={bounceTransition.atActive}
-              mapStyles={mapStyles}
-              className={styles.mainContent}
-             >
-                <Route exact path="/" component={Homepage} />
-                <Route path="/how-we-work" component={HowWeWork} />
-                <Route path="/contacts" component={Contact} />
-                <Route path="/selected-works" component={SelectedWorks} />
-                <Route path="/our-team" component={OurTeam} />
-                <Route path="/services" component={Services} />
-            </AnimatedSwitch>
+            <MouseNavigation>
+                <AnimatedSwitch
+                  atEnter={bounceTransition.atEnter}
+                  atLeave={bounceTransition.atLeave}
+                  atActive={bounceTransition.atActive}
+                  mapStyles={mapStyles}
+                  className={styles.mainContent}
+                 >
+                    <Route exact path="/" component={Homepage} />
+                    <Route path="/how-we-work" component={HowWeWork} />
+                    <Route path="/contacts" component={Contact} />
+                    <Route path="/selected-works" component={SelectedWorks} />
+                    <Route path="/our-team" component={OurTeam} />
+                    <Route path="/services" component={Services} />
+                </AnimatedSwitch>
+            </MouseNavigation>
         );
     }
 }
