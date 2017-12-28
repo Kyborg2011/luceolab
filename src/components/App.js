@@ -21,22 +21,7 @@ class App extends React.Component {
         history: PropTypes.object.isRequired
     }
 
-    constructor( props ) {
-        super( props );
-        this.state = {
-            pageClassName: styles[ props.location.pathname.replace( '/', 'll_' ) ],
-        };
-    }
-
-    componentWillReceiveProps( nextProps ) {
-        this.setState({
-            pageClassName: styles[ nextProps.location.pathname.replace( '/', 'll_' ) ]
-        });
-    }
-
     render() {
-        const { pageClassName } = this.state;
-
         return (
             <div className={styles.wrapper}>
                 <Header />
