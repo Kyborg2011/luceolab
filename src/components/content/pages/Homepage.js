@@ -34,7 +34,7 @@ class Homepage extends React.Component {
         const { pageClassName } = this.state;
 
         return (
-            <div className={classNames( styles.homepageInner, bgStyles.background, pageClassName )}>
+            <div className={classNames( styles.homepageInner )}>
                 <div>
                     <div className={styles.largeLogo}>
                         <img src={largeLogo} alt="LuceoLab" />

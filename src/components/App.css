@@ -58,11 +58,6 @@ body, html, :global(#root) {
     border-radius: 50%;
 }
 
-:global(.mouse-navigation-wrapper) {
-    display: flex;
-    flex: 2;
-}
-
 /* Dark overlay + blur */
 :global(.overlay) {
     position: fixed;

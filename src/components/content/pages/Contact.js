@@ -33,7 +33,6 @@ class Contact extends React.Component {
         const { pageClassName } = this.state;
 
         return (
-            <div className={classNames( bgStyles.background, pageClassName )}>
                 <div>
                     <MainHeading text="get in touch" />
                     <div className={styles.contactsWrapper}>
@@ -61,7 +60,6 @@ class Contact extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
         );
     }
 }

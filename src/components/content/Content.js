@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { Route } from 'react-router-dom';
-import { spring, AnimatedSwitch } from 'react-router-transition';
+import PropTypes from 'prop-types';
+import { Route, withRouter, Switch } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+import bgStyles from '../shared/styles/Background.css';
 import styles from './Content.css';
 import MouseNavigation from '../animation/MouseNavigation';
 import Homepage from './pages/Homepage';
@@ -13,59 +15,76 @@ import SelectedWorks from './pages/SelectedWorks';
 import OurTeam from './pages/OurTeam';
 import Services from './pages/Services';
 
-function mapStyles( styles ) {
-    return {
-        opacity: styles.opacity,
-        transform: `translateY(${styles.offset}%)`,
-    };
-}
-
-function bounce( val ) {
-    return spring( val, {
-        precision: 0.01,
-        stiffness: 100,
-    });
-}
-
-const bounceTransition = {
-    atEnter: {
-        opacity: 0,
-        offset: 25,
-    },
-    atLeave: {
-        opacity: bounce( 0 ),
-        offset: bounce( -25 ),
-    },
-    atActive: {
-        opacity: bounce( 1 ),
-        offset: bounce( 0 ),
-    },
-};
-
 class Content extends React.Component {
     handleClick( e ) {
         e.preventDefault();
     }
+
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+    }
+
+    constructor( props ) {
+        super( props );
+        this.state = {
+            pageClassName: bgStyles[ props.location.pathname.replace( '/', 'll_' ) ],
+            hideBackground: false,
+            transitionDirection: 'bottom-up',
+        };
+    }
+
+    componentWillReceiveProps( nextProps ) {
+        let nextPathname = nextProps.location.pathname;
+        let curPathname = this.props.location.pathname;
+
+        if ( MouseNavigation.routes.indexOf( nextPathname ) > MouseNavigation.routes.indexOf( curPathname )) {
+            this.setState({ transitionDirection: 'bottom-up' });
+        } else {
+            this.setState({ transitionDirection: 'top-down' });
+        }
+
+        setTimeout(() => {
+            this.setState({
+                pageClassName: bgStyles[ nextPathname.replace( '/', 'll_' ) ],
+                hideBackground: false,
+            });
+        }, 1500 );
+    }
+
     render() {
+        const { pageClassName, hideBackground, transitionDirection } = this.state;
+
         return (
             <MouseNavigation>
-                <AnimatedSwitch
-                  atEnter={bounceTransition.atEnter}
-                  atLeave={bounceTransition.atLeave}
-                  atActive={bounceTransition.atActive}
-                  mapStyles={mapStyles}
-                  className={classNames( styles.mainContent, 'main-content' )}
-                 >
-                    <Route exact path="/" component={Homepage} />
-                    <Route path="/how-we-work" component={HowWeWork} />
-                    <Route path="/contacts" component={Contact} />
-                    <Route path="/selected-works" component={SelectedWorks} />
-                    <Route path="/our-team" component={OurTeam} />
-                    <Route path="/services" component={Services} />
-                </AnimatedSwitch>
+                <div className={classNames( bgStyles.background, pageClassName, { 'hide-smoothly': hideBackground })} />
+                <Route render={({ location }) => (
+                    <TransitionGroup className={classNames( styles.transitionGroup, transitionDirection )}>
+                        <CSSTransition
+                          timeout={5000}
+                          classNames="slide-transition"
+                          mountOnEnter
+                          unmountOnExit
+                          key={location.pathname}
+                          onEnter={() => {
+                              this.setState({ hideBackground: true });
+                          }}
+                        >
+                            <Switch key={location.key} location={location}>
+                                <Route exact path="/" component={Homepage} />
+                                <Route path="/how-we-work" component={HowWeWork} />
+                                <Route path="/contacts" component={Contact} />
+                                <Route path="/selected-works" component={SelectedWorks} />
+                                <Route path="/our-team" component={OurTeam} />
+                                <Route path="/services" component={Services} />
+                            </Switch>
+                        </CSSTransition>
+                    </TransitionGroup>
+                )} />
             </MouseNavigation>
         );
     }
 }
 
-export default Content;
+export default withRouter( Content );

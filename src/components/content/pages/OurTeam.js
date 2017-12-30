@@ -40,7 +40,6 @@ class OurTeam extends React.Component {
         const { pageClassName } = this.state;
 
         return (
-            <div className={classNames( bgStyles.background, pageClassName )}>
                 <div>
                     <MainHeading darkstyle text="our best team" />
                     <div className={styles.pageWrapper}>
@@ -200,7 +199,6 @@ class OurTeam extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
         );
     }
 }

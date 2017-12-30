@@ -6,6 +6,8 @@ import {
   withRouter
 } from 'react-router-dom';
 
+import styles from './MouseNavigation.css';
+
 class MouseNavigation extends React.Component {
     static propTypes = {
         match: PropTypes.object.isRequired,
@@ -70,7 +72,7 @@ class MouseNavigation extends React.Component {
 
     render() {
         return (
-            <div className={MouseNavigation.wrapperId} id={MouseNavigation.wrapperId}>
+            <div className={classNames( MouseNavigation.wrapperId, styles.backLining )} id={MouseNavigation.wrapperId}>
                 {this.props.children}
             </div>
         );

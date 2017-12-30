@@ -33,14 +33,12 @@ class HowWeWork extends React.Component {
         const { pageClassName } = this.state;
 
         return (
-            <div className={classNames( bgStyles.background, pageClassName )}>
                 <div>
                     <MainHeading text="how we work" />
                     <div className={styles.pageWrapper}>
                         <div className={styles.videoContainer} />
                     </div>
                 </div>
-            </div>
         );
     }
 }

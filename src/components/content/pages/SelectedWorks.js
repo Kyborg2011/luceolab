@@ -36,7 +36,6 @@ class SelectedWorks extends React.Component {
         const { pageClassName } = this.state;
 
         return (
-            <div className={classNames( bgStyles.background, pageClassName )}>
                 <div>
                     <MainHeading darkstyle text="selected works" />
                     <div className={styles.portfolioWrapper}>
@@ -57,7 +56,6 @@ class SelectedWorks extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
         );
     }
 }

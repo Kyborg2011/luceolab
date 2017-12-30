@@ -1,32 +1,56 @@
-.mainContent {
-    flex: 2;
-    align-items: center;
-    flex-flow: column;
-    user-select: none;
+@keyframes slide-upper {
+    100% { transform: translateY(-100%); }
+}
+
+@keyframes slide-downer {
+    100% { transform: translateY(100%); }
+}
+
+@keyframes slide-up {
+    100% { transform: translateY(0%); }
+}
+
+.transitionGroup {
     position: relative;
-    display: flex;
-    cursor: grab;
-}
-
-.mainContent > div {
-    display: flex;
-    flex-flow: column;
-    align-self: stretch;
-    margin: 0;
+    margin: 0 152px 43px 152px;
     width: 100%;
-    height: 100%;
-    position: absolute;
+    display: flex;
 }
 
-.mainContent > div > div {
+.transitionGroup > div {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100%;
+    width: 100%;
+}
+
+:global(.bottom-up .slide-transition-enter) {
+    transform: translateY(100%);
+    animation: slide-up 1s forwards;
+    animation-delay: 1.5s;
+}
+
+:global(.bottom-up .slide-transition-exit) {
+    transform: translateY(0);
+    animation: slide-upper 1s forwards;
+}
+
+:global(.top-down .slide-transition-enter) {
+    transform: translateY(-100%);
+    animation: slide-up 1s forwards;
+    animation-delay: 1.5s;
+}
+
+:global(.top-down .slide-transition-exit) {
+    transform: translateY(0);
+    animation: slide-downer 1s forwards;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-    .mainContent > div {
+    .transitionGroup {
         margin: 0 15px;
     }
 }

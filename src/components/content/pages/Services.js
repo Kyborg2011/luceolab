@@ -47,7 +47,6 @@ class Services extends React.Component {
         };
 
         return (
-            <div className={classNames( bgStyles.background, pageClassName )}>
                 <div>
                     <MainHeading darkstyle text="services" />
                     <div className={styles.pageWrapper}>
@@ -155,7 +154,6 @@ class Services extends React.Component {
                         </ul>
                     </div>
                 </div>
-            </div>
         );
     }
 }
