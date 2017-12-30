@@ -1,13 +1,20 @@
 @keyframes slide-upper {
-    100% { transform: translateY(-100%); }
+    100% {
+        transform: translateY(-100%);
+    }
 }
 
 @keyframes slide-downer {
-    100% { transform: translateY(100%); }
+    100% {
+        transform: translateY(100%);
+    }
 }
 
 @keyframes slide-up {
-    100% { transform: translateY(0%); }
+    100% {
+        transform: translateY(0%);
+        z-index: 300 !important;
+    }
 }
 
 .transitionGroup {
@@ -35,7 +42,7 @@
 
 :global(.bottom-up .slide-transition-exit) {
     transform: translateY(0);
-    animation: slide-upper 1s forwards;
+    animation: slide-upper 1.5s forwards;
 }
 
 :global(.top-down .slide-transition-enter) {
@@ -46,7 +53,7 @@
 
 :global(.top-down .slide-transition-exit) {
     transform: translateY(0);
-    animation: slide-downer 1s forwards;
+    animation: slide-downer 1.5s forwards;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

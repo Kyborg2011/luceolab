@@ -44,13 +44,6 @@ class Content extends React.Component {
         } else {
             this.setState({ transitionDirection: 'top-down' });
         }
-
-        setTimeout(() => {
-            this.setState({
-                pageClassName: bgStyles[ nextPathname.replace( '/', 'll_' ) ],
-                hideBackground: false,
-            });
-        }, 1500 );
     }
 
     render() {
@@ -62,13 +55,19 @@ class Content extends React.Component {
                 <Route render={({ location }) => (
                     <TransitionGroup className={classNames( styles.transitionGroup, transitionDirection )}>
                         <CSSTransition
-                          timeout={3000}
+                          timeout={2500}
                           classNames="slide-transition"
                           mountOnEnter
                           unmountOnExit
                           key={location.pathname}
-                          onEnter={() => {
+                          onEntering={() => {
                               this.setState({ hideBackground: true });
+                              setTimeout(() => {
+                                  this.setState({
+                                      pageClassName: bgStyles[ this.props.location.pathname.replace( '/', 'll_' ) ],
+                                      hideBackground: false,
+                                  });
+                              }, 1500 );
                           }}
                         >
                             <Switch key={location.key} location={location}>

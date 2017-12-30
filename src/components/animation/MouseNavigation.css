@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     background: #000;
-    opacity: .7;
+    opacity: 1;
 }
 
 :global(.mouse-navigation-wrapper) {

@@ -21,19 +21,42 @@ class App extends React.Component {
         history: PropTypes.object.isRequired
     }
 
+    constructor( props ) {
+        super( props );
+        this.state = {
+            pathname: props.location.pathname,
+            isLightstyle: false,
+        };
+    }
+
+    componentWillReceiveProps( nextProps ) {
+        this.setState({
+            isLightstyle: 1,
+            pathname: nextProps.location.pathname
+        });
+        setTimeout(() => {
+            this.setState({
+                isLightstyle: false,
+            });
+        }, 3000 );
+    }
+
     render() {
+        const { pathname, isLightstyle } = this.state;
+
         return (
             <div className={styles.wrapper}>
                 <Header />
 
                 <div className={classNames( styles.innerWrapper )}>
                     <Content />
-                    {this.props.location.pathname !== '/' &&
+                    {pathname !== '/' &&
                         <VerticalButton darkstyle={([
                             '/our-team',
                             '/selected-works',
                             '/services',
-                        ].indexOf( this.props.location.pathname ) !== -1 )} />
+                        ].indexOf( pathname ) !== -1
+                        && typeof isLightstyle !== 'number' )} />
                     }
                 </div>
 
