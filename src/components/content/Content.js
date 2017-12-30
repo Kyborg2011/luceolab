@@ -36,8 +36,8 @@ class Content extends React.Component {
     }
 
     componentWillReceiveProps( nextProps ) {
-        let nextPathname = nextProps.location.pathname;
         let curPathname = this.props.location.pathname;
+        let nextPathname = nextProps.location.pathname;
 
         if ( MouseNavigation.routes.indexOf( nextPathname ) > MouseNavigation.routes.indexOf( curPathname )) {
             this.setState({ transitionDirection: 'bottom-up' });
@@ -62,7 +62,7 @@ class Content extends React.Component {
                 <Route render={({ location }) => (
                     <TransitionGroup className={classNames( styles.transitionGroup, transitionDirection )}>
                         <CSSTransition
-                          timeout={5000}
+                          timeout={3000}
                           classNames="slide-transition"
                           mountOnEnter
                           unmountOnExit
