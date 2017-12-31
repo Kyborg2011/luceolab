@@ -11,11 +11,12 @@ class Button extends React.Component {
             reverse: typeof props.reverse !== 'undefined' ? true : false,
             dataTooltip: props.dataTooltip,
             iconOnHover: props.iconOnHover,
+            fontAwesomeIcon: props.fontAwesomeIcon,
         };
     }
 
     render() {
-        const { label, reverse, dataTooltip, iconOnHover } = this.state;
+        const { label, reverse, dataTooltip, iconOnHover, fontAwesomeIcon } = this.state;
 
         let btnEl = (
             <a href="#"
@@ -24,6 +25,9 @@ class Button extends React.Component {
               onClick={this.props.onClick}
             >
                 {label}
+                {( typeof fontAwesomeIcon !== 'undefined' ) && (
+                    <i className={classNames( 'fa', 'fa-' + fontAwesomeIcon )} aria-hidden="true" />
+                )}
             </a>
         );
 

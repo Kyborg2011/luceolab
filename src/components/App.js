@@ -30,15 +30,17 @@ class App extends React.Component {
     }
 
     componentWillReceiveProps( nextProps ) {
-        this.setState({
-            isLightstyle: 1,
-            pathname: nextProps.location.pathname
-        });
-        setTimeout(() => {
+        if ( nextProps.location.pathname != this.props.location.pathname ) {
             this.setState({
-                isLightstyle: false,
+                isLightstyle: 1,
+                pathname: nextProps.location.pathname
             });
-        }, 3000 );
+            setTimeout(() => {
+                this.setState({
+                    isLightstyle: false,
+                });
+            }, 2000 );
+        }
     }
 
     render() {

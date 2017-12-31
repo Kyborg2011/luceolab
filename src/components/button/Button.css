@@ -14,9 +14,15 @@
     opacity: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 0;
     line-height: 39px !important;
+}
+
+.btn i {
+    margin-left: 7px;
+    font-size: 23px;
 }
 
 .reverse {

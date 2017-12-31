@@ -37,23 +37,23 @@
 :global(.bottom-up .slide-transition-enter) {
     transform: translateY(100%);
     animation: slide-up 1s forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 :global(.bottom-up .slide-transition-exit) {
     transform: translateY(0);
-    animation: slide-upper 1.5s forwards;
+    animation: slide-upper 1s forwards;
 }
 
 :global(.top-down .slide-transition-enter) {
     transform: translateY(-100%);
     animation: slide-up 1s forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 :global(.top-down .slide-transition-exit) {
     transform: translateY(0);
-    animation: slide-downer 1.5s forwards;
+    animation: slide-downer 1s forwards;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

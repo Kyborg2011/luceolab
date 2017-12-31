@@ -23,6 +23,7 @@ class Homepage extends React.Component {
         super( props );
         this.state = {
             pageClassName: bgStyles[ props.location.pathname.replace( '/', 'll_' ) ],
+            blurred: true,
         };
     }
 
@@ -31,7 +32,7 @@ class Homepage extends React.Component {
     }
 
     render() {
-        const { pageClassName } = this.state;
+        const { pageClassName, blurred } = this.state;
 
         return (
             <div className={classNames( styles.homepageInner )}>
@@ -39,12 +40,14 @@ class Homepage extends React.Component {
                     <div className={styles.largeLogo}>
                         <img src={largeLogo} alt="LuceoLab" />
                     </div>
-                    <SwingingLogo blur={'homepage-blurred'} />
-                    <div id="homepage-blurred" className="blurred">
+                    <SwingingLogo onEnd={() => {
+                        this.setState({ blurred: false })
+                    }} />
+                    <div id="homepage-blurred" className={classNames( 'blurred', { 'unblur': !blurred })}>
                         <h1 className={classNames( styles.homepageMainPhrase )}>
                             The digital agency that<br />makes things clear
                         </h1>
-                        <Button label="How we work" reverse onClick={this.handleClick.bind( this )} />
+                        <Button label="How we work" fontAwesomeIcon="angle-down" reverse onClick={this.handleClick.bind( this )} />
                     </div>
                 </div>
             </div>

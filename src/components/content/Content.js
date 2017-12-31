@@ -39,10 +39,12 @@ class Content extends React.Component {
         let curPathname = this.props.location.pathname;
         let nextPathname = nextProps.location.pathname;
 
-        if ( MouseNavigation.routes.indexOf( nextPathname ) > MouseNavigation.routes.indexOf( curPathname )) {
-            this.setState({ transitionDirection: 'bottom-up' });
-        } else {
-            this.setState({ transitionDirection: 'top-down' });
+        if ( curPathname !== nextPathname ) {
+            if ( MouseNavigation.routes.indexOf( nextPathname ) > MouseNavigation.routes.indexOf( curPathname )) {
+                this.setState({ transitionDirection: 'bottom-up' });
+            } else {
+                this.setState({ transitionDirection: 'top-down' });
+            }
         }
     }
 
@@ -67,7 +69,7 @@ class Content extends React.Component {
                                       pageClassName: bgStyles[ this.props.location.pathname.replace( '/', 'll_' ) ],
                                       hideBackground: false,
                                   });
-                              }, 1500 );
+                              }, 1000 );
                           }}
                         >
                             <Switch key={location.key} location={location}>

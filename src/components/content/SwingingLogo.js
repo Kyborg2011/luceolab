@@ -14,7 +14,6 @@ class SwingingLogo extends React.Component {
         this.state = {
             overlay: true,
             fade: false,
-            blurClassName: props.blur ? props.blur : null,
         };
     }
 
@@ -22,9 +21,6 @@ class SwingingLogo extends React.Component {
         var that = this;
 
         setTimeout(() => {
-
-            let mainElement = document.getElementById( this.state.blurClassName );
-
             let canvas = document.getElementById( 'canvas' );
             let context = canvas.getContext( '2d' );
 
@@ -102,11 +98,8 @@ class SwingingLogo extends React.Component {
                 context.rotate( angle );
 
                 if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
-                    console.log( 'test ... problem place' + img.src );
                     img.src = onLamp;
-                    if ( mainElement.length ) {
-                        mainElement.classList.add( 'unblur' );
-                    }
+                    that.props.onEnd();
                     that.setState({ fade: true });
                 }
                 context.drawImage( img, -60, rPend, 120, 143 );
@@ -114,7 +107,7 @@ class SwingingLogo extends React.Component {
                 context.restore();
                 prev = angle;
             });
-        }, 100 );
+        }, 1000 );
     }
 
     render() {
