@@ -53,7 +53,6 @@
     border: 2px solid #212121;
     border-radius: 6px;
     transition: border 0.2s;
-    transition-delay: 0.2s;
 }
 
 .secondaryNavigation nav > a.active:before,

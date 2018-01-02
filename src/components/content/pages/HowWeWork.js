@@ -5,11 +5,15 @@ import PropTypes from 'prop-types';
 import {
   withRouter
 } from 'react-router-dom';
+import { Player } from 'video-react';
 
 import styles from './HowWeWork.css';
+import '../../shared/styles/VideoReact.css';
 import bgStyles from '../../shared/styles/Background.css';
 import Button from '../../button/Button';
 import MainHeading from '../main-heading/MainHeading';
+import videoSource from '../../../assets/video/videoinfographic.mp4';
+
 
 class HowWeWork extends React.Component {
     static propTypes = {
@@ -36,7 +40,14 @@ class HowWeWork extends React.Component {
                 <div>
                     <MainHeading text="how we work" />
                     <div className={styles.pageWrapper}>
-                        <div className={styles.videoContainer} />
+                        <div className={styles.videoContainer}>
+                            <Player
+                              playsInline
+                              autoPlay
+                              muted
+                              src={videoSource}
+                            />
+                        </div>
                     </div>
                 </div>
         );

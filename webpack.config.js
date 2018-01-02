@@ -60,6 +60,18 @@ module.exports = {
             ],
         },
         {
+            test: /\.mp4$/,
+            use: {
+                loader: 'url-loader?limit=10000&mimetype=video/mp4&name=assets/[name].[ext]&publicPath=',
+            }
+        },
+        {
+            test: /\.scss/,
+            use: {
+                loader: 'sass-loader',
+            }
+        },
+        {
             test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
             loader: 'file-loader',
             options: {

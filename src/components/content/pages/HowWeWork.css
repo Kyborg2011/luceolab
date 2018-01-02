@@ -1,6 +1,6 @@
 .pageWrapper {
     composes: pageWrapper from "../../shared/styles/Layout.css";
-    margin: 20px 0;
+    margin: 20px 0 0 0;
 }
 
 .videoContainer {
@@ -13,6 +13,13 @@
     width: 100%;
     height: 100%;
     margin: 0;
+}
+
+:global(.video-react) {
+    display: flex!important;
+    width: 100% !important;
+    height: 100%!important;
+    padding-top: 0 !important;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

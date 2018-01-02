@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {
-  withRouter
+  withRouter,
+  Link
 } from 'react-router-dom';
 
 import styles from './Homepage.css';
