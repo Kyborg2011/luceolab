@@ -3,14 +3,14 @@
         position: absolute;
         bottom: 0;
         width: 237px;
-        height: 260px;
+        height: 200px;
     }
 
     50% {
         position: absolute;
         bottom: 0;
         width: 500px;
-        height: 260px;
+        height: 200px;
     }
 
     100% {
@@ -33,19 +33,37 @@
 }
 
 .serviceOpen h4 {
-    color: #212121 !important;
+    color: #fff !important;
     margin: 12px 0 0 0 !important;
 }
 
 .serviceOpen > div > p {
-    background: #212121 !important;
-    border-color: #212121 !important;
+    background: #fff !important;
+    border-color: #fff !important;
 }
 
 .serviceOpen > div > p img {
-    filter: invert(100%) !important;
+    filter: none !important;
 }
 
 .serviceOpen > div {
-    z-index: 400;
+    z-index: 1500;
+}
+
+.serviceOpen > div > div {
+    padding: 15px 21px;
+    margin-top: 15px;
+    overflow: visible;
+}
+
+.serviceOpen > div > div > p {
+    height: 300px;
+    width: 458px;
+    transition: width 2s, height 2s 2s;
+}
+
+.serviceOpen > div > div > a {
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 3s 1s;
 }

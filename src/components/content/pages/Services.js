@@ -62,15 +62,19 @@ class Services extends React.Component {
                             </p>
                         </div>
                         <ul className={styles.list}>
-                            <li className={openServiceAnimation( 0 )} onClick={() => {
-                                this.setState({ opennedServiceIndex: 0 })
-                            }}>
+                            <li className={openServiceAnimation( 0 )}>
                                 <div className={styles.listInnerWrapper}>
                                     <p className={styles.icon}>
                                         <img src={webdevIcon} alt="Web development" />
                                     </p>
                                     <h4>web development</h4>
                                     <div className={styles.details}>
+                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                            e.preventDefault();
+                                            this.setState({ opennedServiceIndex: -1 })
+                                        }}>
+                                            <i className="fa fa-times" aria-hidden="true" />
+                                        </a>
                                         <p>
                                             According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
                                             about web-development: 76% of consumers say the most important factor in a website's
@@ -87,72 +91,122 @@ class Services extends React.Component {
                                             that's why we are not afraid to use the
                                             latest trends in the world of web developing:
                                         </p>
-                                        <Button label="request" />
+                                        <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={() => {
+                                            this.setState({ opennedServiceIndex: 0 })
+                                        }} />
                                     </div>
                                 </div>
                             </li>
-                            <li className={openServiceAnimation( 1 )} onClick={() => {
-                                this.setState({ opennedServiceIndex: 1 })
-                            }}>
+                            <li className={openServiceAnimation( 1 )}>
                                 <div className={styles.listInnerWrapper}>
                                     <p className={styles.icon}>
                                         <img src={designBrandingIcon} alt="Design & Branding" />
                                     </p>
                                     <h4>design & branding</h4>
-                                    <div className={classNames( styles.details )}>
-                                        Lorem ipsum dolor sit amet, consectetur<br />
+                                    <div className={styles.details}>
+                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                            e.preventDefault();
+                                            this.setState({ opennedServiceIndex: -1 })
+                                        }}>
+                                            <i className="fa fa-times" aria-hidden="true" />
+                                        </a>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                            According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
+                                            about web-development: 76% of consumers say the most important factor in a website's
+                                            design is "the website makes it easy for me to find what I want."<br/>
+                                            The main principle by which LuceoLab is guided is the clarity of vision.
+                                            Therefore, we consider the main criteria for the quality of our work:
+                                            <ul>
+                                                <li>Simplicity of the UI (user interface)</li>
+                                                <li>Сlear UX (user experience)</li>
+                                                <li>Maximum accessibility of the web content</li>
+                                                <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
+                                            </ul>
+                                            We continually improve our skills,
+                                            that's why we are not afraid to use the
+                                            latest trends in the world of web developing:
                                         </p>
-                                        <Button label="request" />
+                                        <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={() => {
+                                            this.setState({ opennedServiceIndex: 1 })
+                                        }} />
                                     </div>
                                 </div>
                             </li>
-                            <li className={openServiceAnimation( 2 )} onClick={() => {
-                                this.setState({ opennedServiceIndex: 2 })
-                            }}>
+                            <li className={openServiceAnimation( 2 )}>
                                 <div className={styles.listInnerWrapper}>
                                     <p className={styles.icon}>
                                         <img src={marketingIcon} alt="Digital marketing" />
                                     </p>
                                     <h4>digital marketing</h4>
                                     <div className={styles.details}>
-                                        Lorem ipsum dolor sit amet, consectetur<br />
+                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                            e.preventDefault();
+                                            this.setState({ opennedServiceIndex: -1 })
+                                        }}>
+                                            <i className="fa fa-times" aria-hidden="true" />
+                                        </a>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                            According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
+                                            about web-development: 76% of consumers say the most important factor in a website's
+                                            design is "the website makes it easy for me to find what I want."<br/>
+                                            The main principle by which LuceoLab is guided is the clarity of vision.
+                                            Therefore, we consider the main criteria for the quality of our work:
+                                            <ul>
+                                                <li>Simplicity of the UI (user interface)</li>
+                                                <li>Сlear UX (user experience)</li>
+                                                <li>Maximum accessibility of the web content</li>
+                                                <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
+                                            </ul>
+                                            We continually improve our skills,
+                                            that's why we are not afraid to use the
+                                            latest trends in the world of web developing:
                                         </p>
-                                        <Button label="request" />
+                                        <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={() => {
+                                            this.setState({ opennedServiceIndex: 2 })
+                                        }} />
                                     </div>
                                 </div>
                             </li>
-                            <li className={openServiceAnimation( 3 )} onClick={() => {
-                                this.setState({ opennedServiceIndex: 3 })
-                            }}>
+                            <li className={openServiceAnimation( 3 )}>
                                 <div className={styles.listInnerWrapper}>
                                     <p className={styles.icon}>
                                         <img src={itConsultingIcon} alt="IT consulting" />
                                     </p>
-                                    <h4>it consulting</h4>
+                                    <h4>IT consulting</h4>
                                     <div className={styles.details}>
-                                        Lorem ipsum dolor sit amet, consectetur<br />
+                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                            e.preventDefault();
+                                            this.setState({ opennedServiceIndex: -1 })
+                                        }}>
+                                            <i className="fa fa-times" aria-hidden="true" />
+                                        </a>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
-                                            Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+                                            According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
+                                            about web-development: 76% of consumers say the most important factor in a website's
+                                            design is "the website makes it easy for me to find what I want."<br/>
+                                            The main principle by which LuceoLab is guided is the clarity of vision.
+                                            Therefore, we consider the main criteria for the quality of our work:
+                                            <ul>
+                                                <li>Simplicity of the UI (user interface)</li>
+                                                <li>Сlear UX (user experience)</li>
+                                                <li>Maximum accessibility of the web content</li>
+                                                <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
+                                            </ul>
+                                            We continually improve our skills,
+                                            that's why we are not afraid to use the
+                                            latest trends in the world of web developing:
                                         </p>
-                                        <Button label="request" />
+                                        <Button label={( opennedServiceIndex === 3 ) ? 'free request' : 'read more'} onClick={() => {
+                                            this.setState({ opennedServiceIndex: 3 })
+                                        }} />
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    {( opennedServiceIndex != -1 ) && (
+                        <div className={styles.overlay} />
+                    )}
                 </div>
         );
     }

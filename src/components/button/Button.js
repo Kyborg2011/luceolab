@@ -15,6 +15,12 @@ class Button extends React.Component {
         };
     }
 
+    componentWillReceiveProps( nextProps ) {
+        this.setState({
+            label: nextProps.label,
+        });
+    }
+
     render() {
         const { label, reverse, dataTooltip, iconOnHover, fontAwesomeIcon } = this.state;
 

@@ -1,3 +1,13 @@
+@keyframes opacity-in {
+    0%   {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
 .pageWrapper {
     composes: pageWrapper from "../../shared/styles/Layout.css";
     flex-direction: column;
@@ -32,7 +42,6 @@
     flex: 2;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
     position: relative;
 }
 
@@ -132,28 +141,34 @@
     font-weight: 600;
     line-height: 23px;
     color: #212121;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: height 1s;
+}
+
+.list li:hover .details {
+    padding: 15px 21px;
+    margin-top: 15px;
+    height: auto;
+    overflow: visible;
 }
 
 .details p {
     font-size: 12.8px;
-    margin: 0 0 15px 0;
+    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 195px;
-}
-
-.list li .details {
-    display: none;
+    height: 0;
+    width: 195px;
 }
 
 .list li:hover .details {
     display: flex;
-    flex: 2;
 }
 
 .details > a {
-    line-height: 30px !important;
     font-weight: 600;
     width: 100%;
 }
@@ -164,12 +179,42 @@
     position: absolute;
     bottom: 0;
     flex-direction: column;
-    height: 196px;
     transition: height 0.5s, top 0.5s;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .list li:hover .listInnerWrapper {
-    height: 260px;
+    height: 200px;
     transition: height 0.5s, top 0.5s;
+}
+
+.overlay {
+    position: fixed;
+    top: 43px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #000;
+    opacity: 0;
+    animation-name: opacity-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 5px;
+    width: 16px !important;
+    line-height: 16px !important;
+    height: 16px;
+    right: 5px;
+    color: #212121;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.closeBtn:hover {
+    color: #fdb951;
 }
