@@ -73,12 +73,16 @@ body, html, :global(#root) {
 
 :global(.blurred) {
     filter: blur(10px);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000;
+    transform: translateZ(0.1px);
 }
 
 :global(.unblur) {
-    animation-name: unblur;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
+    filter: none;
+    transform-style: preserve-3d;
+    transition: 4s filter linear;
 }
 /* End of dark overlay + blur */
 

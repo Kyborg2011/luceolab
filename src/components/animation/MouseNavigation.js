@@ -23,9 +23,26 @@ class MouseNavigation extends React.Component {
         '/our-team',
         '/contacts',
     ]
+    static redirectTimeoutId = null;
+
+    constructor( props ) {
+        super( props );
+        this.redirect = this.redirect.bind( this );
+    }
+
+    redirect( nextRouteId ) {
+        if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 && !MouseNavigation.redirectTimeoutId ) {
+            clearTimeout( MouseNavigation.redirectTimeoutId );
+            MouseNavigation.redirectTimeoutId = setTimeout(() => {
+                this.props.history.push( MouseNavigation.routes[ nextRouteId ]);
+                setTimeout(() => {
+                    MouseNavigation.redirectTimeoutId = null;
+                }, 2000 );
+            }, 250 );
+        }
+    }
 
     componentDidMount() {
-        let redirectTimeoutId = null;
         let startX = -1;
         let endX = 0;
         let element = document.getElementById( MouseNavigation.wrapperId );
@@ -37,12 +54,7 @@ class MouseNavigation extends React.Component {
 	        let delta = Math.max( -1, Math.min( 1, ( e.wheelDelta || -e.detail )));
             let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
             let nextRouteId = routeId - delta;
-            if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 ) {
-                clearTimeout( redirectTimeoutId );
-                redirectTimeoutId = setTimeout(() => {
-                    this.props.history.push( MouseNavigation.routes[ nextRouteId ]);
-                }, 250 );
-            }
+            this.redirect( nextRouteId );
         });
 
         /* Mouse move events handlers for desktops and laptops */
@@ -56,17 +68,8 @@ class MouseNavigation extends React.Component {
                 if ( Math.abs( delta ) > 50 ) {
                     let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                     let nextRouteId = routeId;
-                    if ( delta > 0 ) {
-                        nextRouteId = routeId - 1;
-                    } else {
-                        nextRouteId = routeId + 1;
-                    }
-                    if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 ) {
-                        clearTimeout( redirectTimeoutId );
-                        redirectTimeoutId = setTimeout(() => {
-                            this.props.history.push( MouseNavigation.routes[ nextRouteId ]);
-                        }, 250 );
-                    }
+                    nextRouteId = ( delta > 0 ) ? --routeId : ++routeId;
+                    this.redirect( nextRouteId );
                 }
             }
             startX = -1;
@@ -88,18 +91,8 @@ class MouseNavigation extends React.Component {
                 if ( Math.abs( delta ) > 50 ) {
                     let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                     let nextRouteId = routeId;
-                    if ( delta > 0 ) {
-                        nextRouteId = routeId - 1;
-                    } else {
-                        nextRouteId = routeId + 1;
-                    }
-                    if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 ) {
-                        e.preventDefault();
-                        clearTimeout( redirectTimeoutId );
-                        redirectTimeoutId = setTimeout(() => {
-                            this.props.history.push( MouseNavigation.routes[ nextRouteId ]);
-                        }, 250 );
-                    }
+                    nextRouteId = ( delta > 0 ) ? --routeId : ++routeId;
+                    this.redirect( nextRouteId );
                 }
             }
             startX = -1;
