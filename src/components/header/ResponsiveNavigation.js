@@ -15,12 +15,6 @@ class ResponsiveNavigation extends React.Component {
         this.toggle = this.toggle.bind( this );
     }
 
-    componentDidMount() {
-        $( '.' + styles[ 'navicon-button' ]).click( function() {
-            $( this ).toggleClass( styles.open );
-        });
-    }
-
     toggle( e ) {
         e.preventDefault();
         this.setState({ open: ( !this.state.open ) && styles.visible });

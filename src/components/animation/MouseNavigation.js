@@ -30,6 +30,7 @@ class MouseNavigation extends React.Component {
         let endX = 0;
         let element = document.getElementById( MouseNavigation.wrapperId );
 
+        /* Mouse wheel scroll event handler for desktops and laptops */
         element.addEventListener( 'wheel', ( e ) => {
             /* old IE support */
             e = window.event || e;
@@ -43,6 +44,8 @@ class MouseNavigation extends React.Component {
                 }, 250 );
             }
         });
+
+        /* Mouse move events handlers for desktops and laptops */
         element.addEventListener( 'mousedown', ( e ) => {
             startX = e.pageY;
         }, false );
@@ -59,6 +62,39 @@ class MouseNavigation extends React.Component {
                         nextRouteId = routeId + 1;
                     }
                     if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 ) {
+                        clearTimeout( redirectTimeoutId );
+                        redirectTimeoutId = setTimeout(() => {
+                            this.props.history.push( MouseNavigation.routes[ nextRouteId ]);
+                        }, 250 );
+                    }
+                }
+            }
+            startX = -1;
+        }, false );
+
+        /* Touch events handlers for mobile devices and tablets */
+        element.addEventListener( 'touchmove', ( e ) => {
+            e.preventDefault();
+        });
+        element.addEventListener( 'touchstart', ( e ) => {
+            var touch = e.touches[ 0 ] || e.changedTouches[ 0 ];
+            startX = touch.pageY;
+        }, false );
+        element.addEventListener( 'touchend', ( e ) => {
+            var touch = e.touches[ 0 ] || e.changedTouches[ 0 ];
+            endX = touch.pageY;
+            if ( startX != -1 ) {
+                let delta = endX - startX;
+                if ( Math.abs( delta ) > 50 ) {
+                    let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
+                    let nextRouteId = routeId;
+                    if ( delta > 0 ) {
+                        nextRouteId = routeId - 1;
+                    } else {
+                        nextRouteId = routeId + 1;
+                    }
+                    if ( MouseNavigation.routes.length > nextRouteId && nextRouteId != -1 ) {
+                        e.preventDefault();
                         clearTimeout( redirectTimeoutId );
                         redirectTimeoutId = setTimeout(() => {
                             this.props.history.push( MouseNavigation.routes[ nextRouteId ]);

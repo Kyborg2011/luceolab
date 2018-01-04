@@ -95,9 +95,5 @@ module.exports = {
             disable: false,
             allChunks: true
         }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        }),
     ]
 };
