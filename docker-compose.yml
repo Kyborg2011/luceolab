@@ -1,0 +1,4 @@
+web:
+  build: .
+  environment:
+    - VIRTUAL_HOST=dev.luceolab.com
