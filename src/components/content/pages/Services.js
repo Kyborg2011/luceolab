@@ -91,7 +91,8 @@ class Services extends React.Component {
                                             that's why we are not afraid to use the
                                             latest trends in the world of web developing:
                                         </p>
-                                        <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={() => {
+                                        <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                            e.preventDefault();
                                             this.setState({ opennedServiceIndex: 0 })
                                         }} />
                                     </div>
@@ -126,7 +127,8 @@ class Services extends React.Component {
                                             that's why we are not afraid to use the
                                             latest trends in the world of web developing:
                                         </p>
-                                        <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={() => {
+                                        <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                            e.preventDefault();
                                             this.setState({ opennedServiceIndex: 1 })
                                         }} />
                                     </div>
@@ -161,7 +163,8 @@ class Services extends React.Component {
                                             that's why we are not afraid to use the
                                             latest trends in the world of web developing:
                                         </p>
-                                        <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={() => {
+                                        <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                            e.preventDefault();
                                             this.setState({ opennedServiceIndex: 2 })
                                         }} />
                                     </div>
@@ -196,7 +199,8 @@ class Services extends React.Component {
                                             that's why we are not afraid to use the
                                             latest trends in the world of web developing:
                                         </p>
-                                        <Button label={( opennedServiceIndex === 3 ) ? 'free request' : 'read more'} onClick={() => {
+                                        <Button label={( opennedServiceIndex === 3 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                            e.preventDefault();
                                             this.setState({ opennedServiceIndex: 3 })
                                         }} />
                                     </div>

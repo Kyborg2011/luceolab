@@ -80,7 +80,7 @@ body, html, :global(#root) {
 }
 
 :global(.unblur) {
-    filter: none;
+    filter: blur(.5px);
     transform-style: preserve-3d;
     transition: 4s filter linear;
 }

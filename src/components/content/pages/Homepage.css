@@ -26,7 +26,9 @@
     align-self: center!important;
 }
 
-.homepageMainHomepage {}
+.homepageInner > div {
+    height: 100%;
+}
 
 .homepageMainPhrase {
     display: flex;
@@ -56,39 +58,6 @@
     display: flex;
     flex-flow: column wrap;
 }
-
-/*.mouseWheelWrapper {
-    position: relative;
-    display: flex;
-    width: 30px;
-    height: 48px;
-    cursor: pointer;
-    margin: 15px auto 0;
-}
-
-.mouse {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #464c4d;
-    border-radius: 15px;
-}
-
-.wheel {
-    display: block;
-    margin: 0 0 0 -2px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    width: 4px;
-    height: 4px;
-    background: #464c4d;
-    border-radius: 50%;
-    animation: scroll-wheel 1.8s linear 0s infinite normal none;
-}*/
 
 @media (min-width: 320px) and (max-width: 767px) {
     .largeLogo {

@@ -23,7 +23,7 @@ class MouseNavigation extends React.Component {
         '/our-team',
         '/contacts',
     ]
-    static redirectTimeoutId = null;
+    static redirectTimeoutId = null
 
     constructor( props ) {
         super( props );

@@ -1,11 +1,32 @@
 .pageWrapper {
     composes: pageWrapper from "../../shared/styles/Layout.css";
     margin: 20px 0 0 0;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.pageWrapper a {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: #fff;
+    opacity: 0.6;
+    text-decoration: none;
+    text-transform: uppercase;
+    flex-direction: column;
+    text-align: center;
+    line-height: 30px;
+    font-size: 26px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.pageWrapper a:hover {
+    color: #fbbd63;
+    opacity: 1;
 }
 
 .videoContainer {
     display: flex;
-    flex: 2;
     align-self: stretch;
     border-style: solid;
     border-width: 1px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import styles from './Button.css';
 
 class Button extends React.Component {
@@ -12,6 +13,7 @@ class Button extends React.Component {
             dataTooltip: props.dataTooltip,
             iconOnHover: props.iconOnHover,
             fontAwesomeIcon: props.fontAwesomeIcon,
+            href: props.href || '',
         };
     }
 
@@ -22,10 +24,10 @@ class Button extends React.Component {
     }
 
     render() {
-        const { label, reverse, dataTooltip, iconOnHover, fontAwesomeIcon } = this.state;
+        const { label, reverse, dataTooltip, iconOnHover, fontAwesomeIcon, href } = this.state;
 
         let btnEl = (
-            <a href="#"
+            <Link to={href}
               title={label}
               className={classNames( styles.btn, this.props.className, ( reverse ) ? styles.reverse : null )}
               onClick={this.props.onClick}
@@ -34,12 +36,12 @@ class Button extends React.Component {
                 {( typeof fontAwesomeIcon !== 'undefined' ) && (
                     <i className={classNames( 'fa', 'fa-' + fontAwesomeIcon )} aria-hidden="true" />
                 )}
-            </a>
+            </Link>
         );
 
         if ( typeof dataTooltip !== 'undefined' ) {
             btnEl = (
-                <a href="#"
+                <Link to={href}
                   title={label}
                   className={classNames( styles.btn, styles.withTooltip, this.props.className, ( reverse ) ? styles.reverse : null )}
                   onClick={this.props.onClick}
@@ -51,7 +53,7 @@ class Button extends React.Component {
                             <i className={classNames( 'fa', iconOnHover )} aria-hidden="true" />
                         </span>
                     </span>
-                </a>
+                </Link>
             );
         }
 

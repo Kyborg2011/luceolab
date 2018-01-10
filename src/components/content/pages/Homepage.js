@@ -28,10 +28,6 @@ class Homepage extends React.Component {
         };
     }
 
-    handleClick( e ) {
-        e.preventDefault();
-    }
-
     render() {
         const { pageClassName, blurred } = this.state;
 
@@ -48,7 +44,7 @@ class Homepage extends React.Component {
                         <h1 className={classNames( styles.homepageMainPhrase )}>
                             The digital agency that<br />makes things clear
                         </h1>
-                        <Button label="How we work" fontAwesomeIcon="angle-down" reverse onClick={this.handleClick.bind( this )} />
+                        <Button href="/how-we-work" label="How we work" fontAwesomeIcon="angle-down" reverse />
                     </div>
                 </div>
             </div>
