@@ -25,18 +25,18 @@ module.exports = {
         {
             test: /\.css$/,
             loader: ( env === 'production' )
-            ? ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: [
-                    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+                ? ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+                        'postcss-loader'
+                    ]
+                })
+                : [
+                    'style-loader',
+                    'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
                     'postcss-loader'
                 ]
-            })
-            : [
-                'style-loader',
-                'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
-                'postcss-loader'
-            ]
         },
         {
             test: indexHtml,
@@ -62,7 +62,7 @@ module.exports = {
         {
             test: /\.mp4$/,
             use: {
-                loader: 'url-loader?limit=10000&mimetype=video/mp4&name=assets/[name].[ext]&publicPath=',
+                loader: 'url-loader?limit=10000&mimetype=video/mp4&name=assets/[name].[ext]&publicPath=/',
             }
         },
         {
@@ -76,7 +76,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
                 outputPath: 'assets/',
-                publicPath: '',
+                publicPath: '/',
             }
         } ]
     },
