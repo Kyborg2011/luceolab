@@ -12,6 +12,11 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# Open port, that have been listened by an app server
 EXPOSE 80
-CMD [ "npm", "build" ]
+
+# Build application through webpack
+RUN [ "npm", "build" ]
+
+# Start a server (node+express)
 CMD [ "npm", "start" ]
