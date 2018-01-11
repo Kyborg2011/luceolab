@@ -9,11 +9,11 @@ import {
 import { Player } from 'video-react';
 
 import styles from './HowWeWork.css';
-import '../../shared/styles/VideoReact.css';
-import bgStyles from '../../shared/styles/Background.css';
-import Button from '../../button/Button';
-import MainHeading from '../main-heading/MainHeading';
-import videoSource from '../../../assets/video/videoinfographic.mp4';
+import '../../../shared/styles/VideoReact.css';
+import bgStyles from '../../../shared/styles/Background.css';
+import Button from '../../../button/Button';
+import MainHeading from '../../main-heading/MainHeading';
+import videoSource from '../../../../assets/video/videoinfographic.mp4';
 
 
 class HowWeWork extends React.Component {

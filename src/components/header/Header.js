@@ -9,7 +9,7 @@ class Header extends React.Component {
     render() {
         return (
         <header className={styles.header}>
-            <Link className={styles.headerLogo} to="/" alt="LuceoLab digital agency" />
+            <Link className={styles.headerLogo} to="/" title="LuceoLab - Digital agency" />
             <nav className={styles.primaryNav}>
                 <a href="mailto:info@luceolab.com" target="_blank">
                     <i className="fa fa-envelope-open-o" aria-hidden="true" />
@@ -22,7 +22,7 @@ class Header extends React.Component {
                     <i className="fa fa-facebook" aria-hidden="true" />
                 </a>
                 <Button className={styles.requestBtn} label="send a request" />
-                <a className={styles.languageBtn} href="#" target="_blank">ru</a>
+                <Link className={styles.languageBtn} to="/">ru</Link>
             </nav>
             <ResponsiveNavigation />
         </header>

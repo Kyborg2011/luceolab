@@ -7,9 +7,9 @@ import {
 } from 'react-router-dom';
 
 import styles from './Contact.css';
-import bgStyles from '../../shared/styles/Background.css';
-import Button from '../../button/Button';
-import MainHeading from '../main-heading/MainHeading';
+import bgStyles from '../../../shared/styles/Background.css';
+import Button from '../../../button/Button';
+import MainHeading from '../../main-heading/MainHeading';
 
 class Contact extends React.Component {
     static propTypes = {

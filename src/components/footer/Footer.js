@@ -1,9 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import {
-  withRouter
-} from 'react-router-dom';
 
 import styles from './Footer.css';
 
@@ -12,7 +8,7 @@ class Footer extends React.Component {
         return (
         <footer className={classNames( styles.footer )}>
             <p>
-                &copy; 2016 – 2017 «LuceoLab»
+                &copy; 2016 – 2018 «LuceoLab»
             </p>
             <p>
                 All rights reserved
@@ -22,4 +18,4 @@ class Footer extends React.Component {
     }
 }
 
-export default withRouter( Footer );
+export default Footer;

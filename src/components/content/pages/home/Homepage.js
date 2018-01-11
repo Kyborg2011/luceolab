@@ -8,10 +8,10 @@ import {
 } from 'react-router-dom';
 
 import styles from './Homepage.css';
-import bgStyles from '../../shared/styles/Background.css';
-import largeLogo from '../../../assets/img/homepage-logo-large.png';
-import Button from '../../button/Button';
-import SwingingLogo from '../SwingingLogo';
+import bgStyles from '../../../shared/styles/Background.css';
+import largeLogo from '../../../../assets/img/homepage-logo-large.png';
+import Button from '../../../button/Button';
+import SwingingLogo from '../../SwingingLogo';
 
 class Homepage extends React.Component {
     static propTypes = {

@@ -1,5 +1,5 @@
 .pageWrapper {
-    composes: pageWrapper from "../../shared/styles/Layout.css";
+    composes: pageWrapper from "../../../shared/styles/Layout.css";
     padding: 0 117px;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -8,14 +8,14 @@
 }
 
 .inner {
-    composes: inner from "../../shared/styles/Layout.css";
+    composes: inner from "../../../shared/styles/Layout.css";
     width: 50%;
     height: auto;
     margin-left: 0;
 }
 
 .description {
-    composes: description from "../../shared/styles/Layout.css";
+    composes: description from "../../../shared/styles/Layout.css";
     font-weight: 600;
     font-size: 14px;
     line-height: 23px;

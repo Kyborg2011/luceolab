@@ -6,17 +6,17 @@ import {
   withRouter
 } from 'react-router-dom';
 
-import layout from '../../shared/styles/Layout.css';
-import bgStyles from '../../shared/styles/Background.css';
+import layout from '../../../shared/styles/Layout.css';
+import bgStyles from '../../../shared/styles/Background.css';
 import styles from './Services.css';
-import animations from '../../shared/styles/Animations.css';
-import Button from '../../button/Button';
-import MainHeading from '../main-heading/MainHeading';
+import animations from '../../../shared/styles/Animations.css';
+import Button from '../../../button/Button';
+import MainHeading from '../../main-heading/MainHeading';
 
-import designBrandingIcon from '../../../assets/img/icons/services-designbranding.png';
-import itConsultingIcon from '../../../assets/img/icons/services-itconsulting.png';
-import marketingIcon from '../../../assets/img/icons/services-marketing.png';
-import webdevIcon from '../../../assets/img/icons/services-webdev.png';
+import designBrandingIcon from '../../../../assets/img/icons/services-designbranding.png';
+import itConsultingIcon from '../../../../assets/img/icons/services-itconsulting.png';
+import marketingIcon from '../../../../assets/img/icons/services-marketing.png';
+import webdevIcon from '../../../../assets/img/icons/services-webdev.png';
 
 class Services extends React.Component {
     static propTypes = {

@@ -1,5 +1,5 @@
 .pageWrapper {
-    composes: pageWrapper from "../../shared/styles/Layout.css";
+    composes: pageWrapper from "../../../shared/styles/Layout.css";
     margin: 20px 0 0 0;
     justify-content: space-between;
     margin: 0;

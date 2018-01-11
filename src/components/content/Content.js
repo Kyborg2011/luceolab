@@ -1,19 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+import MouseNavigation from '../animation/MouseNavigation';
+import asyncComponent from './AsyncComponent';
+
 import bgStyles from '../shared/styles/Background.css';
 import styles from './Content.css';
-import MouseNavigation from '../animation/MouseNavigation';
-import Homepage from './pages/Homepage';
-import HowWeWork from './pages/HowWeWork';
-import Contact from './pages/Contact';
-import SelectedWorks from './pages/SelectedWorks';
-import OurTeam from './pages/OurTeam';
-import Services from './pages/Services';
+
+const home = asyncComponent(() => import(
+    /* webpackChunkName: 'homepage' */
+    './pages/home/Homepage'
+));
+const howWeWork = asyncComponent(() => import(
+    /* webpackChunkName: 'how-we-work' */
+    './pages/how-we-work/howWeWork'
+));
+const services = asyncComponent(() => import(
+    /* webpackChunkName: 'services' */
+    './pages/services/Services'
+));
+/* const selectedWorks = asyncComponent(() => import( './pages/selected-works/index' )); */
+const ourTeam = asyncComponent(() => import(
+    /* webpackChunkName: 'our-team' */
+    './pages/our-team/OurTeam'
+));
+const contact = asyncComponent(() => import(
+    /* webpackChunkName: 'contact' */
+    './pages/contact/Contact'
+));
 
 class Content extends React.Component {
     handleClick( e ) {
@@ -73,12 +90,11 @@ class Content extends React.Component {
                           }}
                         >
                             <Switch key={location.key} location={location}>
-                                <Route exact path="/" component={Homepage} />
-                                <Route path="/how-we-work" component={HowWeWork} />
-                                <Route path="/contacts" component={Contact} />
-                                <Route path="/selected-works" component={SelectedWorks} />
-                                <Route path="/our-team" component={OurTeam} />
-                                <Route path="/services" component={Services} />
+                                <Route exact path="/" component={home} />
+                                <Route path="/how-we-work" component={howWeWork} />
+                                <Route path="/services" component={services} />
+                                <Route path="/our-team" component={ourTeam} />
+                                <Route path="/contacts" component={contact} />
                             </Switch>
                         </CSSTransition>
                     </TransitionGroup>

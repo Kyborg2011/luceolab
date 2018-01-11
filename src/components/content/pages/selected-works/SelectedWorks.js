@@ -7,12 +7,12 @@ import {
 } from 'react-router-dom';
 
 import styles from './SelectedWorks.css';
-import bgStyles from '../../shared/styles/Background.css';
-import Button from '../../button/Button';
-import MainHeading from '../main-heading/MainHeading';
-import sliderImageTest from '../../../assets/img/slider-image-test.png';
-import sliderPrevBtnBg from '../../../assets/img/slider-prev-btn.png';
-import sliderNextBtnBg from '../../../assets/img/slider-next-btn.png';
+import bgStyles from '../../../shared/styles/Background.css';
+import Button from '../../../button/Button';
+import MainHeading from '../../main-heading/MainHeading';
+import sliderImageTest from '../../../../assets/img/slider-image-test.png';
+import sliderPrevBtnBg from '../../../../assets/img/slider-prev-btn.png';
+import sliderNextBtnBg from '../../../../assets/img/slider-next-btn.png';
 
 class SelectedWorks extends React.Component {
     static propTypes = {

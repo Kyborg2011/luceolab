@@ -24,7 +24,7 @@
     display: flex;
 }
 
-.transitionGroup > div {
+.transitionGroup > div, .transitionGroup > div > div {
     position: absolute;
     top: 0;
     left: 0;
