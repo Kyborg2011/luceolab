@@ -16,7 +16,7 @@ const home = asyncComponent(() => import(
 ));
 const howWeWork = asyncComponent(() => import(
     /* webpackChunkName: 'how-we-work' */
-    './pages/how-we-work/howWeWork'
+    './pages/how-we-work/HowWeWork'
 ));
 const services = asyncComponent(() => import(
     /* webpackChunkName: 'services' */
