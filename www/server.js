@@ -1,6 +1,17 @@
-let express = require( 'express' );
-let app = express();
 let path = require( 'path' );
+let express = require( 'express' );
+let compression = require( 'compression' );
+
+let app = express();
+app.use( compression({
+    filter: ( req, res ) => {
+        if ( req.headers[ 'x-no-compression' ]) {
+            return false;
+        }
+
+        return compression.filter( req, res );
+    }
+}));
 
 app.use( '/assets', express.static( path.resolve( __dirname + './../dist/assets' )));
 app.use( '/css', express.static( path.resolve( __dirname + './../dist/css' )));
