@@ -24,12 +24,35 @@ module.exports = {
                 exclude: /node_modules/
             }, {
                 test: /\.css$/,
-                loader: ( env === 'production' )
+                use: ( env === 'production' )
                     ? ExtractTextPlugin.extract({
                         fallback: 'style-loader',
-                        use: [ 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss-loader' ]
+                        use: [
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    modules: true,
+                                    sourceMap: true,
+                                    importLoaders: 1,
+                                    localIdentName: 'css-[hash:base64:5]',
+                                }
+                            },
+                            'postcss-loader'
+                        ]
                     })
-                    : [ 'style-loader', 'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss-loader' ]
+                    : [
+                        'style-loader',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                sourceMap: true,
+                                importLoaders: 1,
+                                localIdentName: '[name]__[local]___[hash:base64:5]'
+                            }
+                        },
+                        'postcss-loader'
+                    ]
             }, {
                 test: indexHtml,
                 use: [

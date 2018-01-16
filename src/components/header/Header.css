@@ -85,6 +85,10 @@
     align-self: center;
 }
 
+.githubIcon {
+    font-size: 18px;
+}
+
 .telegramIcon:hover {
     background: url('../../assets/img/icons/telegram-logo-hover.png');
     background-size: 100%;

@@ -21,6 +21,10 @@ class Header extends React.Component {
                 <a className={styles.facebookIcon} href="#" target="_blank">
                     <i className="fa fa-facebook" aria-hidden="true" />
                 </a>
+                <a className={styles.githubIcon} href="https://github.com/Kyborg2011/luceolab" target="_blank"
+                  title="We are Open Sourced!">
+                    <i className="fa fa-github" aria-hidden="true" />
+                </a>
                 <Button className={styles.requestBtn} label="send a request" />
                 <Link className={styles.languageBtn} to="/">ru</Link>
             </nav>

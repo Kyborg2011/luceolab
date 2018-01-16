@@ -22,7 +22,6 @@ const services = asyncComponent(() => import(
     /* webpackChunkName: 'services' */
     './pages/services/Services'
 ));
-/* const selectedWorks = asyncComponent(() => import( './pages/selected-works/index' )); */
 const ourTeam = asyncComponent(() => import(
     /* webpackChunkName: 'our-team' */
     './pages/our-team/OurTeam'
