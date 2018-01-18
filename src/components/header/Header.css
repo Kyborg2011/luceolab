@@ -1,6 +1,5 @@
 .header {
     position: relative;
-    z-index: 2000; 
     background: #fff;
     display: flex;
     flex-flow: row nowrap;
