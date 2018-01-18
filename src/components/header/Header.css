@@ -1,14 +1,29 @@
 .header {
     position: relative;
-    z-index: 200;
+    z-index: 2000;
     background: #fff;
     display: flex;
     flex-flow: row nowrap;
     height: 43px;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     user-select: none;
     justify-content: space-between;
+}
+
+.header::after {
+    content: '';
+    display: flex;
+    bottom: -5px;
+    box-shadow: inset 0px 4px 8px -3px rgba(17, 17, 17, .14);
+    height: 5px;
+    left: 0;
+    opacity: 1;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 2050;
 }
 
 .headerLogo {
@@ -33,10 +48,12 @@
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
+    transition: 0.4s color;
 }
 
 .primaryNav a:hover {
     color: #fbbd63;
+    transition: 0.4s color;
 }
 
 .primaryNav a.requestBtn {

@@ -20,6 +20,10 @@
     line-height: 39px !important;
 }
 
+.btn {
+    transition: 0.75s background-color, 0.75s border;
+}
+
 .btn i {
     margin-left: 7px;
     font-size: 23px;

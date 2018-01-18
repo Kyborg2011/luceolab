@@ -26,7 +26,6 @@ class Header extends React.Component {
                     <i className="fa fa-github" aria-hidden="true" />
                 </a>
                 <Button className={styles.requestBtn} label="send a request" />
-                <Link className={styles.languageBtn} to="/">ru</Link>
             </nav>
             <ResponsiveNavigation />
         </header>
