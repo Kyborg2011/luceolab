@@ -27,10 +27,6 @@ body, html, :global(#root) {
     font-family: 'Open Sans', sans-serif;
 }
 
-:global(header) {
-    z-index: 2050 !important;
-}
-
 :global(h2) {
     margin: 0;
 }

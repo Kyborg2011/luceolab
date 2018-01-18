@@ -8,6 +8,7 @@
     overflow: visible;
     user-select: none;
     justify-content: space-between;
+    z-index: 200;
 }
 
 .header::after {
@@ -22,7 +23,7 @@
     position: absolute;
     right: 0;
     width: 100%;
-    z-index: 2050;
+    z-index: 200;
 }
 
 .headerLogo {
