@@ -8,7 +8,7 @@ import ResponsiveNavigation from './ResponsiveNavigation';
 class Header extends React.Component {
     render() {
         return (
-        <header className={styles.header} style={{ zIndex: 200 }}>
+        <header className={styles.header} style={{ zIndex: 550 }}>
             <Link className={styles.headerLogo} to="/" title="LuceoLab - Digital agency" />
             <nav className={styles.primaryNav}>
                 <a href="mailto:info@luceolab.com" target="_blank">
