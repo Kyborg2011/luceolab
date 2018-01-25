@@ -60,7 +60,9 @@ class App extends React.Component {
                     }
                 </div>
 
-                <Navigation />
+                <Navigation darkstyle={([
+                    '/services',
+                ].indexOf( pathname ) !== -1 )} />
                 <Footer />
             </div>
         );

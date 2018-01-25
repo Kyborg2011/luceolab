@@ -94,6 +94,23 @@
     color: #fbbd63;
 }
 
+.darkstyle nav > a:hover,
+.darkstyle nav > a.active {
+    color: #76a6b1;
+}
+
+.darkstyle nav > a:after,
+.darkstyle nav > a.active:after,
+.darkstyle nav > a:hover::after {
+    border-bottom-color: #76a6b1;
+}
+
+.darkstyle nav > a.active:before,
+.darkstyle nav > a:hover::before {
+    border: 2px solid #76a6b1;
+    transition: border 0.2s;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
     .secondaryNavigation {
         display: none;

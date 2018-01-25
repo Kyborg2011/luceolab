@@ -7,7 +7,10 @@ import styles from './Navigation.css';
 class Navigation extends React.Component {
     render() {
         return (
-            <aside className={classNames( styles.secondaryNavigation )}>
+            <aside className={classNames(
+                styles.secondaryNavigation,
+                ( this.props.darkstyle ) ? styles.darkstyle : null
+            )}>
                 <div className={styles.visibleColumn} />
                 <nav>
                     <NavLink activeClassName={styles.active} exact to="/">Home</NavLink>

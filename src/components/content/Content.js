@@ -61,7 +61,7 @@ class Content extends React.Component {
                 this.setState({
                     backgroundImagesPrefix: nextProps.location.pathname.replace( '/', '' ),
                 });
-            }, 1000 );
+            }, 900 );
 
             if ( MouseNavigation.routes.indexOf( nextPathname ) > MouseNavigation.routes.indexOf( curPathname )) {
                 this.setState({ transitionDirection: 'bottom-up' });

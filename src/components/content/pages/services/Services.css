@@ -32,9 +32,9 @@
     flex-flow: nowrap;
     justify-content: space-between;
     width: 100%;
-    padding: 25px 0 0 117px;
+    padding: 25px 0 0 0;
     flex: 2;
-    margin-bottom: 0;
+    margin: 0 0 0 20px;
 }
 
 .list li {
@@ -78,12 +78,12 @@
 .list li:hover h4 {
     color: #212121;
     margin: 12px 0 0 0;
-    transition: margin 0.5s, color 0.5s;
+    transition: margin 0.5s 0.2s, color 0.5s 0.2s;
 }
 
 .list li:hover .icon {
     background: #212121;
-    transition: background 0.5s, border-color 0.5s;
+    transition: background 0.5s 0.2s, border-color 0.5s 0.2s;
     border-color: #212121;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .list li:hover .icon img {
-    transition: filter 0.5s;
+    transition: filter 0.5s 0.2s;
     filter: invert(100%);
 }
 
@@ -143,15 +143,32 @@
     color: #212121;
     height: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     transition: height 1s;
+    margin-top: 15px;
+}
+
+.list li .details > a:last-child {
+    margin: 15px 21px;
+    opacity: 0;
+    color: transparent;
+    overflow: hidden;
+}
+
+.list li:hover .details > a:last-child {
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.5s 0.2s;
+}
+
+.list li .details > a:hover {
+    color: #212121 !important;
+    transition: none;
 }
 
 .list li:hover .details {
-    padding: 15px 21px;
-    margin-top: 15px;
-    height: auto;
-    overflow: visible;
+    height: 70px;
+    transition: height 1s 0.2s;
 }
 
 .details p {
@@ -170,7 +187,7 @@
 
 .details > a {
     font-weight: 600;
-    width: 100%;
+    width: auto;
 }
 
 .listInnerWrapper {
@@ -182,11 +199,6 @@
     transition: height 0.5s, top 0.5s;
     align-items: center;
     padding-bottom: 30px;
-}
-
-.list li:hover .listInnerWrapper {
-    height: 200px;
-    transition: height 0.5s, top 0.5s;
 }
 
 .overlay {
