@@ -24,9 +24,9 @@
     text-transform: uppercase;
     transition: 1s opacity, 1s background-color;
     line-height: 43px;
-    opacity: .65;
+    opacity: .4;
     background-color: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .footer p:hover {

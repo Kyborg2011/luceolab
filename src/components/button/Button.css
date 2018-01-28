@@ -1,3 +1,27 @@
+@keyframes scroll-wheel {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+    35% {
+        transform: translate3d(0, 7px, 0);
+        opacity: 1
+    }
+    50% {
+        transform: translate3d(0, 10px, 0);
+        opacity: 0
+    }
+    50.001% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0
+    }
+    80% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0
+    }
+}
+
+
 .btn {
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
@@ -18,10 +42,7 @@
     margin: 0 auto;
     padding: 0;
     line-height: 39px !important;
-}
-
-.btn {
-    transition: 0.75s background-color, 0.75s border;
+    transition: background-color .75s, border .75s, color .75s;
 }
 
 .btn i {
@@ -39,6 +60,7 @@
     border-style: solid;
     border-width: 2px;
     color: #212121;
+    transition: background-color .75s, border .75s, color .75s;
 }
 
 .reverse:hover {
@@ -65,7 +87,7 @@
 .withTooltip {
     display: inline-block;
     position: relative;
-    transition: background-color 500ms, transform 100ms;
+    transition: background-color .75s, transform .1s;
 }
 
 .textWrapper {
@@ -154,4 +176,63 @@
 
 .withTooltip:active {
     transform: translate(2px, 2px);
+}
+
+.withMouseWheel {
+    font-size: 16px;
+    letter-spacing: .75px;
+    font-weight: 300;
+    line-height: 44px !important;
+    width: 210px;
+    border: 1px solid #fff;
+    background-color: #76a6b1;
+}
+
+.withMouseWheel:hover {
+    border: 1px solid #212121;
+}
+
+.withMouseWheel .mouseWheelWrapper {
+    position: relative;
+    display: flex;
+    width: 20px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.withMouseWheel .mouseWheelWrapper .mouse {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    transition: border .75s;
+}
+
+.withMouseWheel .mouseWheelWrapper .wheel {
+    display: block;
+    margin: 0 0 0 -2px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    animation: scroll-wheel 1.8s linear 0s infinite normal none;
+    transition: background .75s;
+}
+
+.withMouseWheel:hover .mouseWheelWrapper .mouse {
+    border: 1px solid #212121;
+    transition: border .75s;
+}
+
+.withMouseWheel:hover .mouseWheelWrapper .wheel {
+    background: #212121;
+    transition: background .75s;
 }

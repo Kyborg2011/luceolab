@@ -21,10 +21,37 @@
     }
 }
 
+@keyframes service-close {
+    0%   {
+        position: absolute;
+        bottom: 0;
+        width: 500px;
+        height: 500px;
+    }
+
+    50% {
+        position: absolute;
+        bottom: 0;
+        width: 500px;
+        height: 200px;
+    }
+
+    100% {
+        position: absolute;
+        bottom: 0;
+        width: 237px;
+        height: 200px;
+    }
+}
+
 .serviceOpen > div {
     animation-duration: 2s;
     animation-name: service-open;
     animation-fill-mode: forwards;
+}
+
+.serviceClose > div {
+    animation-name: service-close;
 }
 
 .serviceOpen > div > div {

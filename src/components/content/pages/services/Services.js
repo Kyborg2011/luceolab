@@ -30,6 +30,7 @@ class Services extends React.Component {
         this.state = {
             pageClassName: bgStyles[ props.location.pathname.replace( '/', 'll_' ) ],
             opennedServiceIndex: -1,
+            closedServiceIndex: -1,
         };
     }
 
@@ -38,9 +39,12 @@ class Services extends React.Component {
     }
 
     render() {
-        const { opennedServiceIndex, pageClassName } = this.state;
+        const { opennedServiceIndex, pageClassName, closedServiceIndex } = this.state;
 
         const openServiceAnimation = ( i ) => {
+            if ( closedServiceIndex === i ) {
+                return animations.serviceOpen + ' ' + animations.serviceClose;
+            }
             if ( opennedServiceIndex === i ) {
                 return animations.serviceOpen;
             }
@@ -71,7 +75,7 @@ class Services extends React.Component {
                                     <div className={styles.details}>
                                         <a href="" className={styles.closeBtn} onClick={( e ) => {
                                             e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1 })
+                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 0 })
                                         }}>
                                             <i className="fa fa-times" aria-hidden="true" />
                                         </a>
@@ -107,7 +111,7 @@ class Services extends React.Component {
                                     <div className={styles.details}>
                                         <a href="" className={styles.closeBtn} onClick={( e ) => {
                                             e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1 })
+                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 })
                                         }}>
                                             <i className="fa fa-times" aria-hidden="true" />
                                         </a>
@@ -143,7 +147,7 @@ class Services extends React.Component {
                                     <div className={styles.details}>
                                         <a href="" className={styles.closeBtn} onClick={( e ) => {
                                             e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1 })
+                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 2 })
                                         }}>
                                             <i className="fa fa-times" aria-hidden="true" />
                                         </a>
@@ -179,7 +183,7 @@ class Services extends React.Component {
                                     <div className={styles.details}>
                                         <a href="" className={styles.closeBtn} onClick={( e ) => {
                                             e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1 })
+                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 3 })
                                         }}>
                                             <i className="fa fa-times" aria-hidden="true" />
                                         </a>

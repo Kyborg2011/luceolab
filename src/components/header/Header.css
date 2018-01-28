@@ -48,12 +48,13 @@
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-    transition: 0.4s color;
+    transition: 0.4s transform, 0.4s color;
 }
 
 .primaryNav a:hover {
     color: #fbbd63;
-    transition: 0.4s color;
+    transform: scale(1.2);
+    transition: 0.4s transform, 0.4s color;
 }
 
 .primaryNav a.requestBtn {
@@ -65,12 +66,17 @@
     text-decoration: none;
     background-color: #fbbd63;
     margin-right: 0;
+    z-index: 300;
 }
 
 .primaryNav a.requestBtn:hover {
-    border-color: #212121;
-    background: none;
-    color: #212121;
+    border-color: #76a6b1;
+    background: #76a6b1;
+    color: #fff;
+}
+
+.primaryNav a.requestBtn:hover {
+    transform: scale(1.1) translateX(-4px) translateY(1px);
 }
 
 .primaryNav a.languageBtn {

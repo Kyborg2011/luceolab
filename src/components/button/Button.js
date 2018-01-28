@@ -13,6 +13,7 @@ class Button extends React.Component {
             iconOnHover: props.iconOnHover,
             fontAwesomeIcon: props.fontAwesomeIcon,
             href: props.href || '',
+            hasMouseWheel: props.hasMouseWheel ? true : false,
         };
     }
 
@@ -23,26 +24,51 @@ class Button extends React.Component {
     }
 
     render() {
-        const { label, reverse, dataTooltip, iconOnHover, fontAwesomeIcon, href } = this.state;
+        const {
+            label,
+            reverse,
+            dataTooltip,
+            iconOnHover,
+            fontAwesomeIcon,
+            href,
+            hasMouseWheel } = this.state;
 
         let btnEl = (
             <Link to={href}
-              title={label}
-              className={classNames( styles.btn, this.props.className, ( reverse ) ? styles.reverse : null )}
+              className={classNames(
+                  styles.btn,
+                  this.props.className,
+                  ( reverse ) ? styles.reverse : null,
+                  ( hasMouseWheel ) ? styles.withMouseWheel : null
+              )}
               onClick={this.props.onClick}
             >
                 {label}
-                {( typeof fontAwesomeIcon !== 'undefined' ) && (
+
+                {( fontAwesomeIcon ) && (
                     <i className={classNames( 'fa', 'fa-' + fontAwesomeIcon )} aria-hidden="true" />
                 )}
+
+                {( hasMouseWheel ) && (
+                    <span className={styles.mouseWheelWrapper}>
+                        <span className={styles.mouse}>
+                            <span className={styles.wheel}/>
+					    </span>
+                    </span>
+                )}
+
             </Link>
         );
 
-        if ( typeof dataTooltip !== 'undefined' ) {
+        if ( dataTooltip ) {
             btnEl = (
                 <Link to={href}
-                  title={label}
-                  className={classNames( styles.btn, styles.withTooltip, this.props.className, ( reverse ) ? styles.reverse : null )}
+                  className={classNames(
+                      styles.btn,
+                      styles.withTooltip,
+                      this.props.className,
+                      ( reverse ) ? styles.reverse : null
+                  )}
                   onClick={this.props.onClick}
                   data-tooltip={dataTooltip}
                 >

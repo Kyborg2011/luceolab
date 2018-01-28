@@ -44,7 +44,7 @@ class Homepage extends React.Component {
                         <h1 className={classNames( styles.homepageMainPhrase )}>
                             The digital agency that<br />makes things clear
                         </h1>
-                        <Button href="/how-we-work" label="How we work" fontAwesomeIcon="angle-down" reverse />
+                        <Button href="/how-we-work" label="How we work" hasMouseWheel />
                     </div>
                 </div>
             </div>
