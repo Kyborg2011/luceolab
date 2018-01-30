@@ -47,3 +47,10 @@
     height: 100% !important;
     padding-top: 0 !important;
 }
+
+:global(.video-react .video-react-control-bar) {
+    width: calc(100% - 2px);
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+}

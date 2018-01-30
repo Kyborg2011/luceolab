@@ -126,8 +126,8 @@ class SwingingLogo extends React.Component {
     render() {
         return (
             <div style={{ display: 'flex' }}>
-                {( this.state.overlay ) && <div className={classNames( 'overlay', { fade: this.state.fade })} />}
                 <canvas className={styles.canvas} width="700" height="300" id="canvas" />
+                {( this.state.overlay ) && <div className={classNames( 'overlay', { fade: this.state.fade })} />}
             </div>
         );
     }

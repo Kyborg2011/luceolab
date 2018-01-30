@@ -23,7 +23,7 @@
 
 .homepageInner {
     display: flex;
-    align-self: center!important;
+    align-self: center !important;
 }
 
 .homepageInner > div {
@@ -60,9 +60,6 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-    .largeLogo {
-        display: flex;
-    }
     .homepageMainPhrase {
         font-size: 25px;
         line-height: 40px;

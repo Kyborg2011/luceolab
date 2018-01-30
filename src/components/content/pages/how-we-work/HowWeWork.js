@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom';
 import { Player } from 'video-react';
 
-import styles from './HowWeWork.css';
 import '../../../shared/styles/VideoReact.css';
+import styles from './HowWeWork.css';
 import bgStyles from '../../../shared/styles/Background.css';
 import Button from '../../../button/Button';
 import MainHeading from '../../main-heading/MainHeading';

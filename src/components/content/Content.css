@@ -1,18 +1,18 @@
 @keyframes slide-upper {
     100% {
-        transform: translateY(-100%);
+        transform: translate3d(0, -100%, 0);
     }
 }
 
 @keyframes slide-downer {
     100% {
-        transform: translateY(100%);
+        transform: translate3d(0, 100%, 0);
     }
 }
 
 @keyframes slide-up {
     100% {
-        transform: translateY(0%);
+        transform: translate3d(0, 0%, 0);
         z-index: 300 !important;
     }
 }
@@ -36,24 +36,24 @@
 }
 
 :global(.bottom-up .slide-transition-enter) {
-    transform: translateY(100%);
+    transform: translate3d(0, 100%, 0);
     animation: slide-up 1s forwards;
     animation-delay: 1s;
 }
 
 :global(.bottom-up .slide-transition-exit) {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     animation: slide-upper 1s forwards;
 }
 
 :global(.top-down .slide-transition-enter) {
-    transform: translateY(-100%);
+    transform: translate3d(0, -100%, 0);
     animation: slide-up 1s forwards;
     animation-delay: 1s;
 }
 
 :global(.top-down .slide-transition-exit) {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     animation: slide-downer 1s forwards;
 }
 

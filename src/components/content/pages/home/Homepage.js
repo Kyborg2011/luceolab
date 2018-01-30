@@ -9,9 +9,8 @@ import {
 
 import styles from './Homepage.css';
 import bgStyles from '../../../shared/styles/Background.css';
-import largeLogo from '../../../../assets/img/homepage-logo-large.png';
 import Button from '../../../button/Button';
-import SwingingLogo from '../../SwingingLogo';
+import SwingingLogo from '../../../animation/SwingingLogo';
 
 class Homepage extends React.Component {
     static propTypes = {
@@ -23,7 +22,6 @@ class Homepage extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
-            pageClassName: bgStyles[ props.location.pathname.replace( '/', 'll_' ) ],
             blurred: true,
             cancelBlur: false,
             swingingLogo: true,
@@ -35,15 +33,18 @@ class Homepage extends React.Component {
     }
 
     render() {
-        const { pageClassName, blurred, cancelBlur, swingingLogo } = this.state;
+        const {
+            blurred,
+            cancelBlur,
+            swingingLogo,
+        } = this.state;
 
         return (
             <div className={classNames( styles.homepageInner )}>
                 <div>
-                    <div className={styles.largeLogo}>
-                        <img src={largeLogo} alt="LuceoLab" />
-                    </div>
-                    <SwingingLogo animation={swingingLogo}
+
+                    <SwingingLogo
+                      animation={swingingLogo}
                       onEnd={() => {
                           this.setState({ blurred: false })
                       }}
@@ -51,12 +52,19 @@ class Homepage extends React.Component {
                           this.setState({ cancelBlur: true });
                       }}
                     />
-                    <div id="homepage-blurred" className={classNames({ 'blurred': !cancelBlur, 'unblur': !blurred })}>
+
+                    <div id="homepage-blurred" className={
+                        classNames({
+                            'blurred': !cancelBlur,
+                            'unblur': !blurred
+                        })
+                    }>
                         <h1 className={classNames( styles.homepageMainPhrase )}>
                             The digital agency that<br />makes things clear
                         </h1>
                         <Button href="/how-we-work" label="How we work" hasMouseWheel />
                     </div>
+
                 </div>
             </div>
         );

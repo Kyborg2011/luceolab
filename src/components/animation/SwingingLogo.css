@@ -7,9 +7,3 @@
     z-index: 2000;
     filter: none;
 }
-
-@media (min-width: 320px) and (max-width: 767px) {
-    .canvas {
-        display: none;
-    }
-}
