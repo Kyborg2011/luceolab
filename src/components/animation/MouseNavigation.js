@@ -46,6 +46,7 @@ class MouseNavigation extends React.Component {
 
         /* Mouse wheel scroll event handler for desktops and laptops */
         element.addEventListener( 'wheel', ( e ) => {
+            e.preventDefault();
             /* old IE support */
             e = window.event || e;
 	        let delta = Math.max( -1, Math.min( 1, ( e.wheelDelta || -e.detail )));
@@ -56,13 +57,14 @@ class MouseNavigation extends React.Component {
 
         /* Mouse move events handlers for desktops and laptops */
         element.addEventListener( 'mousedown', ( e ) => {
+            e.preventDefault();
             startX = e.pageY;
         }, false );
         element.addEventListener( 'mouseup', ( e ) => {
             endX = e.pageY;
             if ( startX != -1 ) {
                 let delta = endX - startX;
-                if ( Math.abs( delta ) > 50 ) {
+                if ( Math.abs( delta ) > 75 ) {
                     let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                     let nextRouteId = routeId;
                     nextRouteId = ( delta > 0 ) ? --routeId : ++routeId;

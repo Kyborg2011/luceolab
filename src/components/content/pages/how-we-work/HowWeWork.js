@@ -23,26 +23,30 @@ class HowWeWork extends React.Component {
         history: PropTypes.object.isRequired
     }
 
+    static VIDEO_CONTAINER_MARGIN_BOTTOM = 15;
+
     constructor( props ) {
         super( props );
         this.state = {
             pageClassName: bgStyles[ props.location.pathname.replace( '/', 'll_' ) ],
-            videoWidth: 0,
-            videoHeight: 0,
+            videoWidth: null,
+            videoHeight: null,
         };
     }
 
     componentDidMount() {
-        let height = document.getElementById( 'video-wrapper' ).clientHeight;
-        let width = document.getElementById( 'video-wrapper' ).clientWidth;
+        setTimeout(() => {
+            let height = document.getElementById( 'video-wrapper' ).clientHeight - HowWeWork.VIDEO_CONTAINER_MARGIN_BOTTOM;
+            let width = document.getElementById( 'video-wrapper' ).clientWidth;
 
-        /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
-        width = Math.min( width, height / 0.5625  );
-        height = width * 0.5625;
-        this.setState({
-            videoWidth: width,
-            videoHeight: height,
-        });
+            /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
+            width = Math.min( width, height / 0.5625  );
+            height = width * 0.5625;
+            this.setState({
+                videoWidth: width,
+                videoHeight: height,
+            });
+        }, 2000 );
     }
 
     handleClick( e ) {
@@ -67,12 +71,14 @@ class HowWeWork extends React.Component {
                             home
                         </Link>
                         <div id="video-wrapper" className={styles.videoContainer} style={stylesWrapper}>
-                            <Player
-                              playsInline
-                              autoPlay
-                              muted
-                              src={videoSource}
-                            />
+                            {( videoWidth && videoHeight ) && (
+                                <Player
+                                  playsInline
+                                  autoPlay
+                                  muted
+                                  src={videoSource}
+                                />
+                            )}
                         </div>
                         <Link to="/services">
                             <i className="fa fa-chevron-circle-right" aria-hidden="true" />

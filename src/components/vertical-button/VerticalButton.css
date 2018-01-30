@@ -24,21 +24,26 @@
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
+    transition: color 1s;
 }
 
 .verticalBtn.darkstyle a {
+    transition: color 1s;
     color: #212121;
 }
 
 .verticalBtn.darkstyle a:before {
+    transition: border 1s;
     border-bottom-color: #212121;
 }
 
 .verticalBtn a:hover {
+    transition: color 1s;
     color: #fbbd63;
 }
 
 .verticalBtn a:hover::before {
+    transition: border 1s;
     border-bottom-color: #fbbd63;
 }
 
@@ -62,6 +67,7 @@
     border-bottom-width: 1px;
     border-bottom-color: #fff;
     transform: rotate(90deg);
+    transition: border 1s;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

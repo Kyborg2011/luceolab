@@ -8,19 +8,32 @@ import offLamp from '../../assets/img/logo-lamp-off-large.png';
 import onLamp from '../../assets/img/logo-lamp-on-large.png';
 import logoWithoutLamp from '../../assets/img/logo-without-lamp.png';
 
+let animationTimeout = null;
+
 class SwingingLogo extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
             overlay: true,
             fade: false,
+            isAnimation: props.animation,
         };
+    }
+
+    componentWillReceiveProps( nextProps ) {
+        if ( this.props.animation && !nextProps.animation ) {
+            clearInterval( animationTimeout );
+            this.setState({
+                overlay: false,
+            });
+            nextProps.onCancelAnimation();
+        }
     }
 
     componentDidMount() {
         var that = this;
 
-        setTimeout(() => {
+        animationTimeout = setTimeout(() => {
             let canvas = document.getElementById( 'canvas' );
             let context = canvas.getContext( '2d' );
 

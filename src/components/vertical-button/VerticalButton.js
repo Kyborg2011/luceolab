@@ -11,7 +11,7 @@ class VerticalButton extends React.Component {
                 styles.verticalBtn,
                 ( this.props.darkstyle ) ? styles.darkstyle : null )}
             >
-                <Link to="/" title="LuceoLab - Digital agency">luceolab</Link>
+                <Link to="/">luceolab</Link>
             </div>
         );
     }

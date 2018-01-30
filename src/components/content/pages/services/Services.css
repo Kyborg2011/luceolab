@@ -134,6 +134,7 @@
     align-self: center;
     width: 8px;
     height: 8px;
+    background: #fff;
     border: 1px solid #fff;
     box-sizing: border-box;
     border-radius: 4px;

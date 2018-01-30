@@ -91,7 +91,7 @@ body, html, :global(#root) {
 }
 
 :global(.unblur) {
-    filter: blur(.5px);
+    filter: blur(.3px);
     transition: 4s filter linear;
 }
 /* End of dark overlay + blur */
