@@ -5,7 +5,6 @@ let serveStatic = require( 'serve-static' );
 
 let app = express();
 
-app.use( '/', serveStatic( path.resolve( __dirname + './../dist' )));
 app.use( compression({
     filter: ( req, res ) => {
         if ( req.headers[ 'x-no-compression' ]) {
@@ -14,6 +13,7 @@ app.use( compression({
         return compression.filter( req, res );
     }
 }));
+app.use( '/', serveStatic( path.resolve( __dirname + './../dist' )));
 
 app.get( '/*', function( req, res ) {
     res.sendFile( path.resolve( __dirname + './../dist/index.html' ));
