@@ -5,18 +5,15 @@ let serveStatic = require( 'serve-static' );
 
 let app = express();
 
+app.use( '/', serveStatic( path.resolve( __dirname + './../dist' )));
 app.use( compression({
     filter: ( req, res ) => {
         if ( req.headers[ 'x-no-compression' ]) {
             return false;
         }
-
         return compression.filter( req, res );
     }
 }));
-app.use( '/assets', serveStatic( path.resolve( __dirname + './../dist/assets' )));
-app.use( '/css', serveStatic( path.resolve( __dirname + './../dist/css' )));
-app.use( '/js', serveStatic( path.resolve( __dirname + './../dist/js' )));
 
 app.get( '/*', function( req, res ) {
     res.sendFile( path.resolve( __dirname + './../dist/index.html' ));
