@@ -75,7 +75,6 @@ class HowWeWork extends React.Component {
                                 <Player
                                   playsInline
                                   autoPlay
-                                  muted
                                   src={videoSource}
                                 />
                             )}
