@@ -49,6 +49,7 @@ class Content extends React.Component {
             hideBackground: false,
             transitionDirection: 'bottom-up',
             backgroundImagesPrefix: props.location.pathname.replace( '/', '' ),
+            backgroundHeight: 0,
         };
     }
 
@@ -71,13 +72,23 @@ class Content extends React.Component {
         }
     }
 
+    componentDidMount() {
+        let backgroundHeight = document.getElementById( MouseNavigation.wrapperId ).clientHeight;
+        this.setState({ backgroundHeight });
+    }
+
     render() {
-        const { hideBackground, transitionDirection, backgroundImagesPrefix } = this.state;
+        const {
+            hideBackground,
+            transitionDirection,
+            backgroundImagesPrefix,
+            backgroundHeight,
+        } = this.state;
 
         let bgPicture = ( <picture /> );
         try {
             bgPicture = (
-                <LazyLoad>
+                <LazyLoad height={backgroundHeight}>
                     <picture>
                         <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
                           srcSet={
@@ -107,7 +118,7 @@ class Content extends React.Component {
                           } />
                       </picture>
                   </LazyLoad>
-              );
+             );
         } catch ( e ) {
             console.log( e );
         }
