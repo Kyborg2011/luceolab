@@ -149,7 +149,6 @@
 }
 
 .details {
-    font-size: 12.8px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     line-height: 23px;
@@ -186,13 +185,12 @@
 }
 
 .details p {
-    font-size: 12.8px;
+    font-size: 14.5px;
     margin: 0;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     height: 0;
-    width: 195px;
+    font-weight: 300;
+    width: 100%;
 }
 
 .list li:hover .details {
@@ -213,6 +211,7 @@
     transition: height 0.5s, top 0.5s;
     align-items: center;
     padding-bottom: 30px;
+    width: 237px;
 }
 
 .overlay {
@@ -231,16 +230,45 @@
 
 .closeBtn {
     position: absolute;
-    top: 5px;
+    top: 77px;
     width: 16px !important;
     line-height: 16px !important;
     height: 16px;
     right: 5px;
-    color: #212121;
-    font-size: 16px;
+    color: #fff;
+    font-size: 23px;
     opacity: 0;
+    text-decoration: none;
 }
 
 .closeBtn:hover {
     color: #fdb951;
+}
+
+.technoligiesList {
+    display: inline-block;
+    width: 100%;
+    height: 85px;
+}
+
+.technoligiesList a {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.technoligiesList img {
+    display: inline-block;
+    height: 100%;
+    filter: grayscale(100%);
+    opacity: .6;
+    transition: opacity .5s;
+}
+
+.technoligiesList a:hover img {
+    filter: none;
+    opacity: 1;
+    transition: opacity .5s;
 }

@@ -92,7 +92,7 @@ class Content extends React.Component {
                 bgPictures.push(
                     <LazyLoad key={i} height={backgroundHeight}>
                         <picture style={{
-                            display: ( prefix == backgroundImagesPrefix ) ? 'flex' : 'none'
+                            display: ( prefix == backgroundImagesPrefix ) ? 'block' : 'none'
                         }}>
                             <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
                               srcSet={

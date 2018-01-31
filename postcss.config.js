@@ -4,6 +4,6 @@ module.exports = ( ctx ) => ({
     plugins: {
         'postcss-nested': {},
         'autoprefixer': {},
-        'cssnano': ctx.env === 'production' ? {} : false
+        'cssnano': ( ctx.env === 'production' ) ? { zindex: false } : false
     }
 });

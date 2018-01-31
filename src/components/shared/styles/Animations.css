@@ -3,14 +3,14 @@
         position: absolute;
         bottom: 0;
         width: 237px;
-        height: 200px;
+        height: 206px;
     }
 
     50% {
         position: absolute;
         bottom: 0;
         width: 500px;
-        height: 200px;
+        height: 206px;
     }
 
     100% {
@@ -29,18 +29,32 @@
         height: 500px;
     }
 
-    50% {
+    35% {
         position: absolute;
         bottom: 0;
         width: 500px;
-        height: 200px;
+        height: 206px;
+    }
+
+    70% {
+        position: absolute;
+        bottom: 0;
+        width: 237px;
+        height: 206px;
+    }
+
+    99% {
+        position: absolute;
+        bottom: 0;
+        width: 237px;
+        height: 160px;
     }
 
     100% {
         position: absolute;
         bottom: 0;
         width: 237px;
-        height: 200px;
+        height: auto;
     }
 }
 
@@ -78,19 +92,67 @@
 }
 
 .serviceOpen > div > div {
-    padding: 15px 21px;
     margin-top: 15px;
     overflow: visible;
 }
 
+.serviceOpen > div > div:before {
+    border: 3px solid #fdb951;
+    background: #fff;
+    transition: border 0.5s 0.5s, background 0.5s 0.5s;
+}
+
+.serviceOpen > div > div:after {
+    background: #fdb951;
+    border: 1px solid #fdb951;
+    transition: border .5s, background .5s;
+}
+
+.serviceOpen > div > p img {
+    filter: invert(100%);
+}
+
+.serviceClose h4 {
+    color: #fff !important;
+    margin: 36px 0 0 0 !important;
+    transition: margin 0.5s, color 0.5s;
+}
+
+.serviceClose > div > div:before {
+    border: none;
+    background: transparent;
+    transition: border 0.5s 0.5s, background 0.5s 0.5s;
+}
+
+.serviceClose > div > div:after {
+    background: #fff;
+    border: 1px solid #fff;
+    transition: border .5s, background .5s;
+}
+
 .serviceOpen > div > div > p {
-    height: 300px;
-    width: 458px;
+    height: auto;
+    width: auto;
+    flex: 2;
+    padding: 0 21px;
+    margin-top: 15px;
     transition: width 2s, height 2s 2s;
+}
+
+.serviceOpen > div > a {
+    opacity: 1 !important;
+}
+
+.serviceClose > div > a {
+    opacity: 0 !important;
 }
 
 .serviceOpen > div > div > a {
     text-decoration: none;
-    opacity: 1;
+    opacity: 1 !important;
+    color: #fff !important;
+    width: auto;
+    display: flex;
     transition: opacity 3s 1s;
+    margin-top: 0 !important;
 }

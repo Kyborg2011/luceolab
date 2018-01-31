@@ -72,32 +72,37 @@ class Services extends React.Component {
                                         <img src={webdevIcon} alt="Web development" />
                                     </p>
                                     <h4>web development</h4>
+                                    <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                        e.preventDefault();
+                                        this.setState({ opennedServiceIndex: -1, closedServiceIndex: 0 })
+                                    }}>&#10005;</a>
                                     <div className={styles.details}>
-                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
-                                            e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 0 })
-                                        }}>
-                                            <i className="fa fa-times" aria-hidden="true" />
-                                        </a>
                                         <p>
-                                            According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
-                                            about web-development: 76% of consumers say the most important factor in a website's
-                                            design is "the website makes it easy for me to find what I want."<br/>
-                                            The main principle by which LuceoLab is guided is the clarity of vision.
-                                            Therefore, we consider the main criteria for the quality of our work:
-                                            <ul>
-                                                <li>Simplicity of the UI (user interface)</li>
-                                                <li>Сlear UX (user experience)</li>
-                                                <li>Maximum accessibility of the web content</li>
-                                                <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
-                                            </ul>
-                                            We continually improve our skills,
-                                            that's why we are not afraid to use the
-                                            latest trends in the world of web developing:
+                                            We create beautiful custom‑designed websites with unique UX, well-understood for everyone.
+                                            Through continually improving our skills, we are not afraid to use the latest trends in the world of web developing.<br/>
+                                            <span style={{ color: '#fbbd63', fontWeight: 'bold' }}>Our agency driven by the main single principle - the clarity of vision.</span>&nbsp;
+                                            Due to that we find the necessary balance between the complexity of the selected technologies and the real need for each individual project.<br/>
+                                            <span style={{ textAlign: 'center', display: 'block' }}>
+                                                Some technologies that inspire us:
+                                            </span>
+                                            <span className={styles.technoligiesList}>
+                                                <a href="https://reactjs.org/" title="ReactJS" target="_blank">
+                                                    <img src={require( '../../../../assets/img/icons/react-js.png' )} />
+                                                </a>
+                                                <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" title="ECMAScript 2015" target="_blank">
+                                                    <img src={require( '../../../../assets/img/icons/es6.svg' )} />
+                                                </a>
+                                                <a href="https://www.docker.com/" title="Docker" target="_blank">
+                                                    <img src={require( '../../../../assets/img/icons/docker.svg' )} />
+                                                </a>
+                                                <a href="https://symfony.com/" title="Symfony" target="_blank" style={{ padding: 0, top: '13px', position: 'relative' }}>
+                                                    <img src={require( '../../../../assets/img/icons/symfony.svg' )} />
+                                                </a>
+                                            </span>
                                         </p>
                                         <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                             e.preventDefault();
-                                            this.setState({ opennedServiceIndex: 0 })
+                                            this.setState({ opennedServiceIndex: 0, closedServiceIndex: -1 })
                                         }} />
                                     </div>
                                 </div>
@@ -108,28 +113,17 @@ class Services extends React.Component {
                                         <img src={designBrandingIcon} alt="Design & Branding" />
                                     </p>
                                     <h4>design & branding</h4>
+                                    <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                        e.preventDefault();
+                                        this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 })
+                                    }}>&#10005;</a>
                                     <div className={styles.details}>
-                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
-                                            e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 })
-                                        }}>
-                                            <i className="fa fa-times" aria-hidden="true" />
-                                        </a>
                                         <p>
-                                            According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
-                                            about web-development: 76% of consumers say the most important factor in a website's
-                                            design is "the website makes it easy for me to find what I want."<br/>
-                                            The main principle by which LuceoLab is guided is the clarity of vision.
-                                            Therefore, we consider the main criteria for the quality of our work:
-                                            <ul>
-                                                <li>Simplicity of the UI (user interface)</li>
-                                                <li>Сlear UX (user experience)</li>
-                                                <li>Maximum accessibility of the web content</li>
-                                                <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
-                                            </ul>
-                                            We continually improve our skills,
-                                            that's why we are not afraid to use the
-                                            latest trends in the world of web developing:
+                                            We create beautiful custom‑designed websites with unique UX, well-understood for everyone.
+                                            Through continually improving our skills, we are not afraid to use the latest trends in the world of web developing.
+                                            Our agency driven by the main single principle - the clarity of vision.
+                                            Due to that we find the necessary balance between the complexity of the selected technologies and the real need for each individual project.
+                                            One of the main goal for us is to make the website as easy to find, what every user wants, as possible.
                                         </p>
                                         <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                             e.preventDefault();
@@ -144,29 +138,12 @@ class Services extends React.Component {
                                         <img src={marketingIcon} alt="Digital marketing" />
                                     </p>
                                     <h4>digital marketing</h4>
+                                    <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                        e.preventDefault();
+                                        this.setState({ opennedServiceIndex: -1, closedServiceIndex: 2 })
+                                    }}>&#10005;</a>
                                     <div className={styles.details}>
-                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
-                                            e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 2 })
-                                        }}>
-                                            <i className="fa fa-times" aria-hidden="true" />
-                                        </a>
-                                        <p>
-                                            According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
-                                            about web-development: 76% of consumers say the most important factor in a website's
-                                            design is "the website makes it easy for me to find what I want."<br/>
-                                            The main principle by which LuceoLab is guided is the clarity of vision.
-                                            Therefore, we consider the main criteria for the quality of our work:
-                                            <ul>
-                                                <li>Simplicity of the UI (user interface)</li>
-                                                <li>Сlear UX (user experience)</li>
-                                                <li>Maximum accessibility of the web content</li>
-                                                <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
-                                            </ul>
-                                            We continually improve our skills,
-                                            that's why we are not afraid to use the
-                                            latest trends in the world of web developing:
-                                        </p>
+                                        <p />
                                         <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                             e.preventDefault();
                                             this.setState({ opennedServiceIndex: 2 })
@@ -180,13 +157,11 @@ class Services extends React.Component {
                                         <img src={itConsultingIcon} alt="IT consulting" />
                                     </p>
                                     <h4>IT consulting</h4>
+                                    <a href="" className={styles.closeBtn} onClick={( e ) => {
+                                        e.preventDefault();
+                                        this.setState({ opennedServiceIndex: -1, closedServiceIndex: 3 })
+                                    }}>&#10005;</a>
                                     <div className={styles.details}>
-                                        <a href="" className={styles.closeBtn} onClick={( e ) => {
-                                            e.preventDefault();
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 3 })
-                                        }}>
-                                            <i className="fa fa-times" aria-hidden="true" />
-                                        </a>
                                         <p>
                                             According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
                                             about web-development: 76% of consumers say the most important factor in a website's
