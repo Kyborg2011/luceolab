@@ -6,15 +6,11 @@ import {
   withRouter,
   Link
 } from 'react-router-dom';
-import { Player } from 'video-react';
 
-import '../../../shared/styles/VideoReact.css';
 import styles from './HowWeWork.css';
 import bgStyles from '../../../shared/styles/Background.css';
 import Button from '../../../button/Button';
 import MainHeading from '../../main-heading/MainHeading';
-import videoSource from '../../../../assets/video/videoinfographic.mp4';
-
 
 class HowWeWork extends React.Component {
     static propTypes = {
@@ -46,7 +42,7 @@ class HowWeWork extends React.Component {
                 videoWidth: width,
                 videoHeight: height,
             });
-        }, 2000 );
+        }, 1500 );
     }
 
     handleClick( e ) {
@@ -72,10 +68,13 @@ class HowWeWork extends React.Component {
                         </Link>
                         <div id="video-wrapper" className={styles.videoContainer} style={stylesWrapper}>
                             {( videoWidth && videoHeight ) && (
-                                <Player
-                                  playsInline
-                                  autoPlay
-                                  src={videoSource}
+                                <iframe src="https://player.vimeo.com/video/254140924?title=0&byline=0&badge=0&portrait=0&color=fff&autoplay=1&player_id=player"
+                                  width={videoWidth}
+                                  height={videoHeight}
+                                  frameBorder="0"
+                                  webkitallowfullscreen
+                                  mozallowfullscreen
+                                  allowFullScreen
                                 />
                             )}
                         </div>
