@@ -18,6 +18,7 @@ class MouseNavigation extends React.Component {
         '/how-we-work',
         '/services',
         '/our-team',
+        '/our-beliefs',
         '/contacts',
     ]
     static redirectTimeoutId = null

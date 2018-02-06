@@ -27,6 +27,10 @@ const ourTeam = asyncComponent(() => import(
     /* webpackChunkName: 'our-team' */
     './pages/our-team/OurTeam'
 ));
+const ourBeliefs = asyncComponent(() => import(
+    /* webpackChunkName: 'our-beliefs' */
+    './pages/our-beliefs/OurBeliefs'
+));
 const contact = asyncComponent(() => import(
     /* webpackChunkName: 'contact' */
     './pages/contact/Contact'
@@ -153,6 +157,7 @@ class Content extends React.Component {
                                 <Route path="/how-we-work" component={howWeWork} />
                                 <Route path="/services" component={services} />
                                 <Route path="/our-team" component={ourTeam} />
+                                <Route path="/our-beliefs" component={ourBeliefs} />
                                 <Route path="/contacts" component={contact} />
                             </Switch>
                         </CSSTransition>
