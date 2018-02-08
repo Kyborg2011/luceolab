@@ -4,6 +4,12 @@
     position: relative;
     top: 0;
     left: 75px;
-    z-index: 2000;
+    z-index: 1100;
     filter: none;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .canvas {
+        left: 0;
+    }
 }

@@ -41,7 +41,7 @@ class OurTeam extends React.Component {
 
         return (
                 <div>
-                    <MainHeading darkstyle text="our best team" />
+                    <MainHeading darkstyle text="our best team" subTitle="nature born climbers" />
                     <div className={styles.pageWrapper}>
                         <div className={styles.inner}>
                             <h2 className={layout.subTitle}>

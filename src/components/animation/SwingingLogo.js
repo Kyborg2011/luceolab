@@ -9,6 +9,8 @@ import onLamp from '../../assets/img/logo-lamp-on-large.png';
 import logoWithoutLamp from '../../assets/img/logo-without-lamp.png';
 
 let animationTimeout = null;
+const maxCanvasWidth = 700;
+const maxCanvasHeight = 300;
 
 class SwingingLogo extends React.Component {
     constructor( props ) {
@@ -17,6 +19,8 @@ class SwingingLogo extends React.Component {
             overlay: true,
             fade: false,
             isAnimation: props.animation,
+            canvasWidth: maxCanvasWidth,
+            canvasHeight: maxCanvasHeight,
         };
     }
 
@@ -27,13 +31,51 @@ class SwingingLogo extends React.Component {
                 overlay: false,
             });
             nextProps.onCancelAnimation();
+
+            setTimeout(() => {
+                let canvas = document.getElementById( 'canvas' );
+                let context = canvas.getContext( '2d' );
+
+                var imgSymbols = new Image();
+                imgSymbols.src = logoWithoutLamp;
+                imgSymbols.onload = () => {
+                    context.drawImage( imgSymbols, 100, 180, 357, 100 );
+                };
+
+                context.beginPath();
+                context.strokeStyle = '#838586';
+                context.lineWidth = 2;
+                context.moveTo( canvas.width / 2, 0 );
+                context.lineTo( 350, 150 );
+                context.closePath();
+                context.stroke();
+
+                var img = new Image();
+                img.src = onLamp;
+                img.onload = () => {
+                    context.drawImage( img, 290, 150, 120, 143 );
+                };
+            }, 500 );
         }
     }
 
     componentDidMount() {
         var that = this;
 
+        let height = maxCanvasHeight;
+        let width = document.getElementById( 'root' ).clientWidth - 30;
+        width = Math.min( width, maxCanvasWidth );
+        let coefficient = width / maxCanvasWidth;
+        if ( coefficient != 1 ) {
+            coefficient *= 1.5;
+        }
+        this.setState({
+            canvasWidth: width,
+            canvasHeight: height * coefficient,
+        });
+
         animationTimeout = setTimeout(() => {
+
             let canvas = document.getElementById( 'canvas' );
             let context = canvas.getContext( '2d' );
 
@@ -46,7 +88,6 @@ class SwingingLogo extends React.Component {
                 var zeroCount = 0;
                 var lightOn = false;
                 var refreshIntervalId = setInterval( function() {
-
                     var acceleration = k * Math.sin( angle );
                     velocity += acceleration * timestep_s;
                     angle += velocity * timestep_s;
@@ -66,14 +107,30 @@ class SwingingLogo extends React.Component {
                             var imgLetters = new Image();
                             imgLetters.src = logoWithoutLamp;
                             imgLetters.onload = () => {
-                                context.drawImage( imgLetters, 100, 180, 357, 100 );
+                                if ( coefficient == 1 ) {
+                                    context.drawImage(
+                                        imgLetters,
+                                        100,
+                                        180,
+                                        357,
+                                        100
+                                    );
+                                } else {
+                                    context.drawImage(
+                                        imgLetters,
+                                        0,
+                                        canvas.height - canvas.width * 0.269 - 20,
+                                        canvas.width,
+                                        canvas.width * 0.269
+                                    );
+                                }
                                 that.setState({ overlay: false });
                             };
                             clearInterval( refreshIntervalId );
                         }
                     }
                     callback( angle, lightOn );
-                }, timestep_ms );
+                }, 16 );
                 return refreshIntervalId;
             }
 
@@ -84,8 +141,12 @@ class SwingingLogo extends React.Component {
             var prev = 0;
             var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, function( angle, lightOn ) {
 
+                if ( coefficient == 1 ) {
+                    var rPend = canvas.height / 2;
+                } else {
+                    var rPend = canvas.height / 2 - 20;
+                }
 
-                var rPend = 150;
                 var rBall = 80;
                 var rBar = Math.min( canvas.width, canvas.height ) * 0.005;
                 var ballX = Math.sin( angle ) * rPend;
@@ -102,12 +163,22 @@ class SwingingLogo extends React.Component {
                 context.beginPath();
                 context.strokeStyle = '#838586';
                 context.lineWidth = 2;
-                context.moveTo( canvas.width / 2, 0 );
-                context.lineTo( -ballX + canvas.width / 2, ballY );
+                if ( coefficient == 1 ) {
+                    context.moveTo( canvas.width / 2, 0 );
+                    context.lineTo( -ballX + canvas.width / 2, ballY );
+                } else {
+                    context.moveTo( canvas.width * 0.699, 0 );
+                    context.lineTo( -ballX + canvas.width * 0.699, ballY );
+                }
                 context.closePath();
                 context.stroke();
 
-                context.translate( canvas.width / 2, 0 );
+                if ( coefficient == 1 ) {
+                    context.translate( canvas.width / 2, 0 );
+                } else {
+                    context.translate( canvas.width * 0.699, 0 );
+                }
+
                 context.rotate( angle );
 
                 if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
@@ -115,7 +186,24 @@ class SwingingLogo extends React.Component {
                     that.props.onEnd();
                     that.setState({ fade: true });
                 }
-                context.drawImage( img, -60, rPend, 120, 143 );
+
+                if ( coefficient == 1 ) {
+                    context.drawImage(
+                        img,
+                        -60,
+                        rPend,
+                        120,
+                        143
+                    );
+                } else {
+                    context.drawImage(
+                        img,
+                        -canvas.width * 0.314 / 2,
+                        rPend,
+                        canvas.width * 0.314,
+                        canvas.width * 0.314 * 1.196
+                    );
+                }
 
                 context.restore();
                 prev = angle;
@@ -124,9 +212,10 @@ class SwingingLogo extends React.Component {
     }
 
     render() {
+        const { canvasWidth, canvasHeight } = this.state;
         return (
             <div style={{ display: 'flex' }}>
-                <canvas className={styles.canvas} width="700" height="300" id="canvas" />
+                <canvas id="canvas" className={styles.canvas} width={canvasWidth} height={canvasHeight} />
                 {( this.state.overlay ) && <div className={classNames( 'overlay', { fade: this.state.fade })} />}
             </div>
         );

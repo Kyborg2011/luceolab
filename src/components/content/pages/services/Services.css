@@ -175,8 +175,8 @@
 
 .list li .details > a:hover {
     color: #fff !important;
-    background: #76a6b1;
-    border-color: #76a6b1;
+    background: #FF5964;
+    border-color: #FF5964;
 }
 
 .list li:hover .details {

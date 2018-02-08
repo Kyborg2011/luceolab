@@ -1,0 +1,4 @@
+.inner {
+    composes: inner from "../../../shared/styles/Layout.css";
+    width: auto;
+}

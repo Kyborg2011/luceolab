@@ -42,7 +42,7 @@ class HowWeWork extends React.Component {
                 videoWidth: width,
                 videoHeight: height,
             });
-        }, 1500 );
+        }, 2000 );
     }
 
     handleClick( e ) {
