@@ -78,6 +78,8 @@ class SwingingLogo extends React.Component {
 
             let canvas = document.getElementById( 'canvas' );
             let context = canvas.getContext( '2d' );
+            const canvasWidth = canvas.width;
+            const canvasHeight = canvas.height;
 
             function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
                 var stops = [ -60, 40, -30, 0 ];
@@ -119,9 +121,9 @@ class SwingingLogo extends React.Component {
                                     context.drawImage(
                                         imgLetters,
                                         0,
-                                        canvas.height - canvas.width * 0.269 - 20,
-                                        canvas.width,
-                                        canvas.width * 0.269
+                                        canvasHeight - canvasWidth * 0.269 - 20,
+                                        canvasWidth,
+                                        canvasWidth * 0.269
                                     );
                                 }
                                 that.setState({ overlay: false });
@@ -130,11 +132,9 @@ class SwingingLogo extends React.Component {
                         }
                     }
                     callback( angle, lightOn );
-                }, 16 );
+                }, 10 );
                 return refreshIntervalId;
             }
-
-
 
             var img = new Image();
             img.src = offLamp;
@@ -142,19 +142,19 @@ class SwingingLogo extends React.Component {
             var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, function( angle, lightOn ) {
 
                 if ( coefficient == 1 ) {
-                    var rPend = canvas.height / 2;
+                    var rPend = canvasHeight / 2;
                 } else {
-                    var rPend = canvas.height / 2 - 20;
+                    var rPend = canvasHeight / 2 - 20;
                 }
 
                 var rBall = 80;
-                var rBar = Math.min( canvas.width, canvas.height ) * 0.005;
+                var rBar = Math.min( canvasWidth, canvasHeight ) * 0.005;
                 var ballX = Math.sin( angle ) * rPend;
                 var ballY = Math.cos( angle ) * rPend;
 
                 context.fillStyle = 'rgba(255,255,255,0.51)';
                 context.globalCompositeOperation = 'destination-out';
-                context.fillRect( 0, 0, canvas.width, canvas.height );
+                context.fillRect( 0, 0, canvasWidth, canvasHeight );
 
 
                 context.globalCompositeOperation = 'source-over';
@@ -164,19 +164,19 @@ class SwingingLogo extends React.Component {
                 context.strokeStyle = '#838586';
                 context.lineWidth = 2;
                 if ( coefficient == 1 ) {
-                    context.moveTo( canvas.width / 2, 0 );
-                    context.lineTo( -ballX + canvas.width / 2, ballY );
+                    context.moveTo( canvasWidth / 2, 0 );
+                    context.lineTo( -ballX + canvasWidth / 2, ballY );
                 } else {
-                    context.moveTo( canvas.width * 0.699, 0 );
-                    context.lineTo( -ballX + canvas.width * 0.699, ballY );
+                    context.moveTo( canvasWidth * 0.699, 0 );
+                    context.lineTo( -ballX + canvasWidth * 0.699, ballY );
                 }
                 context.closePath();
                 context.stroke();
 
                 if ( coefficient == 1 ) {
-                    context.translate( canvas.width / 2, 0 );
+                    context.translate( canvasWidth / 2, 0 );
                 } else {
-                    context.translate( canvas.width * 0.699, 0 );
+                    context.translate( canvasWidth * 0.699, 0 );
                 }
 
                 context.rotate( angle );
@@ -198,10 +198,10 @@ class SwingingLogo extends React.Component {
                 } else {
                     context.drawImage(
                         img,
-                        -canvas.width * 0.314 / 2,
+                        -canvasWidth * 0.314 / 2,
                         rPend,
-                        canvas.width * 0.314,
-                        canvas.width * 0.314 * 1.196
+                        canvasWidth * 0.314,
+                        canvasWidth * 0.314 * 1.196
                     );
                 }
 
