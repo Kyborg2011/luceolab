@@ -75,7 +75,6 @@ class SwingingLogo extends React.Component {
         });
 
         animationTimeout = setTimeout(() => {
-
             let canvas = document.getElementById( 'canvas' );
             let context = canvas.getContext( '2d' );
             const canvasWidth = canvas.width;
@@ -132,6 +131,7 @@ class SwingingLogo extends React.Component {
                         }
                     }
                     callback( angle, lightOn );
+
                 }, 10 );
                 return refreshIntervalId;
             }
@@ -139,7 +139,7 @@ class SwingingLogo extends React.Component {
             var img = new Image();
             img.src = offLamp;
             var prev = 0;
-            var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, function( angle, lightOn ) {
+            let render = function( angle, lightOn ) {
 
                 if ( coefficient == 1 ) {
                     var rPend = canvasHeight / 2;
@@ -155,11 +155,9 @@ class SwingingLogo extends React.Component {
                 context.fillStyle = 'rgba(255,255,255,0.51)';
                 context.globalCompositeOperation = 'destination-out';
                 context.fillRect( 0, 0, canvasWidth, canvasHeight );
-
-
                 context.globalCompositeOperation = 'source-over';
-
                 context.save();
+
                 context.beginPath();
                 context.strokeStyle = '#838586';
                 context.lineWidth = 2;
@@ -207,7 +205,10 @@ class SwingingLogo extends React.Component {
 
                 context.restore();
                 prev = angle;
-            });
+            };
+            requestAnimationFrame( render );
+            var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, render );
+
         }, 1000 );
     }
 
