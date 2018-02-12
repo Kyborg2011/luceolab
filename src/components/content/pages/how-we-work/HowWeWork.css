@@ -40,3 +40,16 @@
     border-width: 1px;
     border-color: #fff;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .pageWrapper {
+        flex-direction: column;
+        justify-content: space-evenly;
+        top: -20px;
+    }
+    .pageWrapper a {
+        line-height: 55px;
+        font-size: 38px;
+        opacity: .4;
+    }
+}
