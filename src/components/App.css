@@ -5,8 +5,12 @@
 }
 
 @keyframes fadingoverlay {
-    0%   {opacity: 0.8;}
-    100% {opacity: 0;}
+    0%   {
+        background: #000;
+    }
+    100% {
+        background: transparent;
+    }
 }
 
 @keyframes overlay {
@@ -80,9 +84,8 @@ body, html, :global(#root) {
     width: 100%;
     height: 100%;
     z-index: 1000;
-    animation-name: overlay;
-    animation-duration: 1.2s;
-    animation-fill-mode: forwards;
+    opacity: .9;
+    background: #000;
 }
 
 :global(.blurred) {
@@ -92,14 +95,15 @@ body, html, :global(#root) {
 
 :global(.unblur) {
     filter: blur(.3px);
-    transition: 4s filter linear;
+    transition: 5s filter ease-in;
 }
 /* End of dark overlay + blur */
 
 :global(.fade) {
     animation-name: fadingoverlay;
-    animation-duration: 3s;
+    animation-duration: 6s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
 }
 
 .wrapper {

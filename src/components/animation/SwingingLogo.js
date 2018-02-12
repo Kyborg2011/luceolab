@@ -74,141 +74,140 @@ class SwingingLogo extends React.Component {
             canvasHeight: height * coefficient,
         });
 
-        animationTimeout = setTimeout(() => {
-            let canvas = document.getElementById( 'canvas' );
-            let context = canvas.getContext( '2d' );
-            const canvasWidth = canvas.width;
-            const canvasHeight = canvas.height;
+        let canvas = document.getElementById( 'canvas' );
+        let context = canvas.getContext( '2d' );
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
 
-            function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
-                var stops = [ -60, 40, -30, 0 ];
-                var velocity = 0;
-                var angle = initialAngle_rad;
-                var k = -gravity_mps2 / length_m;
-                var timestep_s = timestep_ms / 1000;
-                var zeroCount = 0;
-                var lightOn = false;
-                var refreshIntervalId = setInterval( function() {
-                    var acceleration = k * Math.sin( angle );
-                    velocity += acceleration * timestep_s;
-                    angle += velocity * timestep_s;
-                    var degrees = angle * 180 / Math.PI;
-                    degrees = Math.round( degrees % 360 );
-                    if ( degrees == stops[ 0 ]) {
-                        if ( stops[ 0 ] === 40 ) {
-                            lightOn = true;
-                        }
-                        if ( stops[ 0 ] === 0 ) {
-                            zeroCount++;
-                        } else {
-                            velocity = velocity * 0.6;
-                            stops.shift();
-                        }
-                        if ( zeroCount > 2 ) {
-                            var imgLetters = new Image();
-                            imgLetters.src = logoWithoutLamp;
-                            imgLetters.onload = () => {
-                                if ( coefficient == 1 ) {
-                                    context.drawImage(
-                                        imgLetters,
-                                        100,
-                                        180,
-                                        357,
-                                        100
-                                    );
-                                } else {
-                                    context.drawImage(
-                                        imgLetters,
-                                        0,
-                                        canvasHeight - canvasWidth * 0.269 - 20,
-                                        canvasWidth,
-                                        canvasWidth * 0.269
-                                    );
-                                }
-                                that.setState({ overlay: false });
-                            };
-                            clearInterval( refreshIntervalId );
-                        }
+        function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
+            var stops = [ -60, 40, -30, 0 ];
+            var velocity = 0;
+            var angle = initialAngle_rad;
+            var k = -gravity_mps2 / length_m;
+            var timestep_s = timestep_ms / 1000;
+            var zeroCount = 0;
+            var lightOn = false;
+            var refreshIntervalId = setInterval( function() {
+                var acceleration = k * Math.sin( angle );
+                velocity += acceleration * timestep_s;
+                angle += velocity * timestep_s;
+                var degrees = angle * 180 / Math.PI;
+                degrees = Math.round( degrees % 360 );
+                if ( degrees == stops[ 0 ]) {
+                    if ( stops[ 0 ] === 40 ) {
+                        lightOn = true;
                     }
-                    callback( angle, lightOn );
+                    if ( stops[ 0 ] === 0 ) {
+                        zeroCount++;
+                    } else {
+                        velocity = velocity * 0.6;
+                        stops.shift();
+                    }
+                    if ( zeroCount > 2 ) {
+                        var imgLetters = new Image();
+                        imgLetters.src = logoWithoutLamp;
+                        imgLetters.onload = () => {
+                            if ( coefficient == 1 ) {
+                                context.drawImage(
+                                    imgLetters,
+                                    100,
+                                    180,
+                                    357,
+                                    100
+                                );
+                            } else {
+                                context.drawImage(
+                                    imgLetters,
+                                    0,
+                                    canvasHeight - canvasWidth * 0.269 - 20,
+                                    canvasWidth,
+                                    canvasWidth * 0.269
+                                );
+                            }
+                            that.setState({ overlay: false });
+                        };
+                        clearInterval( refreshIntervalId );
+                    }
+                }
+                callback( angle, lightOn );
 
-                }, 10 );
-                return refreshIntervalId;
+            }, 10 );
+            return refreshIntervalId;
+        }
+
+        var img = new Image();
+        img.src = offLamp;
+        var prev = 0;
+        let render = function( angle, lightOn ) {
+            if ( coefficient == 1 ) {
+                var rPend = canvasHeight / 2;
+            } else {
+                var rPend = canvasHeight / 2 - 20;
             }
 
-            var img = new Image();
-            img.src = offLamp;
-            var prev = 0;
-            let render = function( angle, lightOn ) {
+            var rBall = 80;
+            var rBar = Math.min( canvasWidth, canvasHeight ) * 0.005;
+            var ballX = Math.sin( angle ) * rPend;
+            var ballY = Math.cos( angle ) * rPend;
 
-                if ( coefficient == 1 ) {
-                    var rPend = canvasHeight / 2;
-                } else {
-                    var rPend = canvasHeight / 2 - 20;
-                }
+            context.fillStyle = 'rgba(255,255,255,0.51)';
+            context.globalCompositeOperation = 'destination-out';
+            context.fillRect( 0, 0, canvasWidth, canvasHeight );
+            context.globalCompositeOperation = 'source-over';
+            context.save();
 
-                var rBall = 80;
-                var rBar = Math.min( canvasWidth, canvasHeight ) * 0.005;
-                var ballX = Math.sin( angle ) * rPend;
-                var ballY = Math.cos( angle ) * rPend;
+            context.beginPath();
+            context.strokeStyle = '#838586';
+            context.lineWidth = 2;
+            if ( coefficient == 1 ) {
+                context.moveTo( canvasWidth / 2, 0 );
+                context.lineTo( -ballX + canvasWidth / 2, ballY );
+            } else {
+                context.moveTo( canvasWidth * 0.699, 0 );
+                context.lineTo( -ballX + canvasWidth * 0.699, ballY );
+            }
+            context.closePath();
+            context.stroke();
 
-                context.fillStyle = 'rgba(255,255,255,0.51)';
-                context.globalCompositeOperation = 'destination-out';
-                context.fillRect( 0, 0, canvasWidth, canvasHeight );
-                context.globalCompositeOperation = 'source-over';
-                context.save();
+            if ( coefficient == 1 ) {
+                context.translate( canvasWidth / 2, 0 );
+            } else {
+                context.translate( canvasWidth * 0.699, 0 );
+            }
 
-                context.beginPath();
-                context.strokeStyle = '#838586';
-                context.lineWidth = 2;
-                if ( coefficient == 1 ) {
-                    context.moveTo( canvasWidth / 2, 0 );
-                    context.lineTo( -ballX + canvasWidth / 2, ballY );
-                } else {
-                    context.moveTo( canvasWidth * 0.699, 0 );
-                    context.lineTo( -ballX + canvasWidth * 0.699, ballY );
-                }
-                context.closePath();
-                context.stroke();
+            context.rotate( angle );
 
-                if ( coefficient == 1 ) {
-                    context.translate( canvasWidth / 2, 0 );
-                } else {
-                    context.translate( canvasWidth * 0.699, 0 );
-                }
+            if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
+                img.src = onLamp;
+                that.props.onEnd();
+                that.setState({ fade: true });
+            }
 
-                context.rotate( angle );
+            if ( coefficient == 1 ) {
+                context.drawImage(
+                    img,
+                    -60,
+                    rPend,
+                    120,
+                    143
+                );
+            } else {
+                context.drawImage(
+                    img,
+                    -canvasWidth * 0.314 / 2,
+                    rPend,
+                    canvasWidth * 0.314,
+                    canvasWidth * 0.314 * 1.196
+                );
+            }
 
-                if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
-                    img.src = onLamp;
-                    that.props.onEnd();
-                    that.setState({ fade: true });
-                }
+            context.restore();
+            prev = angle;
+        };
+        requestAnimationFrame( render );
 
-                if ( coefficient == 1 ) {
-                    context.drawImage(
-                        img,
-                        -60,
-                        rPend,
-                        120,
-                        143
-                    );
-                } else {
-                    context.drawImage(
-                        img,
-                        -canvasWidth * 0.314 / 2,
-                        rPend,
-                        canvasWidth * 0.314,
-                        canvasWidth * 0.314 * 1.196
-                    );
-                }
-
-                context.restore();
-                prev = angle;
-            };
-            requestAnimationFrame( render );
+        animationTimeout = setTimeout(() => {
             var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, render );
-
         }, 1000 );
     }
 
