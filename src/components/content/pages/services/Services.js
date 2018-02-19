@@ -61,8 +61,9 @@ class Services extends React.Component {
                                 With the most top-notch technologies, LuceoLab offers
                                 a robust suite of digital services, including inventive
                                 web design and development. We driven by top world standards
-                                in web. <span style={{ fontWeight: 600 }}>Our products create immediate marketing impact
-                                and increases your business revenue.</span>
+                                in web.<br />
+                                <span style={{ fontWeight: 600, textAlign: 'center', display: 'block' }}>Our products create immediate marketing impact
+                                and increases your business revenue!</span>
                             </p>
                         </div>
                         <ul className={styles.list}>

@@ -101,7 +101,7 @@ body, html, :global(#root) {
 
 :global(.fade) {
     animation-name: fadingoverlay;
-    animation-duration: 6s;
+    animation-duration: 5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
 }

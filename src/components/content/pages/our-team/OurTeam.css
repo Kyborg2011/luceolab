@@ -13,13 +13,21 @@
     height: auto;
     margin-left: 0;
     margin: 15px 0 0 0;
+    justify-content: center;
+}
+
+.subTitle {
+    composes: subTitle from "../../../shared/styles/Layout.css";
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .description {
     composes: description from "../../../shared/styles/Layout.css";
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 23px;
+    line-height: 28px;
     margin-top: 10px;
 }
 
@@ -148,18 +156,46 @@
 
 .joinUsBox {
     flex-direction: column;
-    padding: 0 30px;
+    padding: 0 10px;
     border-right: 1px #fcfdfd solid;
     border-bottom: 1px #fcfdfd solid;
 }
 
 .joinUsBox a {
-    width: 100%;
+    width: 80%;
+    border-width: 1px !important;
     height: 40px;
     line-height: 36px !important;
+    font-size: 16px;
+    letter-spacing: .75px;
+    font-weight: 300;
 }
 
 .joinUsBox a:hover {
     background-color: #fbbd63 !important;
     border-color: #fbbd63 !important;
+}
+
+.morrisonQuote {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 0;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}
+
+.ourTeamQuote {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 34px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: right;
+    margin-top: 0;
 }

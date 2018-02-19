@@ -1,7 +1,7 @@
 .mainHeadingWrapper {
     display: flex;
     flex-flow: row wrap;
-    justify-content: baseline;
+    justify-content: space-between;
     margin: 59px 0 0 94px;
 }
 
@@ -9,7 +9,7 @@
     display: flex;
     margin: 0;
     padding: 0 0 0 21px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 30px;
     color: #f1f1f1;
@@ -17,21 +17,8 @@
     background-repeat: no-repeat;
     background-size: 8px;
     background-position: left center;
-    letter-spacing: 3.5px;
-    text-transform: uppercase;
-}
-
-.h3 {
-    font-family: 'PT Sans', sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    display: flex;
-    margin: 0 0 0 8px;
-    line-height: 34px;
-    position: relative;
-    top: 4px;
-    font-size: 18px;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .mainHeadingWrapper:before {
