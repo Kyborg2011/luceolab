@@ -14,12 +14,14 @@ class Button extends React.Component {
             fontAwesomeIcon: props.fontAwesomeIcon,
             href: props.href || '',
             hasMouseWheel: props.hasMouseWheel ? true : false,
+            backgroundColor: props.backgroundColor,
         };
     }
 
     componentWillReceiveProps( nextProps ) {
         this.setState({
             label: nextProps.label,
+            backgroundColor: nextProps.backgroundColor,
         });
     }
 
@@ -31,7 +33,15 @@ class Button extends React.Component {
             iconOnHover,
             fontAwesomeIcon,
             href,
-            hasMouseWheel } = this.state;
+            hasMouseWheel,
+            backgroundColor } = this.state;
+
+        let additionalStyles = ( backgroundColor ) ?
+        {
+            backgroundColor: backgroundColor,
+            borderColor: backgroundColor,
+            transition: '10s background-color, 10s border-color, 0.4s transform',
+        } : {};
 
         let btnEl = (
             <Link to={href}
@@ -41,6 +51,7 @@ class Button extends React.Component {
                   ( reverse ) ? styles.reverse : null,
                   ( hasMouseWheel ) ? styles.withMouseWheel : null
               )}
+              style={additionalStyles}
               onClick={this.props.onClick}
             >
                 {label}

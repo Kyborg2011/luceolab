@@ -13,12 +13,22 @@
     font-weight: 600;
     font-size: 30px;
     color: #f1f1f1;
-    background-image: url('../../../assets/img/main-heading-circle.png');
-    background-repeat: no-repeat;
-    background-size: 8px;
-    background-position: left center;
     letter-spacing: 2px;
     text-transform: uppercase;
+    position: relative;
+}
+
+.h1:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    opacity: 0.6;
 }
 
 .mainHeadingWrapper:before {
@@ -36,7 +46,6 @@
 }
 
 :global(.dark-style-header) .h1 {
-    background-image: url('../../../assets/img/main-heading-circle-dark.png');
     color: #212121;
 }
 
@@ -44,15 +53,30 @@
     border-bottom-color: #212121;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+:global(.dark-style-header) .h1:before {
+    border-color: #212121;
+}
+
+@media (max-width: 767px) {
     .mainHeadingWrapper {
-        margin: 30px 0 20px 0;
+        margin: 30px 0 0 0;
     }
     .mainHeadingWrapper:before {
         width: 15px;
     }
     .h1 {
-        font-size: 30px;
+        font-size: 20px;
         letter-spacing: 2.5px;
+    }
+    .h1:before {
+        width: 4px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #fff;
+        opacity: 1;
+    }
+    :global(.dark-style-header) .h1:before {
+        background-color: #212121;
+        border-color: #212121;
     }
 }

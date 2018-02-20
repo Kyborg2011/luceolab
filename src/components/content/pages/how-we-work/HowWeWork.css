@@ -49,7 +49,6 @@
     }
     .pageWrapper a {
         line-height: 55px;
-        font-size: 38px;
-        opacity: .4;
+        font-size: 24px;
     }
 }

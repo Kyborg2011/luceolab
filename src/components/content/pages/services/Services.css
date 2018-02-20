@@ -272,3 +272,23 @@
     opacity: 1;
     transition: opacity .5s;
 }
+
+@media (max-width: 767px) {
+    .inner {
+        width: 100%;
+    }
+    .list {
+        flex-flow: wrap;
+        justify-content: left;
+        margin: 20px 0 0 0;
+    }
+    .list li {
+        display: flex;
+        flex: none;
+        width: 50%;
+        height: 50%;
+    }
+    .list li h4 {
+        margin: 15px 0 0 0;
+    }
+}
