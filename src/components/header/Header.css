@@ -37,11 +37,10 @@
 
 .headerLogo:before {
     content: '';
-    height: 43px;
-    width: 43px;
-    background-image: url('../../assets/img/logo-ic.png');
-    background-size: 30px 35px;
-    background-position: center;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/img/logo.svg');
+    background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
