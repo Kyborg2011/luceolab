@@ -130,7 +130,7 @@
     background-size: 100%;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
     .primaryNav a.requestBtn,
     .primaryNav a.languageBtn {
         display: none !important;

@@ -59,7 +59,7 @@
     flex-flow: column wrap;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
     .homepageMainPhrase {
         font-size: 25px;
         line-height: 40px;

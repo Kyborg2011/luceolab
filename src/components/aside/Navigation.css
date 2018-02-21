@@ -111,7 +111,7 @@
     transition: border 0.2s;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
     .secondaryNavigation {
         display: none;
     }

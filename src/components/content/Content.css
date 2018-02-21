@@ -22,6 +22,7 @@
     margin: 0 152px 43px 152px;
     width: 100%;
     display: flex;
+    z-index: 100;
 }
 
 .transitionGroup > div, .transitionGroup > div > div {
@@ -57,7 +58,7 @@
     animation: slide-downer 1s forwards;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
     .transitionGroup {
         margin: 0 15px;
     }

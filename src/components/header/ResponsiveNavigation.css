@@ -137,7 +137,7 @@
   transform: scale(0.75) rotate(45deg);
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
     .navicon-button {
         display: flex;
     }
