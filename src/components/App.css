@@ -91,6 +91,7 @@ body, html, :global(#root) {
 :global(.blurred) {
     filter: blur(10px);
     backface-visibility: hidden;
+    will-change: filter;
 }
 
 :global(.unblur) {

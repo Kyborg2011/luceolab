@@ -22,7 +22,7 @@
     margin: 0 152px 43px 152px;
     width: 100%;
     display: flex;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .transitionGroup > div, .transitionGroup > div > div {
@@ -40,22 +40,26 @@
     transform: translate3d(0, 100%, 0);
     animation: slide-up 1s forwards;
     animation-delay: 1s;
+    will-change: transform;
 }
 
 :global(.bottom-up .slide-transition-exit) {
     transform: translate3d(0, 0, 0);
     animation: slide-upper 1s forwards;
+    will-change: transform;
 }
 
 :global(.top-down .slide-transition-enter) {
     transform: translate3d(0, -100%, 0);
     animation: slide-up 1s forwards;
     animation-delay: 1s;
+    will-change: transform;
 }
 
 :global(.top-down .slide-transition-exit) {
     transform: translate3d(0, 0, 0);
     animation: slide-downer 1s forwards;
+    will-change: transform;
 }
 
 @media (max-width: 767px) {

@@ -41,7 +41,9 @@
     border-color: #fff;
 }
 
-@media (max-width: 1024px) {
+@media only screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
     .pageWrapper {
         flex-direction: column;
         justify-content: space-evenly;

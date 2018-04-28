@@ -199,3 +199,71 @@
     text-align: right;
     margin-top: 0;
 }
+
+@media (max-width: 767px) {
+    .pageWrapper {
+        padding: 0;
+    }
+    .inner {
+        width: 100%;
+        margin: 0;
+    }
+    .teamMember {
+        width: 33%;
+        height: 25%;
+    }
+    .teamMember:nth-child(4),
+    .teamMember:nth-child(5),
+    .teamMember:nth-child(6) {
+        padding-top: 0;
+    }
+    .morrisonQuote {
+        font-size: 14px;
+        padding-bottom: 0;
+    }
+    .joinUsBox a {
+        display: none;
+    }
+    .memberInfoWrap {
+        height: 90%;
+    }
+    .memberName, .memberPosition, .memberSocialLinks a {
+        font-size: 14px;
+    }
+    .teamMember:nth-child(3) {
+        background: transparent;
+    }
+    .teamMember:nth-child(4), .teamMember:nth-child(6) {
+        background: #fff;
+    }
+}
+
+@media (max-width: 360px) {
+    .description {
+        margin: 5px 0 0;
+        line-height: 23px;
+        font-size: 13px;
+    }
+}
+
+@media only screen
+    and (max-width: 767px)
+    and (orientation: landscape) {
+    .pageWrapper {
+        justify-content: space-evenly;
+        margin: 15px 0;
+    }
+    .inner {
+        display: none;
+    }
+    .teamMember {
+        width: 33%;
+        height: 50%;
+    }
+    .teamMember:nth-child(3) {
+        background: transparent;
+    }
+    .teamMember:nth-child(4), .teamMember:nth-child(6) {
+        background: #fff;
+    }
+}

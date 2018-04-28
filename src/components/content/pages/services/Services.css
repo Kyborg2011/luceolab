@@ -21,7 +21,7 @@
 
 .description {
     composes: description from "../../../shared/styles/Layout.css";
-    line-height: 27px;
+    line-height: 23px;
     font-weight: 400;
 }
 
@@ -75,25 +75,8 @@
     color: #fff;
 }
 
-.list li:hover h4 {
-    color: #212121;
-    margin: 12px 0 0 0;
-    transition: margin 0.5s 0.2s, color 0.5s 0.2s;
-}
-
-.list li:hover .icon {
-    background: #212121;
-    transition: background 0.5s 0.2s, border-color 0.5s 0.2s;
-    border-color: #212121;
-}
-
 .list li .icon img {
     transition: filter 0.5s;
-}
-
-.list li:hover .icon img {
-    transition: filter 0.5s 0.2s;
-    filter: invert(100%);
 }
 
 .details {
@@ -120,12 +103,6 @@
     box-sizing: border-box;
 }
 
-.list li:hover .details:before {
-    border: 3px solid #fdb951;
-    background: #fff;
-    transition: border 0.5s 0.5s, background 0.5s 0.5s;
-}
-
 .details:after {
     content: '';
     position: absolute;
@@ -139,12 +116,6 @@
     box-sizing: border-box;
     border-radius: 4px;
     z-index: 200;
-    transition: border .5s, background .5s;
-}
-
-.list li:hover .details:after {
-    background: #fdb951;
-    border: 1px solid #fdb951;
     transition: border .5s, background .5s;
 }
 
@@ -167,21 +138,10 @@
     overflow: hidden;
 }
 
-.list li:hover .details > a:last-child {
-    color: #fff;
-    opacity: 1;
-    transition: opacity 0.5s 0.2s;
-}
-
 .list li .details > a:hover {
     color: #fff !important;
     background: #FF5964;
     border-color: #FF5964;
-}
-
-.list li:hover .details {
-    height: 70px;
-    transition: height 0.5s;
 }
 
 .details p {
@@ -191,10 +151,6 @@
     height: 0;
     font-weight: 300;
     width: 100%;
-}
-
-.list li:hover .details {
-    display: flex;
 }
 
 .details > a {
@@ -261,16 +217,101 @@
 
 .technoligiesList img {
     display: inline-block;
-    height: 100%;
+    max-height: 100%;
     filter: grayscale(100%);
     opacity: .6;
     transition: opacity .5s;
+    max-width: 100%;
 }
 
 .technoligiesList a:hover img {
     filter: none;
     opacity: 1;
     transition: opacity .5s;
+}
+
+.modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(231,229,221,.95);
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .3s ease-in-out,opacity .3s ease-in-out;
+    transition-delay: 250ms;
+    z-index: 1000;
+}
+
+.activeModal {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.modalContainer {
+    padding: 70px 15px 15px;
+    height: 100%;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+.modalContainer p {
+    line-height: 23px;
+    font-weight: 400;
+}
+
+:global(#close-modal) {
+    font-size: 30px;
+    color: #212121;
+}
+
+@media (min-width: 767px) {
+    .list li:hover .details:before {
+        border: 3px solid #fdb951;
+        background: #fff;
+        transition: border 0.5s 0.5s, background 0.5s 0.5s;
+    }
+
+    .list li:hover .details:after {
+        background: #fdb951;
+        border: 1px solid #fdb951;
+        transition: border .5s, background .5s;
+    }
+
+    .list li:hover .details > a:last-child {
+        color: #fff;
+        opacity: 1;
+        transition: opacity 0.5s 0.2s;
+    }
+
+    .list li:hover .details {
+        height: 70px;
+        transition: height 0.5s;
+    }
+
+    .list li:hover .details {
+        display: flex;
+    }
+
+    .list li:hover h4 {
+        color: #212121;
+        margin: 12px 0 0 0;
+        transition: margin 0.5s 0.2s, color 0.5s 0.2s;
+    }
+
+    .list li:hover .icon {
+        background: #212121;
+        transition: background 0.5s 0.2s, border-color 0.5s 0.2s;
+        border-color: #212121;
+    }
+
+    .list li:hover .icon img {
+        transition: filter 0.5s 0.2s;
+        filter: invert(100%);
+    }
 }
 
 @media (max-width: 767px) {
@@ -290,5 +331,58 @@
     }
     .list li h4 {
         margin: 15px 0 0 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .list li h4 {
+        font-size: 13px;
+    }
+}
+
+@media only screen
+    and (max-width: 767px)
+    and (orientation: landscape) {
+    .list li {
+        width: 25%;
+    }
+
+    .list li h4 {
+        font-size: 12px;
+        margin: 5px 0 0 0;
+    }
+
+    .list li .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .list li .icon img {
+        max-width: 20px;
+    }
+
+    .listInnerWrapper {
+        padding-bottom: 10px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .modalContainer {
+        padding: 50px 10px 10px;
+    }
+
+    .modalContainer p {
+        margin-top: 0;
+    }
+
+    :global(#modal-content p) {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .technoligiesList {
+        height: 50px;
     }
 }

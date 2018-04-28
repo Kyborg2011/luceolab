@@ -66,6 +66,8 @@
 
 .serviceClose > div {
     animation-name: service-close;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 .serviceOpen > div > div {
@@ -155,4 +157,8 @@
     display: flex;
     transition: opacity 3s 1s;
     margin-top: 0 !important;
+}
+
+@media (max-width: 767px) {
+    
 }

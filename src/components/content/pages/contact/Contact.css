@@ -75,7 +75,6 @@
 }
 
 .formWrapper a:hover {
-    margin-top: 63px;
     color: #fff !important;
     border-color: #fbbd63;
 }
@@ -139,4 +138,75 @@
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media only screen
+    and (max-width: 767px)
+    and (orientation: portrait) {
+    .contactsWrapper {
+        margin: 10px 0;
+        flex-direction: column;
+    }
+
+    .info {
+        order: 2;
+        margin-top: 30px;
+        min-width: auto;
+    }
+
+    .socialNetworks {
+        justify-content: center;
+    }
+
+    .socialNetworks li {
+        margin: 0 20px;
+    }
+
+    .formWrapper {
+        order: 1;
+        width: 100%;
+    }
+
+    .info p {
+        margin: 5px 0;
+    }
+
+    .formWrapper input {
+        margin-top: 0;
+    }
+
+    .formWrapper a {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media only screen
+    and (max-width: 767px)
+    and (orientation: landscape) {
+    .contactsWrapper {
+        margin: 10px 0;
+        flex-direction: row;
+    }
+
+    .formWrapper input, .formWrapper textarea {
+        padding: 10px 0;
+    }
+
+    .info {
+        min-width: auto;
+    }
+
+    .info p {
+        margin: 5px 0;
+    }
+
+    .formWrapper input {
+        margin-top: 0;
+    }
+
+    .formWrapper a {
+        margin-top: 20px;
+        width: 100%;
+    }
 }
