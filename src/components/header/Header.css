@@ -114,14 +114,18 @@
 }
 
 .telegramIcon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: url('../../assets/img/icons/telegram-logo.png');
     background-size: 100%;
     align-self: center;
 }
 
-.githubIcon {
+a.githubIcon {
+    font-size: 18px;
+}
+
+a.instagramIcon {
     font-size: 18px;
 }
 

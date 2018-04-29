@@ -45,7 +45,7 @@ class Header extends React.Component {
                         <i className="fa fa-envelope-open-o" aria-hidden="true" />
                     </a>
                     <a href="#" target="_blank" className={styles.telegramIcon} />
-                    <a href="#" target="_blank">
+                    <a href="#" target="_blank" className={styles.instagramIcon}>
                         <i className="fa fa-instagram" aria-hidden="true" />
                     </a>
                     <a className={styles.facebookIcon} href="#" target="_blank">

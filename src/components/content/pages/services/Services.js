@@ -36,16 +36,16 @@ class Services extends React.Component {
     }
 
     componentDidMount() {
-        let list = document.getElementsByClassName(styles.list);
-        let modalContent = document.getElementById('modal-content').getElementsByTagName('p')[0];
-        let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        if (width < 767) {
-            console.log(list.length);
-            let listElements = list[0].childNodes;
-            listElements.forEach((val) => {
-                val.addEventListener( "click", (e) => {
+        let list = document.getElementsByClassName( styles.list );
+        let modalContent = document.getElementById( 'modal-content' ).getElementsByTagName( 'p' )[ 0 ];
+        let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
+        if ( width < 767 ) {
+            console.log( list.length );
+            let listElements = list[ 0 ].childNodes;
+            listElements.forEach(( val ) => {
+                val.addEventListener( 'click', ( e ) => {
                     e.preventDefault();
-                    modalContent.innerHTML = val.getElementsByTagName('div')[0].getElementsByTagName('div')[0].getElementsByTagName('p')[0].innerHTML;
+                    modalContent.innerHTML = val.getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'p' )[ 0 ].innerHTML;
                     this.setState({
                         isModalActive: styles.activeModal,
                     });
@@ -98,7 +98,7 @@ class Services extends React.Component {
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 0 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                    }, 2000);
+                                    }, 2000 );
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
@@ -142,7 +142,7 @@ class Services extends React.Component {
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                    }, 2000);
+                                    }, 2000 );
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
@@ -170,7 +170,7 @@ class Services extends React.Component {
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 2 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                    }, 2000);
+                                    }, 2000 );
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p />
@@ -192,7 +192,7 @@ class Services extends React.Component {
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 3 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                    }, 2000);
+                                    }, 2000 );
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
@@ -223,15 +223,15 @@ class Services extends React.Component {
                 {( opennedServiceIndex != -1 ) && (
                     <div className={styles.overlay} />
                 )}
-                <div className={classNames(styles.modal, isModalActive)}>
+                <div className={classNames( styles.modal, isModalActive )}>
                     <div className={styles.modalContainer}>
-                        <a href="" id="close-modal" onClick={(e) => {
+                        <a href="" id="close-modal" onClick={( e ) => {
                             e.preventDefault();
                             this.setState({
                                 isModalActive: '',
                             });
                         }}>
-                            <i className="fa fa-times" aria-hidden="true"></i>
+                            <i className="fa fa-times" aria-hidden="true" />
                         </a>
                         <div id="modal-content"><p/></div>
                         <Button label={'free request'} onClick={( e ) => {
