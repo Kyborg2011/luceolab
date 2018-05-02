@@ -261,6 +261,7 @@
 .modalContainer p {
     line-height: 23px;
     font-weight: 400;
+    text-align: justify;
 }
 
 :global(#close-modal) {
@@ -318,19 +319,26 @@
     .inner {
         width: 100%;
     }
+
     .list {
         flex-flow: wrap;
         justify-content: left;
         margin: 20px 0 0 0;
     }
+
     .list li {
         display: flex;
         flex: none;
         width: 50%;
         height: 50%;
     }
+
     .list li h4 {
         margin: 15px 0 0 0;
+    }
+
+    .details:after {
+        display: none;
     }
 }
 

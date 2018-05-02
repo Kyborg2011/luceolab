@@ -251,6 +251,8 @@ class SwingingLogo extends React.Component {
 
         var img = new Image();
         img.src = offLamp;
+        var img2 = new Image();
+        img2.src = onLamp;
         var prev = 0;
         let render = function( angle, lightOn ) {
             if ( width == maxCanvasWidth ) {
@@ -292,7 +294,7 @@ class SwingingLogo extends React.Component {
             context.rotate( angle );
 
             if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
-                img.src = onLamp;
+                img = img2;
                 that.props.onEnd();
                 that.setState({ fade: true });
             }

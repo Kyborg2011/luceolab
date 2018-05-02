@@ -120,7 +120,7 @@ class Services extends React.Component {
                                                 <img src={require( '../../../../assets/img/icons/docker.svg' )} />
                                             </a>
                                             <a href="https://symfony.com/" title="Symfony" target="_blank" style={{ padding: 0, top: '13px', position: 'relative' }}>
-                                                <img src={require( '../../../../assets/img/icons/symfony.svg' )} />
+                                                <img src={require( '../../../../assets/img/icons/symfony.png' )} />
                                             </a>
                                         </span>
                                     </p>

@@ -77,6 +77,20 @@ class HowWeWork extends React.Component {
                                   allowFullScreen
                                 />
                             )}
+                            {( !videoWidth || !videoHeight ) && (
+                                <div className={styles.ldsGear}>
+                                    <div>
+                                        <div/>
+                                        <div/>
+                                        <div/>
+                                        <div/>
+                                        <div/>
+                                        <div/>
+                                        <div/>
+                                        <div/>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                         <Link to="/services">
                             <i className="fa fa-chevron-circle-right" aria-hidden="true" />
