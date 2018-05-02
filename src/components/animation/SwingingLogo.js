@@ -160,19 +160,21 @@ class SwingingLogo extends React.Component {
         let height = maxCanvasHeight;
         let width = document.getElementById( 'root' ).clientWidth - 30;
         width = Math.min( width, maxCanvasWidth );
-        let coefficient = width / maxCanvasWidth;
-        if ( coefficient != 1 ) {
-            coefficient *= 1.5;
+
+        if ( width !== maxCanvasWidth ) {
+            width = 290;
+            height = document.getElementById( 'root' ).clientHeight * 0.4;
         }
+
         this.setState({
             canvasWidth: width,
-            canvasHeight: height * coefficient,
+            canvasHeight: height,
         });
 
         let canvas = document.getElementById( 'canvas' );
         let context = canvas.getContext( '2d' );
-        const canvasWidth = canvas.width;
-        const canvasHeight = canvas.height;
+        const canvasWidth = width;
+        const canvasHeight = height;
 
         function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
             var stops = [ -60, 40, -30, 0 ];
@@ -203,7 +205,7 @@ class SwingingLogo extends React.Component {
                         var imgLetters = new Image();
                         imgLetters.src = logoWithoutLamp;
                         imgLetters.onload = () => {
-                            if ( coefficient == 1 ) {
+                            if ( width === maxCanvasWidth ) {
                                 context.drawImage(
                                     imgLetters,
                                     100,
@@ -251,10 +253,10 @@ class SwingingLogo extends React.Component {
         img.src = offLamp;
         var prev = 0;
         let render = function( angle, lightOn ) {
-            if ( coefficient == 1 ) {
+            if ( width == maxCanvasWidth ) {
                 var rPend = canvasHeight / 2;
             } else {
-                var rPend = canvasHeight / 2 - 20;
+                var rPend = canvasHeight - canvasWidth * 0.3  - 30;
             }
 
             var rBall = 80;
@@ -271,7 +273,7 @@ class SwingingLogo extends React.Component {
             context.beginPath();
             context.strokeStyle = '#838586';
             context.lineWidth = 2;
-            if ( coefficient == 1 ) {
+            if ( width == maxCanvasWidth ) {
                 context.moveTo( canvasWidth / 2, 0 );
                 context.lineTo( -ballX + canvasWidth / 2, ballY );
             } else {
@@ -281,7 +283,7 @@ class SwingingLogo extends React.Component {
             context.closePath();
             context.stroke();
 
-            if ( coefficient == 1 ) {
+            if ( width == maxCanvasWidth ) {
                 context.translate( canvasWidth / 2, 0 );
             } else {
                 context.translate( canvasWidth * 0.699, 0 );
@@ -295,7 +297,7 @@ class SwingingLogo extends React.Component {
                 that.setState({ fade: true });
             }
 
-            if ( coefficient == 1 ) {
+            if ( width == maxCanvasWidth ) {
                 context.drawImage(
                     img,
                     -60,
