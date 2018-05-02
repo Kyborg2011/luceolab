@@ -12,6 +12,101 @@ let animationTimeout = null;
 const maxCanvasWidth = 700;
 const maxCanvasHeight = 300;
 
+var Animation = function( canvasId ) {
+    this.canvas = document.getElementById( canvasId );
+    this.context = this.canvas.getContext( '2d' );
+
+    /* Start point */
+    this.t = 3000;
+    this.timeInterval = 0;
+    this.startTime = 0;
+    this.lastTime = 0;
+    this.frame = 0;
+    this.animating = false;
+
+    window.requestAnimFrame = ( function( callback ) {
+        return window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      function( callback ) {
+          window.setTimeout( callback, 1000 / 60 );
+      };
+    })();
+};
+
+Animation.prototype.getContext = function() {
+    return this.context;
+};
+
+Animation.prototype.getCanvas = function() {
+    return this.canvas;
+};
+
+Animation.prototype.clear = function() {
+    this.context.clearRect( 0, 0, this.canvas.width, this.canvas.height );
+};
+
+Animation.prototype.setStage = function( func ) {
+    this.stage = func;
+};
+
+Animation.prototype.isAnimating = function() {
+    return this.animating;
+};
+
+Animation.prototype.getFrame = function() {
+    return this.frame;
+};
+
+Animation.prototype.start = function() {
+    this.animating = true;
+    var date = new Date();
+    this.startTime = date.getTime();
+    this.lastTime = this.startTime;
+
+    if ( this.stage !== undefined ) {
+        this.stage();
+    }
+
+    this.animationLoop();
+};
+
+Animation.prototype.stop = function() {
+    this.animating = false;
+};
+
+Animation.prototype.getTimeInterval = function() {
+    return this.timeInterval;
+};
+
+Animation.prototype.getTime = function() {
+    return this.t;
+};
+
+Animation.prototype.getFps = function() {
+    return this.timeInterval > 0 ? 1000 / this.timeInterval : 0;
+};
+
+Animation.prototype.animationLoop = function() {
+    var that = this;
+
+    this.frame++;
+    var date = new Date();
+    var thisTime = date.getTime();
+    this.timeInterval = thisTime - this.lastTime;
+    this.t += this.timeInterval;
+    this.lastTime = thisTime;
+
+    if ( this.stage !== undefined ) {
+        this.stage();
+    }
+
+    if ( this.animating ) {
+        window.requestAnimFrame( function() {
+            that.animationLoop();
+        });
+    }
+};
+
 class SwingingLogo extends React.Component {
     constructor( props ) {
         super( props );
@@ -87,7 +182,8 @@ class SwingingLogo extends React.Component {
             var timestep_s = timestep_ms / 1000;
             var zeroCount = 0;
             var lightOn = false;
-            var refreshIntervalId = setInterval( function() {
+
+            var func = function() {
                 var acceleration = k * Math.sin( angle );
                 velocity += acceleration * timestep_s;
                 angle += velocity * timestep_s;
@@ -129,9 +225,25 @@ class SwingingLogo extends React.Component {
                         clearInterval( refreshIntervalId );
                     }
                 }
-                callback( angle, lightOn );
+                window.requestAnimFrame( function() {
+                    callback( angle, lightOn );
+                });
+            };
 
+            window.requestAnimFrame = ( function( func ) {
+                return window.requestAnimationFrame ||
+              window.webkitRequestAnimationFrame ||
+              function( func ) {
+                  func();
+              };
+            })();
+
+            var refreshIntervalId = setInterval(() => {
+                window.requestAnimFrame( function() {
+                    func();
+                });
             }, 10 );
+
             return refreshIntervalId;
         }
 
@@ -204,11 +316,57 @@ class SwingingLogo extends React.Component {
             context.restore();
             prev = angle;
         };
-        requestAnimationFrame( render );
 
         animationTimeout = setTimeout(() => {
             var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, render );
         }, 1000 );
+
+        /*
+        animationTimeout = setTimeout(() => {
+            //var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, render );
+            // instantiate new Animation object
+            var anim = new Animation( 'canvas' );
+            var context = anim.getContext();
+            var canvas = anim.getCanvas();
+            var img = new Image();
+            img.src = offLamp;
+
+            var amplitude = -Math.PI * 0.6;
+            var period = 4000;
+            var theta = 0;
+            var pendulumLength = 150;
+            var pendulumWidth = 2;
+            var rotationPointX = canvas.width / 2;
+            var rotationPointY = 0;
+
+            anim.setStage( function() {
+                theta = ( amplitude * Math.sin(( 2 * Math.PI * this.getTime()) / period )) + Math.PI / 2;
+                this.clear();
+
+                context.beginPath();
+                var endPointX = rotationPointX + ( pendulumLength * Math.cos( theta ));
+                var endPointY = rotationPointY + ( pendulumLength * Math.sin( theta ));
+                context.beginPath();
+                context.moveTo( rotationPointX, rotationPointY );
+                context.lineTo( endPointX, endPointY );
+                context.lineWidth = pendulumWidth;
+                context.strokeStyle = '#838586';
+                context.stroke();
+
+                context.translate( endPointX, endPointY );
+                context.rotate( theta - Math.PI / 2 );
+                context.drawImage(
+                    img,
+                    -60,
+                    0,
+                    120,
+                    143
+                );
+                context.rotate( -theta + Math.PI / 2 );
+                context.translate( -endPointX, -endPointY );
+            });
+            anim.start();
+        }, 1000 );*/
     }
 
     render() {
