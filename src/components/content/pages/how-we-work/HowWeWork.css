@@ -110,7 +110,7 @@
 .ldsGear {
     width: 25px !important;
     height: 25px !important;
-    opacity: 0.7;
+    opacity: 0.6;
     transform: translate(-45px, -45px) scale(0.45) translate(45px, 45px);
 }
 
@@ -127,6 +127,21 @@
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
+    .videoContainer {
+        margin: 0;
+    }
+
+    .ldsGear {
+        position: relative;
+        left: -15px;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
     .videoContainer {
         margin: 0;
     }

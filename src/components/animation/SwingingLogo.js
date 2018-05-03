@@ -9,8 +9,8 @@ import onLamp from '../../assets/img/logo-lamp-on-large.png';
 import logoWithoutLamp from '../../assets/img/logo-without-lamp.png';
 
 let animationTimeout = null;
-const maxCanvasWidth = 700;
-const maxCanvasHeight = 300;
+const MAX_CANVAS_WIDTH = 700;
+const MAX_CANVAS_HEIGHT = 300;
 
 var Animation = function( canvasId ) {
     this.canvas = document.getElementById( canvasId );
@@ -114,8 +114,8 @@ class SwingingLogo extends React.Component {
             overlay: true,
             fade: false,
             isAnimation: props.animation,
-            canvasWidth: maxCanvasWidth,
-            canvasHeight: maxCanvasHeight,
+            canvasWidth: MAX_CANVAS_WIDTH,
+            canvasHeight: MAX_CANVAS_HEIGHT,
         };
     }
 
@@ -128,27 +128,68 @@ class SwingingLogo extends React.Component {
             nextProps.onCancelAnimation();
 
             setTimeout(() => {
+                let height = MAX_CANVAS_HEIGHT;
+                let width = document.getElementById( 'root' ).clientWidth - 30;
+                width = Math.min( width, MAX_CANVAS_WIDTH );
+
+                if ( width !== MAX_CANVAS_WIDTH ) {
+                    width = 290;
+                    height = document.getElementById( 'root' ).clientHeight * 0.4;
+                }
+
+                this.setState({
+                    canvasWidth: width,
+                    canvasHeight: height,
+                });
+
                 let canvas = document.getElementById( 'canvas' );
                 let context = canvas.getContext( '2d' );
+                const canvasWidth = width;
+                const canvasHeight = height;
 
                 var imgSymbols = new Image();
                 imgSymbols.src = logoWithoutLamp;
                 imgSymbols.onload = () => {
-                    context.drawImage( imgSymbols, 100, 180, 357, 100 );
+                    if ( width === MAX_CANVAS_WIDTH ) {
+                        context.drawImage(
+                            imgSymbols,
+                            100,
+                            180,
+                            357,
+                            100
+                        );
+                    } else {
+                        context.drawImage(
+                            imgSymbols,
+                            0,
+                            canvasHeight - canvasWidth * 0.269 - 20,
+                            canvasWidth,
+                            canvasWidth * 0.269
+                        );
+                    }
                 };
 
                 context.beginPath();
                 context.strokeStyle = '#838586';
                 context.lineWidth = 2;
-                context.moveTo( canvas.width / 2, 0 );
-                context.lineTo( 350, 150 );
+                if ( width == MAX_CANVAS_WIDTH ) {
+                    context.moveTo( canvasWidth / 2, 0 );
+                    context.lineTo( 350, 150 );
+                } else {
+                    context.moveTo( canvasWidth * 0.699, 0 );
+                    context.lineTo( canvasWidth * 0.699, 115 );
+                }
                 context.closePath();
                 context.stroke();
 
                 var img = new Image();
                 img.src = onLamp;
                 img.onload = () => {
-                    context.drawImage( img, 290, 150, 120, 143 );
+                    if ( width == MAX_CANVAS_WIDTH ) {
+                        context.drawImage( img, 290, 150, 120, 143 );
+                    } else {
+                        context.drawImage( img, 157, 115, 91, 108 );
+                    }
                 };
             }, 500 );
         }
@@ -157,11 +198,11 @@ class SwingingLogo extends React.Component {
     componentDidMount() {
         var that = this;
 
-        let height = maxCanvasHeight;
+        let height = MAX_CANVAS_HEIGHT;
         let width = document.getElementById( 'root' ).clientWidth - 30;
-        width = Math.min( width, maxCanvasWidth );
+        width = Math.min( width, MAX_CANVAS_WIDTH );
 
-        if ( width !== maxCanvasWidth ) {
+        if ( width !== MAX_CANVAS_WIDTH ) {
             width = 290;
             height = document.getElementById( 'root' ).clientHeight * 0.4;
         }
@@ -205,7 +246,7 @@ class SwingingLogo extends React.Component {
                         var imgLetters = new Image();
                         imgLetters.src = logoWithoutLamp;
                         imgLetters.onload = () => {
-                            if ( width === maxCanvasWidth ) {
+                            if ( width === MAX_CANVAS_WIDTH ) {
                                 context.drawImage(
                                     imgLetters,
                                     100,
@@ -255,7 +296,7 @@ class SwingingLogo extends React.Component {
         img2.src = onLamp;
         var prev = 0;
         let render = function( angle, lightOn ) {
-            if ( width == maxCanvasWidth ) {
+            if ( width == MAX_CANVAS_WIDTH ) {
                 var rPend = canvasHeight / 2;
             } else {
                 var rPend = canvasHeight - canvasWidth * 0.3  - 30;
@@ -275,7 +316,7 @@ class SwingingLogo extends React.Component {
             context.beginPath();
             context.strokeStyle = '#838586';
             context.lineWidth = 2;
-            if ( width == maxCanvasWidth ) {
+            if ( width == MAX_CANVAS_WIDTH ) {
                 context.moveTo( canvasWidth / 2, 0 );
                 context.lineTo( -ballX + canvasWidth / 2, ballY );
             } else {
@@ -285,7 +326,7 @@ class SwingingLogo extends React.Component {
             context.closePath();
             context.stroke();
 
-            if ( width == maxCanvasWidth ) {
+            if ( width == MAX_CANVAS_WIDTH ) {
                 context.translate( canvasWidth / 2, 0 );
             } else {
                 context.translate( canvasWidth * 0.699, 0 );
@@ -299,7 +340,7 @@ class SwingingLogo extends React.Component {
                 that.setState({ fade: true });
             }
 
-            if ( width == maxCanvasWidth ) {
+            if ( width == MAX_CANVAS_WIDTH ) {
                 context.drawImage(
                     img,
                     -60,

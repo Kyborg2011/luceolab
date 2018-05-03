@@ -253,18 +253,30 @@
         justify-content: space-evenly;
         margin: 15px 0;
     }
+
     .inner {
         display: none;
     }
+
     .teamMember {
         width: 33%;
         height: 50%;
     }
+
     .teamMember:nth-child(3) {
         background: transparent;
     }
+
     .teamMember:nth-child(4), .teamMember:nth-child(6) {
         background: #fff;
+    }
+
+    .memberSocialLinks {
+        bottom: 5px;
+    }
+
+    .morrisonQuote {
+        margin: 0;
     }
 }
 
@@ -279,5 +291,9 @@
 
     .inner {
         margin-bottom: 15px;
+    }
+
+    .morrisonQuote {
+        margin: 0;
     }
 }

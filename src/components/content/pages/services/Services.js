@@ -104,14 +104,14 @@ class Services extends React.Component {
                                     <p>
                                         We create beautiful custom‑designed websites with unique UX, well-understood for everyone.
                                         Through continually improving our skills, we are not afraid to use the latest trends in the world of web developing.
-                                        <span style={{ color: '#fbbd63', fontWeight: 'bold' }}> Our agency driven by the main single principle - the clarity of vision.</span>&nbsp;
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}> Our agency driven by the main single principle - the clarity of vision.</span>&nbsp;
                                         Due to that we find the necessary balance between the complexity of the selected technologies and the real need for each individual project.<br/>
                                         <span style={{ textAlign: 'center', display: 'block' }}>
                                             Some technologies that inspire us:
                                         </span>
                                         <span className={styles.technoligiesList}>
                                             <a href="https://reactjs.org/" title="ReactJS" target="_blank">
-                                                <img src={require( '../../../../assets/img/icons/react-js.png' )} />
+                                                <img style={{ height: '50px;' }} src={require( '../../../../assets/img/icons/react-js.png' )} />
                                             </a>
                                             <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" title="ECMAScript 2015" target="_blank">
                                                 <img src={require( '../../../../assets/img/icons/es6.svg' )} />
@@ -119,7 +119,7 @@ class Services extends React.Component {
                                             <a href="https://www.docker.com/" title="Docker" target="_blank">
                                                 <img src={require( '../../../../assets/img/icons/docker.svg' )} />
                                             </a>
-                                            <a href="https://symfony.com/" title="Symfony" target="_blank" style={{ padding: 0, top: '13px', position: 'relative' }}>
+                                            <a href="https://symfony.com/" title="Symfony" target="_blank">
                                                 <img src={require( '../../../../assets/img/icons/symfony.png' )} />
                                             </a>
                                         </span>
