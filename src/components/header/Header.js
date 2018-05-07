@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.css';
 import Button from '../button/Button';
+import Form from '../request/Form';
 import ResponsiveNavigation from './ResponsiveNavigation';
 
 const additionalColors = [
@@ -55,7 +56,7 @@ class Header extends React.Component {
                       title="We are Open Sourced!">
                         <i className="fa fa-github" aria-hidden="true" />
                     </a>
-                    <Button backgroundColor={backgroundColor} className={styles.requestBtn} label="send a request" />
+                    <Form backgroundColor={backgroundColor} label={'send a request'} />
                 </nav>
                 <ResponsiveNavigation />
             </header>

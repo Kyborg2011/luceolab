@@ -51,9 +51,10 @@
 .primaryNav {
     align-self: baseline;
     display: flex;
+    padding-right: 189px;
 }
 
-.primaryNav a {
+.primaryNav > a {
     line-height: 43px;
     margin: 0 10px;
     color: #212121;
@@ -64,32 +65,9 @@
     transition: 0.4s transform, 0.4s color;
 }
 
-.primaryNav a:hover {
+.primaryNav > a:hover {
     color: #fbbd63;
     transition: 0.4s color;
-}
-
-.primaryNav a.requestBtn {
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    color: #FFF;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    background-color: #fbbd63;
-    margin-right: 0;
-    z-index: 500;
-    transition: 0.4s color, 0.4s transform;
-}
-
-.primaryNav a.requestBtn:hover {
-    border-color: #FF5964;
-    background: #FF5964;
-    color: #fff;
-}
-
-.primaryNav a.requestBtn:hover {
-    transform: scale(1.2) translateX(-4px) translateY(1px);
 }
 
 .primaryNav a.languageBtn {
@@ -123,6 +101,7 @@
 
 a.githubIcon {
     font-size: 18px;
+    margin-right: 20px;
 }
 
 a.instagramIcon {

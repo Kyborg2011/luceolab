@@ -1,0 +1,95 @@
+@keyframes form-open {
+    0%   {
+        width: 189px;
+        height: 43px;
+    }
+
+    50% {
+        width: 400px;
+        height: 43px;
+    }
+
+    100% {
+        width: 400px;
+        height: 100%;
+    }
+}
+
+.requestForm {
+    width: 189px;
+    height: 43px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.formWrapper {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.openForm {
+    animation-duration: 2s;
+    animation-name: form-open;
+    animation-fill-mode: forwards;
+    will-change: width, height;
+}
+
+a.requestBtn {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #fbbd63;
+    margin: 0;
+    z-index: 500;
+    width: 100%;
+    transition: 0.4s color, 0.4s transform;
+}
+
+a.requestBtn:hover {
+    border-color: #FF5964;
+    background: #FF5964;
+    color: #fff;
+}
+
+.reverseForm {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.reverseForm * {
+    margin-bottom: 20px;
+}
+
+.reverseForm a {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.reverseForm input, .reverseForm textarea {
+    color: #212121;
+    border-bottom: 1px rgba(0,0,0,.4) solid;
+}
+
+.reverseForm textarea {
+    height: 100px;
+}
+
+.reverseForm ::placeholder {
+    color: rgba(0,0,0,.4);
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
