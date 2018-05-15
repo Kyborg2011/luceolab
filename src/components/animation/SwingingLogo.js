@@ -218,7 +218,7 @@ class SwingingLogo extends React.Component {
         const canvasHeight = height;
 
         function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
-            var stops = [ -60, 40, -30, 0 ];
+            var stops = [ -60, 45, -5, -1, 0 ];
             var velocity = 0;
             var angle = initialAngle_rad;
             var k = -gravity_mps2 / length_m;
@@ -233,13 +233,13 @@ class SwingingLogo extends React.Component {
                 var degrees = angle * 180 / Math.PI;
                 degrees = Math.round( degrees % 360 );
                 if ( degrees == stops[ 0 ]) {
-                    if ( stops[ 0 ] === 40 ) {
+                    if ( stops[ 0 ] === 45 ) {
                         lightOn = true;
                     }
                     if ( stops[ 0 ] === 0 ) {
                         zeroCount++;
                     } else {
-                        velocity = velocity * 0.6;
+                        velocity = velocity * 0.65;
                         stops.shift();
                     }
                     if ( zeroCount > 2 ) {
@@ -295,6 +295,9 @@ class SwingingLogo extends React.Component {
         var img2 = new Image();
         img2.src = onLamp;
         var prev = 0;
+        var isLightingStarted = false;
+        var lightningOpacity = 0.01;
+
         let render = function( angle, lightOn ) {
             if ( width == MAX_CANVAS_WIDTH ) {
                 var rPend = canvasHeight / 2;
@@ -335,12 +338,16 @@ class SwingingLogo extends React.Component {
             context.rotate( angle );
 
             if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
-                img = img2;
+                //img = img2;
+                isLightingStarted = true;
                 that.props.onEnd();
                 that.setState({ fade: true });
             }
 
             if ( width == MAX_CANVAS_WIDTH ) {
+                if ( isLightingStarted ) {
+                    context.globalAlpha = 1 - lightningOpacity;
+                }
                 context.drawImage(
                     img,
                     -60,
@@ -348,7 +355,24 @@ class SwingingLogo extends React.Component {
                     120,
                     143
                 );
+                if ( isLightingStarted ) {
+                    context.globalAlpha = lightningOpacity;
+                    context.drawImage(
+                        img2,
+                        -60,
+                        rPend,
+                        120,
+                        143
+                    );
+
+                    if ( lightningOpacity < 1 ) {
+                        lightningOpacity += 0.003;
+                    }
+                }
             } else {
+                if ( isLightingStarted ) {
+                    context.globalAlpha = 1 - lightningOpacity;
+                }
                 context.drawImage(
                     img,
                     -canvasWidth * 0.314 / 2,
@@ -356,7 +380,22 @@ class SwingingLogo extends React.Component {
                     canvasWidth * 0.314,
                     canvasWidth * 0.314 * 1.196
                 );
+
+                if ( isLightingStarted ) {
+                    context.globalAlpha = lightningOpacity;
+                    context.drawImage(
+                        img2,
+                        -canvasWidth * 0.314 / 2,
+                        rPend,
+                        canvasWidth * 0.314,
+                        canvasWidth * 0.314 * 1.196
+                    );
+                    if ( lightningOpacity < 1 ) {
+                        lightningOpacity += 0.003;
+                    }
+                }
             }
+            context.globalAlpha = 1;
 
             context.restore();
             prev = angle;
@@ -365,6 +404,11 @@ class SwingingLogo extends React.Component {
         animationTimeout = setTimeout(() => {
             var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, render );
         }, 1000 );
+
+        animationTimeout = setTimeout(() => {
+            isLightingStarted = true;
+            this.setState({ fade: true });
+        }, 2700 );
 
         /*
         animationTimeout = setTimeout(() => {

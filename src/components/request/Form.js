@@ -13,7 +13,10 @@ class Form extends React.Component {
             label: props.label,
             backgroundColor: props.backgroundColor,
             isOpen: false,
+            isClosed: false,
+            selectValue: null,
         };
+        this.handleSelectChange = this.handleSelectChange.bind( this );
     }
 
     componentWillReceiveProps( nextProps ) {
@@ -27,42 +30,62 @@ class Form extends React.Component {
 
     }
 
+    handleSelectChange( selectValue ) {
+		    this.setState({ selectValue });
+	  }
+
     render() {
-        const { backgroundColor, label, isOpen } = this.state;
+        const { backgroundColor, label, isOpen, isClosed, selectValue } = this.state;
 
         const mainClasses = () => {
             let classes = {};
             if ( isOpen ) {
                 classes[ styles.openForm ] = true;
             }
+            if ( isClosed ) {
+                classes[ styles.closeForm ] = true;
+            }
             return classes;
         };
 
         return (
-            <div className={classNames( styles.requestForm, mainClasses())}>
-                <Button backgroundColor={backgroundColor} className={styles.requestBtn} label={label} onClick={( e ) => {
-                    this.setState({ isOpen: true });
-                    e.preventDefault();
-                }} />
-                {( isOpen ) && (
-                    <div className={styles.formWrapper}>
-                        <form className={styles.reverseForm}>
-                            <Select
-                              options={[
-                                  { label: 'Mobile app', value: 'Mobile app' },
-                                  { text: 'Site', value: 'Site' },
-                                  { text: 'Only UI Design', value: 'Only UI Design' },
-                                  { text: 'Only Development', value: 'Only Development' },
-                                  { text: 'Concept Design', value: 'Concept Design' },
-                              ]}
-                              noResultsText="Interested in ..."
-                            />
-                            <input type="text" name="full-name" placeholder="Your name" />
-                            <input type="text" name="email" placeholder="Email" />
-                            <textarea placeholder="Project description (optional)" />
-                            <Button label="send" reverse />
-                        </form>
-                    </div>
+            <div>
+                <div className={classNames( styles.requestForm, mainClasses())}>
+                    <Button backgroundColor={backgroundColor} className={styles.requestBtn} label={label} onClick={( e ) => {
+                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                        e.preventDefault();
+                    }} />
+                    {( isOpen ) && (
+                        <div className={styles.formWrapper}>
+                            <form className={styles.reverseForm}>
+                                <Select
+                                  options={[
+                                      { label: 'Mobile app', value: 'Mobile app' },
+                                      { label: 'Site', value: 'Site' },
+                                      { label: 'Only UI Design', value: 'Only UI Design' },
+                                      { label: 'Only Development', value: 'Only Development' },
+                                      { label: 'Concept Design', value: 'Concept Design' },
+                                  ]}
+                                  id="interested-in"
+                                  onBlurResetsInput={false}
+                                  onSelectResetsInput={false}
+                                  onChange={this.handleSelectChange}
+                                  simpleValue
+                                  clearable={this.state.clearable}
+                                  name="interested-in"
+                                  placeholder="Interested in ..."
+                                  value={selectValue}
+                                />
+                                <input type="text" name="full-name" placeholder="Your name" />
+                                <input type="text" name="email" placeholder="Email" />
+                                <textarea placeholder="Project description (optional)" />
+                                <Button label="send" reverse />
+                            </form>
+                        </div>
+                    )}
+                </div>
+                {( isOpen || isClosed ) && (
+                    <div className={classNames( styles.overlay, { overlayClose: isClosed })} />
                 )}
             </div>
         );

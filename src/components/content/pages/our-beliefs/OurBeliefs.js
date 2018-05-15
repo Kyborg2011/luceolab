@@ -28,12 +28,16 @@ class OurBeliefs extends React.Component {
                     <MainHeading darkstyle text="our beliefs" />
                     <div className={layout.pageWrapper}>
                         <div className={styles.inner}>
-                            <p className={layout.description}>
-                                Open-mindedness, creativity, incessant self-development &mdash; that's what unites us in a single team LuceoLab. We adore new challenges, time after time we fearlessly rush to new heights in the business that we have chosen for ourselves. So, dear friend, let's get acquainted?!
-                            </p>
-                            <p className={layout.description}>
-                                Open-mindedness, creativity, incessant self-development &mdash; that's what unites us in a single team LuceoLab. We adore new challenges, time after time we fearlessly rush to new heights in the business that we have chosen for ourselves. So, dear friend, let's get acquainted?!
-                            </p>
+                            <div className={styles.slide}>
+                                <p className={styles.epigraph}>
+                                    «Such men know to begin with, and then their whole effort is to examine, to enlarge, and to enrich the ephemeral island on which they have just landed» ― Albert Camus
+                                </p>
+                                <p className={styles.content}>
+                                    We see business as a creative act, in which a person who defends the right to his unique universe, free from any framework and limitations, finds its realization.<br/>
+                                    The main aspiration of LuceoLab is the clarity of the vision.<br/>
+                                    Arguing in this way, we derive four main principles: Arts, Privacy, Clear Workflow, Openness.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
