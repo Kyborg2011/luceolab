@@ -126,4 +126,8 @@ a.instagramIcon {
     .primaryNav a:last-child {
         font-size: 16px;
     }
+    
+    .primaryNav {
+        padding-right: 0;
+    }
 }

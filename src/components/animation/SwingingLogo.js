@@ -129,11 +129,11 @@ class SwingingLogo extends React.Component {
 
             setTimeout(() => {
                 let height = MAX_CANVAS_HEIGHT;
-                let width = document.getElementById( 'root' ).clientWidth - 30;
+                let width = document.getElementById( 'root' ).clientWidth;
                 width = Math.min( width, MAX_CANVAS_WIDTH );
 
                 if ( width !== MAX_CANVAS_WIDTH ) {
-                    width = 290;
+                    //width = 290;
                     height = document.getElementById( 'root' ).clientHeight * 0.4;
                 }
 
@@ -203,7 +203,7 @@ class SwingingLogo extends React.Component {
         width = Math.min( width, MAX_CANVAS_WIDTH );
 
         if ( width !== MAX_CANVAS_WIDTH ) {
-            width = 290;
+            //width = 290;
             height = document.getElementById( 'root' ).clientHeight * 0.4;
         }
 

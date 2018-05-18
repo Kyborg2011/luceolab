@@ -1,4 +1,50 @@
 .inner {
     composes: inner from "../../../shared/styles/Layout.css";
     width: auto;
+    margin-top: 0;
+}
+
+.epigraph {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: right;
+    width: 40%;
+    color: #545b67;
+    letter-spacing: 0.5px;
+}
+
+.epigraph:hover {
+    color: #D81159;
+}
+
+.content {
+    font-weight: 600;
+    line-height: 23px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    width: 50%;
+    text-align: justify;
+}
+
+.slide {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    text-align: right;
+    position: relative;
+    top: -75px;
+}
+
+.controls a {
+    font-size: 75px;
+    color: #545b67;
+    opacity: 0.7;
+    margin-left: 30px;
+}
+
+.controls a:hover {
+    color: #D81159;
 }
