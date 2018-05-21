@@ -132,3 +132,10 @@
         margin: 7px 0 0 10px;
     }
 }
+
+@media only screen and (max-width: 360px) {
+    .h3 {
+        font-size: 9px;
+        margin: 10px 0 0 10px;
+    }
+}

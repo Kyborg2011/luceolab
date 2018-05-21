@@ -76,12 +76,14 @@
 
 .content a img {
     width: 50%;
-    margin-top: 15px;
+    float: left;
+    padding-top: 15px;
+    display: block;
 }
 
 .content a:last-child img {
     float: right;
-    width: 35%;
+    width: 30%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -109,5 +111,21 @@
         left: -70px;
         font-size: 200px !important;
         opacity: 0.35 !important;
+    }
+
+    .content a img {
+        width: 100%;
+    }
+
+    .content a:last-child img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .content {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 0;
     }
 }
