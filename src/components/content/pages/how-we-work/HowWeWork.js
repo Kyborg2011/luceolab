@@ -68,14 +68,17 @@ class HowWeWork extends React.Component {
                         </Link>
                         <div id="video-wrapper" className={styles.videoContainer} style={stylesWrapper}>
                             {( videoWidth && videoHeight ) && (
-                                <iframe src="https://player.vimeo.com/video/254140924?title=0&byline=0&badge=0&portrait=0&color=fff&autoplay=1&player_id=player"
-                                  width={videoWidth}
-                                  height={videoHeight}
-                                  frameBorder="0"
-                                  webkitallowfullscreen
-                                  mozallowfullscreen
-                                  allowFullScreen
-                                />
+                                <div>
+                                    <iframe src="https://player.vimeo.com/video/254140924?title=0&byline=0&badge=0&portrait=0&color=fff&autoplay=1&player_id=player"
+                                      width={videoWidth}
+                                      height={videoHeight}
+                                      frameBorder="0"
+                                      webkitallowfullscreen
+                                      mozallowfullscreen
+                                      allowFullScreen
+                                    />
+                                    <script src="https://player.vimeo.com/api/player.js" />
+                                </div>
                             )}
                             {( !videoWidth || !videoHeight ) && (
                                 <div className={styles.ldsGear}>

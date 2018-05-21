@@ -6,12 +6,12 @@
 
 .epigraph {
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 17px;
-    line-height: 22px;
     text-align: right;
     width: 40%;
     color: #545b67;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    font-size: 25px;
+    line-height: 38px;
 }
 
 .epigraph:hover {
@@ -19,32 +19,95 @@
 }
 
 .content {
-    font-weight: 600;
+    font-weight: 400;
     line-height: 23px;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     width: 50%;
     text-align: justify;
+    padding-top: 10px;
+    letter-spacing: 0.75px;
 }
 
 .slide {
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(-200%);
+    transition: transform 1s, opacity 0.5s 0.5s;
+}
+
+.slide.right {
+    transform: translateX(200%);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: none;
 }
 
 .controls {
     text-align: right;
-    position: relative;
-    top: -75px;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
 }
 
 .controls a {
     font-size: 75px;
     color: #545b67;
-    opacity: 0.7;
+    opacity: 0.5;
     margin-left: 30px;
+    transition: opacity 1s;
 }
 
 .controls a:hover {
     color: #D81159;
+    opacity: 1;
+}
+
+.bold {
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+
+.content a img {
+    width: 50%;
+    margin-top: 15px;
+}
+
+.content a:last-child img {
+    float: right;
+    width: 35%;
+}
+
+@media only screen and (max-width: 767px) {
+    .epigraph {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .forwardBtn {
+        display: block;
+        position: fixed;
+        bottom: -20px;
+        right: -30px;
+        font-size: 200px !important;
+        opacity: 0.35 !important;
+    }
+
+    .backBtn {
+        display: block;
+        position: fixed;
+        top: -20px;
+        left: -70px;
+        font-size: 200px !important;
+        opacity: 0.35 !important;
+    }
 }
