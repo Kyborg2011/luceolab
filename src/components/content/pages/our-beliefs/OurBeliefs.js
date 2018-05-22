@@ -81,14 +81,14 @@ class OurBeliefs extends React.Component {
                             <div className={classNames( styles.slide, getClassNames( 1 ))}>
                                 <p className={styles.content}>
                                     The character of LuceoLab is enclosed
-                                    in the name itself, which comes from "luceo" (lat.) - I dawn, become light, become clear.
-                                     It's all about clarity of vision, about seeing things as they are.<br/><br/>
-                                    Everyone talks about effective trade on the Internet - this is not enough for us.
-                                    We take it higher, we talk about life, in all its diversity.<br/><br/>
+                                    in the name itself, which comes from "luceo" (latin) ― I dawn, become light, become clear.
+                                    It's all about clarity of vision, about seeing things as they are.<br/><br/>
+                                    Everyone talks about effective trade on the Internet ― this is not enough for us.
+                                    We take it higher, we talk about our life, in all its diversity.<br/><br/>
                                     Often, business is reduced to profit, to numbers, to rational.
                                     But is our life reduced to purely rational, to dry logic? Definitely not.<br/><br/>
                                     All that we need is the clarity of vision. <span className={styles.bold}>Business for us is not just part of the modern culture of production and consumption,
-                                    but a creative act in which a person is able to assert the right to his own unique universe, free from all limitations.</span><br/><br/>
+                                    but a creative act in which a person is able to claim his own unique universe, free from all limitations.</span><br/><br/>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «Such men know to begin with, and then their whole effort is to examine, to enlarge, and to enrich the ephemeral island on which they have just landed»<br/><br/>― Albert Camus
@@ -96,12 +96,12 @@ class OurBeliefs extends React.Component {
                             </div>
                             <div className={classNames( styles.slide, getClassNames( 2 ))}>
                                 <p className={styles.content}>
-                                    In search of clarity, first of all we find arts as the most effective school of patience and clarity. Creativity requires daily effort, self-mastery, an accurate assessment of the boundaries of truth, requires action and strength.<br/><br/>
-                                    We believe that a website can be not only a container for some piece of art, but in itself is a unique kind of art. A browser window can be turned into anything:
+                                    In search of clarity, we find art as the most effective school of patience and clarity. Creativity requires daily effort, self-mastery, an accurate assessment of the boundaries of truth, requires action and strength.<br/><br/>
+                                    We believe that a website can be not only a container for some piece of art, but in itself is a unique modern kind of art.  <span className={styles.bold}>A browser window can be turned into anything:
                                     the theatrical scene,
                                     the painter's canvas,
-                                    the page from the writer's diary...<br/><br/>
-                                    In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence - as if the sunrise, as the arrival of the long-awaited spring - the absolute "Yes!" to the life.<br/><br/>
+                                    the page from the writer's diary...</span><br/><br/>
+                                    In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring... Or generally become the absolute "Yes!" to the life.<br/><br/>
                                     LuceoLab is an attempt to resurrect the ancient Greek tragedy in the modern world, with the help of wide possibilities of digital experience!
                                 </p>
                                 <p className={styles.epigraph}>
@@ -110,10 +110,10 @@ class OurBeliefs extends React.Component {
                             </div>
                             <div className={classNames( styles.slide, getClassNames( 3 ))}>
                                 <p className={styles.content}>
-                                    The following conclusion, which we derive from the clarity of vision, is freedom - as the source of beauty, the source of any art.<br/><br/>
-                                    We believe Internet is the unique tool that allows you to maintain maximum personal freedom.<br/><br/>
-                                    In our work, we regularly use modern methods of achieving privacy in the Internet, such as: Tor network, VPN connections, SSL certificates, PGP, and much more.<br/><br/>
-                                    Moreover, in Blockchain technology, in the principles of the modern cryptocurrencies, we see one of the most important directions of the moving forward, into the future!
+                                    The next conclusion, which we derive from the clarity of vision, is freedom ― as the source of beauty, the source of any art.<br/><br/>
+                                    We believe Internet is the unique tool that allows you to maintain maximum personal freedom, using some anonymization methods.
+                                    In our work, we regularly use modern methods of achieving privacy in the Internet, such as: Tor network, VPN connections, SSL certificates, PGP, cryptography, and much more.<br/><br/>
+                                    Moreover, in the principles of the modern cryptocurrencies we see one of the most important direction of our activities in the nearest future. Therefore, we will be extremely pleased to work with new blockchain-startups! Feel free to write us!
                                     <a href="https://www.blockchain.com/" target="_blank">
                                         <img src={require( '../../../../assets/img/icons/bc.svg' )} />
                                     </a>
@@ -132,7 +132,7 @@ class OurBeliefs extends React.Component {
                                     We claim that the Internet is the only technology that can give us the
                                     maximum number of points of view, the primary source of any information. <br/><br/>
                                     Combining all these beliefs, we get the concept of creative solutions striving for the maximum freedom. Firstly, freedom in our workflow, in the interaction between our clients and company. Secondly, freedom in effort to freely disseminate the results of our work. We truly love Open Source! <br/> <br/>
-                                    LuceoLab inevitably strives to constantly increase the diversity in the world, its development and transformation. <br/><br/>LuceoLab declares the maximum love of life, but only on our own terms!
+                                    <span className={styles.bold}>LuceoLab inevitably strives to constantly increase the diversity in the world, its development and transformation. <br/><br/>LuceoLab declares the maximum love of life, but only on our own terms!</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «Task: to see things as they are. Means: to look at them with a hundred eyes, from many persons»<br/><br/>― Friedrich Nietzsche
