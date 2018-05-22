@@ -70,6 +70,12 @@
     transition: border 1s;
 }
 
+@media (max-height: 400px) {
+    .verticalBtn {
+        display: none;
+    }
+}
+
 @media (max-width: 767px) {
     .verticalBtn {
         display: none;

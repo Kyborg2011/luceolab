@@ -1,8 +1,6 @@
 .secondaryNavigation {
     position: fixed;
-    top: -43px;
     right: -139px;
-    bottom: 43px;
     height: 100%;
     display: flex;
     z-index: 500;
@@ -30,7 +28,6 @@
     justify-content: center;
     padding-left: 7px;
     margin-top: 0;
-    padding-top: 120px;
 }
 
 .secondaryNavigation nav > a {
@@ -45,6 +42,8 @@
     text-transform: uppercase;
     margin-bottom: 21px;
     text-decoration: none;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .secondaryNavigation nav > a:before {
@@ -69,9 +68,7 @@
 .secondaryNavigation nav > a:after {
     content: '';
     position: absolute;
-    top: 0;
     left: -28px;
-    height: 7.5px;
     width: 0;
     border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -109,6 +106,12 @@
 .darkstyle nav > a:hover::before {
     border: 2px solid #76a6b1;
     transition: border 0.2s;
+}
+
+@media (max-height: 300px) {
+    .secondaryNavigation {
+        top: 0;
+    }
 }
 
 @media (max-width: 767px) {

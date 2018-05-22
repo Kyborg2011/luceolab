@@ -270,6 +270,26 @@
     color: #212121;
 }
 
+.epigraph {
+    text-align: right;
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(216, 17, 89);
+    padding-bottom: 15px;
+}
+
+.details p a {
+    color: rgb(216, 17, 89);
+    font-weight: bold;
+}
+
+.details p a:hover {
+    text-decoration: none;
+}
 @media (min-width: 767px) {
     .list li:hover .details:before {
         border: 3px solid #fdb951;

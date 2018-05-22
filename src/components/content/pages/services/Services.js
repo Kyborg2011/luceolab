@@ -134,9 +134,9 @@ class Services extends React.Component {
                         <li className={openServiceAnimation( 1 )}>
                             <div className={styles.listInnerWrapper}>
                                 <p className={styles.icon}>
-                                    <img src={designBrandingIcon} alt="Design & Branding" />
+                                    <img src={designBrandingIcon} alt="design & ui/ux" />
                                 </p>
-                                <h4>design & branding</h4>
+                                <h4>design & ui/ux</h4>
                                 <a href="" className={styles.closeBtn} onClick={( e ) => {
                                     e.preventDefault();
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 });
@@ -146,11 +146,10 @@ class Services extends React.Component {
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
-                                        We create beautiful custom‑designed websites with unique UX, well-understood for everyone.
-                                        Through continually improving our skills, we are not afraid to use the latest trends in the world of web developing.
-                                        Our agency driven by the main single principle - the clarity of vision.
-                                        Due to that we find the necessary balance between the complexity of the selected technologies and the real need for each individual project.
-                                        One of the main goal for us is to make the website as easy to find, what every user wants, as possible.
+                                        <span className={styles.epigraph}>«Beauty will save the world» ― Fyodor Dostoyevsky</span>
+                                        If you are aiming to have really stunning and unique UI/UX for the product, you need to use our services!<br/><br/>
+                                        For each project we create a unique concept. LuceoLab is constantly following the newest trends in the industry.<br/><br/>
+                                        Our passion is to produce a pure expression of a joy! Like the coming of a spring, like a sun rising... Making design is something bigger then simple work - it is an art!
                                     </p>
                                     <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
@@ -184,9 +183,9 @@ class Services extends React.Component {
                         <li className={openServiceAnimation( 3 )}>
                             <div className={styles.listInnerWrapper}>
                                 <p className={styles.icon}>
-                                    <img src={itConsultingIcon} alt="IT consulting" />
+                                    <img src={itConsultingIcon} alt="Branding" />
                                 </p>
-                                <h4>IT consulting</h4>
+                                <h4>branding</h4>
                                 <a href="" className={styles.closeBtn} onClick={( e ) => {
                                     e.preventDefault();
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 3 });

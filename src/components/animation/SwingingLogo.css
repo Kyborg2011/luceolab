@@ -11,6 +11,9 @@
 @media (max-width: 767px) {
     .canvas {
         left: 0;
+        width: 100% !important;
+        position: fixed;
+        top: 43px;
     }
 }
 

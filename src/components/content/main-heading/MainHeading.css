@@ -74,7 +74,7 @@
     border-color: #212121;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px), screen and (max-height: 300px) {
     .mainHeadingWrapper {
         margin: 30px 0 0 0;
     }
@@ -116,7 +116,7 @@
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 300px) {
     .mainHeadingWrapper:before {
         width: 100px;
     }
