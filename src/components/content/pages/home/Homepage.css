@@ -70,6 +70,11 @@
         justify-content: space-between;
         margin-bottom: 30px;
     }
+
+    :global(#homepage-blurred) {
+        position: relative;
+        top: 50%;
+    }
 }
 
 @media only screen
@@ -77,6 +82,17 @@
     and (orientation: landscape) {
     .homepageMainPhrase {
         margin: 0 0 10px;
+        line-height: 35px;
+    }
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .homepageMainPhrase {
+        margin: 0 0 10px;
+        line-height: 45px;
     }
 }
 

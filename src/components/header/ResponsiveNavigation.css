@@ -162,3 +162,25 @@
         width: 50%;
     }
 }
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .navicon-button {
+        display: flex;
+    }
+
+    .responsiveNavigationContainer {
+        display: flex;
+    }
+
+    .responsiveNavigationContainer nav {
+        flex-flow: row wrap;
+        padding: 30px 0;
+    }
+
+    .responsiveNavigationContainer nav a {
+        width: 50%;
+    }
+}
