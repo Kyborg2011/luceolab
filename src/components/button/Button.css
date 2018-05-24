@@ -21,7 +21,6 @@
     }
 }
 
-
 .btn {
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
@@ -43,6 +42,10 @@
     padding: 0;
     line-height: 39px !important;
     transition: background-color .75s, border .75s, color .75s;
+}
+
+.btn:hover {
+    text-decoration: none;
 }
 
 .btn i {

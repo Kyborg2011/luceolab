@@ -3,7 +3,12 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import Select from 'react-select';
+import Input from 'muicss/lib/react/input';
+import Textarea from 'muicss/lib/react/textarea';
 import Button from '../button/Button';
+
+import 'react-select/dist/react-select.css';
+import 'muicss/dist/css/mui.css';
 import styles from './Form.css';
 
 class Form extends React.Component {
@@ -14,6 +19,7 @@ class Form extends React.Component {
             backgroundColor: props.backgroundColor,
             isOpen: false,
             isClosed: false,
+            isRemoveOverlay: false,
             selectValue: null,
         };
         this.handleSelectChange = this.handleSelectChange.bind( this );
@@ -35,7 +41,7 @@ class Form extends React.Component {
 	  }
 
     render() {
-        const { backgroundColor, label, isOpen, isClosed, selectValue } = this.state;
+        const { backgroundColor, label, isOpen, isClosed, isRemoveOverlay, selectValue } = this.state;
 
         const mainClasses = () => {
             let classes = {};
@@ -51,7 +57,19 @@ class Form extends React.Component {
         return (
             <div>
                 <div className={classNames( styles.requestForm, mainClasses())}>
+                    <div className={styles.requestFormOpacityBg}/>
                     <Button backgroundColor={backgroundColor} className={styles.requestBtn} label={label} onClick={( e ) => {
+                        if ( isOpen ) {
+                            setTimeout(() => {
+                                this.setState({
+                                    isRemoveOverlay: true,
+                                });
+                            }, 1000 );
+                        } else {
+                            this.setState({
+                                isRemoveOverlay: false,
+                            });
+                        }
                         this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                         e.preventDefault();
                     }} />
@@ -60,7 +78,6 @@ class Form extends React.Component {
                             <form className={styles.reverseForm}>
                                 <Select
                                   options={[
-                                      { label: 'Mobile app', value: 'Mobile app' },
                                       { label: 'Site', value: 'Site' },
                                       { label: 'Only UI Design', value: 'Only UI Design' },
                                       { label: 'Only Development', value: 'Only Development' },
@@ -76,15 +93,15 @@ class Form extends React.Component {
                                   placeholder="Interested in ..."
                                   value={selectValue}
                                 />
-                                <input type="text" name="full-name" placeholder="Your name" />
-                                <input type="text" name="email" placeholder="Email" />
-                                <textarea placeholder="Project description (optional)" />
+                                <Input label="Your name" floatingLabel />
+                                <Input label="E-mail" floatingLabel />
+                                <Textarea label="Project description (optional)" floatingLabel />
                                 <Button label="send" reverse />
                             </form>
                         </div>
                     )}
                 </div>
-                {( isOpen || isClosed ) && (
+                {( isOpen || isClosed && !isRemoveOverlay ) && (
                     <div className={classNames( styles.overlay, { overlayClose: isClosed })} />
                 )}
             </div>

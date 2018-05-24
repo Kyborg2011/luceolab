@@ -38,13 +38,13 @@
     }
 
     100% {
-        opacity: 0.9;
+        opacity: .75;
     }
 }
 
 @keyframes opacity-out {
     0%   {
-        opacity: 0.9;
+        opacity: .75;
     }
 
     100% {
@@ -59,10 +59,19 @@
     position: fixed;
     top: 0;
     right: 0;
-    background: #fff;
     display: flex;
     flex-direction: column;
     z-index: 1500;
+}
+
+.requestForm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
 }
 
 .formWrapper {
@@ -122,7 +131,11 @@ a.requestBtn:hover {
     width: 100%;
 }
 
-.reverseForm input, .reverseForm textarea, .reverseForm :global(.Select) {
+.reverseForm > a {
+    z-index: 1000;
+}
+
+.reverseForm :global(.Select) {
     margin-bottom: 20px;
 }
 
@@ -168,6 +181,10 @@ a.requestBtn:hover {
     animation-name: opacity-out;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+}
+
+:global(.is-focused .Select-control) {
+    border-color: #FBBD63 !important;
 }
 
 @media (max-width: 767px) {

@@ -4,7 +4,17 @@
     }
 
     100% {
-        opacity: 0.9;
+        opacity: 0.8;
+    }
+}
+
+@keyframes opacity-out {
+    0%   {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -21,7 +31,7 @@
 
 .description {
     composes: description from "../../../shared/styles/Layout.css";
-    line-height: 23px;
+    line-height: 28px;
     font-weight: 400;
 }
 
@@ -184,6 +194,12 @@
     animation-fill-mode: forwards;
 }
 
+:global(.overlayClose) {
+    animation-name: opacity-out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
 .closeBtn {
     position: absolute;
     top: 77px;
@@ -275,7 +291,6 @@
     display: block;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 600;
-    font-style: italic;
     font-size: 16px;
     letter-spacing: 1px;
     color: rgb(216, 17, 89);
@@ -290,6 +305,7 @@
 .details p a:hover {
     text-decoration: none;
 }
+
 @media (min-width: 767px) {
     .list li:hover .details:before {
         border: 3px solid #fdb951;

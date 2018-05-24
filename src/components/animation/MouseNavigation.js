@@ -58,7 +58,6 @@ class MouseNavigation extends React.Component {
 
         /* Mouse move events handlers for desktops and laptops */
         element.addEventListener( 'mousedown', ( e ) => {
-            e.preventDefault();
             startX = e.pageY;
         }, false );
         element.addEventListener( 'mouseup', ( e ) => {

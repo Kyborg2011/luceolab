@@ -29,6 +29,7 @@
     font-size: 14px;
     line-height: 28px;
     margin-top: 10px;
+    padding-right: 15px;
 }
 
 .teamMember {
@@ -60,7 +61,9 @@
 }
 
 .hidden {
-    display: none;
+    display: flex;
+    opacity: 0;
+    transition: opacity .5s;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -93,6 +96,8 @@
 }
 
 .teamMember:hover .hidden {
+    opacity: 1;
+    transition: opacity .5s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,8 +182,8 @@
 }
 
 .morrisonQuote {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     font-size: 16px;
     line-height: 22px;
     text-align: center;

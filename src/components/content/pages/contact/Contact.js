@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import {
   withRouter
 } from 'react-router-dom';
+import Input from 'muicss/lib/react/input';
+import Textarea from 'muicss/lib/react/textarea';
 
 import styles from './Contact.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -38,9 +40,9 @@ class Contact extends React.Component {
                     <div className={styles.contactsWrapper}>
                         <div className={styles.formWrapper}>
                             <form>
-                                <input type="text" placeholder="name" />
-                                <input type="text" placeholder="e-mail" />
-                                <textarea placeholder="your message" />
+                                <Input label="Your name" floatingLabel />
+                                <Input label="E-mail" floatingLabel />
+                                <Textarea label="Your message" floatingLabel />
                                 <Button label="send a message" reverse />
                             </form>
                         </div>

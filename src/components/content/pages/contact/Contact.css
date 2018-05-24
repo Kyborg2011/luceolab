@@ -23,13 +23,10 @@
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-size: 14.5;
+    font-size: 14.5px;
     display: flex;
     text-decoration: none;
-}
-
-.info a:hover {
-    color: #e3af61;
+    transition: color .5s;
 }
 
 .info p span {
@@ -45,6 +42,10 @@
     font-size: 17px;
 }
 
+.info p:hover a, .info p:hover, .info p:hover span {
+    color: #e3af61;
+}
+
 .info p:first-child span {
     margin-top: -28px;
 }
@@ -55,10 +56,31 @@
 
 .formWrapper form {
     width: 100%;
+    position: relative;
+    top: -15px;
+}
+
+.formWrapper label {
+    font-size: 14.5px;
+}
+
+.formWrapper :global(.mui-textfield) {
+    margin-bottom: 10px;
 }
 
 .formWrapper input, .formWrapper textarea {
     margin-top: 28px;
+    border-color: #f1f1f1 !important;
+    color: #f1f1f1;
+    font-size: 14.5px;
+}
+
+.formWrapper input:focus, .formWrapper textarea:focus {
+    border-bottom-color: #fbbd63 !important;
+}
+
+.formWrapper label {
+    color: #f1f1f1 !important;
 }
 
 .formWrapper input:first-child {
@@ -66,7 +88,7 @@
 }
 
 .formWrapper a {
-    margin-top: 63px;
+    margin-top: 40px;
     border-color: #e3af61;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
@@ -84,6 +106,7 @@
     flex-flow: row wrap;
     list-style: none;
     padding: 0;
+    margin-top: 10px;
 }
 
 .socialNetworks li {
@@ -102,6 +125,7 @@
     justify-content: center;
     font-size: 23px;
     flex-flow: column wrap;
+    transition: background-color .5s, border .5s, color .5s;
 }
 
 .socialNetworks li a span {

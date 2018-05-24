@@ -32,6 +32,9 @@ class Services extends React.Component {
             opennedServiceIndex: -1,
             closedServiceIndex: -1,
             isModalActive: '',
+            isOpen: false,
+            isClosed: false,
+            isRemoveOverlay: false,
         };
     }
 
@@ -59,7 +62,7 @@ class Services extends React.Component {
     }
 
     render() {
-        const { opennedServiceIndex, pageClassName, closedServiceIndex, isModalActive } = this.state;
+        const { opennedServiceIndex, pageClassName, closedServiceIndex, isModalActive, isOpen, isClosed, isRemoveOverlay } = this.state;
 
         const openServiceAnimation = ( i ) => {
             if ( closedServiceIndex === i ) {
@@ -95,6 +98,20 @@ class Services extends React.Component {
                                 <h4>web development</h4>
                                 <a href="" className={styles.closeBtn} onClick={( e ) => {
                                     e.preventDefault();
+
+                                    if ( isOpen ) {
+                                        setTimeout(() => {
+                                            this.setState({
+                                                isRemoveOverlay: true,
+                                            });
+                                        }, 2000 );
+                                    } else {
+                                        this.setState({
+                                            isRemoveOverlay: false,
+                                        });
+                                    }
+                                    this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 0 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
@@ -126,7 +143,19 @@ class Services extends React.Component {
                                     </p>
                                     <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
-                                        this.setState({ opennedServiceIndex: 0, closedServiceIndex: -1 })
+                                        if ( isOpen ) {
+                                            setTimeout(() => {
+                                                this.setState({
+                                                    isRemoveOverlay: true,
+                                                });
+                                            }, 2000 );
+                                        } else {
+                                            this.setState({
+                                                isRemoveOverlay: false,
+                                            });
+                                        }
+                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                                        this.setState({ opennedServiceIndex: 0, closedServiceIndex: -1 });
                                     }} />
                                 </div>
                             </div>
@@ -139,6 +168,18 @@ class Services extends React.Component {
                                 <h4>design & ui/ux</h4>
                                 <a href="" className={styles.closeBtn} onClick={( e ) => {
                                     e.preventDefault();
+                                    if ( isOpen ) {
+                                        setTimeout(() => {
+                                            this.setState({
+                                                isRemoveOverlay: true,
+                                            });
+                                        }, 2000 );
+                                    } else {
+                                        this.setState({
+                                            isRemoveOverlay: false,
+                                        });
+                                    }
+                                    this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
@@ -153,7 +194,19 @@ class Services extends React.Component {
                                     </p>
                                     <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
-                                        this.setState({ opennedServiceIndex: 1 })
+                                        if ( isOpen ) {
+                                            setTimeout(() => {
+                                                this.setState({
+                                                    isRemoveOverlay: true,
+                                                });
+                                            }, 2000 );
+                                        } else {
+                                            this.setState({
+                                                isRemoveOverlay: false,
+                                            });
+                                        }
+                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                                        this.setState({ opennedServiceIndex: 1 });
                                     }} />
                                 </div>
                             </div>
@@ -166,6 +219,18 @@ class Services extends React.Component {
                                 <h4>digital marketing</h4>
                                 <a href="" className={styles.closeBtn} onClick={( e ) => {
                                     e.preventDefault();
+                                    if ( isOpen ) {
+                                        setTimeout(() => {
+                                            this.setState({
+                                                isRemoveOverlay: true,
+                                            });
+                                        }, 2000 );
+                                    } else {
+                                        this.setState({
+                                            isRemoveOverlay: false,
+                                        });
+                                    }
+                                    this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                     this.setState({ opennedServiceIndex: -1, closedServiceIndex: 2 });
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
@@ -175,7 +240,19 @@ class Services extends React.Component {
                                     <p />
                                     <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
-                                        this.setState({ opennedServiceIndex: 2 })
+                                        this.setState({ opennedServiceIndex: 2 });
+                                        if ( isOpen ) {
+                                            setTimeout(() => {
+                                                this.setState({
+                                                    isRemoveOverlay: true,
+                                                });
+                                            }, 2000 );
+                                        } else {
+                                            this.setState({
+                                                isRemoveOverlay: false,
+                                            });
+                                        }
+                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                     }} />
                                 </div>
                             </div>
@@ -192,6 +269,18 @@ class Services extends React.Component {
                                     setTimeout(() => {
                                         this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
                                     }, 2000 );
+                                    if ( isOpen ) {
+                                        setTimeout(() => {
+                                            this.setState({
+                                                isRemoveOverlay: true,
+                                            });
+                                        }, 2000 );
+                                    } else {
+                                        this.setState({
+                                            isRemoveOverlay: false,
+                                        });
+                                    }
+                                    this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
@@ -212,15 +301,27 @@ class Services extends React.Component {
                                     </p>
                                     <Button label={( opennedServiceIndex === 3 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
-                                        this.setState({ opennedServiceIndex: 3 })
+                                        this.setState({ opennedServiceIndex: 3 });
+                                        if ( isOpen ) {
+                                            setTimeout(() => {
+                                                this.setState({
+                                                    isRemoveOverlay: true,
+                                                });
+                                            }, 2000 );
+                                        } else {
+                                            this.setState({
+                                                isRemoveOverlay: false,
+                                            });
+                                        }
+                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                     }} />
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                {( opennedServiceIndex != -1 ) && (
-                    <div className={styles.overlay} />
+                {( isOpen || isClosed && !isRemoveOverlay ) && (
+                    <div className={classNames( styles.overlay, { overlayClose: isClosed })} />
                 )}
                 <div className={classNames( styles.modal, isModalActive )}>
                     <div className={styles.modalContainer}>

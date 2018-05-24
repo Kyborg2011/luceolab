@@ -23,7 +23,19 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             }, {
+                test: /\.css/,
+                include: /node_modules/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            }, {
                 test: /\.css$/,
+                exclude: /node_modules/,
                 use: ( env === 'production' )
                     ? ExtractTextPlugin.extract({
                         fallback: 'style-loader',

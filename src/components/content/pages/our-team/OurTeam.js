@@ -186,7 +186,7 @@ class OurTeam extends React.Component {
                         <div className={classNames( styles.teamMember, styles.joinUsBox )}>
                             <p className={styles.morrisonQuote}>
                                 We are not constant<br />
-                                We are an arrow in flight
+                                We are an arrow in flight!
                             </p>
                             <Button
                               label="join us"
