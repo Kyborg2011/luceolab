@@ -161,6 +161,9 @@
     height: 0;
     font-weight: 300;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
 }
 
 .details > a {
@@ -257,9 +260,9 @@
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
-    transition: visibility .3s ease-in-out,opacity .3s ease-in-out;
+    transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
     transition-delay: 250ms;
-    z-index: 1000;
+    z-index: 2500;
 }
 
 .activeModal {
@@ -279,6 +282,8 @@
     line-height: 23px;
     font-weight: 400;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
 }
 
 :global(#close-modal) {
@@ -288,13 +293,13 @@
 
 .epigraph {
     text-align: right;
-    display: block;
+    align-self: flex-end;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 600;
     font-size: 16px;
     letter-spacing: 1px;
     color: rgb(216, 17, 89);
-    padding-bottom: 15px;
+    width: 50%;
 }
 
 .details p a {
@@ -383,6 +388,31 @@
     .list li h4 {
         font-size: 13px;
     }
+
+    .description {
+        line-height: 20px;
+    }
+
+    .listInnerWrapper {
+        padding-bottom: 0;
+    }
+
+    .list li .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .list li .icon img {
+        max-width: 20px;
+    }
+
+    .list {
+        margin: 0;
+    }
+
+    .modalContainer p {
+        line-height: 20px;
+    }
 }
 
 @media only screen
@@ -445,6 +475,10 @@
 
     .inner {
         width: 100%;
+    }
+
+    .description {
+        margin-top: 30px;
     }
 
     .list {

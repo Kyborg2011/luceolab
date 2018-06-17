@@ -164,9 +164,28 @@
 }
 
 @media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 812px)
-  and (-webkit-min-device-pixel-ratio: 3) {
+    and (min-device-width: 375px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: portrait) {
+    .navicon-button {
+        display: flex;
+    }
+
+    .responsiveNavigationContainer {
+        display: flex;
+    }
+
+    .responsiveNavigationContainer nav {
+        flex-flow: column wrap;
+    }
+}
+
+@media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape) {
     .navicon-button {
         display: flex;
     }

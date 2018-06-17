@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {
   withRouter
 } from 'react-router-dom';
+import emitter from '../../../shared/utils/mrEmitter';
 
 import layout from '../../../shared/styles/Layout.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -120,15 +121,14 @@ class Services extends React.Component {
                                 <div className={styles.details}>
                                     <p>
                                         We create beautiful custom‑designed websites with unique UX, well-understood for everyone.
-                                        Through continually improving our skills, we are not afraid to use the latest trends in the world of web developing.
-                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}> Our agency driven by the main single principle - the clarity of vision.</span>&nbsp;
-                                        Due to that we find the necessary balance between the complexity of the selected technologies and the real need for each individual project.<br/>
+                                        Through continually improving our skills, we are not afraid to use the latest trends in the world of web developing.<br/><br/>
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}> Our agency driven by the main single principle - the clarity of vision.</span><br/>Due to that we find the necessary balance between the complexity of the selected technologies and the real need for each individual project.<br/>
                                         <span style={{ textAlign: 'center', display: 'block' }}>
                                             Some technologies that inspire us:
                                         </span>
                                         <span className={styles.technoligiesList}>
                                             <a href="https://reactjs.org/" title="ReactJS" target="_blank">
-                                                <img style={{ height: '50px;' }} src={require( '../../../../assets/img/icons/react-js.png' )} />
+                                                <img style={{ height: '50px' }} src={require( '../../../../assets/img/icons/react-js.png' )} />
                                             </a>
                                             <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" title="ECMAScript 2015" target="_blank">
                                                 <img src={require( '../../../../assets/img/icons/es6.svg' )} />
@@ -144,18 +144,14 @@ class Services extends React.Component {
                                     <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
                                         if ( isOpen ) {
-                                            setTimeout(() => {
-                                                this.setState({
-                                                    isRemoveOverlay: true,
-                                                });
-                                            }, 2000 );
+                                            emitter.emit( 'request' );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
                                             });
+                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                                            this.setState({ opennedServiceIndex: 0, closedServiceIndex: -1 });
                                         }
-                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
-                                        this.setState({ opennedServiceIndex: 0, closedServiceIndex: -1 });
                                     }} />
                                 </div>
                             </div>
@@ -187,26 +183,21 @@ class Services extends React.Component {
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
-                                        <span className={styles.epigraph}>«Beauty will save the world» ― Fyodor Dostoyevsky</span>
-                                        If you are aiming to have really stunning and unique UI/UX for the product, you need to use our services!<br/><br/>
-                                        For each project we create a unique concept. LuceoLab is constantly following the newest trends in the industry.<br/><br/>
-                                        Our passion is to produce a pure expression of a joy! Like the coming of a spring, like a sun rising... Making design is something bigger then simple work - it is an art!
+                                        <span className={styles.epigraph}>«Beauty will save the world» ― Fyodor Dostoyevsky</span><br/>
+                                        If you are aiming to have really stunning unique UI/UX for your product, you need to use our services! LuceoLab is constantly following the newest trends in the industry, moreover we are strive for open up new approaches in user interfaces and web design.
+                                        A browser window can be turned into anything: the theatrical scene, the painter's canvas, the page from the writer's diary. <br/><br/><span style={{ color: '#D81159', fontWeight: 'bold' }}>The desire for clarity of vision in everything that we do brings us to art. That is why we believe that a website can be not only a container for some piece of art, but in itself is a unique modern kind of art.</span><br/><br/>
                                     </p>
                                     <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
                                         if ( isOpen ) {
-                                            setTimeout(() => {
-                                                this.setState({
-                                                    isRemoveOverlay: true,
-                                                });
-                                            }, 2000 );
+                                            emitter.emit( 'request' );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
                                             });
+                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                                            this.setState({ opennedServiceIndex: 1, closedServiceIndex: -1 });
                                         }
-                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
-                                        this.setState({ opennedServiceIndex: 1 });
                                     }} />
                                 </div>
                             </div>
@@ -237,22 +228,22 @@ class Services extends React.Component {
                                     }, 2000 );
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
-                                    <p />
+                                    <p>
+                                        Why people buy something? Any goods or services? The main reason is emotions, pleasant memories. People buy the opportunity to spend a good time with good people. In the end, people buy what is beautiful, what causes a feeling of reverence.<br/><br/>
+                                        We believe that beauty is an inherent quality of any kind of art. Art can evoke the most vivid feelings, touch the most secret corners of the human soul.<br/><br/>
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring. Let's say "Yes!" to all sides of life in this world!</span>
+                                    </p>
                                     <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
-                                        this.setState({ opennedServiceIndex: 2 });
                                         if ( isOpen ) {
-                                            setTimeout(() => {
-                                                this.setState({
-                                                    isRemoveOverlay: true,
-                                                });
-                                            }, 2000 );
+                                            emitter.emit( 'request' );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
                                             });
+                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                                            this.setState({ opennedServiceIndex: 2, closedServiceIndex: -1 });
                                         }
-                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                     }} />
                                 </div>
                             </div>
@@ -283,37 +274,18 @@ class Services extends React.Component {
                                     this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
-                                    <p>
-                                        According to <a href="https://blog.hubspot.com/blog/tabid/6307/bid/14953/what-do-76-of-consumers-want-from-your-website-new-data.aspx" target="_blank">this @HubSpot survey</a>
-                                        about web-development: 76% of consumers say the most important factor in a website's
-                                        design is "the website makes it easy for me to find what I want."<br/>
-                                        The main principle by which LuceoLab is guided is the clarity of vision.
-                                        Therefore, we consider the main criteria for the quality of our work:
-                                        <ul>
-                                            <li>Simplicity of the UI (user interface)</li>
-                                            <li>Сlear UX (user experience)</li>
-                                            <li>Maximum accessibility of the web content</li>
-                                            <li>We use only <span style={{ fontWeight: 600 }}>responsive web design</span></li>
-                                        </ul>
-                                        We continually improve our skills,
-                                        that's why we are not afraid to use the
-                                        latest trends in the world of web developing:
-                                    </p>
+                                    <p />
                                     <Button label={( opennedServiceIndex === 3 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
-                                        this.setState({ opennedServiceIndex: 3 });
                                         if ( isOpen ) {
-                                            setTimeout(() => {
-                                                this.setState({
-                                                    isRemoveOverlay: true,
-                                                });
-                                            }, 2000 );
+                                            emitter.emit( 'request' );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
                                             });
+                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                                            this.setState({ opennedServiceIndex: 3, closedServiceIndex: -1 });
                                         }
-                                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                     }} />
                                 </div>
                             </div>
@@ -336,7 +308,10 @@ class Services extends React.Component {
                         <div id="modal-content"><p/></div>
                         <Button label={'free request'} onClick={( e ) => {
                             e.preventDefault();
-
+                            emitter.emit( 'request' );
+                            this.setState({
+                                isModalActive: '',
+                            });
                         }} />
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-
+import emitter from '../shared/utils/mrEmitter';
 import styles from './ResponsiveNavigation.css';
 import Button from '../button/Button';
 
@@ -9,13 +9,13 @@ class ResponsiveNavigation extends React.Component {
     constructor( props ) {
         super( props );
         this.state = {
-            open: null,
+            open: 'no-animations',
         };
         this.toggle = this.toggle.bind( this );
     }
 
     componentDidMount() {
-        let nav = document.getElementsByClassName(styles.responsiveNavigationContainer)[0].getElementsByTagName('nav')[0];
+        let nav = document.getElementsByClassName( styles.responsiveNavigationContainer )[ 0 ].getElementsByTagName( 'nav' )[ 0 ];
         nav.childNodes.forEach(( val ) => {
             val.addEventListener( 'click', ( e ) => {
                 this.toggle( e );
@@ -24,7 +24,7 @@ class ResponsiveNavigation extends React.Component {
     }
 
     toggle() {
-        this.setState({ open: ( !this.state.open ) && styles.visible });
+        this.setState({ open: ( this.state.open !== styles.visible ) ? styles.visible : '' });
     }
 
     render() {
@@ -36,7 +36,7 @@ class ResponsiveNavigation extends React.Component {
                     classNames(
                         styles[ 'navicon-button' ],
                         styles[ 'x' ],
-                        ( open ) ? styles.open : null
+                        ( open === styles.visible ) ? styles.open : null
                     )}>
                     <div className={styles.navicon} />
                 </a>
@@ -47,7 +47,12 @@ class ResponsiveNavigation extends React.Component {
                     <NavLink activeClassName={styles.active} to="/our-team">Our team</NavLink>
                     <NavLink activeClassName={styles.active} to="/our-beliefs">Our beliefs</NavLink>
                     <NavLink activeClassName={styles.active} to="/contacts">Contact</NavLink>
-                    <Button className={styles.requestMobBtn} label="send a request" />
+                    <Button className={styles.requestMobBtn} label="send a request" onClick={( e ) => {
+                        e.preventDefault();
+                        setTimeout(() => {
+                            emitter.emit( 'request' );
+                        }, 250 );
+                    }} />
                 </nav>
             </div>
         );

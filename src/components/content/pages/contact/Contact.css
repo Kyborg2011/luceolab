@@ -194,9 +194,10 @@
     }
 
     .info {
-        order: 2;
-        margin-top: 30px;
+        order: 1;
+        margin-top: 0;
         min-width: auto;
+        height: auto;
     }
 
     .socialNetworks {
@@ -208,25 +209,43 @@
     }
 
     .formWrapper {
-        order: 1;
+        order: 2;
         width: 100%;
+        margin-top: 10px;
     }
 
     .info p {
-        margin: 5px 0;
+        margin: 0;
+        line-height: 25px;
+        font-size: 13px;
+    }
+
+    .info p a {
+        font-size: 13px;
+    }
+
+    .info p span {
+        min-width: unset;
     }
 
     .formWrapper input {
         margin-top: 10px;
+        font-size: 13px;
     }
 
     .formWrapper a {
-        margin-top: 20px;
+        margin-top: 0;
         width: 100%;
     }
 
     .formWrapper form a {
         padding: 20px 0;
+        max-height: 30px;
+    }
+
+    .formWrapper textarea {
+        margin-top: 0;
+        font-size: 13px;
     }
 }
 
@@ -263,5 +282,79 @@
 
     .formWrapper form a {
         padding: 15px 0;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contactsWrapper {
+        margin: 30px 0 0;
+    }
+
+    .contactsWrapper {
+        margin: 10px 0;
+        flex-direction: column;
+    }
+
+    .info {
+        order: 2;
+        margin-top: 0;
+        min-width: auto;
+        height: 100%;
+    }
+
+    .socialNetworks {
+        justify-content: center;
+    }
+
+    .socialNetworks li {
+        margin: 0 20px;
+    }
+
+    .formWrapper {
+        order: 1;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .info p {
+        margin: 0;
+        line-height: 25px;
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    .info p a {
+        font-size: 13px;
+    }
+
+    .info p span {
+        min-width: unset;
+    }
+
+    .formWrapper input {
+        margin-top: 20px;
+        font-size: 15px;
+        max-width: unset;
+    }
+
+    .formWrapper a {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .formWrapper form a {
+        padding: 20px 0;
+        max-height: 30px;
+    }
+
+    .formWrapper textarea {
+        margin-top: 0;
+        font-size: 15px;
+        max-width: unset;
+        min-height: 125px;
     }
 }

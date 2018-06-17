@@ -98,7 +98,7 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 767px) {
     .mainHeadingWrapper {
         margin: 10px 0 0 0;
     }

@@ -132,3 +132,7 @@ body, html, :global(#root) {
 :global(a:hover) {
   text-decoration: none !important;
 }
+
+:global(.no-animations) {
+    transition: unset !important;
+}

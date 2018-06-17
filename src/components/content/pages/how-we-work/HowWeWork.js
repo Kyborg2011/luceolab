@@ -36,9 +36,15 @@ class HowWeWork extends React.Component {
             let height = document.getElementById( 'video-wrapper' ).clientHeight - HowWeWork.VIDEO_CONTAINER_MARGIN_BOTTOM;
             let width = document.getElementById( 'video-wrapper' ).clientWidth;
 
+
+            console.log( width );
+            console.log( height );
+
             /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
             width = Math.min( width, height / 0.5625  );
             height = width * 0.5625;
+
+
 
             this.setState({
                 videoWidth: width,

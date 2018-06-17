@@ -212,6 +212,9 @@
         width: 100%;
         margin: 0;
     }
+    .description {
+        padding-right: 0;
+    }
     .teamMember {
         width: 33%;
         height: 25%;
@@ -222,7 +225,7 @@
         padding-top: 0;
     }
     .morrisonQuote {
-        font-size: 14px;
+        font-size: 12px;
         padding-bottom: 0;
     }
     .joinUsBox a {
@@ -239,14 +242,6 @@
     }
     .teamMember:nth-child(4), .teamMember:nth-child(6) {
         background: #fff;
-    }
-}
-
-@media (max-width: 360px) {
-    .description {
-        margin: 5px 0 0;
-        line-height: 23px;
-        font-size: 13px;
     }
 }
 
@@ -299,5 +294,78 @@
 
     .morrisonQuote {
         margin: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .description {
+        margin: 5px 0 0;
+        line-height: 23px;
+        font-size: 13px;
+    }
+
+    .morrisonQuote {
+        font-size: 9px;
+    }
+
+    .memberSocialLinks {
+        display: none;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .pageWrapper {
+        padding: 0;
+    }
+
+    .inner {
+        width: 100%;
+        margin: 0;
+    }
+
+    .description {
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    .teamMember {
+        width: 33%;
+        height: 25%;
+    }
+    .teamMember:nth-child(4),
+    .teamMember:nth-child(5),
+    .teamMember:nth-child(6) {
+        padding-top: 0;
+    }
+    .morrisonQuote {
+        font-size: 12px;
+        padding-bottom: 0;
+    }
+
+    .memberInfoWrap {
+        height: 90%;
+    }
+    .memberName, .memberPosition, .memberSocialLinks a {
+        font-size: 14px;
+    }
+    .teamMember:nth-child(3) {
+        background: transparent;
+    }
+    .teamMember:nth-child(4), .teamMember:nth-child(6) {
+        background: #fff;
+    }
+
+    .pageWrapper {
+        flex-grow: 1;
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+
+    .inner {
+        margin-bottom: 15px;
     }
 }
