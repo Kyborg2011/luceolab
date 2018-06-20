@@ -93,10 +93,14 @@ class Content extends React.Component {
         try {
             for ( let i = 0, len = MouseNavigation.routes.length; i < len; i++ ) {
                 let prefix = MouseNavigation.routes[ i ].replace( '/', '' );
+                let display = 'none';
+                if ( prefix === backgroundImagesPrefix ) {
+                    display = 'block';
+                }
                 bgPictures.push(
                     <LazyLoad key={i} height={backgroundHeight}>
                         <picture style={{
-                            display: ( prefix == backgroundImagesPrefix ) ? 'block' : 'none'
+                            display: display
                         }}>
                             <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
                               srcSet={

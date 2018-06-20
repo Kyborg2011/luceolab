@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 
 import 'normalize.css';
@@ -69,4 +69,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default withRouter( App );

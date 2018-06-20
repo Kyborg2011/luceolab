@@ -1,15 +1,15 @@
-/* Webpack main config file */
+/* Webpack client config file */
 let webpack = require( 'webpack' );
 let ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 let path = require( 'path' );
+var nodeExternals = require( 'webpack-node-externals' );
 
 const env = process.env.NODE_ENV;
-const indexHtml = path.join( __dirname, 'src', 'index.html' );
 
-module.exports = {
+module.exports = [ {
     devtool: 'source-map',
     entry: [
-        './src/Startup.js', indexHtml
+        './src/client.js'
     ],
     output: {
         filename: 'js/[name].bundle.js',
@@ -66,29 +66,6 @@ module.exports = {
                         'postcss-loader'
                     ]
             }, {
-                test: indexHtml,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]'
-                        }
-                    }, {
-                        loader: 'extract-loader'
-                    }, {
-                        loader: 'html-loader',
-                        options: {
-                            attrs: [ 'img:src' ],
-                            interpolate: true
-                        }
-                    }
-                ]
-            }, {
-                test: /\.mp4$/,
-                use: {
-                    loader: 'url-loader?limit=10000&mimetype=video/mp4&name=assets/[name].[ext]&publicPath=/'
-                }
-            }, {
                 test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
@@ -105,4 +82,4 @@ module.exports = {
         modules: [ 'node_modules' ]
     },
     plugins: [ new ExtractTextPlugin({ filename: 'css/[name].css', disable: false, allChunks: true }) ]
-};
+} ];

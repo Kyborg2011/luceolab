@@ -40,21 +40,23 @@ class Services extends React.Component {
     }
 
     componentDidMount() {
-        let list = document.getElementsByClassName( styles.list );
-        let modalContent = document.getElementById( 'modal-content' ).getElementsByTagName( 'p' )[ 0 ];
-        let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
-        if ( width < 767 ) {
-            console.log( list.length );
-            let listElements = list[ 0 ].childNodes;
-            listElements.forEach(( val ) => {
-                val.addEventListener( 'click', ( e ) => {
-                    e.preventDefault();
-                    modalContent.innerHTML = val.getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'p' )[ 0 ].innerHTML;
-                    this.setState({
-                        isModalActive: styles.activeModal,
+        if ( process.env.BROWSER ) {
+            let list = document.getElementsByClassName( styles.list );
+            let modalContent = document.getElementById( 'modal-content' ).getElementsByTagName( 'p' )[ 0 ];
+            let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
+            if ( width < 767 ) {
+                console.log( list.length );
+                let listElements = list[ 0 ].childNodes;
+                listElements.forEach(( val ) => {
+                    val.addEventListener( 'click', ( e ) => {
+                        e.preventDefault();
+                        modalContent.innerHTML = val.getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'p' )[ 0 ].innerHTML;
+                        this.setState({
+                            isModalActive: styles.activeModal,
+                        });
                     });
                 });
-            });
+            }
         }
     }
 

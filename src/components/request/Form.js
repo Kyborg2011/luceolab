@@ -47,14 +47,16 @@ class Form extends React.Component {
     }
 
     open() {
-        let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
-        if ( width < 767 ) {
-            this.setState({
-                isModalActive: styles.activeModal,
-                isMobile: true,
-            });
+        if ( process.env.BROWSER ) {
+            let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
+            if ( width < 767 ) {
+                this.setState({
+                    isModalActive: styles.activeModal,
+                    isMobile: true,
+                });
+            }
+            this.setState({ isOpen: true, isClosed: false });
         }
-        this.setState({ isOpen: true, isClosed: false });
     }
 
     render() {

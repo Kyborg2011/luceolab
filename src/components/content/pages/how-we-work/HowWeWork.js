@@ -32,74 +32,76 @@ class HowWeWork extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            let height = document.getElementById( 'video-wrapper' ).clientHeight - HowWeWork.VIDEO_CONTAINER_MARGIN_BOTTOM;
-            let width = document.getElementById( 'video-wrapper' ).clientWidth;
-
-
-            console.log( width );
-            console.log( height );
-
-            /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
-            width = Math.min( width, height / 0.5625  );
-            height = width * 0.5625;
-
-
-
-            this.setState({
-                videoWidth: width,
-                videoHeight: height,
-            });
-
-            var options = {
-                id: 254140924,
-                title: false,
-                byline: false,
-                badge: false,
-                portrait: false,
-                autoplay: true,
-                muted: true,
-            };
-            var handstick = new Player( document.getElementById( 'embed' ), options );
-
-            ( function() {
-                var throttle = function( type, name, obj ) {
-                    obj = obj || window;
-                    var running = false;
-                    var func = function() {
-                        if ( running ) {
-                            return;
-                        }
-                        running = true;
-                        requestAnimationFrame( function() {
-                            obj.dispatchEvent( new CustomEvent( name ));
-                            running = false;
-                        });
-                    };
-                    obj.addEventListener( type, func );
-                };
-
-                /* init - you can init any event */
-                throttle( 'resize', 'optimizedResize' );
-            })();
-
-            // handle event
-            window.addEventListener( 'optimizedResize', () => {
+        if ( process.env.BROWSER ) {
+            setTimeout(() => {
                 let height = document.getElementById( 'video-wrapper' ).clientHeight - HowWeWork.VIDEO_CONTAINER_MARGIN_BOTTOM;
                 let width = document.getElementById( 'video-wrapper' ).clientWidth;
 
-                /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
+
+                console.log( width );
+                console.log( height );
+
+            /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
                 width = Math.min( width, height / 0.5625  );
                 height = width * 0.5625;
+
+
 
                 this.setState({
                     videoWidth: width,
                     videoHeight: height,
                 });
 
-                console.log( 'Resource conscious resize callback!' );
-            });
-        }, 2000 );
+                var options = {
+                    id: 254140924,
+                    title: false,
+                    byline: false,
+                    badge: false,
+                    portrait: false,
+                    autoplay: true,
+                    muted: true,
+                };
+                var handstick = new Player( document.getElementById( 'embed' ), options );
+
+                ( function() {
+                    var throttle = function( type, name, obj ) {
+                        obj = obj || window;
+                        var running = false;
+                        var func = function() {
+                            if ( running ) {
+                                return;
+                            }
+                            running = true;
+                            requestAnimationFrame( function() {
+                                obj.dispatchEvent( new CustomEvent( name ));
+                                running = false;
+                            });
+                        };
+                        obj.addEventListener( type, func );
+                    };
+
+                /* init - you can init any event */
+                    throttle( 'resize', 'optimizedResize' );
+                })();
+
+            // handle event
+                window.addEventListener( 'optimizedResize', () => {
+                    let height = document.getElementById( 'video-wrapper' ).clientHeight - HowWeWork.VIDEO_CONTAINER_MARGIN_BOTTOM;
+                    let width = document.getElementById( 'video-wrapper' ).clientWidth;
+
+                /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
+                    width = Math.min( width, height / 0.5625  );
+                    height = width * 0.5625;
+
+                    this.setState({
+                        videoWidth: width,
+                        videoHeight: height,
+                    });
+
+                    console.log( 'Resource conscious resize callback!' );
+                });
+            }, 2000 );
+        }
     }
 
     handleClick( e ) {
