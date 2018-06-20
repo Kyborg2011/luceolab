@@ -111,7 +111,7 @@ body, html, :global(#root) {
   animation-timing-function: ease-in-out;
 }
 
-.wrapper {
+.wrapper, :global(#root > div) {
   width: 100%;
   height: 100%;
   display: flex;

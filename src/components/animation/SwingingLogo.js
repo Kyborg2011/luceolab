@@ -41,60 +41,61 @@ class SwingingLogo extends React.Component {
 
     componentWillReceiveProps( nextProps ) {
         if ( process.env.BROWSER ) {
-            if ( this.props.animation && !nextProps.animation ) {
-                clearInterval( animationTimeout );
-                this.setState({
-                    overlay: false,
-                });
-                nextProps.onCancelAnimation();
-
-                setTimeout(() => {
-                    let height = MAX_CANVAS_HEIGHT;
-                    let width = document.getElementById( 'root' ).clientWidth;
-                    width = Math.min( width, MAX_CANVAS_WIDTH );
-
-                    if ( isMobile()) {
-                    //width = 290;
-                        height = document.getElementById( 'root' ).clientHeight * 0.4;
-                    }
-
+            if ( typeof window.changedPath !== 'undefined' && window.changedPath.curr == '/' && window.changedPath.prev ) {
+                if ( this.props.animation && !nextProps.animation ) {
+                    clearInterval( animationTimeout );
                     this.setState({
-                        canvasWidth: width,
-                        canvasHeight: height,
+                        overlay: false,
                     });
+                    nextProps.onCancelAnimation();
 
-                    let canvas = document.getElementById( 'canvas' );
-                    let context = canvas.getContext( '2d' );
+                    setTimeout(() => {
+                        let height = MAX_CANVAS_HEIGHT;
+                        let width = document.getElementById( 'root' ).clientWidth;
+                        width = Math.min( width, MAX_CANVAS_WIDTH );
 
-                    let canvasWidth = width;
-                    let shiftX = 0;
-                    if ( width > 500 && isMobile()) {
-                        canvasWidth = 220;
-                        shiftX = ( width - 220 ) / 2;
-                    }
-                    const canvasHeight = height;
+                        if ( isMobile()) {
+                    //width = 290;
+                            height = document.getElementById( 'root' ).clientHeight * 0.4;
+                        }
 
-                    var imgSymbols = new Image();
-                    imgSymbols.src = logoWithoutLamp;
-                    imgSymbols.onload = () => {
-                        if ( !isMobile()) {
-                            context.drawImage(
+                        this.setState({
+                            canvasWidth: width,
+                            canvasHeight: height,
+                        });
+
+                        let canvas = document.getElementById( 'canvas' );
+                        let context = canvas.getContext( '2d' );
+
+                        let canvasWidth = width;
+                        let shiftX = 0;
+                        if ( width > 500 && isMobile()) {
+                            canvasWidth = 220;
+                            shiftX = ( width - 220 ) / 2;
+                        }
+                        const canvasHeight = height;
+
+                        var imgSymbols = new Image();
+                        imgSymbols.src = logoWithoutLamp;
+                        imgSymbols.onload = () => {
+                            if ( !isMobile()) {
+                                context.drawImage(
                             imgSymbols,
                             100,
                             180,
                             357,
                             100
                         );
-                        } else {
-                            context.drawImage(
+                            } else {
+                                context.drawImage(
                             imgSymbols,
                             shiftX,
                             canvasHeight - canvasWidth * 0.269 - 20,
                             canvasWidth,
                             canvasWidth * 0.269
                         );
-                        }
-                    };
+                            }
+                        };
 
                 /*context.beginPath();
                 context.strokeStyle = '#838586';
@@ -119,72 +120,72 @@ class SwingingLogo extends React.Component {
                     }
                 };*/
 
-                    var img = new Image();
-                    img.src = onLamp;
-                    var isLightingStarted = false;
-                    var lightningOpacity = 1;
-                    var prev = 0;
-                    let render = function( angle, lightOn ) {
-                        if ( !isMobile()) {
-                            var rPend = canvasHeight / 2;
-                        } else {
-                            var rPend = canvasHeight - canvasWidth * 0.3  - 30;
-                        }
-
-                        var rBall = 80;
-                        var rBar = Math.min( canvasWidth, canvasHeight ) * 0.005;
-                        var ballX = Math.sin( angle ) * rPend;
-                        var ballY = Math.cos( angle ) * rPend;
-
-                        context.fillStyle = 'rgba(255,255,255,0.51)';
-                        context.globalCompositeOperation = 'destination-out';
-                        context.fillRect( 0, 0, canvasWidth + shiftX * 2, canvasHeight );
-                        context.globalCompositeOperation = 'source-over';
-                        context.save();
-
-                        context.beginPath();
-                        context.strokeStyle = '#838586';
-                        context.lineWidth = 2;
-                        if ( !isMobile()) {
-                            context.moveTo( canvasWidth / 2, 0 );
-                            context.lineTo( -ballX + canvasWidth / 2, ballY );
-                        } else {
-                            context.moveTo( canvasWidth * 0.699 + shiftX, 0 );
-                            context.lineTo( -ballX + canvasWidth * 0.699 + shiftX, ballY );
-                        }
-                        context.closePath();
-                        context.stroke();
-
-                        if ( !isMobile()) {
-                            context.translate( canvasWidth / 2, 0 );
-                        } else {
-                            context.translate( canvasWidth * 0.699 + shiftX, 0 );
-                        }
-
-                        context.rotate( angle );
-
-                        if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
-                        //img = img2;
-                            isLightingStarted = true;
-                            that.props.onEnd();
-                            that.setState({ fade: true });
-                        }
-
-                        img.onload = () => {
+                        var img = new Image();
+                        img.src = onLamp;
+                        var isLightingStarted = false;
+                        var lightningOpacity = 1;
+                        var prev = 0;
+                        let render = function( angle, lightOn ) {
                             if ( !isMobile()) {
-                                if ( isLightingStarted ) {
-                                    context.globalAlpha = 1 - lightningOpacity;
-                                }
-                                context.drawImage(
+                                var rPend = canvasHeight / 2;
+                            } else {
+                                var rPend = canvasHeight - canvasWidth * 0.3  - 30;
+                            }
+
+                            var rBall = 80;
+                            var rBar = Math.min( canvasWidth, canvasHeight ) * 0.005;
+                            var ballX = Math.sin( angle ) * rPend;
+                            var ballY = Math.cos( angle ) * rPend;
+
+                            context.fillStyle = 'rgba(255,255,255,0.51)';
+                            context.globalCompositeOperation = 'destination-out';
+                            context.fillRect( 0, 0, canvasWidth + shiftX * 2, canvasHeight );
+                            context.globalCompositeOperation = 'source-over';
+                            context.save();
+
+                            context.beginPath();
+                            context.strokeStyle = '#838586';
+                            context.lineWidth = 2;
+                            if ( !isMobile()) {
+                                context.moveTo( canvasWidth / 2, 0 );
+                                context.lineTo( -ballX + canvasWidth / 2, ballY );
+                            } else {
+                                context.moveTo( canvasWidth * 0.699 + shiftX, 0 );
+                                context.lineTo( -ballX + canvasWidth * 0.699 + shiftX, ballY );
+                            }
+                            context.closePath();
+                            context.stroke();
+
+                            if ( !isMobile()) {
+                                context.translate( canvasWidth / 2, 0 );
+                            } else {
+                                context.translate( canvasWidth * 0.699 + shiftX, 0 );
+                            }
+
+                            context.rotate( angle );
+
+                            if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
+                        //img = img2;
+                                isLightingStarted = true;
+                                that.props.onEnd();
+                                that.setState({ fade: true });
+                            }
+
+                            img.onload = () => {
+                                if ( !isMobile()) {
+                                    if ( isLightingStarted ) {
+                                        context.globalAlpha = 1 - lightningOpacity;
+                                    }
+                                    context.drawImage(
                             img,
-                            -60,
+                            290,
                             rPend,
                             120,
                             143
                         );
-                                if ( isLightingStarted ) {
-                                    context.globalAlpha = lightningOpacity;
-                                    context.drawImage(
+                                    if ( isLightingStarted ) {
+                                        context.globalAlpha = lightningOpacity;
+                                        context.drawImage(
                                 img2,
                                 -60,
                                 rPend,
@@ -192,15 +193,15 @@ class SwingingLogo extends React.Component {
                                 143
                             );
 
-                                    if ( lightningOpacity < 1 ) {
-                                        lightningOpacity += 0.003;
+                                        if ( lightningOpacity < 1 ) {
+                                            lightningOpacity += 0.003;
+                                        }
                                     }
-                                }
-                            } else {
-                                if ( isLightingStarted ) {
-                                    context.globalAlpha = 1 - lightningOpacity;
-                                }
-                                context.drawImage(
+                                } else {
+                                    if ( isLightingStarted ) {
+                                        context.globalAlpha = 1 - lightningOpacity;
+                                    }
+                                    context.drawImage(
                                 img,
                                 canvasWidth - canvasWidth * 0.46 + shiftX,
                                 rPend,
@@ -208,29 +209,30 @@ class SwingingLogo extends React.Component {
                                 canvasWidth * 0.314 * 1.196
                             );
 
-                                if ( isLightingStarted ) {
-                                    context.globalAlpha = lightningOpacity;
-                                    context.drawImage(
+                                    if ( isLightingStarted ) {
+                                        context.globalAlpha = lightningOpacity;
+                                        context.drawImage(
                                 img2,
                                 -canvasWidth * 0.314 / 2,
                                 rPend,
                                 canvasWidth * 0.314,
                                 canvasWidth * 0.314 * 1.196
                             );
-                                    if ( lightningOpacity < 1 ) {
-                                        lightningOpacity += 0.003;
+                                        if ( lightningOpacity < 1 ) {
+                                            lightningOpacity += 0.003;
+                                        }
                                     }
                                 }
-                            }
-                            context.globalAlpha = 1;
+                                context.globalAlpha = 1;
+                            };
+
+                            context.restore();
+                            prev = angle;
                         };
 
-                        context.restore();
-                        prev = angle;
-                    };
-
-                    render( 0, true );
-                }, 500 );
+                        render( 0, true );
+                    }, 500 );
+                }
             }
         }
     }

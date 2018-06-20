@@ -30,6 +30,12 @@ class App extends React.Component {
 
     componentWillReceiveProps( nextProps ) {
         if ( nextProps.location.pathname != this.props.location.pathname ) {
+            if ( process.env.BROWSER ) {
+                window.changedPath = {
+                    prev: this.props.location.pathname,
+                    curr: nextProps.location.pathname,
+                };
+            }
             this.setState({
                 isLightstyle: 1,
                 pathname: nextProps.location.pathname

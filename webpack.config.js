@@ -7,7 +7,6 @@ var nodeExternals = require( 'webpack-node-externals' );
 const env = process.env.NODE_ENV;
 
 module.exports = [ {
-    devtool: 'source-map',
     entry: [
         './src/client.js'
     ],
@@ -24,14 +23,20 @@ module.exports = [ {
             }, {
                 test: /\.css/,
                 include: /node_modules/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    }
-                ]
+                use: ( env === 'production' )
+                    ? ExtractTextPlugin.extract({
+                        use: [
+                            {
+                                loader: 'css-loader'
+                            },
+                            'postcss-loader'
+                        ]
+                    })
+                    : [
+                        {
+                            loader: 'css-loader'
+                        }
+                    ]
             }, {
                 test: /\.css$/,
                 exclude: /node_modules/,
@@ -81,7 +86,11 @@ module.exports = [ {
         modules: [ 'node_modules' ]
     },
     plugins: [
-        new ExtractTextPlugin({ filename: 'css/[name].css', disable: false, allChunks: true }),
+        new ExtractTextPlugin({
+            filename: 'css/[name].css',
+            disable: false,
+            allChunks: true
+        }),
         new webpack.DefinePlugin({
             'process.env.BROWSER': JSON.stringify( process.env.BROWSER )
         })
