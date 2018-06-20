@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Input from 'muicss/lib/react/input';
 import Textarea from 'muicss/lib/react/textarea';
+import { Helmet } from 'react-helmet';
 
 import styles from './Contact.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -36,6 +37,15 @@ class Contact extends React.Component {
 
         return (
                 <div>
+                    <Helmet
+                      htmlAttributes={{ lang: 'en' }}
+                      title="Contacts - LuceoLab"
+                      titleAttributes={{ itemprop: 'name', lang: 'en' }}
+                      meta={[
+                            { name: 'description', content: 'Contacts - LuceoLab' },
+                            { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
+                      ]}
+                    />
                     <MainHeading text="get in touch" />
                     <div className={styles.contactsWrapper}>
                         <div className={styles.formWrapper}>

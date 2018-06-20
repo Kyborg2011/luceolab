@@ -13,7 +13,6 @@ module.exports = [ {
     ],
     output: {
         filename: 'js/[name].bundle.js',
-        chunkFilename: 'js/[name].chunk.js',
         path: path.resolve( './dist' )
     },
     module: {
@@ -81,5 +80,10 @@ module.exports = [ {
     resolve: {
         modules: [ 'node_modules' ]
     },
-    plugins: [ new ExtractTextPlugin({ filename: 'css/[name].css', disable: false, allChunks: true }) ]
+    plugins: [
+        new ExtractTextPlugin({ filename: 'css/[name].css', disable: false, allChunks: true }),
+        new webpack.DefinePlugin({
+            'process.env.BROWSER': JSON.stringify( process.env.BROWSER )
+        })
+    ]
 } ];

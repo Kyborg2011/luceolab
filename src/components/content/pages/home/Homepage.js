@@ -6,6 +6,7 @@ import {
   withRouter,
   Link
 } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import styles from './Homepage.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -41,8 +42,16 @@ class Homepage extends React.Component {
 
         return (
             <div className={classNames( styles.homepageInner )}>
+                <Helmet
+                  htmlAttributes={{ lang: 'en' }}
+                  title="LuceoLab - digital agency"
+                  titleAttributes={{ itemprop: 'name', lang: 'en' }}
+                  meta={[
+                        { name: 'description', content: 'LuceoLab - digital agency' },
+                        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
+                  ]}
+                />
                 <div>
-
                     <SwingingLogo
                       animation={swingingLogo}
                       onEnd={() => {

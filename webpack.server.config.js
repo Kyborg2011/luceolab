@@ -31,12 +31,12 @@ module.exports = [ {
             }, {
                 test: /\.css$/,
                 use: [ {
-                    loader: 'css-loader',
+                    loader: 'css-loader/locals',
                     options: {
                         modules: true,
                         sourceMap: true,
                         importLoaders: 1,
-                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                        localIdentName: 'css-[hash:base64:5]',
                     }
                 } ]
             }, {
@@ -54,6 +54,5 @@ module.exports = [ {
     },
     resolve: {
         modules: [ 'node_modules' ]
-    },
-    plugins: [ new ExtractTextPlugin({ filename: 'css/[name].css', disable: false, allChunks: true }) ]
+    }
 } ];

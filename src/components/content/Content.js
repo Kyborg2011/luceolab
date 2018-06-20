@@ -11,30 +11,33 @@ import asyncComponent from './AsyncComponent';
 import bgStyles from '../shared/styles/Background.css';
 import styles from './Content.css';
 
-const home = asyncComponent(() => import(
-    /* webpackChunkName: 'homepage' */
-    './pages/home/Homepage'
-));
-const howWeWork = asyncComponent(() => import(
-    /* webpackChunkName: 'how-we-work' */
-    './pages/how-we-work/HowWeWork'
-));
-const services = asyncComponent(() => import(
-    /* webpackChunkName: 'services' */
-    './pages/services/Services'
-));
-const ourTeam = asyncComponent(() => import(
-    /* webpackChunkName: 'our-team' */
-    './pages/our-team/OurTeam'
-));
-const ourBeliefs = asyncComponent(() => import(
-    /* webpackChunkName: 'our-beliefs' */
-    './pages/our-beliefs/OurBeliefs'
-));
-const contact = asyncComponent(() => import(
-    /* webpackChunkName: 'contact' */
-    './pages/contact/Contact'
-));
+import home from './pages/home/Homepage';
+import howWeWork from './pages/how-we-work/HowWeWork';
+import services from './pages/services/Services';
+import ourTeam from './pages/our-team/OurTeam';
+import ourBeliefs from './pages/our-beliefs/OurBeliefs';
+import contact from './pages/contact/Contact';
+
+/*if ( process.env.BROWSER ) {
+    const home = asyncComponent(() => import(
+        './pages/home/Homepage'
+    ));
+    const howWeWork = asyncComponent(() => import(
+        './pages/how-we-work/HowWeWork'
+    ));
+    const services = asyncComponent(() => import(
+        './pages/services/Services'
+    ));
+    const ourTeam = asyncComponent(() => import(
+        './pages/our-team/OurTeam'
+    ));
+    const ourBeliefs = asyncComponent(() => import(
+        './pages/our-beliefs/OurBeliefs'
+    ));
+    const contact = asyncComponent(() => import(
+        './pages/contact/Contact'
+    ));
+}*/
 
 class Content extends React.Component {
     handleClick( e ) {
@@ -97,8 +100,43 @@ class Content extends React.Component {
                 if ( prefix === backgroundImagesPrefix ) {
                     display = 'block';
                 }
-                bgPictures.push(
-                    <LazyLoad key={i} height={backgroundHeight}>
+                if ( process.env.BROWSER ) {
+                    bgPictures.push(
+                        <LazyLoad key={i} height={backgroundHeight}>
+                            <picture style={{
+                                display: display
+                            }}>
+                                <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
+                                  srcSet={
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_874.jpg' ) + ' 874w'
+                                  } />
+                                <source media="(min-width: 768px) and (max-width: 991px)"
+                                  sizes="(max-width: 1530px) 100vw, 1530px"
+                                  srcSet={[
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_768.jpg' ) + ' 768w',
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1192.jpg' ) + ' 1192w',
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1530.jpg' ) + ' 1530w'
+                                  ].join( ',' )} />
+                                <source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 1147px) 100vw, 1147px"
+                                  srcSet={[
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_992.jpg' ) + ' 992w',
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1099.jpg' ) + ' 1099w',
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1147.jpg' ) + ' 1147w'
+                                  ].join( ',' )} />
+                                <img sizes="(max-width: 3626px) 100vw, 3626px"
+                                  srcSet={[
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1200.jpg' ) + ' 1200w',
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_2618.jpg' ) + ' 2618w',
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' ) + ' 3626w'
+                                  ].join( ',' )}
+                                  src={
+                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' )
+                                  } />
+                            </picture>
+                        </LazyLoad>
+                    );
+                } else {
+                    bgPictures.push(
                         <picture style={{
                             display: display
                         }}>
@@ -129,8 +167,8 @@ class Content extends React.Component {
                                   require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' )
                               } />
                         </picture>
-                    </LazyLoad>
-                );
+                    );
+                }
             }
         } catch ( e ) {
             console.log( e );
@@ -156,14 +194,16 @@ class Content extends React.Component {
                               }, 1000 );
                           }}
                         >
-                            <Switch key={location.key} location={location}>
-                                <Route exact path="/" component={home} />
-                                <Route path="/how-we-work" component={howWeWork} />
-                                <Route path="/services" component={services} />
-                                <Route path="/our-team" component={ourTeam} />
-                                <Route path="/our-beliefs" component={ourBeliefs} />
-                                <Route path="/contacts" component={contact} />
-                            </Switch>
+                            <div>
+                                <Switch key={location.key} location={location}>
+                                    <Route exact path="/" component={home} />
+                                    <Route path="/how-we-work" component={howWeWork} />
+                                    <Route path="/services" component={services} />
+                                    <Route path="/our-team" component={ourTeam} />
+                                    <Route path="/our-beliefs" component={ourBeliefs} />
+                                    <Route path="/contacts" component={contact} />
+                                </Switch>
+                            </div>
                         </CSSTransition>
                     </TransitionGroup>
                 )} />

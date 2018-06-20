@@ -4,7 +4,7 @@
   "description": "HTML5/CSS3 full markup for the https://luceolab.com",
   "main": "www/server.js",
   "scripts": {
-    "build-client": "cross-env NODE_ENV=production webpack",
+    "build-client": "cross-env NODE_ENV=production BROWSER=true webpack",
     "build-server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js",
     "start-dev": "cross-env NODE_ENV=development webpack --watch",
     "start": "npm run build-client && npm run build-server && node dist/server.js",
@@ -26,6 +26,7 @@
     "webpack": "^2.6.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
     "@vimeo/player": "^2.6.1",
     "assets-webpack-plugin": "^3.5.1",
     "autoprefixer": "^6.7.7",

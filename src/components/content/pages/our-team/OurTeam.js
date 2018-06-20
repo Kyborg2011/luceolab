@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {
   withRouter
 } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import layout from '../../../shared/styles/Layout.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -41,6 +42,15 @@ class OurTeam extends React.Component {
 
         return (
                 <div>
+                    <Helmet
+                      htmlAttributes={{ lang: 'en' }}
+                      title="Our Team - LuceoLab"
+                      titleAttributes={{ itemprop: 'name', lang: 'en' }}
+                      meta={[
+                            { name: 'description', content: 'Our Team - LuceoLab' },
+                            { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
+                      ]}
+                    />
                     <MainHeading darkstyle text="nature born climbers" />
                     <div className={styles.pageWrapper}>
                         <div className={styles.inner}>

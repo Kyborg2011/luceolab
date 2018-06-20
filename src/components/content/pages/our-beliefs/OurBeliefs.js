@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {
   withRouter
 } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import styles from './OurBeliefs.css';
 import layout from '../../../shared/styles/Layout.css';
@@ -56,6 +57,15 @@ class OurBeliefs extends React.Component {
 
         return (
                 <div>
+                    <Helmet
+                      htmlAttributes={{ lang: 'en' }}
+                      title="Our Beliefs - LuceoLab"
+                      titleAttributes={{ itemprop: 'name', lang: 'en' }}
+                      meta={[
+                            { name: 'description', content: 'Our Beliefs - LuceoLab' },
+                            { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
+                      ]}
+                    />
                     <MainHeading darkstyle text="our beliefs" subTitle={titles[ currentSlide ]} />
                     <div className={layout.pageWrapper}>
                         <div className={styles.inner}>

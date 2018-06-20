@@ -4,6 +4,7 @@ import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 
 import 'normalize.css';
+import '../../node_modules/font-awesome/css/font-awesome.css';
 import styles from './App.css';
 
 import Header from './header/Header';

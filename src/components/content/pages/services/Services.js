@@ -6,6 +6,7 @@ import {
   withRouter
 } from 'react-router-dom';
 import emitter from '../../../shared/utils/mrEmitter';
+import { Helmet } from 'react-helmet';
 
 import layout from '../../../shared/styles/Layout.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -78,6 +79,15 @@ class Services extends React.Component {
 
         return (
             <div>
+                <Helmet
+                  htmlAttributes={{ lang: 'en' }}
+                  title="Services - LuceoLab"
+                  titleAttributes={{ itemprop: 'name', lang: 'en' }}
+                  meta={[
+                        { name: 'description', content: 'Services - LuceoLab' },
+                        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
+                  ]}
+                />
                 <MainHeading darkstyle text="services" />
                 <div className={styles.pageWrapper}>
                     <div className={styles.inner}>

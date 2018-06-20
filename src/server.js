@@ -26,7 +26,7 @@ app.use( compression({
 app.get( '/*', function( req, res ) {
     const appString = renderToString(
         <StaticRouter location={req.url} context={{}}>
-            <Route path="/" component={App} />
+            <App />
         </StaticRouter>
     );
 
