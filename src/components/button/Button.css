@@ -124,7 +124,7 @@
     text-align: justify;
     background-color: #fbbd63;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 20px;
     border-radius: 10px;
     padding: 10px 15px;
     left: calc(50% - 120px);
@@ -132,7 +132,7 @@
     color: #fff;
     text-transform: none;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .withTooltip::after {

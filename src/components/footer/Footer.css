@@ -24,7 +24,7 @@
     text-transform: uppercase;
     transition: 1s opacity, 1s background-color;
     line-height: 43px;
-    opacity: .4;
+    opacity: .7;
     background-color: transparent;
     letter-spacing: .7px;
 }

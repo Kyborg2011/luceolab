@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import classNames from 'classnames';
+import { Helmet } from 'react-helmet';
 
 import 'normalize.css';
 import '../../node_modules/font-awesome/css/font-awesome.css';
@@ -53,6 +54,13 @@ class App extends React.Component {
 
         return (
             <div className={styles.wrapper}>
+                <Helmet
+                  htmlAttributes={{ lang: 'en' }}
+                  meta={[
+                      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+                      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
+                  ]}
+                />
                 <Header />
 
                 <div className={classNames( styles.innerWrapper )}>

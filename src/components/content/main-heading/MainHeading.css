@@ -49,13 +49,15 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 16px;
-    padding: 0;
+    padding: 0 0 0 20px;
     margin: 13px 0 0 10px;
-    color: #f1f1f1;
+    color: #212121;
+    font-weight: 600;
+    transition: color 1s;
 }
 
 :global(.dark-style-header) .h3 {
-    color: #545b67;
+    color: #212121;
 }
 
 .h3:hover {

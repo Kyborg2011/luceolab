@@ -48,18 +48,14 @@ class MouseNavigation extends React.Component {
             let endX = 0;
             let element = document.getElementById( MouseNavigation.wrapperId );
 
-        /* Mouse wheel scroll event handler for desktops and laptops */
             element.addEventListener( 'wheel', ( e ) => {
                 e.preventDefault();
-            /* old IE support */
                 e = window.event || e;
-	        let delta = Math.max( -1, Math.min( 1, ( e.wheelDelta || -e.detail )));
+	            let delta = Math.max( -1, Math.min( 1, ( e.wheelDelta || -e.detail )));
                 let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                 let nextRouteId = routeId - delta;
                 this.redirect( nextRouteId );
             });
-
-        /* Mouse move events handlers for desktops and laptops */
             element.addEventListener( 'mousedown', ( e ) => {
                 startX = e.pageY;
             }, false );
@@ -76,8 +72,6 @@ class MouseNavigation extends React.Component {
                 }
                 startX = -1;
             }, false );
-
-        /* Touch events handlers for mobile devices and tablets */
             element.addEventListener( 'touchmove', ( e ) => {
                 e.preventDefault();
             });

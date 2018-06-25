@@ -1,53 +1,13 @@
 .canvas {
     display: flex;
     margin: 0 auto;
-    position: relative;
-    top: 0;
-    left: 75px;
     z-index: 1100;
     filter: none;
 }
 
-@media (max-width: 767px) {
-    .canvas {
-        left: -15px;
-        position: absolute;
-    }
-}
-
-/*
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) {
-    .canvas {
-        position: static;
-    }
-}
-
-@media only screen
-    and (min-device-width : 768px)
-    and (max-device-width : 1024px)
-    and (orientation : landscape) {
-    .canvas {
-        margin-left: 137px;
-    }
-}
-
-@media only screen
-    and (min-device-width: 375px)
-    and (max-device-width: 812px)
-    and (-webkit-min-device-pixel-ratio: 3)
-    and (orientation : landscape) {
-    .canvas {
-        margin-left: -40px;
-    }
-}
-
-@media only screen
-    and (max-width: 811px)
-    and (orientation : landscape) {
-    .canvas {
-        margin-left: 0;
-    }
+.canvasContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
 }

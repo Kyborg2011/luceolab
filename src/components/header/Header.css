@@ -130,6 +130,10 @@ a.instagramIcon {
     .primaryNav {
         padding-right: 0;
     }
+
+    a.githubIcon {
+        margin-right: 10px;
+    }
 }
 
 @media only screen

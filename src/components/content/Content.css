@@ -1,28 +1,50 @@
 @keyframes slide-upper {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .2;
+    }
+
     100% {
         transform: translate3d(0, -100%, 0);
+        opacity: 0;
     }
 }
 
 @keyframes slide-downer {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .2;
+    }
+
     100% {
         transform: translate3d(0, 100%, 0);
+        opacity: 0;
     }
 }
 
 @keyframes slide-up {
+    0% {
+        opacity: 0;
+    }
+
     100% {
+        opacity: 1;
         transform: translate3d(0, 0%, 0);
         z-index: 300 !important;
     }
 }
 
 .transitionGroup {
-    position: relative;
     margin: 0 152px 43px 152px;
     width: 100%;
     display: flex;
-    z-index: 1000;
+    z-index: 700;
 }
 
 .transitionGroup > div, .transitionGroup > div > div {
@@ -34,6 +56,10 @@
     height: 100%;
     width: 100%;
     justify-content: space-evenly;
+}
+
+:global(.pageWithMargins) {
+    position: relative !important;
 }
 
 :global(.bottom-up .slide-transition-enter) {

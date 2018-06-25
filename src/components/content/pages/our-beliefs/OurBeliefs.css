@@ -2,42 +2,47 @@
     composes: inner from "../../../shared/styles/Layout.css";
     width: auto;
     margin-top: 0;
+    position: relative;
+}
+
+.pageWrapper {
+    composes: pageWrapper from "../../../shared/styles/Layout.css";
+    flex-direction: column;
 }
 
 .epigraph {
     font-family: 'Open Sans Condensed', sans-serif;
-    text-align: right;
-    width: 40%;
-    color: #545b67;
-    letter-spacing: 1px;
-    font-size: 25px;
-    line-height: 38px;
-}
-
-.epigraph:hover {
+    text-align: center;
+    width: 30%;
     color: #D81159;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-size: 20px;
+    line-height: 38px;
 }
 
 .content {
     font-weight: 400;
     line-height: 23px;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    width: 50%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    width: 70%;
     text-align: justify;
-    padding-top: 10px;
-    letter-spacing: 0.75px;
+    padding-right: 15px;
 }
 
 .slide {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 0;
-    opacity: 0;
+    z-index: 200;
+    opacity: 1;
     overflow: hidden;
     transform: translateX(-200%);
-    transition: transform 1s, opacity 0.5s 0.5s;
+}
+
+.slide.slidingStarted {
+    transition: transform 1s;
 }
 
 .slide.right {
@@ -49,11 +54,38 @@
     transform: none;
 }
 
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-top: 15px;
+    width: 72%;
+}
+
 .controls a {
-    font-size: 75px;
-    color: #545b67;
-    opacity: 0.5;
+    display: flex;
+    color: #D81159;
+    font-size: 40px;
+    line-height: 40px;
+    text-decoration: none;
     transition: opacity 1s;
+    margin-right: 30px;
+}
+
+.controls a span {
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+.controls a:hover span {
+    text-decoration: underline;
+}
+
+.controls a:last-child {
+    margin-right: 0;
 }
 
 .controls a:hover {
@@ -63,7 +95,7 @@
 
 .bold {
     font-weight: 600;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .content a img {
@@ -78,22 +110,45 @@
     width: 30%;
 }
 
-.forwardBtn {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 200px !important;
-    opacity: 0.35 !important;
+.technoligiesList {
+    display: inline-block;
+    width: 100%;
+    height: 85px;
 }
 
-.backBtn {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: -70px;
-    font-size: 200px !important;
-    opacity: 0.35 !important;
+.technoligiesList a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.technoligiesList a img {
+    display: inline-block;
+    filter: grayscale(100%);
+    opacity: .5;
+    transition: opacity 1s, filter 1s;
+    width: 35% !important;
+    margin: 0 auto;
+    padding: 0;
+    float: none !important;
+}
+
+.technoligiesList a:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+:global(.disableArr) {
+    opacity: .4 !important;
+    color: #545b67 !important;
+    cursor: grab;
+}
+
+:global(.disableArr) span {
+    text-decoration: none !important;
 }
 
 @media only screen and (max-width: 767px) {

@@ -43,13 +43,7 @@ class OurTeam extends React.Component {
         return (
                 <div>
                     <Helmet
-                      htmlAttributes={{ lang: 'en' }}
                       title="Our Team - LuceoLab"
-                      titleAttributes={{ itemprop: 'name', lang: 'en' }}
-                      meta={[
-                            { name: 'description', content: 'Our Team - LuceoLab' },
-                            { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
-                      ]}
                     />
                     <MainHeading darkstyle text="nature born climbers" />
                     <div className={styles.pageWrapper}>
@@ -199,8 +193,13 @@ class OurTeam extends React.Component {
                                 We are an arrow in flight!
                             </p>
                             <Button
+                              onClick={( e ) => {
+                                  if ( process.env.BROWSER ) {
+                                      window.location.href = 'mailto:info@luceolab.com';
+                                  }
+                                  e.preventDefault();
+                              }}
                               label="join us"
-                              onClick={this.handleClick.bind( this )}
                               dataTooltip={
                                     'We are always looking for new talents, so if you know something about projects development and promotion in web - it\'s time to apply, buddy!'
                                 }

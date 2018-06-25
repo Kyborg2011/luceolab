@@ -28,3 +28,18 @@
         height: 100%;
     }
 }
+
+/*
+    ##Device = Tablets, Ipad Pro 12 inch (portrait)
+    ##Screen = B/w 1024px to 1366px
+*/
+@media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+    .background picture, .background picture img {
+        height: 100%;
+        width: auto;
+    }
+}

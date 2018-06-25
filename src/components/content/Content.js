@@ -100,75 +100,38 @@ class Content extends React.Component {
                 if ( prefix === backgroundImagesPrefix ) {
                     display = 'block';
                 }
-                if ( process.env.BROWSER ) {
-                    bgPictures.push(
-                        <LazyLoad key={i} height={backgroundHeight}>
-                            <picture style={{
-                                display: display
-                            }}>
-                                <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
-                                  srcSet={
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_874.jpg' ) + ' 874w'
-                                  } />
-                                <source media="(min-width: 768px) and (max-width: 991px)"
-                                  sizes="(max-width: 1530px) 100vw, 1530px"
-                                  srcSet={[
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_768.jpg' ) + ' 768w',
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1192.jpg' ) + ' 1192w',
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1530.jpg' ) + ' 1530w'
-                                  ].join( ',' )} />
-                                <source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 1147px) 100vw, 1147px"
-                                  srcSet={[
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_992.jpg' ) + ' 992w',
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1099.jpg' ) + ' 1099w',
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1147.jpg' ) + ' 1147w'
-                                  ].join( ',' )} />
-                                <img sizes="(max-width: 3626px) 100vw, 3626px"
-                                  srcSet={[
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1200.jpg' ) + ' 1200w',
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_2618.jpg' ) + ' 2618w',
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' ) + ' 3626w'
-                                  ].join( ',' )}
-                                  src={
-                                      require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' )
-                                  } />
-                            </picture>
-                        </LazyLoad>
-                    );
-                } else {
-                    bgPictures.push(
-                        <picture style={{
-                            display: display
-                        }}>
-                            <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
-                              srcSet={
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_874.jpg' ) + ' 874w'
-                              } />
-                            <source media="(min-width: 768px) and (max-width: 991px)"
-                              sizes="(max-width: 1530px) 100vw, 1530px"
-                              srcSet={[
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_768.jpg' ) + ' 768w',
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1192.jpg' ) + ' 1192w',
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1530.jpg' ) + ' 1530w'
-                              ].join( ',' )} />
-                            <source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 1147px) 100vw, 1147px"
-                              srcSet={[
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_992.jpg' ) + ' 992w',
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1099.jpg' ) + ' 1099w',
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1147.jpg' ) + ' 1147w'
-                              ].join( ',' )} />
-                            <img sizes="(max-width: 3626px) 100vw, 3626px"
-                              srcSet={[
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1200.jpg' ) + ' 1200w',
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_2618.jpg' ) + ' 2618w',
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' ) + ' 3626w'
-                              ].join( ',' )}
-                              src={
-                                  require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' )
-                              } />
-                        </picture>
-                    );
-                }
+                bgPictures.push(
+                    <picture key={i} style={{
+                        display: display
+                    }}>
+                        <source media="(max-width: 767px)" sizes="(max-width: 874px) 100vw, 874px"
+                          srcSet={
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_874.jpg' ) + ' 874w'
+                          } />
+                        <source media="(min-width: 768px) and (max-width: 991px)"
+                          sizes="(max-width: 1530px) 100vw, 1530px"
+                          srcSet={[
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_768.jpg' ) + ' 768w',
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1192.jpg' ) + ' 1192w',
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1530.jpg' ) + ' 1530w'
+                          ].join( ',' )} />
+                        <source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 1147px) 100vw, 1147px"
+                          srcSet={[
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_992.jpg' ) + ' 992w',
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1099.jpg' ) + ' 1099w',
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1147.jpg' ) + ' 1147w'
+                          ].join( ',' )} />
+                        <img sizes="(max-width: 3626px) 100vw, 3626px"
+                          srcSet={[
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_1200.jpg' ) + ' 1200w',
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_2618.jpg' ) + ' 2618w',
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' ) + ' 3626w'
+                          ].join( ',' )}
+                          src={
+                              require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' )
+                          } />
+                    </picture>
+                );
             }
         } catch ( e ) {
             console.log( e );
@@ -180,7 +143,7 @@ class Content extends React.Component {
                     {bgPictures}
                 </div>
                 <Route render={({ location }) => (
-                    <TransitionGroup className={classNames( styles.transitionGroup, transitionDirection )}>
+                    <TransitionGroup className={classNames( styles.transitionGroup, transitionDirection, { pageWithMargins: ( backgroundImagesPrefix !== '' ) })}>
                         <CSSTransition
                           timeout={2500}
                           classNames="slide-transition"

@@ -169,7 +169,7 @@ a.requestBtn:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 1200;
     background-color: #000;
     opacity: 0;
     animation-name: opacity-in;
@@ -221,14 +221,35 @@ a.requestBtn:hover {
     text-align: justify;
 }
 
+.modalContainer :global(.mui-textfield) label {
+    color: rgba(0,0,0,.4) !important;
+}
+
 :global(#close-modal) {
     font-size: 30px;
-    color: #212121;
+    color: rgba(0,0,0,.4) !important;
 }
 
 @media (max-width: 767px) {
     .requestForm {
         display: none;
+    }
+
+    :global(.Select-placeholder), :global(.Select-menu-outer *), :global(.Select-value) {
+        background-color: rgba(231,229,221,.95) !important;
+    }
+
+    .reverseForm {
+        padding: 0 5px;
+        margin-top: 15px;
+    }
+
+    .reverseForm input, .reverseForm textarea, .reverseForm label {
+        font-size: 13px;
+    }
+
+    .reverseForm :global(.mui-textfield) {
+        padding-top: 10px;
     }
 }
 

@@ -9,13 +9,11 @@
 .formWrapper {
     display: flex;
     width: 50%;
-    height: 100%;
 }
 
 .info {
     display: flex;
     flex-flow: column;
-    height: 100%;
     min-width: 360px;
 }
 
@@ -183,6 +181,10 @@
         display: flex;
         flex-direction: column;
     }
+
+    .formWrapper form a {
+        margin-top: 0;
+    }
 }
 
 @media only screen
@@ -194,8 +196,8 @@
     }
 
     .info {
-        order: 1;
-        margin-top: 0;
+        order: 2;
+        margin-top: 15px;
         min-width: auto;
         height: auto;
     }
@@ -209,15 +211,20 @@
     }
 
     .formWrapper {
-        order: 2;
+        order: 1;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 0;
+    }
+
+    .formWrapper label {
+        font-size: 13px;
     }
 
     .info p {
         margin: 0;
         line-height: 25px;
         font-size: 13px;
+        justify-content: center;
     }
 
     .info p a {
@@ -286,10 +293,26 @@
 }
 
 /*
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
+    ##Device = Tablets, Ipad Pro 12 inch (portrait)
+    ##Screen = B/w 1024px to 1366px
 */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+    .info {
+        flex: 2;
+    }
+}
+
+@media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : portrait) {
+    .info {
+        flex: 2;
+    }
     .contactsWrapper {
         margin: 30px 0 0;
     }
@@ -303,7 +326,6 @@
         order: 2;
         margin-top: 0;
         min-width: auto;
-        height: 100%;
     }
 
     .socialNetworks {
@@ -356,5 +378,42 @@
         font-size: 15px;
         max-width: unset;
         min-height: 125px;
+    }
+}
+
+@media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : landscape) {
+    .contactsWrapper {
+        margin: 10px 0;
+        flex-direction: row;
+    }
+
+    .formWrapper input, .formWrapper textarea {
+        padding: 10px 0;
+    }
+
+    .info {
+        flex: 2;
+        margin: 0 15px;
+        min-width: auto;
+    }
+
+    .info p {
+        margin: 5px 0;
+    }
+
+    .formWrapper input {
+        margin-top: 0;
+    }
+
+    .formWrapper a {
+        margin-top: 20px;
+        line-height: 16px !important;
+    }
+
+    .formWrapper form a {
+        padding: 15px 0;
     }
 }
