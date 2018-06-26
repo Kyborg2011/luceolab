@@ -46,7 +46,6 @@ class Services extends React.Component {
             let modalContent = document.getElementById( 'modal-content' ).getElementsByTagName( 'p' )[ 0 ];
             let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
             if ( width < 767 ) {
-                console.log( list.length );
                 let listElements = list[ 0 ].childNodes;
                 listElements.forEach(( val ) => {
                     val.addEventListener( 'click', ( e ) => {
@@ -151,23 +150,6 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
-                                            if ( isOpen ) {
-                                                setTimeout(() => {
-                                                    this.setState({
-                                                        isRemoveOverlay: true,
-                                                    });
-                                                }, 2000 );
-                                            } else {
-                                                this.setState({
-                                                    isRemoveOverlay: false,
-                                                });
-                                            }
-                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
-
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 0 });
-                                            setTimeout(() => {
-                                                this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                            }, 2000 );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -213,22 +195,6 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
-                                            if ( isOpen ) {
-                                                setTimeout(() => {
-                                                    this.setState({
-                                                        isRemoveOverlay: true,
-                                                    });
-                                                }, 2000 );
-                                            } else {
-                                                this.setState({
-                                                    isRemoveOverlay: false,
-                                                });
-                                            }
-                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 1 });
-                                            setTimeout(() => {
-                                                this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                            }, 2000 );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -275,22 +241,6 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
-                                            if ( isOpen ) {
-                                                setTimeout(() => {
-                                                    this.setState({
-                                                        isRemoveOverlay: true,
-                                                    });
-                                                }, 2000 );
-                                            } else {
-                                                this.setState({
-                                                    isRemoveOverlay: false,
-                                                });
-                                            }
-                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 2 });
-                                            setTimeout(() => {
-                                                this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                            }, 2000 );
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -333,22 +283,6 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
-                                            this.setState({ opennedServiceIndex: -1, closedServiceIndex: 3 });
-                                            setTimeout(() => {
-                                                this.setState({ opennedServiceIndex: -1, closedServiceIndex: -1 });
-                                            }, 2000 );
-                                            if ( isOpen ) {
-                                                setTimeout(() => {
-                                                    this.setState({
-                                                        isRemoveOverlay: true,
-                                                    });
-                                                }, 2000 );
-                                            } else {
-                                                this.setState({
-                                                    isRemoveOverlay: false,
-                                                });
-                                            }
-                                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,

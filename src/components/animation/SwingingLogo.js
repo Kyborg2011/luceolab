@@ -48,6 +48,10 @@ class SwingingLogo extends React.Component {
                     let width = document.getElementById( 'canvas_container' ).offsetWidth;
                     //width = Math.min( width, MAX_CANVAS_WIDTH );
 
+                    if ( isMobile()) {
+                        height = window.innerHeight * 0.4;
+                    }
+
                     this.setState({
                         canvasWidth: width,
                         canvasHeight: height,
@@ -213,7 +217,7 @@ class SwingingLogo extends React.Component {
 
                     if ( isMobile()) {
                 //width = 290;
-                        height = document.getElementById( 'root' ).clientHeight * 0.4;
+                        height = window.innerHeight * 0.4;
                     }
 
                     this.setState({

@@ -251,6 +251,10 @@ a.requestBtn:hover {
     .reverseForm :global(.mui-textfield) {
         padding-top: 10px;
     }
+
+    .overlay {
+        display: none;
+    }
 }
 
 @media only screen

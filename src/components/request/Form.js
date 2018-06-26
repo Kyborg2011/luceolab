@@ -102,6 +102,7 @@ class Form extends React.Component {
                                       { label: 'Only UI Design', value: 'Only UI Design' },
                                       { label: 'Only Development', value: 'Only Development' },
                                       { label: 'Concept Design', value: 'Concept Design' },
+                                      { label: 'Digital Marketing', value: 'Digital Marketing' },
                                   ]}
                                   id="interested-in"
                                   onBlurResetsInput={false}
@@ -145,6 +146,7 @@ class Form extends React.Component {
                                               { label: 'Only UI Design', value: 'Only UI Design' },
                                               { label: 'Only Development', value: 'Only Development' },
                                               { label: 'Concept Design', value: 'Concept Design' },
+                                              { label: 'Digital Marketing', value: 'Digital Marketing' },
                                           ]}
                                           id="interested-in"
                                           onBlurResetsInput={false}
