@@ -12,6 +12,12 @@
   0% {
     opacity: 0.95;
   }
+  50% {
+    opacity: 0.70;
+  }
+  75% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 0;
   }
@@ -100,13 +106,13 @@ body, html, :global(#root) {
 
 :global(.unblur) {
   filter: blur(.3px);
-  transition: 4s filter ease-in-out;
+  transition: 7s filter ease-in-out;
 }
 /* End of dark overlay + blur */
 
 :global(.fade) {
   animation-name: fadingoverlay;
-  animation-duration: 4.5s;
+  animation-duration: 7s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }

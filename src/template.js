@@ -4,7 +4,7 @@ export default ({ body, helmet }) => {
         <html ${helmet.htmlAttributes.toString()}>
             <head>
                 ${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}
-                <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Open+Sans+Condensed:300" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Open+Sans+Condensed:300,300i" rel="stylesheet">
                 <link href="/css/main.css" rel="stylesheet">
             </head>
             <body ${helmet.bodyAttributes.toString()}>

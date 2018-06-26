@@ -307,7 +307,7 @@ class SwingingLogo extends React.Component {
                             window.requestAnimFrame( function() {
                                 func();
                             });
-                        }, 10 );
+                        }, timestep_ms );
 
                         return refreshIntervalId;
                     }
@@ -424,7 +424,7 @@ class SwingingLogo extends React.Component {
                     };
 
                     animationTimeout = setTimeout(() => {
-                        var sim = PendulumSim( 2, 5, Math.PI * 70 / 100, 10, render );
+                        var sim = PendulumSim( 4, 5, Math.PI * 70 / 100, 10, render );
                     }, 1000 );
 
                     setTimeout(() => {

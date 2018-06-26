@@ -115,6 +115,7 @@ a.requestBtn {
     font: normal normal normal 18px/1 FontAwesome;
     position: absolute;
     right: 15px;
+    top: 11px;
 }
 
 a.requestBtn:hover {

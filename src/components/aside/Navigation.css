@@ -69,6 +69,7 @@
     content: '';
     position: absolute;
     left: -28px;
+    top: 9px;
     width: 0;
     border-bottom-style: solid;
     border-bottom-width: 2px;

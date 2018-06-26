@@ -238,6 +238,8 @@
     .formWrapper input {
         margin-top: 10px;
         font-size: 13px;
+        width: 100%;
+        max-width: unset;
     }
 
     .formWrapper a {
@@ -253,6 +255,8 @@
     .formWrapper textarea {
         margin-top: 0;
         font-size: 13px;
+        max-width: unset;
+        width: 100%;
     }
 }
 
@@ -361,6 +365,7 @@
         margin-top: 20px;
         font-size: 15px;
         max-width: unset;
+        width: 100%;
     }
 
     .formWrapper a {
@@ -377,6 +382,7 @@
         margin-top: 0;
         font-size: 15px;
         max-width: unset;
+        width: 100%;
         min-height: 125px;
     }
 }
@@ -392,6 +398,8 @@
 
     .formWrapper input, .formWrapper textarea {
         padding: 10px 0;
+        max-width: unset;
+        width: 100%;
     }
 
     .info {
@@ -415,5 +423,15 @@
 
     .formWrapper form a {
         padding: 15px 0;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 300px) {
+    .contactsWrapper {
+        margin-left: 0;
     }
 }
