@@ -6,9 +6,8 @@ EXPOSE 80
 WORKDIR /usr/src/app
 # Bundle app source
 COPY . .
-# Install app dependencies && Build app through webpack
-RUN npm install && \
-    npm run build
+# Install app dependencies
+RUN npm install
 
 # Start a server (node+express)
 CMD [ "npm", "start" ]
