@@ -84,7 +84,7 @@ class Form extends React.Component {
                                     isRemoveOverlay: true,
                                     isClosed: false,
                                 });
-                            }, 1500 );
+                            }, 2000 );
                         } else {
                             this.setState({
                                 isRemoveOverlay: false,

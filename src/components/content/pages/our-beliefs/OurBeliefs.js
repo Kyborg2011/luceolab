@@ -126,7 +126,7 @@ class OurBeliefs extends React.Component {
                                     Guided by the clarity of vision, we find art as the most realistic representation of the whole diversity of human life. It requires daily effort, self-mastery, an accurate assessment of the boundaries of truth. Art is the best school of clarity.<br/><br/>
                                     We believe that a website can be not only a container for some piece of art, but in itself is a unique modern kind of art.  <span className={styles.bold}>A browser window can be turned into anything:
                                     theatrical scene, painter's canvas, writer's diary and so on.</span><br/><br/>
-                                    Where the scientific method exhausts itself, the artistic method comes to the rescue. Real art, in our opinion, should evoke a sense of infinity, an infinitely clear and precise vision of the life problem. In each work we strive to get something like this.<br/><br/><span className={styles.bold}>The feeling of beauty is the main force driving LuceoLab.</span>
+                                    Where the scientific method exhausts itself, the artistic method comes to the rescue. Real art, in our opinion, should evoke a sense of infinity, an infinitely clear and precise vision of the life problem. In each work we strive to get something like this.<br/><br/><span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>The feeling of beauty is the main force driving LuceoLab! Beauty not only in visual content and UI, but also in every single step of the process of creation of any Internet project.</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «We have art in order not to die of the truth»<br/> ― Friedrich Nietzsche
@@ -134,12 +134,12 @@ class OurBeliefs extends React.Component {
                             </div>
                             <div className={classNames( styles.slide, getClassNames( 2 ))}>
                                 <p className={styles.content}>
-                                    It's all about preserving clarity in a world where the nebula reigns.
+                                    It is all about preserving clarity in a world where the nebula reigns.
                                     Indeed, the sense of deception, the manipulation of consciousness today is strongly manifested throughout the world.
                                     <span className={styles.bold}> We claim that the Internet is the only technology that can give us the
                                     maximum number of points of view, the primary source of any information.</span><br/><br/>
-                                    Combining clarity, privacy, openness and clear workflow - we get the concept of creative solutions striving for the maximum freedom. Firstly, freedom in our workflow, in the interaction between our clients and company. Secondly, freedom in effort to freely disseminate the results of our work. We truly love Open Source! <br/> <br/>
-                                    <span className={styles.bold}>LuceoLab inevitably strives to constantly increase the diversity in the world, its development and transformation.</span>
+                                    Combining art, privacy, openness and clear workflow - we get the concept of creative solutions striving for the maximum freedom. Firstly, freedom in our workflow, in the interaction between clients, developers, designers and company management. Secondly, freedom in effort to freely disseminate the results of our work. We truly love Open Source! We strive for contributing to Open Source community, because we believe in it.<br/> <br/>
+                                    <span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>LuceoLab inevitably strives to constantly increase the diversity in the world, its development and transformation!</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «Task: to see things as they are. Means: to look at them with a hundred eyes, from many persons»<br/> ― Friedrich Nietzsche
@@ -147,11 +147,11 @@ class OurBeliefs extends React.Component {
                             </div>
                             <div className={classNames( styles.slide, getClassNames( 3 ))}>
                                 <p className={styles.content}>
-                                    The character of LuceoLab is enclosed in the name itself. It's all about clarity of vision, about seeing things as they are.<br/><br/>
+                                    The character of LuceoLab is enclosed in the name itself. It is all about clarity of vision, about seeing things as they are.<br/><br/>
                                     Everyone talks about effective trade on the Internet ― this is not enough for us. We take it higher, we talk about our life, in all its diversity.<br/><br/>
                                     All that we need is go through life without closing eyes to anything, accepting all that life brings, each time answering to it: "yes".<br/><br/>
                                     We find ecstasy only in moving forward, motion without stopping, however, with the appointment. We want to get into a city in which no one has ever been!
-                                    <br/><br/><span className={styles.bold} style={{ textAlign: 'center' }}>LuceoLab declares the maximum love of life, but only on our own terms!</span>
+                                    <br/><br/><span className={styles.bold} style={{ textAlign: 'center', display: 'block' }}>LuceoLab declares the maximum love of life, but only on our own terms!</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     Luceo (from latin) ― I dawn, become light, become clear
