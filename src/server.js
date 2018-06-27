@@ -12,16 +12,14 @@ import template from './template';
 
 let app = express();
 
+app.use( compression());
+
 app.use( serveStatic( path.join( __dirname, '../dist' )));
 
-app.use( compression({
-    filter: ( req, res ) => {
-        if ( req.headers[ 'x-no-compression' ]) {
-            return false;
-        }
-        return compression.filter( req, res );
-    }
-}));
+app.use( '/server.js', function( req, res, next ) {
+    res.status( 403 )
+    res.send( '<h1>403 Forbidden</h1>' )
+})
 
 app.get( '/*', function( req, res ) {
     const appString = renderToString(

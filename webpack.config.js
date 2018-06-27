@@ -91,6 +91,21 @@ module.exports = [ {
             disable: false,
             allChunks: true
         }),
+        new webpack.optimize.UglifyJsPlugin({
+            mangle: true,
+            compress: {
+                warnings: false,
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
+                screw_ie8: true
+            },
+            output: {
+                comments: false,
+            },
+            exclude: [ /\.min\.js$/gi ]
+        }),
+        new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env.BROWSER': JSON.stringify( process.env.BROWSER )
         })
