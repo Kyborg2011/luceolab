@@ -143,7 +143,7 @@ class Content extends React.Component {
                     {bgPictures}
                 </div>
                 <Route render={({ location }) => (
-                    <TransitionGroup className={classNames( styles.transitionGroup, transitionDirection, { pageWithMargins: ( backgroundImagesPrefix !== '' ) })}>
+                    <TransitionGroup id="app-content" className={classNames( styles.transitionGroup, transitionDirection, { pageWithMargins: ( backgroundImagesPrefix !== '' ) })}>
                         <CSSTransition
                           timeout={2500}
                           classNames="slide-transition"

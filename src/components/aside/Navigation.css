@@ -3,7 +3,7 @@
     right: -139px;
     height: 100%;
     display: flex;
-    z-index: 700;
+    z-index: 500;
     transition: right 0.75s;
     user-select: none;
 }

@@ -62,7 +62,9 @@ class App extends React.Component {
                   ]}
                 />
                 <Header />
-
+                <Navigation darkstyle={([
+                    '/services',
+                ].indexOf( pathname ) !== -1 )} />
                 <div className={classNames( styles.innerWrapper )}>
                     <Content />
                     {pathname !== '/' &&
@@ -74,10 +76,6 @@ class App extends React.Component {
                         && typeof isLightstyle !== 'number' )} />
                     }
                 </div>
-
-                <Navigation darkstyle={([
-                    '/services',
-                ].indexOf( pathname ) !== -1 )} />
                 <Footer />
             </div>
         );

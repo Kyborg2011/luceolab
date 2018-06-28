@@ -60,6 +60,7 @@
 
 :global(.pageWithMargins) {
     position: relative !important;
+    z-index: 700 !important;
 }
 
 :global(.bottom-up .slide-transition-enter) {

@@ -54,8 +54,14 @@ class Form extends React.Component {
                     isModalActive: styles.activeModal,
                     isMobile: true,
                 });
+            } else {
+                this.setState({
+                    isOpen: true,
+                    isClosed: false,
+                    isRemoveOverlay: false,
+                });
             }
-            this.setState({ isOpen: true, isClosed: false });
+
         }
     }
 

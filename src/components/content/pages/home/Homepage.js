@@ -49,7 +49,12 @@ class Homepage extends React.Component {
                     <SwingingLogo
                       animation={swingingLogo}
                       onEnd={() => {
-                          this.setState({ blurred: false })
+                          this.setState({ blurred: false });
+                          if ( process.env.BROWSER ) {
+                              setTimeout(() => {
+                                  document.getElementById( 'app-content' ).style.zIndex = 400;
+                              }, 3000 );
+                          }
                       }}
                       onCancelAnimation={() => {
                           this.setState({ cancelBlur: true });

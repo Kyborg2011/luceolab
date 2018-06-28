@@ -24,6 +24,7 @@
 .homepageInner {
     display: flex;
     align-self: center !important;
+    width: 100%;
 }
 
 .homepageInner > div {
