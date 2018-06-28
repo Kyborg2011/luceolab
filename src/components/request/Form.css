@@ -74,6 +74,17 @@
     background: #fff;
 }
 
+.requestForm > a {
+    transition: 1s background-color, 1s border-color !important;
+    background-color: #fbbd63;
+    border-color: #fbbd63;
+}
+
+.requestForm > a:hover, .openForm.requestForm > a {
+    background-color: #D81159;
+    border-color: #D81159;
+}
+
 .formWrapper {
     flex: 2;
     display: flex;

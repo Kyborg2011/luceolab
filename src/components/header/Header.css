@@ -31,8 +31,12 @@
     height: 43px;
     width: 43px;
     background-color: #fbbd63;
-    transition: background-color 10s;
     position: relative;
+    transition: 1s background-color;
+}
+
+.headerLogo:hover {
+    background-color: #D81159;
 }
 
 .headerLogo:before {

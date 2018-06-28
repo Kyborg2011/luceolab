@@ -45,7 +45,7 @@ class HowWeWork extends React.Component {
             /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
                 width = Math.min( width, height / 0.5625  );
                 height = width * 0.5625;
-                height++;
+                height += 3;
 
 
                 this.setState({
@@ -93,6 +93,7 @@ class HowWeWork extends React.Component {
                 /* Video has 1080p -> 16:9 -> coefficient 0.5625 */
                     width = Math.min( width, height / 0.5625  );
                     height = width * 0.5625;
+                    height += 3;
 
                     this.setState({
                         videoWidth: width,

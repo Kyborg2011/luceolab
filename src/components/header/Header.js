@@ -29,18 +29,18 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
+        /*setInterval(() => {
             let maxNumber = additionalColors.length;
             let index = getRandomInt( 0, --maxNumber );
             this.setState({ backgroundColor: additionalColors[ index ] });
-        }, 10000 );
+        }, 10000 );*/
     }
 
     render() {
         const { backgroundColor } = this.state;
         return (
             <header className={styles.header}>
-                <Link style={{ backgroundColor: backgroundColor }} className={styles.headerLogo} to="/" title="LuceoLab - Digital agency" />
+                <Link className={styles.headerLogo} to="/" title="LuceoLab - Digital agency" />
                 <nav className={styles.primaryNav}>
                     <a href="mailto:info@luceolab.com" target="_blank">
                         <i className="fa fa-envelope-open-o" aria-hidden="true" />

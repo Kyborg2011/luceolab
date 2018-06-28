@@ -41,8 +41,13 @@ class SwingingLogo extends React.Component {
     }
 
     componentDidMount() {
+        var that = this;
+
         if ( process.env.BROWSER ) {
-            let pendulumRender = () => {
+            var pendulumRender = () => {
+                var img2 = new Image();
+                img2.src = onLamp;
+
                 setTimeout(() => {
                     let height = MAX_CANVAS_HEIGHT;
                     let width = document.getElementById( 'canvas_container' ).offsetWidth;
@@ -69,6 +74,7 @@ class SwingingLogo extends React.Component {
                         canvasWidth = MAX_CANVAS_WIDTH;
                         shiftX = ( width - canvasWidth ) / 2;
                     }
+                    console.log( shiftX );
                     const canvasHeight = height;
 
                     var imgSymbols = new Image();
@@ -98,7 +104,7 @@ class SwingingLogo extends React.Component {
                     var isLightingStarted = false;
                     var lightningOpacity = 1;
                     var prev = 0;
-                    let render = function( angle, lightOn ) {
+                    var render = function( angle, lightOn ) {
                         /*if ( !isMobile()) {
                             var rPend = canvasHeight / 2;
                         } else {*/
@@ -137,7 +143,7 @@ class SwingingLogo extends React.Component {
 
                         context.rotate( angle );
 
-                        if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
+                        if ( lightOn ) {
                     //img = img2;
                             isLightingStarted = true;
                             that.props.onEnd();
@@ -186,7 +192,7 @@ class SwingingLogo extends React.Component {
                                 context.globalAlpha = lightningOpacity;
                                 context.drawImage(
                             img2,
-                            -canvasWidth * 0.314 / 2,
+                            canvasWidth - canvasWidth * 0.46 + shiftX,
                             rPend,
                             canvasWidth * 0.314,
                             canvasWidth * 0.314 * 1.196
@@ -240,7 +246,7 @@ class SwingingLogo extends React.Component {
                     const canvasHeight = height;
 
                     function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
-                        var stops = [ -60, 45, -5, -1, 0 ];
+                        var stops = [ -60, 0 ];
                         var velocity = 0;
                         var angle = initialAngle_rad;
                         var k = -gravity_mps2 / length_m;
@@ -255,16 +261,15 @@ class SwingingLogo extends React.Component {
                             var degrees = angle * 180 / Math.PI;
                             degrees = Math.round( degrees % 360 );
                             if ( degrees == stops[ 0 ]) {
-                                if ( stops[ 0 ] === 45 ) {
-                                    lightOn = true;
-                                }
+                                lightOn = true;
+
                                 if ( stops[ 0 ] === 0 ) {
                                     zeroCount++;
                                 } else {
-                                    velocity = velocity * 0.65;
+                                    velocity = velocity * 0.6;
                                     stops.shift();
                                 }
-                                if ( zeroCount > 2 ) {
+                                if ( zeroCount > 0 ) {
                                     var imgLetters = new Image();
                                     imgLetters.src = logoWithoutLamp;
                                     imgLetters.onload = () => {
@@ -359,7 +364,7 @@ class SwingingLogo extends React.Component {
 
                         context.rotate( angle );
 
-                        if ( lightOn && img.src.indexOf( onLamp ) == -1 ) {
+                        if ( lightOn ) {
                     //img = img2;
                             isLightingStarted = true;
                             that.props.onEnd();
@@ -413,7 +418,7 @@ class SwingingLogo extends React.Component {
                             canvasWidth * 0.314 * 1.196
                         );
                             if ( lightningOpacity < 1 ) {
-                                lightningOpacity += 0.003;
+                                lightningOpacity += 0.002;
                             }
                         }
                     //}
@@ -423,14 +428,12 @@ class SwingingLogo extends React.Component {
                         prev = angle;
                     };
 
-                    animationTimeout = setTimeout(() => {
-                        var sim = PendulumSim( 4, 5, Math.PI * 70 / 100, 10, render );
-                    }, 1000 );
+                    var sim = PendulumSim( 5, 4, Math.PI * 70 / 100, 5, render );
 
                     setTimeout(() => {
                         isLightingStarted = true;
                         this.setState({ fade: true });
-                    }, 2700 );
+                    }, 2400 );
                 } else {
                     this.setState({
                         fade: false,
