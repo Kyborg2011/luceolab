@@ -63,6 +63,10 @@ class App extends React.Component {
                       { name: 'msapplication-TileImage', content: require( '../assets/favicon/ms-icon-144x144.png' ) },
                       { name: 'theme-color', content: '#ffffff' },
                   ]}>
+                  <meta charSet="utf-8" />
+		          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+                  <meta name="copyright" content="Copyright © LuceoLab. All Rights Reserved." />
+                  <meta name="author" content="LuceoLab (https://luceolab.com)" />
                   <link rel="apple-touch-icon" sizes="57x57" href={require( '../assets/favicon/apple-icon-57x57.png' )}/>
                   <link rel="apple-touch-icon" sizes="60x60" href={require( '../assets/favicon/apple-icon-60x60.png' )}/>
                   <link rel="apple-touch-icon" sizes="72x72" href={require( '../assets/favicon/apple-icon-72x72.png' )}/>
