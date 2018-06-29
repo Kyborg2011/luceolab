@@ -55,14 +55,12 @@ class App extends React.Component {
         return (
             <div className={styles.wrapper}>
                 <Helmet
-                  htmlAttributes={{ lang: 'en' }}
-                  meta={[
-                      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimal-ui' },
-                      { name: 'apple-mobile-web-app-capable', content: 'yes' },
-                      { name: 'msapplication-TileColor', content: '#ffffff' },
-                      { name: 'msapplication-TileImage', content: require( '../assets/favicon/ms-icon-144x144.png' ) },
-                      { name: 'theme-color', content: '#ffffff' },
-                  ]}>
+                  htmlAttributes={{ lang: 'en' }}>
+                  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+                  <meta name="apple-mobile-web-app-capable" content="yes" />
+                  <meta name="msapplication-TileColor" content="#ffffff" />
+                  <meta name="msapplication-TileImage" content={require( '../assets/favicon/ms-icon-144x144.png' )} />
+                  <meta name="theme-color" content="#ffffff" />
                   <meta name="copyright" content="Copyright © LuceoLab. All Rights Reserved." />
                   <meta name="author" content="LuceoLab (https://luceolab.com)" />
                   <link rel="apple-touch-icon" sizes="57x57" href={require( '../assets/favicon/apple-icon-57x57.png' )}/>
