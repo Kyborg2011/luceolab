@@ -40,7 +40,7 @@ module.exports = [ {
                     }
                 } ]
             }, {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|ico|xml)$/,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'assets/',
