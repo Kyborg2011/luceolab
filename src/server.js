@@ -14,12 +14,7 @@ let app = express();
 
 app.use( compression());
 
-app.use( serveStatic( path.join( __dirname, '../dist' )));
-
-app.use( '/server.js', function( req, res, next ) {
-    res.status( 403 )
-    res.send( '<h1>403 Forbidden</h1>' )
-})
+app.use( serveStatic( path.join( __dirname, '../dist/public' )));
 
 app.get( '/*', function( req, res ) {
     const appString = renderToString(

@@ -63,8 +63,6 @@ class App extends React.Component {
                       { name: 'msapplication-TileImage', content: require( '../assets/favicon/ms-icon-144x144.png' ) },
                       { name: 'theme-color', content: '#ffffff' },
                   ]}>
-                  <meta charSet="utf-8" />
-		          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
                   <meta name="copyright" content="Copyright © LuceoLab. All Rights Reserved." />
                   <meta name="author" content="LuceoLab (https://luceolab.com)" />
                   <link rel="apple-touch-icon" sizes="57x57" href={require( '../assets/favicon/apple-icon-57x57.png' )}/>
@@ -80,8 +78,7 @@ class App extends React.Component {
                   <link rel="icon" type="image/png" sizes="32x32" href={require( '../assets/favicon/favicon-32x32.png' )}/>
                   <link rel="icon" type="image/png" sizes="96x96" href={require( '../assets/favicon/favicon-96x96.png' )}/>
                   <link rel="icon" type="image/png" sizes="16x16" href={require( '../assets/favicon/favicon-16x16.png' )}/>
-                  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-                  <link rel="manifest" href={require( '../assets/favicon/favicon.ico' )}/>
+                  <link rel="icon" type="image/x-icon" href={require( '../assets/favicon/favicon.ico' )}/>
                   <link href="/css/main.css" rel="stylesheet" />
                 </Helmet>
                 <Header />

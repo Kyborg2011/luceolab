@@ -40,7 +40,7 @@ module.exports = [ {
                     }
                 } ]
             }, {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|ico|xml)$/,
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|ico)$/,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'assets/',
@@ -50,7 +50,7 @@ module.exports = [ {
         ]
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist/public'
     },
     resolve: {
         modules: [ 'node_modules' ]

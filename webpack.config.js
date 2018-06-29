@@ -12,7 +12,7 @@ module.exports = [ {
     ],
     output: {
         filename: 'js/[name].bundle.js',
-        path: path.resolve( './dist' )
+        path: path.resolve( './dist/public' )
     },
     module: {
         loaders: [
@@ -70,7 +70,7 @@ module.exports = [ {
                         'postcss-loader'
                     ]
             }, {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|ico|xml)$/,
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|ico|xml|json)$/,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'assets/',
@@ -80,7 +80,7 @@ module.exports = [ {
         ]
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist/public'
     },
     resolve: {
         modules: [ 'node_modules' ]
