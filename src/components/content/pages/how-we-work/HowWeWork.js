@@ -59,8 +59,6 @@ class HowWeWork extends React.Component {
                     byline: false,
                     badge: false,
                     portrait: false,
-                    autoplay: true,
-                    muted: true,
                 };
                 var handstick = new Player( document.getElementById( 'embed' ), options );
 
@@ -120,38 +118,38 @@ class HowWeWork extends React.Component {
         }
 
         return (
-                <div>
-                    <Helmet
-                      title="How We Work - LuceoLab"
-                    />
-                    <MainHeading text="how we work" style={{ marginBottom: '20px' }} />
-                    <div className={styles.pageWrapper} style={{  }}>
-                        <Link to="/">
-                            <i className="fa fa-chevron-circle-left" aria-hidden="true" />
-                            home
-                        </Link>
-                        <div id="video-wrapper" className={styles.videoContainer}>
-                            <div id="embed" style={stylesWrapper}>
-                                <div className={styles.ldsGear}>
-                                    <div>
-                                        <div/>
-                                        <div/>
-                                        <div/>
-                                        <div/>
-                                        <div/>
-                                        <div/>
-                                        <div/>
-                                        <div/>
-                                    </div>
+            <div>
+                <Helmet
+                  title="LuceoLab / How we work"
+                />
+                <MainHeading text="how we work" style={{ marginBottom: '20px' }} />
+                <div className={styles.pageWrapper} style={{  }}>
+                    <Link to="/">
+                        <i className="fa fa-chevron-circle-left" aria-hidden="true" />
+                        home
+                    </Link>
+                    <div id="video-wrapper" className={styles.videoContainer}>
+                        <div id="embed" style={stylesWrapper}>
+                            <div className={styles.ldsGear}>
+                                <div>
+                                    <div/>
+                                    <div/>
+                                    <div/>
+                                    <div/>
+                                    <div/>
+                                    <div/>
+                                    <div/>
+                                    <div/>
                                 </div>
                             </div>
                         </div>
-                        <Link to="/services">
-                            <i className="fa fa-chevron-circle-right" aria-hidden="true" />
-                            services
-                        </Link>
                     </div>
+                    <Link to="/services">
+                        <i className="fa fa-chevron-circle-right" aria-hidden="true" />
+                        services
+                    </Link>
                 </div>
+            </div>
         );
     }
 }
