@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import LazyLoad from 'react-lazyload';
 
 import MouseNavigation from '../animation/MouseNavigation';
 import asyncComponent from './AsyncComponent';

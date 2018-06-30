@@ -11,6 +11,17 @@
     z-index: 2000;
 }
 
+.header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 200;
+}
+
 .header::after {
     content: '';
     display: flex;
@@ -32,6 +43,7 @@
     width: 43px;
     background-color: #fbbd63;
     position: relative;
+    z-index: 300;
     transition: 1s background-color;
 }
 
@@ -53,6 +65,7 @@
 }
 
 .primaryNav {
+    z-index: 300;
     align-self: baseline;
     display: flex;
     padding-right: 189px;
