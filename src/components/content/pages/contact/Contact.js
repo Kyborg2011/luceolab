@@ -38,7 +38,7 @@ class Contact extends React.Component {
         return (
                 <div>
                     <Helmet
-                      title="Contacts - LuceoLab"
+                      title="Contacts | LuceoLab"
                     />
                     <MainHeading text="get in touch" />
                     <div className={styles.contactsWrapper}>

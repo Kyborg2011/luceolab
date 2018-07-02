@@ -1,0 +1,67 @@
+@keyframes ldsGear {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ldsGear>div {
+    transform-origin: 100px 100px;
+    animation: ldsGear 3.3s infinite linear;
+    position: relative;
+}
+
+.ldsGear>div div {
+    position: absolute;
+    width: 26px;
+    height: 192px;
+    background: #547375;
+    left: 100px;
+    top: 100px;
+    transform: translate(-50%, -50%);
+}
+
+.ldsGear>div div:nth-child(1) {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+}
+
+.ldsGear>div div:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.ldsGear>div div:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.ldsGear>div div:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.ldsGear>div div:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.ldsGear>div div:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(150deg);
+}
+
+.ldsGear>div div:nth-child(8) {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.ldsGear {
+    width: 25px !important;
+    height: 25px !important;
+    opacity: 0.6;
+    transform: translate(-45px, -45px) scale(0.45) translate(45px, 45px);
+}

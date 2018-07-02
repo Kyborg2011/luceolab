@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import { Helmet } from 'react-helmet';
-
 import 'normalize.css';
 import '../../node_modules/font-awesome/css/font-awesome.css';
 import styles from './App.css';
-
 import Header from './header/Header';
 import Content from './content/Content';
 import Navigation from './aside/Navigation';
 import Footer from './footer/Footer';
 import VerticalButton from './vertical-button/VerticalButton';
+import { ToastContainer } from 'react-toastify';
+import '../../node_modules/react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component {
     static propTypes = {
@@ -95,6 +95,7 @@ class App extends React.Component {
                     }
                 </div>
                 <Footer />
+                <ToastContainer />
             </div>
         );
     }

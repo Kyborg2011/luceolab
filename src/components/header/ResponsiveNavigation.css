@@ -70,37 +70,37 @@
 
 .responsiveNavigationContainer nav.visible a:nth-child(2) {
     animation: fade-in .5s forwards;
-    animation-delay: .25s;
+    animation-delay: .1s;
     will-change: transform, opacity;
 }
 
 .responsiveNavigationContainer nav.visible a:nth-child(3) {
     animation: fade-in .5s forwards;
-    animation-delay: .5s;
+    animation-delay: .2s;
     will-change: transform, opacity;
 }
 
 .responsiveNavigationContainer nav.visible a:nth-child(4) {
     animation: fade-in .5s forwards;
-    animation-delay: .75s;
+    animation-delay: .3s;
     will-change: transform, opacity;
 }
 
 .responsiveNavigationContainer nav.visible a:nth-child(5) {
     animation: fade-in .5s forwards;
-    animation-delay: 1s;
+    animation-delay: .4s;
     will-change: transform, opacity;
 }
 
 .responsiveNavigationContainer nav.visible a:nth-child(6) {
     animation: fade-in .5s forwards;
-    animation-delay: 1.25s;
+    animation-delay: .5s;
     will-change: transform, opacity;
 }
 
 .responsiveNavigationContainer nav.visible a:nth-child(7) {
     animation: fade-in .5s forwards;
-    animation-delay: 1.5s;
+    animation-delay: .6s;
     will-change: transform, opacity;
 }
 
@@ -113,6 +113,8 @@
 .requestMobBtn {
     color: #fff !important;
     width: 250px;
+    font-weight: 300;
+    border: solid #fff 1px;
 }
 
 .requestMobBtn:hover,
