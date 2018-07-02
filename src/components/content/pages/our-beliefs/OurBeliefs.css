@@ -158,6 +158,8 @@
 
     .content {
         width: 100%;
+        font-size: 11px;
+        line-height: 14px;
     }
 
     .forwardBtn {
@@ -190,18 +192,43 @@
         width: 100%;
         justify-content: center;
         margin-top: 0;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .controls a {
+        line-height: 20px;
+        font-size: 20px;
+    }
+
+    .controls a span {
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .technoligiesList a img {
         width: 100% !important;
     }
-}
 
-@media only screen and (max-width: 360px) {
+    .ourBeliefsPage h1 {
+        font-size: 14px !important;
+        letter-spacing: normal !important;
+    }
+
+    .ourBeliefsPage h1 div span {
+        display: none;
+    }
+
     .content {
-        font-size: 14px;
-        line-height: 17px;
-        padding: 0;
+        padding-right: 0;
+    }
+
+    .technoligiesList img {
+        height: 40px !important;
+    }
+
+    .technoligiesList {
+        height: 50px !important;
     }
 }
 

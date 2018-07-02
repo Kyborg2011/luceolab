@@ -120,7 +120,7 @@ class HowWeWork extends React.Component {
         return (
             <div>
                 <Helmet
-                  title="LuceoLab / How we work"
+                  title="How we work | LuceoLab"
                 />
                 <MainHeading text="how we work" style={{ marginBottom: '20px' }} />
                 <div className={styles.pageWrapper} style={{  }}>

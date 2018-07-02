@@ -107,7 +107,7 @@
 .responsiveNavigationContainer nav a.active,
 .responsiveNavigationContainer nav a:hover,
 .responsiveNavigationContainer nav a:focus {
-    color: #fbbd63;
+    color: #fbbd63 !important;
 }
 
 .requestMobBtn {

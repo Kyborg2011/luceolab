@@ -43,7 +43,7 @@ class Homepage extends React.Component {
         return (
             <div className={classNames( styles.homepageInner )}>
                 <Helmet
-                  title="LuceoLab / Arts. Privacy. Clarity. Openness.">
+                  title="LuceoLab | Arts. Privacy. Clarity. Openness.">
                   <meta name="description" content="Hello internet voyager. We are a digital agency LuceoLab. Got a minute? Click on How we work button to learn more about us." />
                 </Helmet>
                 <div>

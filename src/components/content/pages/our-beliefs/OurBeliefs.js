@@ -67,12 +67,21 @@ class OurBeliefs extends React.Component {
             ( <div>how we wrote <span style={{ textDecoration: 'line-through', color: '#545b67' }}>this essay</span> LuceoLab?</div> ),
         ];
 
+        var subTitle = titles[ currentSlide ];
+        var h1Title = 'our beliefs';
+        if ( process.env.BROWSER ) {
+            if ( window.innerWidth < 800 ) {
+                h1Title = titles[ currentSlide ];
+                subTitle = '';
+            }
+        }
+
         return (
-                <div>
+                <div className={styles.ourBeliefsPage}>
                     <Helmet
-                      title="Our Beliefs - LuceoLab"
+                      title="Our beliefs | LuceoLab"
                     />
-                    <MainHeading darkstyle text="our beliefs" subTitle={titles[ currentSlide ]} />
+                    <MainHeading darkstyle text={h1Title} subTitle={subTitle} />
                     <div className={styles.controls}>
                         <a href="" className={classNames({ disableArr: ( currentSlide == 0 ) })} title="Back" onClick={( e ) => {
                             if ( currentSlide > 0 && !blockTimeout ) {

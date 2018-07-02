@@ -79,7 +79,7 @@ class Services extends React.Component {
         return (
             <div>
                 <Helmet
-                  title="Services - LuceoLab"
+                  title="Services | LuceoLab"
                 />
                 <MainHeading darkstyle text="services" />
                 <div className={styles.pageWrapper}>

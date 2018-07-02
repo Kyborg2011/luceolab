@@ -51,8 +51,10 @@ class Form extends React.Component {
             let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
             if ( width < 767 ) {
                 this.setState({
+                    isOpen: true,
                     isModalActive: styles.activeModal,
                     isMobile: true,
+                    isRemoveOverlay: true,
                 });
             } else {
                 this.setState({

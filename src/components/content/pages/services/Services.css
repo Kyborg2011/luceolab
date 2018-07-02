@@ -402,7 +402,7 @@
     }
 
     .description {
-        line-height: 20px;
+        line-height: 23px;
     }
 
     .list li .icon {
@@ -416,10 +416,6 @@
 
     .modalContainer p {
         line-height: 20px;
-    }
-
-    .modalContainer p br {
-        display: none;
     }
 }
 

@@ -16,6 +16,7 @@ class MainHeading extends React.Component {
     componentWillReceiveProps( nextProps ) {
         this.setState({
             subTitle: nextProps.subTitle,
+            text: nextProps.text,
         });
     }
 

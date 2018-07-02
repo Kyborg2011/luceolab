@@ -43,7 +43,7 @@ class OurTeam extends React.Component {
         return (
                 <div>
                     <Helmet
-                      title="Our Team - LuceoLab"
+                      title="Our Team | LuceoLab"
                     />
                     <MainHeading darkstyle text="nature born climbers" />
                     <div className={styles.pageWrapper}>
