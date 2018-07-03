@@ -8,7 +8,8 @@
     "build-server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js",
     "start-dev": "cross-env NODE_ENV=development BROWSER=true webpack --watch",
     "start": "npm run build-client && npm run build-server && node dist/server.js",
-    "lint": "eslint -c .eslintrc --fix src"
+    "lint": "eslint -c .eslintrc --fix src",
+    "make-parameters": "node nconf.js"
   },
   "author": "Anton Babinin <wkyborgw@gmail.com> (https://luceolab.com)",
   "license": "MIT",
@@ -56,6 +57,7 @@
     "install": "^0.10.2",
     "jade": "^1.11.0",
     "muicss": "^0.9.39",
+    "nconf": "^0.10.0",
     "nodemailer": "^4.6.7",
     "normalize.css": "^7.0.0",
     "npm": "^5.6.0",

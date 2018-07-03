@@ -12,16 +12,19 @@ import bodyParser from 'body-parser';
 import App from './components/App';
 import template from './template';
 
+var fs = require( 'fs' );
+var parameters = JSON.parse( fs.readFileSync( path.join( __dirname, '../config.json' ), 'utf8' ));
+
 let app = express();
 app.use( bodyParser.json());
 
 let selfSignedConfig = {
-    host: 'mail.luceolab.com',
-    port: 587,
+    host: parameters.smtp.host,
+    port: parameters.smtp.port,
     secure: false,
     auth: {
-        user: 'info@luceolab.com',
-        pass: 'F17QmMGB8WbM'
+        user: parameters.smtp.auth_user,
+        pass: parameters.smtp.auth_pass
     },
     tls: {
         rejectUnauthorized: false
@@ -36,13 +39,14 @@ app.post( '/send-request', function( req, res, next ) {
     let transporter = nodemailer.createTransport( selfSignedConfig );
     let html = JSON.stringify( params );
     let mailOptions = {
-        from: '"Info LuceoLab" <info@luceolab.com>',
-        to: 'wkyborgw@gmail.com',
+        from: parameters.smtp.mail_from,
+        to: parameters.smtp.mail_to,
         subject: 'Request from LuceoLab',
         text: html,
     };
     transporter.sendMail( mailOptions, ( error, info ) => {
         if ( error ) {
+            console.dir( error );
             res.header( 'Content-Type', 'application/json' );
             res.send( JSON.stringify({ error: true }));
             return;

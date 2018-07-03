@@ -246,7 +246,7 @@ class SwingingLogo extends React.Component {
                     const canvasHeight = height;
 
                     function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
-                        var stops = [ -60, 0 ];
+                        var stops = [ -40, 0 ];
                         var velocity = 0;
                         var angle = initialAngle_rad;
                         var k = -gravity_mps2 / length_m;
