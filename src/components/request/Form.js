@@ -102,7 +102,6 @@ class Form extends React.Component {
                         toast.success( 'Thank you! Our manager will contact you as soon as possible', {
                             position: toast.POSITION.TOP_RIGHT
                         });
-                        toast();
                     });
                 this.setState({ isLoading: true });
                 formValidation.name = false;

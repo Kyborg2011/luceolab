@@ -188,8 +188,10 @@ class Services extends React.Component {
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
-                                        If you are aiming to have really stunning unique UI/UX for your product, you need to use our services! LuceoLab is constantly following the newest trends in the industry, moreover we are strive for open up new approaches in user interfaces and web design.
-                                        A browser window can be turned into anything: the theatrical scene, the painter's canvas, the page from the writer's diary. <br/><br/><span style={{ color: '#D81159', fontWeight: 'bold' }}>The desire for clarity of vision in everything that we do brings us to art. That is why we believe that a website can be not only a container for some piece of art, but in itself is a unique modern kind of art.</span><br/><br/>
+                                        We make immersive UI/UX that tell a story and evoke emotion. Our team successfully uses the newest trends in web design, moreover we are strive for open up new approaches in user interfaces and web design.<br/><br/>
+                                        We believe browser window can be turned into anything: the theatrical scene, the painter's canvas, the page from the writer's diary.<br/><br/>
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring.</span><br/>
+                                        If you want really unique design for your product or site of your company, you need to contact us!
                                     </p>
                                     <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
@@ -234,8 +236,8 @@ class Services extends React.Component {
                                 <div className={styles.details}>
                                     <p>
                                         Why people buy something? Any goods or services? The main reason is emotions, pleasant memories. People buy the opportunity to spend a good time with good people. In the end, people buy what is beautiful, what causes a feeling of reverence.<br/><br/>
-                                        We believe that beauty is an inherent quality of any kind of art. Art can evoke the most vivid feelings, touch the most secret corners of the human soul.<br/><br/>
-                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring. Let's say "Yes!" to all sides of life in this world!</span>
+                                        We believe that beauty is an inherent quality of any kind of art. Art can evoke the most vivid feelings, touch the most secret corners of the human soul. That is why our products always force the visitor to come back again and again.<br/><br/>
+                                        However, we also know modern promotion technologies such as search engine marketing, online advertising and so on. Contact us and we will make your business recognizable, bring it to the leading position in any scale.
                                     </p>
                                     <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
