@@ -63,6 +63,19 @@ class App extends React.Component {
                   <meta name="theme-color" content="#ffffff" />
                   <meta name="copyright" content="Copyright © LuceoLab. All Rights Reserved." />
                   <meta name="author" content="LuceoLab (https://luceolab.com)" />
+                  <meta name="description" content="Hello internet voyager. We are a digital agency LuceoLab. Got a minute? Click on How we work button to learn more about us." />
+                  <meta name="twitter:card" content="summary" />
+                  <meta name="twitter:title" content="LuceoLab | Arts. Privacy. Clarity. Openness." />
+                  <meta name="twitter:description" content="Hello internet voyager. We are a digital agency LuceoLab. Got a minute? Click on How we work button to learn more about us." />
+                  <meta name="twitter:image" content={'https://luceolab.com' + require( '../assets/img/logo-icon.png' )} />
+                  <meta name="twitter:creator" content="@luceolab" />
+                  <meta name="twitter:site" content="@luceolab" />
+                  <meta property="og:url" content={'https://luceolab.com' + this.props.location.pathname} />
+                  <meta property="og:type" content="website" />
+                  <meta property="og:title" content="LuceoLab | Arts. Privacy. Clarity. Openness." />
+                  <meta property="og:description" content="Hello internet voyager. We are a digital agency LuceoLab. Got a minute? Click on How we work button to learn more about us." />
+                  <meta property="og:site_name" content="Luceolab - Digital Agency" />
+                  <meta property="og:image"  content={'https://luceolab.com' + require( '../assets/img/logo-icon.png' )} />
                   <link rel="apple-touch-icon" sizes="57x57" href={require( '../assets/favicon/apple-icon-57x57.png' )}/>
                   <link rel="apple-touch-icon" sizes="60x60" href={require( '../assets/favicon/apple-icon-60x60.png' )}/>
                   <link rel="apple-touch-icon" sizes="72x72" href={require( '../assets/favicon/apple-icon-72x72.png' )}/>

@@ -54,7 +54,6 @@ class SwingingLogo extends React.Component {
                 setTimeout(() => {
                     let height = MAX_CANVAS_HEIGHT;
                     let width = document.getElementById( 'canvas_container' ).offsetWidth;
-                    //width = Math.min( width, MAX_CANVAS_WIDTH );
 
                     if ( isMobile()) {
                         height = window.innerHeight * 0.4;
@@ -77,16 +76,18 @@ class SwingingLogo extends React.Component {
                         canvasWidth = MAX_CANVAS_WIDTH;
                         shiftX = ( width - canvasWidth ) / 2;
                     }
-                    console.log( shiftX );
+
                     const canvasHeight = height;
 
-                    context.drawImage(
-                        imgSymbols,
-                        shiftX,
-                        canvasHeight - canvasWidth * 0.269 - 20,
-                        canvasWidth,
-                        canvasWidth * 0.269
-                    );
+                    setTimeout(() => {
+                        context.drawImage(
+                            imgSymbols,
+                            shiftX,
+                            Math.floor( canvasHeight - canvasWidth * 0.269 - 20 ),
+                            Math.floor( canvasWidth ),
+                            Math.floor( canvasWidth * 0.269 )
+                        );
+                    }, 250 );
 
                     var img = new Image();
                     img.src = onLamp;
@@ -190,6 +191,7 @@ class SwingingLogo extends React.Component {
                         canvasWidth = MAX_CANVAS_WIDTH;
                         shiftX = ( width - canvasWidth ) / 2;
                     }
+                    shiftX = Math.floor( shiftX );
                     const canvasHeight = height;
                     var refreshIntervalId = null;
 
@@ -223,11 +225,11 @@ class SwingingLogo extends React.Component {
                                         context.drawImage(
                                             imgSymbols,
                                             shiftX,
-                                            canvasHeight - canvasWidth * 0.269 - 20,
-                                            canvasWidth,
-                                            canvasWidth * 0.269
+                                            Math.floor( canvasHeight - canvasWidth * 0.269 - 20 ),
+                                            Math.floor( canvasWidth ),
+                                            Math.floor( canvasWidth * 0.269 )
                                         );
-                                    }, 500 );
+                                    }, 250 );
 
                                     that.setState({ overlay: false });
                                     clearInterval( refreshIntervalId );
@@ -281,12 +283,12 @@ class SwingingLogo extends React.Component {
                         context.strokeStyle = '#838586';
                         context.lineWidth = 2;
 
-                        context.moveTo( canvasWidth * 0.699 + shiftX, 0 );
-                        context.lineTo( -ballX + canvasWidth * 0.699 + shiftX, ballY );
+                        context.moveTo( Math.floor( canvasWidth * 0.699 + shiftX ), 0 );
+                        context.lineTo( Math.floor( -ballX + canvasWidth * 0.699 + shiftX ), ballY );
                         context.closePath();
                         context.stroke();
 
-                        context.translate( canvasWidth * 0.699 + shiftX, 0 );
+                        context.translate( Math.floor( canvasWidth * 0.699 + shiftX ), 0 );
 
                         context.rotate( angle );
 
@@ -301,20 +303,20 @@ class SwingingLogo extends React.Component {
                         }
                         context.drawImage(
                         img,
-                        -canvasWidth * 0.314 / 2,
-                        rPend,
-                        canvasWidth * 0.314,
-                        canvasWidth * 0.314 * 1.196
+                        Math.floor( -canvasWidth * 0.314 / 2 ),
+                        Math.floor( rPend ),
+                        Math.floor( canvasWidth * 0.314 ),
+                        Math.floor( canvasWidth * 0.314 * 1.196 )
                     );
 
                         if ( isLightingStarted ) {
                             context.globalAlpha = lightningOpacity;
                             context.drawImage(
                             img2,
-                            -canvasWidth * 0.314 / 2,
-                            rPend,
-                            canvasWidth * 0.314,
-                            canvasWidth * 0.314 * 1.196
+                            Math.floor( -canvasWidth * 0.314 / 2 ),
+                            Math.floor( rPend ),
+                            Math.floor( canvasWidth * 0.314 ),
+                            Math.floor( canvasWidth * 0.314 * 1.196 )
                         );
                             if ( lightningOpacity < 1 ) {
                                 lightningOpacity += 0.002;
@@ -326,7 +328,7 @@ class SwingingLogo extends React.Component {
                         prev = angle;
                     };
 
-                    var sim = PendulumSim( 5, 4, Math.PI * 70 / 100, 5, render );
+                    var sim = PendulumSim( 5, 4, Math.PI * 70 / 100, 10, render );
 
                     setTimeout(() => {
                         isLightingStarted = true;

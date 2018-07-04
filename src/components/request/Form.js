@@ -78,12 +78,17 @@ class Form extends React.Component {
         if ( process.env.BROWSER ) {
             const request = require( 'superagent' );
             var formData = this.state.formData;
-            var formValidation = this.state.formValidation;
+            var formValidation = {
+                name: false,
+                email: false,
+            };
             if ( !formData.name ) {
                 formValidation.name = true;
-            } else if ( !validateEmail( formData.email )) {
+            }
+            if ( !validateEmail( formData.email )) {
                 formValidation.email = true;
-            } else {
+            }
+            if ( !formValidation.name && !formValidation.email ) {
                 request.post( '/send-request' )
                     .set( 'Content-Type', 'application/json' )
                     .send( formData )
