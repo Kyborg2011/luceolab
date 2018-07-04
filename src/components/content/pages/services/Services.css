@@ -146,12 +146,14 @@
     opacity: 0;
     color: transparent;
     overflow: hidden;
+    transition: 1s background-color, 1s border-color !important;
 }
 
 .list li .details > a:hover {
     color: #fff !important;
-    background: #FF5964;
+    background-color: #FF5964;
     border-color: #FF5964;
+    transition: 1s background-color, 1s border-color !important;
 }
 
 .details p {
