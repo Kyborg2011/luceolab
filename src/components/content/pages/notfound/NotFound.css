@@ -1,0 +1,85 @@
+.NotFoundInner {
+    display: flex;
+    align-self: center !important;
+    width: 100%;
+    top: 30% !important;
+}
+
+.NotFoundInner > div {
+    height: 100%;
+}
+
+.NotFoundMainPhrase {
+    display: flex;
+    font-size: 35px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    line-height: 50px;
+    padding: 0 15px;
+    margin: 24px 0 15px 0;
+    text-transform: uppercase;
+}
+
+.largeLogo {
+    display: none;
+    justify-content: center;
+    flex-flow: row;
+}
+
+.largeLogo img {
+    max-height: 250px;
+    display: flex;
+}
+
+.NotFoundMainContent {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.NotFoundInner a:hover {
+    color: #fff !important;
+}
+
+@media (max-width: 767px) {
+    .NotFoundMainPhrase {
+        font-size: 25px;
+        line-height: 40px;
+    }
+
+    .NotFoundMainContent {
+        flex: 2;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen
+    and (max-width: 767px)
+    and (orientation: landscape) {
+    .NotFoundMainPhrase {
+        margin: 0 0 10px;
+        line-height: 35px;
+    }
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .NotFoundMainPhrase {
+        margin: 0 0 10px;
+        line-height: 45px;
+        font-size: 25px;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}

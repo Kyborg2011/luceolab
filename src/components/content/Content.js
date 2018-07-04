@@ -11,6 +11,7 @@ import bgStyles from '../shared/styles/Background.css';
 import styles from './Content.css';
 
 import home from './pages/home/Homepage';
+import notfound from './pages/notfound/NotFound';
 import howWeWork from './pages/how-we-work/HowWeWork';
 import services from './pages/services/Services';
 import ourTeam from './pages/our-team/OurTeam';
@@ -164,6 +165,7 @@ class Content extends React.Component {
                                     <Route path="/our-team" component={ourTeam} />
                                     <Route path="/our-beliefs" component={ourBeliefs} />
                                     <Route path="/contacts" component={contact} />
+                                    <Route path="/*" component={notfound} />
                                 </Switch>
                             </div>
                         </CSSTransition>
