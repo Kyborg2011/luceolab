@@ -44,11 +44,12 @@ class SwingingLogo extends React.Component {
         var that = this;
 
         if ( process.env.BROWSER ) {
+            var imgSymbols = new Image();
+            imgSymbols.src = logoWithoutLamp;
+
             var pendulumRender = () => {
                 var img2 = new Image();
                 img2.src = onLamp;
-                var imgSymbols = new Image();
-                imgSymbols.src = logoWithoutLamp;
 
                 setTimeout(() => {
                     let height = MAX_CANVAS_HEIGHT;
@@ -190,9 +191,7 @@ class SwingingLogo extends React.Component {
                         shiftX = ( width - canvasWidth ) / 2;
                     }
                     const canvasHeight = height;
-
-                    var imgLetters = new Image();
-                    imgLetters.src = logoWithoutLamp;
+                    var refreshIntervalId = null;
 
                     function PendulumSim( length_m, gravity_mps2, initialAngle_rad, timestep_ms, callback ) {
                         var stops = [ -40, 0 ];
@@ -219,13 +218,17 @@ class SwingingLogo extends React.Component {
                                     stops.shift();
                                 }
                                 if ( zeroCount > 0 ) {
-                                    context.drawImage(
-                                    imgLetters,
-                                    shiftX,
-                                    canvasHeight - canvasWidth * 0.269 - 20,
-                                    canvasWidth,
-                                    canvasWidth * 0.269
-                                );
+                                    context.globalAlpha = 1;
+                                    setTimeout(() => {
+                                        context.drawImage(
+                                            imgSymbols,
+                                            shiftX,
+                                            canvasHeight - canvasWidth * 0.269 - 20,
+                                            canvasWidth,
+                                            canvasWidth * 0.269
+                                        );
+                                    }, 500 );
+
                                     that.setState({ overlay: false });
                                     clearInterval( refreshIntervalId );
                                 }
@@ -243,7 +246,7 @@ class SwingingLogo extends React.Component {
                   };
                         })();
 
-                        var refreshIntervalId = setInterval(() => {
+                        refreshIntervalId = setInterval(() => {
                             window.requestAnimFrame( function() {
                                 func();
                             });
