@@ -138,3 +138,7 @@ body, html, :global(#root) {
 :global(.no-animations) {
     transition: unset !important;
 }
+
+:global(.Select) {
+    margin-bottom: 10px;
+}
