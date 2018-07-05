@@ -14,10 +14,9 @@
     font-family: 'Open Sans Condensed', sans-serif;
     text-align: center;
     width: 30%;
-    color: #D81159;
-    font-style: italic;
+    color: #2F4550;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 38px;
 }
 
@@ -29,6 +28,7 @@
     width: 70%;
     text-align: justify;
     padding-right: 15px;
+    color: #2F4550;
 }
 
 .slide {
@@ -64,7 +64,7 @@
 
 .controls a {
     display: flex;
-    color: #D81159;
+    color: #2F4550;
     font-size: 40px;
     line-height: 40px;
     text-decoration: none;
@@ -89,7 +89,7 @@
 }
 
 .controls a:hover {
-    color: #D81159;
+    color: #2F4550;
     opacity: 1;
 }
 
@@ -141,6 +141,10 @@
     opacity: 1;
 }
 
+.ourBeliefsPage h1 {
+    color: #2F4550 !important;
+}
+
 :global(.disableArr) {
     opacity: .4 !important;
     color: #545b67 !important;
@@ -153,13 +157,22 @@
 
 @media only screen and (max-width: 767px) {
     .epigraph {
-        display: none;
+        order: 1;
+        width: 100%;
+        text-align: right;
+        font-size: 14px;
+        line-height: 24px;
     }
 
     .content {
         width: 100%;
         font-size: 11px;
         line-height: 14px;
+        order: 2;
+    }
+
+    .slide {
+        flex-direction: column;
     }
 
     .forwardBtn {
@@ -197,13 +210,13 @@
     }
 
     .controls a {
-        line-height: 20px;
+        line-height: 25px;
         font-size: 20px;
     }
 
     .controls a span {
         font-size: 14px;
-        line-height: 20px;
+        line-height: 30px;
     }
 
     .technoligiesList a img {

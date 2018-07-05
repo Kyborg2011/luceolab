@@ -155,6 +155,8 @@ a.requestBtn:hover {
 .reverseForm input, .reverseForm textarea {
     color: rgba(0,0,0,.4);
     border-bottom: 1px rgba(0,0,0,.4) solid;
+    width: 100%;
+    max-width: unset;
 }
 
 .reverseForm input:focus, .reverseForm textarea:focus {

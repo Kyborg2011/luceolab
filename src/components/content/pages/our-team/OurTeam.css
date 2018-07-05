@@ -44,6 +44,7 @@
     position: absolute;
     height: 100%;
     display: flex;
+    max-width: 100%;
 }
 
 .teamMember:nth-child(3), .teamMember:nth-child(6) {

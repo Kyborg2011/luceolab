@@ -51,17 +51,17 @@
     font-size: 16px;
     padding: 0 0 0 20px;
     margin: 13px 0 0 10px;
-    color: #212121;
+    color: #2F4550;
     font-weight: 600;
     transition: color 1s;
 }
 
 :global(.dark-style-header) .h3 {
-    color: #212121;
+    color: #2F4550;
 }
 
 .h3:hover {
-    color: #D81159;
+    color: #2F4550;
 }
 
 :global(.dark-style-header) .h1 {

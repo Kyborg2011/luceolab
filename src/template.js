@@ -10,7 +10,7 @@ export default ({ body, helmet }) => {
                 <script src="/js/main.bundle.js"></script>
                 <script type="text/javascript">
                   WebFontConfig = {
-                      google: { families: [ 'Open+Sans:300,400,600', 'Open+Sans+Condensed:300,300italic' ] }
+                      google: { families: [ 'Open+Sans:300,400,600', 'Open+Sans+Condensed:300' ] }
                   };
                   (function() {
                     var wf = document.createElement('script');

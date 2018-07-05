@@ -142,3 +142,11 @@ body, html, :global(#root) {
 :global(.Select) {
     margin-bottom: 10px;
 }
+
+:global(.Toastify__toast--error) {
+    background: #FF5964;
+}
+
+:global(.Toastify__toast--success) {
+    background: #63C132;
+}

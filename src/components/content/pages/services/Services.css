@@ -149,6 +149,14 @@
     transition: 1s background-color, 1s border-color !important;
 }
 
+.modalContainer a:last-child {
+    border: solid #fff 1px;
+}
+
+.modalContainer a:last-child:hover {
+    border-color: #212121;
+}
+
 .list li .details > a:hover {
     color: #fff !important;
     background-color: #FF5964;
