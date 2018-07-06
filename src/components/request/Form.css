@@ -122,8 +122,8 @@ a.requestBtn {
 }
 
 .openForm a.requestBtn::after {
-    content: "\F00D";
-    font: normal normal normal 18px/1 FontAwesome;
+    content: "✕";
+    font: normal normal normal 18px/1 'Open Sans';
     position: absolute;
     right: 15px;
     top: 11px;

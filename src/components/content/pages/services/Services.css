@@ -149,7 +149,7 @@
     transition: 1s background-color, 1s border-color !important;
 }
 
-.modalContainer a:last-child {
+.modalContainer > a:last-child {
     border: solid #fff 1px;
 }
 

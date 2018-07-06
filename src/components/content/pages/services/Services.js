@@ -310,7 +310,7 @@ class Services extends React.Component {
                                 isModalActive: '',
                             });
                         }}>
-                            <i className="fa fa-times" aria-hidden="true" />
+                            &#10005;
                         </a>
                         <div id="modal-content"><p/></div>
                         <Button label={'free request'} onClick={( e ) => {
