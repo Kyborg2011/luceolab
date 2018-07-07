@@ -252,6 +252,7 @@ a.requestBtn:hover {
     display: flex;
     align-self: center;
     margin-top: 40px;
+    margin-right: 20px;
 }
 
 :global(.Select-menu-outer) {

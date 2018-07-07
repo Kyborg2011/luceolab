@@ -12,4 +12,6 @@
     flex: 2;
     cursor: grab;
     user-select: none;
+    height: 100%;
+    overflow: hidden;
 }
