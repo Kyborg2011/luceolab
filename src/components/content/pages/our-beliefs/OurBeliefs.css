@@ -145,6 +145,11 @@
     color: #2F4550 !important;
 }
 
+.ourBeliefsPage h1:before {
+    background-color: #2F4550 !important;
+    border-color: #2F4550 !important;
+}
+
 :global(.disableArr) {
     opacity: .4 !important;
     color: #545b67 !important;
