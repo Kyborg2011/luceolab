@@ -101,7 +101,7 @@ class App extends React.Component {
                     <Content />
                     {pathname !== '/' &&
                         <VerticalButton darkstyle={([
-                            '/our-team',
+                            '/team',
                             '/selected-works',
                             '/services',
                         ].indexOf( pathname ) !== -1

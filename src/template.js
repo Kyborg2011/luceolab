@@ -8,7 +8,7 @@ export default ({ body, helmet }) => {
             <body>
                 <div id="root"><div>${body}</div></div>
                 <script src="/js/main.bundle.js"></script>
-                <script type="text/javascript">
+                <script>
                   WebFontConfig = {
                       google: { families: [ 'Open+Sans:300,400,600', 'Open+Sans+Condensed:300' ] }
                   };

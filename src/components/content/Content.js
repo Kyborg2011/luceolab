@@ -127,6 +127,7 @@ class Content extends React.Component {
                               require( '../../assets/img/backgrounds/' + prefix + '-bg--w_2618.jpg' ) + ' 2618w',
                               require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' ) + ' 3626w'
                           ].join( ',' )}
+                          alt="LuceoLab - Digital Agency"
                           src={
                               require( '../../assets/img/backgrounds/' + prefix + '-bg--w_3626.jpg' )
                           } />
@@ -162,9 +163,9 @@ class Content extends React.Component {
                                     <Route exact path="/" component={home} />
                                     <Route path="/how-we-work" component={howWeWork} />
                                     <Route path="/services" component={services} />
-                                    <Route path="/our-team" component={ourTeam} />
-                                    <Route path="/our-beliefs" component={ourBeliefs} />
-                                    <Route path="/contacts" component={contact} />
+                                    <Route path="/team" component={ourTeam} />
+                                    <Route path="/about" component={ourBeliefs} />
+                                    <Route path="/contact" component={contact} />
                                     <Route path="/*" component={notfound} />
                                 </Switch>
                             </div>

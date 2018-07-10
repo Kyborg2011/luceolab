@@ -189,7 +189,7 @@ class OurBeliefs extends React.Component {
                                     We think that in the modern world, the influence of the capitalist market on art is greater than ever. Fortunately, now there are technologies that will make it possible in the future to achieve maximum personal freedom, independence from any political structures, banking system and so on. Namely:<br/>
                                     <span className={styles.technoligiesList}>
                                         <a href="https://www.blockchain.com/" target="_blank">
-                                            <img src={require( '../../../../assets/img/icons/bc.svg' )} />
+                                            <img alt="Blockchain - technology of the future" src={require( '../../../../assets/img/icons/bc.svg' )} />
                                         </a>
                                     </span>
                                     So, in the principles of blockchain we see one of the most important direction of our work. We think that blockchain has a great potential to change our lives in a fundamental way. <span className={styles.bold}>We will be extremely pleased to work with new blockchain startups! Feel free to write us!</span>
