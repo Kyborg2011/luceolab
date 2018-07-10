@@ -107,7 +107,8 @@ module.exports = [ {
         }),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
-            'process.env.BROWSER': JSON.stringify( process.env.BROWSER )
+            'process.env.BROWSER': JSON.stringify( process.env.BROWSER ),
+            'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV ),
         })
     ]
 } ];
