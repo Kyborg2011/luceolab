@@ -94,9 +94,13 @@
         background-color: #fff;
         opacity: 1;
     }
+
     :global(.dark-style-header) .h1:before {
-        background-color: transparent;
         border-color: #212121;
+    }
+
+    .h1:before {
+        background-color: transparent;
     }
 }
 

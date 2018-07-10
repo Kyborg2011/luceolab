@@ -173,16 +173,16 @@ class Services extends React.Component {
                                         </span>
                                         <span className={styles.technoligiesList}>
                                             <a href="https://reactjs.org/" title="ReactJS" target="_blank">
-                                                <img style={{ height: '50px' }} src={require( '../../../../assets/img/icons/react-js.png' )} />
+                                                <img alt="ReactJS" style={{ height: '50px' }} src={require( '../../../../assets/img/icons/react-js.png' )} />
                                             </a>
                                             <a href="http://www.ecma-international.org/ecma-262/6.0/index.html" title="ECMAScript 2015" target="_blank">
-                                                <img src={require( '../../../../assets/img/icons/es6.svg' )} />
+                                                <img alt="ECMAScript 6" src={require( '../../../../assets/img/icons/es6.svg' )} />
                                             </a>
                                             <a href="https://www.docker.com/" title="Docker" target="_blank">
-                                                <img src={require( '../../../../assets/img/icons/docker.svg' )} />
+                                                <img alt="Docker Clusterization" src={require( '../../../../assets/img/icons/docker.svg' )} />
                                             </a>
                                             <a href="https://symfony.com/" title="Symfony" target="_blank">
-                                                <img src={require( '../../../../assets/img/icons/symfony.png' )} />
+                                                <img alt="Symfony PHP framework" src={require( '../../../../assets/img/icons/symfony.png' )} />
                                             </a>
                                         </span>
                                     </p>
