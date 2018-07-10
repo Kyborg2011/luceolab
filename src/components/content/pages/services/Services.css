@@ -146,7 +146,7 @@
     opacity: 0;
     color: transparent;
     overflow: hidden;
-    transition: 1s background-color, 1s border-color !important;
+    transition: 1s background-color, 1s border-color;
 }
 
 .modalContainer > a:last-child {
@@ -341,7 +341,7 @@
     .list li:hover .details > a:last-child {
         color: #fff;
         opacity: 1;
-        transition: opacity 0.5s 0.2s;
+        transition: 1s background-color, 1s border-color, 1s .5s opacity !important;
     }
 
     .list li:hover .details {

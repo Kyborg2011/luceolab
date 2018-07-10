@@ -33,6 +33,74 @@ class OurBeliefs extends React.Component {
         setTimeout(() => {
             this.setState({ isChairsVisible: true });
         }, 2500 );
+
+        if ( process.env.BROWSER ) {
+            var element = document.getElementById( 'our-beliefs-page-wrapper' );
+            var startX = -1;
+            var endX = 0;
+            element.addEventListener( 'touchmove', ( e ) => {
+                e.preventDefault();
+            });
+            element.addEventListener( 'touchstart', ( e ) => {
+                var touch = e.touches[ 0 ] || e.changedTouches[ 0 ];
+                startX = touch.pageX;
+            }, false );
+            element.addEventListener( 'touchend', ( e ) => {
+                var touch = e.touches[ 0 ] || e.changedTouches[ 0 ];
+                endX = touch.pageX;
+                if ( startX != -1 ) {
+                    let delta = endX - startX;
+                    if ( delta < -50 && this.state.currentSlide < 3 ) {
+                        this.setState({
+                            currentSlide: this.state.currentSlide + 1,
+                            isRight: false,
+                            blockTimeout: true,
+                            slidingStarted: true,
+                        });
+                        setTimeout(() => {
+                            this.setState({ blockTimeout: false });
+                        }, 1500 );
+                    }
+                    if ( delta > 50 && this.state.currentSlide > 0 ) {
+                        this.setState({
+                            currentSlide: this.state.currentSlide - 1,
+                            isRight: true,
+                            blockTimeout: true,
+                            slidingStarted: true,
+                        });
+                        setTimeout(() => {
+                            this.setState({ blockTimeout: false });
+                        }, 1500 );
+                    }
+                }
+                startX = -1;
+            }, false );
+
+            ( function() {
+                var throttle = function( type, name, obj ) {
+                    obj = obj || window;
+                    var running = false;
+                    var func = function() {
+                        if ( running ) {
+                            return;
+                        }
+                        running = true;
+                        requestAnimationFrame( function() {
+                            obj.dispatchEvent( new CustomEvent( name ));
+                            running = false;
+                        });
+                    };
+                    obj.addEventListener( type, func );
+                };
+                throttle( 'resize', 'optimizedResize' );
+            })();
+
+            window.addEventListener( 'optimizedResize', () => {
+                this.setState({ currentSlide: this.state.currentSlide });
+
+                console.log( 'Resource conscious resize callback!' );
+            });
+        }
     }
 
     handleClick( e ) {
@@ -112,7 +180,7 @@ class OurBeliefs extends React.Component {
                             e.preventDefault();
                         }}><span>read more</span>&nbsp;&#x27f6;</a>
                     </div>
-                    <div className={styles.pageWrapper}>
+                    <div id="our-beliefs-page-wrapper" className={styles.pageWrapper}>
                         <div className={styles.inner}>
                             <div className={classNames( styles.slide, getClassNames( 0 ))}>
                                 <p className={styles.content}>

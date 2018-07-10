@@ -63,7 +63,7 @@ class MouseNavigation extends React.Component {
                 endX = e.pageY;
                 if ( startX != -1 ) {
                     let delta = endX - startX;
-                    if ( Math.abs( delta ) > 75 ) {
+                    if ( Math.abs( delta ) > 100 ) {
                         let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                         let nextRouteId = routeId;
                         nextRouteId = ( delta > 0 ) ? --routeId : ++routeId;
@@ -84,7 +84,7 @@ class MouseNavigation extends React.Component {
                 endX = touch.pageY;
                 if ( startX != -1 ) {
                     let delta = endX - startX;
-                    if ( Math.abs( delta ) > 50 ) {
+                    if ( Math.abs( delta ) > 100 ) {
                         let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
                         let nextRouteId = routeId;
                         nextRouteId = ( delta > 0 ) ? --routeId : ++routeId;

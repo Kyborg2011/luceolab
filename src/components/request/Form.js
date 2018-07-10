@@ -17,6 +17,8 @@ function validateEmail( email ) {
     return re.test( email );
 }
 
+var openTimeout = null;
+
 class Form extends React.Component {
     constructor( props ) {
         super( props );
@@ -134,7 +136,6 @@ class Form extends React.Component {
                     isRemoveOverlay: false,
                 });
             }
-
         }
     }
 
@@ -157,19 +158,24 @@ class Form extends React.Component {
                 <div className={classNames( styles.requestForm, mainClasses())}>
                     <div className={styles.requestFormOpacityBg}/>
                     <Button backgroundColor={backgroundColor} className={styles.requestBtn} label={label} onClick={( e ) => {
-                        if ( isOpen ) {
-                            setTimeout(() => {
+                        if ( openTimeout == null ) {
+                            if ( isOpen ) {
+                                setTimeout(() => {
+                                    this.setState({
+                                        isRemoveOverlay: true,
+                                        isClosed: false,
+                                    });
+                                }, 2000 );
+                            } else {
                                 this.setState({
-                                    isRemoveOverlay: true,
-                                    isClosed: false,
+                                    isRemoveOverlay: false,
                                 });
+                            }
+                            this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
+                            openTimeout = setTimeout(() => {
+                                openTimeout = null;
                             }, 2000 );
-                        } else {
-                            this.setState({
-                                isRemoveOverlay: false,
-                            });
                         }
-                        this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                         e.preventDefault();
                     }} />
                     {( isOpen ) && (

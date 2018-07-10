@@ -57,6 +57,46 @@ class Services extends React.Component {
                     });
                 });
             }
+            ( function() {
+                var throttle = function( type, name, obj ) {
+                    obj = obj || window;
+                    var running = false;
+                    var func = function() {
+                        if ( running ) {
+                            return;
+                        }
+                        running = true;
+                        requestAnimationFrame( function() {
+                            obj.dispatchEvent( new CustomEvent( name ));
+                            running = false;
+                        });
+                    };
+                    obj.addEventListener( type, func );
+                };
+                throttle( 'resize', 'optimizedResize' );
+            })();
+
+            window.addEventListener( 'optimizedResize', () => {
+                this.setState({ currentSlide: this.state.currentSlide });
+
+                let list = document.getElementsByClassName( styles.list );
+                let modalContent = document.getElementById( 'modal-content' ).getElementsByTagName( 'p' )[ 0 ];
+                let width = ( window.innerWidth > 0 ) ? window.innerWidth : screen.width;
+                if ( width < 767 ) {
+                    let listElements = list[ 0 ].childNodes;
+                    listElements.forEach(( val ) => {
+                        val.addEventListener( 'click', ( e ) => {
+                            e.preventDefault();
+                            modalContent.innerHTML = val.getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'div' )[ 0 ].getElementsByTagName( 'p' )[ 0 ].innerHTML;
+                            this.setState({
+                                isModalActive: styles.activeModal,
+                            });
+                        });
+                    });
+                }
+
+                console.log( 'Resource conscious resize callback!' );
+            });
         }
     }
 

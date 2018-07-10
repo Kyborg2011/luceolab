@@ -26,6 +26,7 @@ class Homepage extends React.Component {
             blurred: true,
             cancelBlur: false,
             swingingLogo: true,
+            isBorder: false,
         };
     }
 
@@ -52,6 +53,7 @@ class Homepage extends React.Component {
                           if ( process.env.BROWSER ) {
                               setTimeout(() => {
                                   document.getElementById( 'app-content' ).style.zIndex = 400;
+                                  document.getElementById( 'homepage-blurred' ).classList.remove( 'blurred' );
                               }, 3000 );
                           }
                       }}
@@ -71,7 +73,6 @@ class Homepage extends React.Component {
                         </h1>
                         <Button href="/how-we-work" label="How we work" hasMouseWheel />
                     </div>
-
                 </div>
             </div>
         );

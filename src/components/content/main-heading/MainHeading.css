@@ -95,7 +95,7 @@
         opacity: 1;
     }
     :global(.dark-style-header) .h1:before {
-        background-color: #212121;
+        background-color: transparent;
         border-color: #212121;
     }
 }

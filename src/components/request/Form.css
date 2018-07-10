@@ -38,13 +38,21 @@
     }
 
     100% {
-        opacity: .75;
+        opacity: .8;
     }
 }
 
 @keyframes opacity-out {
     0%   {
-        opacity: .75;
+        opacity: .8;
+    }
+
+    25%   {
+        opacity: .8;
+    }
+
+    50% {
+        opacity: .8;
     }
 
     100% {
@@ -185,12 +193,13 @@ a.requestBtn:hover {
     animation-name: opacity-in;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    will-change: opacity;
 }
 
 :global(.overlayClose) {
     animation-name: opacity-out;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation-duration: 3s;
+    animation-fill-mode: backwards;
 }
 
 :global(.is-focused .Select-control) {

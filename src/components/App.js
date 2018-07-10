@@ -63,6 +63,7 @@ class App extends React.Component {
                   <meta name="theme-color" content="#ffffff" />
                   <meta name="copyright" content="Copyright © LuceoLab. All Rights Reserved." />
                   <meta name="author" content="LuceoLab (https://luceolab.com)" />
+                  <meta name="robots" content="index, follow" />
                   <meta name="description" content="Hello internet voyager. We are a digital agency LuceoLab. Got a minute? Click on How we work button to learn more about us." />
                   <meta name="twitter:card" content="summary" />
                   <meta name="twitter:title" content="LuceoLab | Arts. Privacy. Clarity. Openness." />

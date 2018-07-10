@@ -60,6 +60,10 @@
     flex-flow: column wrap;
 }
 
+:global(.blurred) > a {
+    border: none;
+}
+
 @media (max-width: 767px) {
     .homepageMainPhrase {
         font-size: 25px;

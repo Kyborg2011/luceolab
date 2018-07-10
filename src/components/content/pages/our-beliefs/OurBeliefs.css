@@ -28,7 +28,7 @@
     width: 70%;
     text-align: justify;
     padding-right: 15px;
-    color: #2F4550;
+    color: #212121;
 }
 
 .slide {
@@ -36,22 +36,25 @@
     justify-content: space-between;
     position: absolute;
     z-index: 200;
-    opacity: 1;
+    opacity: 0;
     overflow: hidden;
     transform: translateX(-200%);
 }
 
 .slide.slidingStarted {
-    transition: transform 1s;
+    opacity: 0;
+    transition: transform 1.5s, opacity .5s;
 }
 
 .slide.right {
+    opacity: 0;
     transform: translateX(200%);
 }
 
 .slide.active {
     opacity: 1;
     transform: none;
+    transition: transform 1.5s, opacity 1.5s .5s;
 }
 
 .controls {
@@ -146,8 +149,8 @@
 }
 
 .ourBeliefsPage h1:before {
-    background-color: #2F4550 !important;
     border-color: #2F4550 !important;
+    background-color: transparent !important;
 }
 
 :global(.disableArr) {

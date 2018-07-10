@@ -53,7 +53,7 @@ class OurTeam extends React.Component {
                             </p>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto1} />
+                            <img src={MemberPhoto1} alt="Name Surname" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Ivanov Ivan</span>
@@ -89,7 +89,7 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto2} />
+                            <img src={MemberPhoto2} alt="Name Surname" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Shever Marina</span>
@@ -115,7 +115,7 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto3} />
+                            <img src={MemberPhoto3} alt="Name Surname" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Shever Marina</span>
@@ -141,7 +141,7 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto4} />
+                            <img src={MemberPhoto4} alt="Name Surname" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Shever Marina</span>
@@ -167,7 +167,7 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto5} />
+                            <img src={MemberPhoto5} alt="Name Surname" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Hren Znaet</span>
