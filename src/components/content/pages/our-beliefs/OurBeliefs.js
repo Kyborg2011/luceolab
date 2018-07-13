@@ -164,7 +164,7 @@ class OurBeliefs extends React.Component {
                                 }, 1500 );
                             }
                             e.preventDefault();
-                        }}>&#x27f5;&nbsp;<span>back</span></a>
+                        }}><i className="fa fa-angle-left" aria-hidden="true" />&nbsp;&nbsp;<span>back</span></a>
                         <a href="" className={classNames({ disableArr: ( currentSlide == 3 ) })} title="Read more" onClick={( e ) => {
                             if ( currentSlide < 3 && !blockTimeout ) {
                                 this.setState({
@@ -178,7 +178,7 @@ class OurBeliefs extends React.Component {
                                 }, 1500 );
                             }
                             e.preventDefault();
-                        }}><span>read more</span>&nbsp;&#x27f6;</a>
+                        }}><span>read more</span>&nbsp;&nbsp;<i className="fa fa-angle-right" aria-hidden="true" /></a>
                     </div>
                     <div id="our-beliefs-page-wrapper" className={styles.pageWrapper}>
                         <div className={styles.inner}>

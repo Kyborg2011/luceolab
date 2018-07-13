@@ -69,7 +69,6 @@
     display: flex;
     color: #2F4550;
     font-size: 40px;
-    line-height: 40px;
     text-decoration: none;
     transition: opacity 1s;
     margin-right: 30px;
@@ -80,7 +79,6 @@
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    line-height: 50px;
 }
 
 .controls a:hover span {
@@ -218,13 +216,11 @@
     }
 
     .controls a {
-        line-height: 25px;
         font-size: 20px;
     }
 
     .controls a span {
         font-size: 14px;
-        line-height: 30px;
     }
 
     .technoligiesList a img {

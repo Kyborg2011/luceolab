@@ -98,7 +98,6 @@
 
 .serviceOpen > div > div {
     margin-top: 15px;
-    overflow: visible;
 }
 
 .serviceOpen > div > div:before {
@@ -139,9 +138,10 @@
     height: auto;
     width: auto;
     flex: 2;
-    padding: 0 21px;
+    padding: 0 21px 0 21px;
     margin-top: 15px;
     transition: width 2s, height 2s 2s;
+    display: flex;
 }
 
 .serviceOpen > div > a {

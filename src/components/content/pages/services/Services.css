@@ -99,36 +99,6 @@
     position: relative;
 }
 
-.details:before {
-    content: '';
-    position: absolute;
-    top: -9px;
-    display: flex;
-    align-self: center;
-    width: 18px;
-    height: 18px;
-    border: none;
-    border-radius: 9px;
-    transition: border 0.5s;
-    box-sizing: border-box;
-}
-
-.details:after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    display: flex;
-    align-self: center;
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    border: 1px solid #fff;
-    box-sizing: border-box;
-    border-radius: 4px;
-    z-index: 200;
-    transition: border .5s, background .5s;
-}
-
 .details {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -136,7 +106,7 @@
     color: #212121;
     height: 0;
     padding: 0;
-    overflow: visible;
+    overflow: hidden;
     transition: height .5s;
     margin-top: 15px;
 }
@@ -299,6 +269,9 @@
 :global(#close-modal) {
     font-size: 30px;
     color: #212121;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    display: block;
 }
 
 .epigraph {
@@ -310,6 +283,10 @@
     letter-spacing: 1px;
     color: rgb(216, 17, 89);
     width: 50%;
+}
+
+.details p {
+    display: none;
 }
 
 .details p a {
