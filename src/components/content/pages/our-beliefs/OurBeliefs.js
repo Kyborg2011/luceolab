@@ -184,15 +184,15 @@ class OurBeliefs extends React.Component {
                         <div className={styles.inner}>
                             <div className={classNames( styles.slide, getClassNames( 0 ))}>
                                 <p className={styles.content}>
-                                    <span className={styles.bold}>Business for us is a creative act in which a person is able to claim his own unique universe, free from all limitations.</span><br/><br/>
-                                    The creation of any piece of art is impossible without freedom. Otherwise, under the influence of economy and politics, that "art" loses its own values; the result of this influence is creative infertility.<br/><br/>
-                                    We think that in the modern world, the influence of the capitalist market on art is greater than ever. Fortunately, now there are technologies that will make it possible in the future to achieve maximum personal freedom, independence from any political structures, banking system and so on. Namely:<br/>
+                                    Clarity of vision is the main principle on which we founded our business. Guided by it, we came to art, as the most realistic reflection of the whole diversity of our lives. The creation of any piece of art is impossible without personal freedom. Otherwise, under the influence of economy and politics, modern "art" loses its own values; the result of this influence is creative infertility.<br/><br/>
+                                    We believe that in the modern world, the influence of the capitalist market on art is greater than ever. Fortunately, now there are technologies that will make it possible in the future to achieve maximum personal freedom, independence from any political structures, banking system and other institutes of suppression of individualities. Namely:<br/>
                                     <span className={styles.technoligiesList}>
                                         <a href="https://www.blockchain.com/" target="_blank">
                                             <img alt="Blockchain - technology of the future" src={require( '../../../../assets/img/icons/bc.svg' )} />
                                         </a>
                                     </span>
-                                    So, in the principles of blockchain we see one of the most important direction of our work. We think that blockchain has a great potential to change our lives in a fundamental way. <span className={styles.bold}>We will be extremely pleased to work with new blockchain startups! Feel free to write us!</span>
+                                    So, in development of new blockchain based technologies we see one of the most important direction of our work and way of thinking. We believe that blockchain has a great potential to change our lives in a fundamental way!
+                                    <br/><br/><span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>Business for us is a creative act in which a person is able to claim his own unique universe, free from all limitations.</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «Freedom is the source of beauty»<br/>― Albert Camus
@@ -200,10 +200,10 @@ class OurBeliefs extends React.Component {
                             </div>
                             <div className={classNames( styles.slide, getClassNames( 1 ))}>
                                 <p className={styles.content}>
-                                    Guided by the clarity of vision, we find art as the most realistic representation of the whole diversity of human life. It requires daily effort, self-mastery, an accurate assessment of the boundaries of truth. Art is the best school of clarity.<br/><br/>
+                                    Art is the best school of clarity. It requires daily effort, self-mastery, an accurate assessment of the boundaries of truth.<br/><br/>
                                     We believe that a website can be not only a container for some piece of art, but in itself is a unique modern kind of art.  <span className={styles.bold}>A browser window can be turned into anything:
                                     theatrical scene, painter's canvas, writer's diary and so on.</span><br/><br/>
-                                    Where the scientific method exhausts itself, the artistic method comes to the rescue. Real art, in our opinion, should evoke a sense of infinity, an infinitely clear and precise vision of the life problem. In each work we strive to get something like that.<br/><br/><span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>The feeling of beauty is the main force driving LuceoLab! Beauty not only in visual content and UI, but also in every single step of the process of creation.</span>
+                                    When the scientific method exhausts itself, the artistic method comes to the rescue. Real art, in our opinion, should evoke a sense of infinity, an infinitely clear and precise vision of the life problem. This is our sense of beauty - impression, which we strive to achieve in everything we do.<br/><br/><span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>The feeling of beauty is the main force driving our developers to grow up every day! Beauty not only in visual content and UI, but also in each step of the process of creation.</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «We have art in order not to die of the truth»<br/> ― Friedrich Nietzsche
@@ -213,10 +213,10 @@ class OurBeliefs extends React.Component {
                                 <p className={styles.content}>
                                     It is all about preserving clarity in a world where the nebula reigns.
                                     Indeed, the sense of deception, the manipulation of consciousness today is strongly manifested throughout the world.
-                                    <span className={styles.bold}> We claim that the Internet is the only technology that can give us the
+                                    <br/><br/><span className={styles.bold}> We claim that the Internet is the only technology that can give us the
                                     maximum number of points of view, the primary source of any information.</span><br/><br/>
-                                    Combining art, privacy, openness and clear workflow - we get the concept of creative solutions striving for maximum freedom. Firstly, freedom in our workflow, in the interaction between clients, developers, designers and company management. Secondly, freedom in effort to freely disseminate the results of our work. We truly love Open Source! We strive for contributing to Open Source community.<br/> <br/>
-                                    <span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>LuceoLab inevitably strives to constantly increase the diversity in the world, its development and transformation!</span>
+                                    Combining art, privacy, openness and clear workflow - we get <span className={styles.bold}>the concept of creative solutions</span> striving for maximum freedom. Firstly, freedom in our workflow, in the interaction between clients, developers, designers and company management. Secondly, freedom in effort to freely disseminate the results of our work. <span className={styles.bold}>We truly love Open Source! We strive for contributing to Open Source community.</span><br/><br/>
+                                    <span style={{ textAlign: 'center', display: 'block' }} className={styles.bold}>LuceoLab inevitably strives to increase the diversity in the world, its development and transformation!</span>
                                 </p>
                                 <p className={styles.epigraph}>
                                     «Task: to see things as they are. Means: to look at them with a hundred eyes, from many persons»<br/> ― Friedrich Nietzsche
@@ -224,14 +224,14 @@ class OurBeliefs extends React.Component {
                             </div>
                             <div className={classNames( styles.slide, getClassNames( 3 ))}>
                                 <p className={styles.content}>
-                                    The character of LuceoLab is enclosed in the name itself. It is all about clarity of vision, about seeing things as they are.<br/><br/>
+                                    The character of LuceoLab is enclosed in the name itself. We want to become a source of light, that will guide you to the highest success in your business. LuceoLab is a comet, whose flight you will never forget!<br/><br/>
                                     Everyone talks about effective trade on the Internet ― this is not enough for us. We take it higher, we talk about our life, in all its diversity.<br/><br/>
                                     All that we need is go through life without closing eyes to anything, accepting all that life brings, each time answering to it: "yes".<br/><br/>
                                     We find ecstasy only in moving forward, motion without stopping, however, with the appointment. <span className={styles.bold}>We want to get into a city in which no one has ever been!</span>
                                     <br/><br/><span className={styles.bold} style={{ textAlign: 'center', display: 'block' }}>LuceoLab declares the maximum love of life, but only on our own terms!</span>
                                 </p>
                                 <p className={styles.epigraph}>
-                                    Luceo (from latin) ― I dawn, become light, become clear
+                                    Luceo (from Latin) ― I dawn, become light, become clear
                                 </p>
                             </div>
                         </div>

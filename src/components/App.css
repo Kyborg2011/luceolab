@@ -100,7 +100,7 @@ body, html, :global(#root) {
 }
 
 :global(.unblur) {
-  filter: blur(.3px);
+  filter: blur(0);
   transition: 4s filter ease-in;
 }
 /* End of dark overlay + blur */

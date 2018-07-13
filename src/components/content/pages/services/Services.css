@@ -326,46 +326,46 @@
 }
 
 @media (min-width: 767px) {
-    .list li:hover .details:before {
+    .list li .listInnerWrapper:hover .details:before {
         border: 3px solid #fdb951;
         background: #fff;
         transition: border 0.5s 0.5s, background 0.5s 0.5s;
     }
 
-    .list li:hover .details:after {
+    .list li .listInnerWrapper:hover .details:after {
         background: #fdb951;
         border: 1px solid #fdb951;
         transition: border .5s, background .5s;
     }
 
-    .list li:hover .details > a:last-child {
+    .list li .listInnerWrapper:hover .details > a:last-child {
         color: #fff;
         opacity: 1;
         transition: 1s background-color, 1s border-color, 1s .5s opacity !important;
     }
 
-    .list li:hover .details {
+    .list li .listInnerWrapper:hover .details {
         height: 70px;
         transition: height 0.5s;
     }
 
-    .list li:hover .details {
+    .list li .listInnerWrapper:hover .details {
         display: flex;
     }
 
-    .list li:hover h4 {
+    .list li .listInnerWrapper:hover h4 {
         color: #212121;
         margin: 12px 0 0 0;
         transition: margin 0.5s 0.2s, color 0.5s 0.2s;
     }
 
-    .list li:hover .icon {
+    .list li .listInnerWrapper:hover .icon {
         background: #212121;
         transition: background 0.5s 0.2s, border-color 0.5s 0.2s;
         border-color: #212121;
     }
 
-    .list li:hover .icon img {
+    .list li .listInnerWrapper:hover .icon img {
         transition: filter 0.5s 0.2s;
         filter: invert(100%);
     }

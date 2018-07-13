@@ -45,12 +45,11 @@ class Header extends React.Component {
                     <a href="mailto:info@luceolab.com" target="_blank">
                         <i className="fa fa-envelope-open-o" aria-hidden="true" />
                     </a>
-                    <a href="#" target="_blank" className={styles.telegramIcon} />
+                    <a className={styles.facebookIcon} href="#" target="_blank">
+                        <i className="fa fa-facebook-f" aria-hidden="true" />
+                    </a>
                     <a href="#" target="_blank" className={styles.instagramIcon}>
                         <i className="fa fa-instagram" aria-hidden="true" />
-                    </a>
-                    <a className={styles.facebookIcon} href="#" target="_blank">
-                        <i className="fa fa-facebook" aria-hidden="true" />
                     </a>
                     <a className={styles.githubIcon} href="https://github.com/Kyborg2011/luceolab" target="_blank"
                       title="We are Open Sourced!">

@@ -116,12 +116,12 @@ class Contact extends React.Component {
                                 Lorem ipsum dolor sit amet,<br />
                                 consectetur adipisicing elit
                             </p>
-                            <p><span className="fa fa-mobile" /><a href="tel:+380663794773">+38 (066) 379-4773</a></p>
+                            <p><span className="fa fa-mobile" /><a href="tel:+380936905361">+38 (093) 690-5361</a></p>
                             <p><span className="fa fa-envelope-o" /><a href="mailto:info@luceolab.com">info@luceolab.com</a></p>
                             <ul className={styles.socialNetworks}>
-                                <li><a href="#" target="_blank"><span className="fa fa-instagram" /></a></li>
                                 <li className={styles.facebookBtn}><a href="#" target="_blank"><span className="fa fa-facebook" /></a></li>
-                                <li className={styles.telegramBtn}><a href="#" target="_blank" /></li>
+                                <li><a href="#" target="_blank"><span className="fa fa-instagram" /></a></li>
+                                <li className={styles.facebookBtn}><a href="#" target="_blank"><span className="fa fa-twitter" /></a></li>
                             </ul>
                         </div>
                     </div>
