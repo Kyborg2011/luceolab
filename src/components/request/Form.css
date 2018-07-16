@@ -269,6 +269,10 @@ a.requestBtn:hover {
     border-top-width: 0;
 }
 
+.modal form a {
+    border: solid #fff 1px;
+}
+
 @media (max-width: 767px) {
     .requestForm {
         display: none;

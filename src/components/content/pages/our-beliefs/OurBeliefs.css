@@ -63,12 +63,14 @@
     flex-direction: row;
     margin-top: 15px;
     width: 72%;
+    margin-bottom: 15px;
 }
 
 .controls a {
     display: flex;
     color: #2F4550;
     font-size: 40px;
+    line-height: 40px;
     text-decoration: none;
     transition: opacity 1s;
     margin-right: 30px;
@@ -217,6 +219,7 @@
 
     .controls a {
         font-size: 20px;
+        line-height: 20px;
     }
 
     .controls a span {

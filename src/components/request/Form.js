@@ -230,7 +230,7 @@ class Form extends React.Component {
                                     isRemoveOverlay: true,
                                 });
                             }}>
-                                <i className="fa fa-times" aria-hidden="true" />
+                                &#10005;
                             </a>
                             <div>
                                 {( this.state.formValidation.name || this.state.formValidation.email ) && (
