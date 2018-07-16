@@ -69,6 +69,7 @@
     align-self: baseline;
     display: flex;
     padding-right: 189px;
+    height: 100%;
 }
 
 .primaryNav > a {
@@ -78,8 +79,23 @@
     font-size: 16px;
     text-transform: uppercase;
     text-decoration: none;
+    align-items: center;
+    display: flex;
     font-family: 'Open Sans', sans-serif;
     transition: 0.4s transform, 0.4s color;
+}
+
+.primaryNav a svg {
+    width: 17px;
+}
+
+.primaryNav a svg path {
+    fill: #212121;
+    transition: fill .4s ease;
+}
+
+.primaryNav a:hover svg path {
+    fill: #fbbd63;
 }
 
 .primaryNav > a:hover {

@@ -127,6 +127,19 @@
     transition: background-color .5s, border .5s, color .5s;
 }
 
+.socialNetworks li a svg {
+    padding: 4px;
+}
+
+.socialNetworks li a svg path {
+    fill: #212121;
+    transition: fill .4s ease;
+}
+
+.socialNetworks li a:hover svg path {
+    fill: #fff;
+}
+
 .socialNetworks li a span {
     display: flex;
     justify-content: center;
