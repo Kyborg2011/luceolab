@@ -1,8 +1,8 @@
 .inner {
     composes: inner from "../../../shared/styles/Layout.css";
     width: auto;
-    margin-top: 0;
     position: relative;
+    margin-top: 0;
 }
 
 .pageWrapper {
@@ -11,13 +11,14 @@
 }
 
 .epigraph {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     text-align: center;
-    width: 30%;
+    width: 70%;
     color: #2F4550;
-    letter-spacing: 1px;
     font-size: 22px;
+    letter-spacing: 1px;
     line-height: 38px;
+    font-weight: 600;
 }
 
 .content {
@@ -25,15 +26,17 @@
     line-height: 23px;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    width: 70%;
+    width: 90%;
     text-align: justify;
     padding-right: 15px;
-    color: #212121;
+    color: #2F4550;
 }
 
 .slide {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     z-index: 200;
     opacity: 0;
@@ -59,11 +62,12 @@
 
 .controls {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: row;
-    margin-top: 15px;
-    width: 72%;
+    margin-top: 25px;
+    width: calc(100% - 117px);
     margin-bottom: 15px;
+    margin-left: 117px;
 }
 
 .controls a {
@@ -215,6 +219,7 @@
         margin-top: 0;
         line-height: 20px;
         margin-bottom: 5px;
+        margin-left: 0;
     }
 
     .controls a {

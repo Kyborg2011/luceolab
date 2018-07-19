@@ -91,7 +91,8 @@ class App extends React.Component {
                   <link rel="icon" type="image/png" sizes="96x96" href={require( '../assets/favicon/favicon-96x96.png' )}/>
                   <link rel="icon" type="image/png" sizes="16x16" href={require( '../assets/favicon/favicon-16x16.png' )}/>
                   <link rel="icon" type="image/x-icon" href={require( '../assets/favicon/favicon.ico' )}/>
-                  <link href="/css/main.css" rel="stylesheet" />
+                  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:300,400,600|Josefin+Sans:300,600" />
+                  <link rel="stylesheet" href="/css/main.css" />
                 </Helmet>
                 <Header />
                 <Navigation darkstyle={([

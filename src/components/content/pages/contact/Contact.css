@@ -214,6 +214,7 @@
         margin-top: 15px;
         min-width: auto;
         height: auto;
+        align-items: center;
     }
 
     .socialNetworks {
@@ -238,15 +239,12 @@
         margin: 0;
         line-height: 25px;
         font-size: 13px;
-        justify-content: center;
+        width: 220px;
+        justify-content: flex-start;
     }
 
     .info p a {
         font-size: 13px;
-    }
-
-    .info p span {
-        min-width: unset;
     }
 
     .formWrapper input {

@@ -113,8 +113,9 @@ class Contact extends React.Component {
                         <div className={styles.info}>
                             <p>
                                 <span className="fa fa-map-marker" />
-                                Lorem ipsum dolor sit amet,<br />
-                                consectetur adipisicing elit
+                                5, Akademika Komarova Av.<br />
+                                Kyiv, 03058<br/>
+                                Ukraine<br/>
                             </p>
                             <p><span className="fa fa-mobile" /><a href="tel:+380936905361">+38 (093) 690-5361</a></p>
                             <p><span className="fa fa-envelope-o" /><a href="mailto:info@luceolab.com">info@luceolab.com</a></p>

@@ -46,7 +46,6 @@ class SwingingLogo extends React.Component {
         if ( process.env.BROWSER ) {
             var imgSymbols = new Image();
             imgSymbols.src = logoWithoutLamp;
-
             var pendulumRender = () => {
                 var img2 = new Image();
                 img2.src = onLamp;
@@ -80,17 +79,19 @@ class SwingingLogo extends React.Component {
                     const canvasHeight = height;
 
                     setTimeout(() => {
-                        context.drawImage(
-                            imgSymbols,
-                            shiftX,
-                            Math.floor( canvasHeight - canvasWidth * 0.269 - 20 ),
-                            Math.floor( canvasWidth ),
-                            Math.floor( canvasWidth * 0.269 )
-                        );
+                        var imgSymbols = new Image();
+                        imgSymbols.src = logoWithoutLamp;
+                        imgSymbols.onload = () => {
+                            context.drawImage(
+                                imgSymbols,
+                                shiftX,
+                                Math.floor( canvasHeight - canvasWidth * 0.269 - 20 ),
+                                Math.floor( canvasWidth ),
+                                Math.floor( canvasWidth * 0.269 )
+                            );
+                        };
                     }, 250 );
 
-                    var img = new Image();
-                    img.src = onLamp;
                     var isLightingStarted = false;
                     var lightningOpacity = 1;
                     var prev = 0;
@@ -127,31 +128,16 @@ class SwingingLogo extends React.Component {
                             that.setState({ fade: true });
                         }
 
+                        var img = new Image();
+                        img.src = onLamp;
                         img.onload = () => {
-                            if ( isLightingStarted ) {
-                                context.globalAlpha = 1 - lightningOpacity;
-                            }
                             context.drawImage(
-                            img,
-                            canvasWidth - canvasWidth * 0.46 + shiftX,
-                            rPend,
-                            canvasWidth * 0.314,
-                            canvasWidth * 0.314 * 1.196
-                        );
-
-                            if ( isLightingStarted ) {
-                                context.globalAlpha = lightningOpacity;
-                                context.drawImage(
-                            img2,
-                            canvasWidth - canvasWidth * 0.46 + shiftX,
-                            rPend,
-                            canvasWidth * 0.314,
-                            canvasWidth * 0.314 * 1.196
-                        );
-                                if ( lightningOpacity < 1 ) {
-                                    lightningOpacity += 0.003;
-                                }
-                            }
+                                img,
+                                canvasWidth - canvasWidth * 0.46 + shiftX,
+                                rPend,
+                                canvasWidth * 0.314,
+                                canvasWidth * 0.314 * 1.196
+                            );
                             context.globalAlpha = 1;
                         };
 
@@ -217,7 +203,7 @@ class SwingingLogo extends React.Component {
                                 if ( stops[ 0 ] === 0 ) {
                                     zeroCount++;
                                 } else {
-                                    velocity = velocity * 0.6;
+                                    velocity = velocity * 0.7;
                                     stops.shift();
                                 }
                                 if ( zeroCount > 0 ) {
@@ -305,13 +291,16 @@ class SwingingLogo extends React.Component {
                         if ( isLightingStarted ) {
                             context.globalAlpha = 1 - lightningOpacity;
                         }
-                        context.drawImage(
-                        img,
-                        Math.floor( -canvasWidth * 0.314 / 2 ),
-                        Math.floor( rPend ),
-                        Math.floor( canvasWidth * 0.314 ),
-                        Math.floor( canvasWidth * 0.314 * 1.196 )
-                    );
+
+                        if ( lightningOpacity < 1 ) {
+                            context.drawImage(
+                                img,
+                                Math.floor( -canvasWidth * 0.314 / 2 ),
+                                Math.floor( rPend ),
+                                Math.floor( canvasWidth * 0.314 ),
+                                Math.floor( canvasWidth * 0.314 * 1.196 )
+                            );
+                        }
 
                         if ( isLightingStarted ) {
                             context.globalAlpha = lightningOpacity;

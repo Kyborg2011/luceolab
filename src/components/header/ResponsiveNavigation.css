@@ -155,7 +155,7 @@
 .navicon {
   position: relative;
   width: 35px;
-  height: .3125rem;
+  height: 3px;
   background: #212121;
   transition: 0.5s;
   border-radius: 2.5rem;
@@ -163,7 +163,7 @@
 .navicon:before, .navicon:after {
   display: block;
   content: "";
-  height: .3125rem;
+  height: 3px;
   width: 35px;
   background: #212121;
   position: absolute;
