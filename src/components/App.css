@@ -91,6 +91,7 @@ body, html, :global(#root) {
   z-index: 1200;
   opacity: .95;
   background: #000;
+  will-change: opacity;
 }
 
 :global(.blurred) {
