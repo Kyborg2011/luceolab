@@ -157,6 +157,10 @@
     background-color: transparent !important;
 }
 
+.ourBeliefsPage > div:first-child {
+    margin-top: 30px;
+}
+
 :global(.disableArr) {
     opacity: .4 !important;
     color: #545b67 !important;
