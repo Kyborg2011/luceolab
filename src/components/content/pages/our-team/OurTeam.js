@@ -44,7 +44,9 @@ class OurTeam extends React.Component {
                 <div>
                     <Helmet
                       title="Our Team | LuceoLab"
-                    />
+                    >
+                        <meta name="description" content="LuceoLab - Our Team" />
+                    </Helmet>
                     <MainHeading darkstyle text="nature born climbers" />
                     <div className={styles.pageWrapper}>
                         <div className={styles.inner}>

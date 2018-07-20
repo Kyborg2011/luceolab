@@ -98,8 +98,10 @@ class Contact extends React.Component {
         return (
                 <div>
                     <Helmet
-                      title="Contacts | LuceoLab"
-                    />
+                      title="Contact | LuceoLab"
+                    >
+                        <meta name="description" content="What are you looking for? Drop us a line or contact us wherever you were." />
+                    </Helmet>
                     <MainHeading text="get in touch" />
                     <div className={styles.contactsWrapper}>
                         <div className={styles.formWrapper}>
@@ -113,7 +115,7 @@ class Contact extends React.Component {
                         <div className={styles.info}>
                             <p>
                                 <span className="fa fa-map-marker" />
-                                5, Akademika Komarova Av.<br />
+                                5, Kosmonavta Komarova Av.<br />
                                 Kyiv, 03058<br/>
                                 Ukraine<br/>
                             </p>

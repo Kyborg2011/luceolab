@@ -9,7 +9,7 @@ export default ({ body, helmet }) => {
                 <div id="root"><div>${body}</div></div>
                 <script type="text/javascript">
                   WebFontConfig = {
-                      google: { families: [ 'Open+Sans+Condensed:300', 'Open+Sans:300,400,600', 'Josefin+Sans:300,600' ] }
+                      google: { families: [ 'Open+Sans+Condensed:300,600', 'Open+Sans:300,400,600', 'Josefin+Sans:300,600' ] }
                   };
                   (function() {
                     var wf = document.createElement('script');

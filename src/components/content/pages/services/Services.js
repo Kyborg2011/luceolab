@@ -120,7 +120,9 @@ class Services extends React.Component {
             <div>
                 <Helmet
                   title="Services | LuceoLab"
-                />
+                >
+                    <meta name="description" content="LuceoLab - Services" />
+                </Helmet>
                 <MainHeading darkstyle text="services" />
                 <div className={styles.pageWrapper}>
                     <div className={styles.inner}>
@@ -186,7 +188,7 @@ class Services extends React.Component {
                                             </a>
                                         </span>
                                     </p>
-                                    <Button label={( opennedServiceIndex === 0 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                    <Button label={( opennedServiceIndex === 0 ) ? 'get a free quote' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
@@ -228,12 +230,12 @@ class Services extends React.Component {
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
-                                        We make immersive UI/UX that tell a story and evoke emotion. Our team successfully uses the newest trends in web design, moreover we are strive for open up new approaches in user interfaces and web design.<br/><br/>
-                                        We believe browser window can be turned into anything: the theatrical scene, the painter's canvas, the page from the writer's diary.<br/><br/>
-                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring.</span><br/>
-                                        If you want really unique design for your product or site of your company, you need to contact us!
+                                        We make immersive UI/UX that tell a story and evoke emotions. Our team successfully uses the newest trends in web design, moreover we are strive for open up new approaches in user interfaces and digital experience.<br/><br/>
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>We believe that browser window can be turned into anything: the theatrical scene, the painter's canvas, the page from the writer's diary.</span><br/>
+                                        We believe that beauty is an inherent quality of any kind of art. Art can evoke the most vivid feelings, touch the most secret corners of the human soul.<br/><br/>
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>If you want really unique design for your product or site of your company, you need to contact us!</span>
                                     </p>
-                                    <Button label={( opennedServiceIndex === 1 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                    <Button label={( opennedServiceIndex === 1 ) ? 'get a free quote' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
@@ -276,10 +278,10 @@ class Services extends React.Component {
                                 <div className={styles.details}>
                                     <p>
                                         Why people buy something? Any goods or services? The main reason is emotions, pleasant memories. People buy the opportunity to spend a good time with good people. In the end, people buy what is beautiful, what causes a feeling of reverence.<br/><br/>
-                                        We believe that beauty is an inherent quality of any kind of art. Art can evoke the most vivid feelings, touch the most secret corners of the human soul. That is why our products always force the visitor to come back again and again.<br/><br/>
-                                        However, we also know modern promotion technologies such as search engine marketing, online advertising and so on. Contact us and we will make your business recognizable, bring it to the leading position in any scale.
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring. That is why our products always force the visitor to come back again and again.</span><br/>
+                                        However, we also know modern promotion technologies such as search engine marketing, online advertising and so on. <br/><br/><span style={{ color: '#D81159', fontWeight: 'bold' }}>Contact us and we will make your business recognizable, bring it to the leading position in any scale!</span>
                                     </p>
-                                    <Button label={( opennedServiceIndex === 2 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                    <Button label={( opennedServiceIndex === 2 ) ? 'get a free quote' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
@@ -320,8 +322,12 @@ class Services extends React.Component {
                                     this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
-                                    <p />
-                                    <Button label={( opennedServiceIndex === 3 ) ? 'free request' : 'read more'} onClick={( e ) => {
+                                    <p>
+                                        No matter how big (or small) your business is, successful branding is necessary when it comes to digital branding.<br/><br/>
+                                        LuceoLab digs deep into the soul of a brand to generate strategies that work. Our team will help you define your visual identity, implement the design, and prepare eye‑catching marketing materials that amplify your impact.<br/><br/>
+                                        <span style={{ color: '#D81159', fontWeight: 'bold' }}>Do you want to shape your own destiny with your project? Make it a reflection of your own truths?</span> <br/>Our products, like other works of art, are absolutely unique. We offer you not just a modern, effective Internet representation for your company, we propose to create together with us something completely new!
+                                    </p>
+                                    <Button label={( opennedServiceIndex === 3 ) ? 'get a free quote' : 'read more'} onClick={( e ) => {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
@@ -353,7 +359,7 @@ class Services extends React.Component {
                             &#10005;
                         </a>
                         <div id="modal-content"><p/></div>
-                        <Button label={'free request'} onClick={( e ) => {
+                        <Button label={'get a free quote'} onClick={( e ) => {
                             e.preventDefault();
                             emitter.emit( 'request' );
                             this.setState({

@@ -121,7 +121,9 @@ class HowWeWork extends React.Component {
             <div>
                 <Helmet
                   title="How we work | LuceoLab"
-                />
+                >
+                    <meta name="description" content="LuceoLab - How we work" />
+                </Helmet>
                 <MainHeading text="how we work" style={{ marginBottom: '20px' }} />
                 <div className={styles.pageWrapper} style={{  }}>
                     <Link to="/">

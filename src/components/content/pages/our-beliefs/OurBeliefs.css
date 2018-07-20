@@ -26,7 +26,7 @@
     line-height: 23px;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    width: 90%;
+    width: 100%;
     text-align: justify;
     padding-right: 15px;
     color: #2F4550;
@@ -155,6 +155,10 @@
 .ourBeliefsPage h1:before {
     border-color: #2F4550 !important;
     background-color: transparent !important;
+}
+
+.ourBeliefsPage > div:first-child {
+    margin-top: 30px;
 }
 
 :global(.disableArr) {
