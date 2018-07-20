@@ -277,7 +277,7 @@ class Services extends React.Component {
                                 }}>&#10005;</a>
                                 <div className={styles.details}>
                                     <p>
-                                        Why people buy something? Any goods or services? The main reason is emotions, pleasant memories. People buy the opportunity to spend a good time with good people. In the end, people buy what is beautiful, what causes a feeling of reverence.<br/><br/>
+                                        Why people buy something? Any goods or services? The main reason is emotions, pleasant memories. People buy the opportunity to spend a good time with good people.<br/><br/>
                                         <span style={{ color: '#D81159', fontWeight: 'bold' }}>In our products, we strive to reflect the full spectrum of human feelings. Digital experience should become a holiday of existence, like the sunrise, the arrival of the long-awaited spring. That is why our products always force the visitor to come back again and again.</span><br/>
                                         However, we also know modern promotion technologies such as search engine marketing, online advertising and so on. <br/><br/><span style={{ color: '#D81159', fontWeight: 'bold' }}>Contact us and we will make your business recognizable, bring it to the leading position in any scale!</span>
                                     </p>

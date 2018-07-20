@@ -157,10 +157,6 @@
     background-color: transparent !important;
 }
 
-.ourBeliefsPage > div:first-child {
-    margin-top: 30px;
-}
-
 :global(.disableArr) {
     opacity: .4 !important;
     color: #545b67 !important;
@@ -172,6 +168,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .ourBeliefsPage > div:first-child {
+        margin-top: 0;
+    }
+
     .epigraph {
         order: 1;
         width: 100%;
