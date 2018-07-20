@@ -50,9 +50,9 @@ class MouseNavigation extends React.Component {
 
             element.addEventListener( 'wheel', ( e ) => {
                 e.preventDefault();
-                e = window.event || e;
-	            let delta = Math.max( -1, Math.min( 1, ( e.wheelDelta || -e.detail )));
+	            let delta = Math.max( -1, Math.min( 1, e.deltaY ));
                 let routeId = MouseNavigation.routes.indexOf( this.props.location.pathname );
+                delta = -delta;
                 let nextRouteId = routeId - delta;
                 this.redirect( nextRouteId );
             });
