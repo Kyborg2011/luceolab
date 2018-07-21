@@ -7,7 +7,7 @@ export default ({ body, helmet }) => {
             </head>
             <body>
                 <div id="root"><div>${body}</div></div>
-                <script type="text/javascript">
+                <script>
                   WebFontConfig = {
                       google: { families: [ 'Open+Sans+Condensed:300,600', 'Open+Sans:300,400,600', 'Josefin+Sans:300,600' ] }
                   };
