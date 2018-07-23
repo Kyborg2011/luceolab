@@ -4,6 +4,15 @@ export default ({ body, helmet }) => {
         <html lang="en">
             <head>
                 ${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36412889-2"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'UA-36412889-2');
+                </script>
             </head>
             <body>
                 <div id="root"><div>${body}</div></div>

@@ -272,4 +272,9 @@
     .inner {
         margin: 0;
     }
+
+    .controls {
+        width: 100%;
+        margin-left: 0;
+    }
 }
