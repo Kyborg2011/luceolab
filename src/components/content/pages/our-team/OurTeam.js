@@ -59,7 +59,7 @@ class OurTeam extends React.Component {
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Anton Babinin</span>
-                                    <span className={styles.memberPosition}>CEO</span>
+                                    <span className={styles.memberPosition}>Founder, CEO</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
                                             <a href="mailto:anton.babinin@luceolab.com" title="Mail" target="_blank">
@@ -123,10 +123,10 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto4} alt="Peleshenko Alexey" />
+                            <img src={MemberPhoto4} alt="Alexey Peleshenko" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Peleshenko Alexey</span>
+                                    <span className={styles.memberName}>Alexey Peleshenko</span>
                                     <span className={styles.memberPosition}>content strategy</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
@@ -139,10 +139,10 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto5} alt="Shever Marina" />
+                            <img src={MemberPhoto5} alt="Marina Shever" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Shever Marina</span>
+                                    <span className={styles.memberName}>Marina Shever</span>
                                     <span className={styles.memberPosition}>marketer</span>
                                 </div>
                             </div>
