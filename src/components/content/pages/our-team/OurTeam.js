@@ -55,34 +55,34 @@ class OurTeam extends React.Component {
                             </p>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto1} alt="Name Surname" />
+                            <img src={MemberPhoto1} alt="Anton Babinin" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Ivanov Ivan</span>
-                                    <span className={styles.memberPosition}>web-developer</span>
+                                    <span className={styles.memberName}>Anton Babinin</span>
+                                    <span className={styles.memberPosition}>SEO</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
-                                            <a href="mailto:example@example.net" title="Mail" target="_blank">
+                                            <a href="mailto:anton.babinin@luceolab.com" title="Mail" target="_blank">
                                                 <i className="fa fa-envelope-o" aria-hidden="true" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="Instagram" target="_blank">
+                                            <a href="https://www.instagram.com/antonbabinin/" title="Instagram" target="_blank">
                                                 <i className="fa fa-instagram" aria-hidden="true" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="Linkedin" target="_blank">
+                                            <a href="https://www.linkedin.com/in/anton-babinin-a09000a6" title="Linkedin" target="_blank">
                                                 <i className="fa fa-linkedin" aria-hidden="true" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="GitHub" target="_blank">
+                                            <a href="https://github.com/Kyborg2011" title="GitHub" target="_blank">
                                                 <i className="fa fa-github" aria-hidden="true" />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="Telegram" target="_blank">
+                                            <a href="http://t.me/kyborg2011" title="Telegram" target="_blank">
                                                 <i className="fa fa-telegram" aria-hidden="true" />
                                             </a>
                                         </li>
@@ -91,51 +91,15 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto2} alt="Name Surname" />
+                            <img src={MemberPhoto2} alt="Bohdan Chych" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Shever Marina</span>
-                                    <span className={styles.memberPosition}>account manager</span>
-                                    <ul className={styles.memberSocialLinks}>
-                                        <li>
-                                            <a href="mailto:example@example.net" title="Mail">
-                                                <i className="fa fa-envelope-o" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Instagram">
-                                                <i className="fa fa-instagram" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Linkedin">
-                                                <i className="fa fa-linkedin" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.teamMember}>
-                            <img src={MemberPhoto3} alt="Name Surname" />
-                            <div className={styles.hidden}>
-                                <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Shever Marina</span>
+                                    <span className={styles.memberName}>Bohdan Chych</span>
                                     <span className={styles.memberPosition}>graphic designer</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
-                                            <a href="mailto:example@example.net" title="Mail">
-                                                <i className="fa fa-envelope-o" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Instagram">
+                                            <a href="https://www.instagram.com/bohdan.chych/" title="Instagram">
                                                 <i className="fa fa-instagram" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Linkedin" target="_blank">
-                                                <i className="fa fa-linkedin" aria-hidden="true" />
                                             </a>
                                         </li>
                                     </ul>
@@ -143,25 +107,15 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto4} alt="Name Surname" />
+                            <img src={MemberPhoto3} alt="Olga Stanislavova" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Shever Marina</span>
-                                    <span className={styles.memberPosition}>co-founder</span>
+                                    <span className={styles.memberName}>Olga Stanislavova</span>
+                                    <span className={styles.memberPosition}>account manager</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
-                                            <a href="mailto:example@example.net" title="Mail" target="_blank">
+                                            <a href="mailto:olya.stanis@luceolab.com" title="Mail">
                                                 <i className="fa fa-envelope-o" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Instagram" target="_blank">
-                                                <i className="fa fa-instagram" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Linkedin" target="_blank">
-                                                <i className="fa fa-linkedin" aria-hidden="true" />
                                             </a>
                                         </li>
                                     </ul>
@@ -169,23 +123,27 @@ class OurTeam extends React.Component {
                             </div>
                         </div>
                         <div className={styles.teamMember}>
-                            <img src={MemberPhoto5} alt="Name Surname" />
+                            <img src={MemberPhoto4} alt="Peleshenko Alexey" />
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
-                                    <span className={styles.memberName}>Hren Znaet</span>
+                                    <span className={styles.memberName}>Peleshenko Alexey</span>
                                     <span className={styles.memberPosition}>content strategy</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
-                                            <a href="mailto:example@example.net" title="Mail" target="_blank">
-                                                <i className="fa fa-envelope-o" aria-hidden="true" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Linkedin" target="_blank">
-                                                <i className="fa fa-linkedin" aria-hidden="true" />
+                                            <a href="https://www.instagram.com/peleshenkoa/" title="Instagram" target="_blank">
+                                                <i className="fa fa-instagram" aria-hidden="true" />
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.teamMember}>
+                            <img src={MemberPhoto5} alt="Shever Marina" />
+                            <div className={styles.hidden}>
+                                <div className={styles.memberInfoWrap}>
+                                    <span className={styles.memberName}>Shever Marina</span>
+                                    <span className={styles.memberPosition}>marketer</span>
                                 </div>
                             </div>
                         </div>
