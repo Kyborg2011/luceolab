@@ -77,6 +77,7 @@ class App extends React.Component {
                   <meta property="og:description" content="Hello internet voyager. We are a digital agency LuceoLab. Got a minute? Click on How we work button to learn more about us." />
                   <meta property="og:site_name" content="Luceolab - Digital Agency" />
                   <meta property="og:image"  content={'https://luceolab.com' + require( '../assets/img/logo-icon.png' )} />
+                  <meta name="google-site-verification" content="GWecWlR63iKKMkLrVkt_KR9Nprct7OebhTExzKsbPXA" />
                   <link rel="apple-touch-icon" sizes="57x57" href={require( '../assets/favicon/apple-icon-57x57.png' )}/>
                   <link rel="apple-touch-icon" sizes="60x60" href={require( '../assets/favicon/apple-icon-60x60.png' )}/>
                   <link rel="apple-touch-icon" sizes="72x72" href={require( '../assets/favicon/apple-icon-72x72.png' )}/>
