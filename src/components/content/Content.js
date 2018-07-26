@@ -17,6 +17,8 @@ import services from './pages/services/Services';
 import ourTeam from './pages/our-team/OurTeam';
 import ourBeliefs from './pages/our-beliefs/OurBeliefs';
 import contact from './pages/contact/Contact';
+import GA from '../shared/utils/GoogleAnalytics';
+
 
 /*if ( process.env.BROWSER ) {
     const home = asyncComponent(() => import(
@@ -159,6 +161,7 @@ class Content extends React.Component {
                           }}
                         >
                             <div>
+                                { GA.init() && <GA.RouteTracker /> }
                                 <Switch key={location.key} location={location}>
                                     <Route exact path="/" component={home} />
                                     <Route path="/how-we-work" component={howWeWork} />
