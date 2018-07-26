@@ -161,7 +161,7 @@ class Content extends React.Component {
                           }}
                         >
                             <div>
-                                { GA.init() && <GA.RouteTracker /> }
+                                { process.env.BROWSER && GA.init() && <GA.RouteTracker /> }
                                 <Switch key={location.key} location={location}>
                                     <Route exact path="/" component={home} />
                                     <Route path="/how-we-work" component={howWeWork} />
