@@ -44,11 +44,7 @@
     background-color: #fbbd63;
     position: relative;
     z-index: 300;
-    transition: 1s background-color;
-}
-
-.headerLogo:hover {
-    background-color: #D81159;
+    transition: 7s background-color;
 }
 
 .headerLogo:before {
