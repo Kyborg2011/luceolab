@@ -164,7 +164,7 @@ class OurBeliefs extends React.Component {
             ( <span>how we see the future?</span> ),
             ( <span>how we making art?</span> ),
             ( <span>how we clarify all things?</span> ),
-            ( <div>how we wrote <span style={{ textDecoration: 'line-through', color: '#545b67', opacity: .5 }}>this essay</span> LuceoLab?</div> ),
+            ( <div>how we wrote <span style={{ textDecoration: 'line-through' }}>this essay</span> LuceoLab?</div> ),
         ];
 
         var subTitle = titles[ currentSlide ];

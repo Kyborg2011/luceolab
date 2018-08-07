@@ -3,5 +3,3 @@
 package-lock.json
 .DS_STORE
 config.json
-id_rsa_github_luceolab
-.pub
