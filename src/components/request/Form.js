@@ -6,6 +6,7 @@ import Select from 'react-select';
 import { toast } from 'react-toastify';
 import Input from 'muicss/lib/react/input';
 import Textarea from 'muicss/lib/react/textarea';
+import ReactGA from 'react-ga';
 import Button from '../button/Button';
 import LdsGear from '../animation/LdsGear';
 import 'react-select/dist/react-select.css';
@@ -91,6 +92,10 @@ class Form extends React.Component {
                 formValidation.email = true;
             }
             if ( !formValidation.name && !formValidation.email ) {
+                ReactGA.event({
+                    category: 'request_form',
+                    action: 'send'
+                });
                 request.post( '/send-request' )
                     .set( 'Content-Type', 'application/json' )
                     .send( formData )
@@ -169,6 +174,10 @@ class Form extends React.Component {
                             } else {
                                 this.setState({
                                     isRemoveOverlay: false,
+                                });
+                                ReactGA.event({
+                                    category: 'request_button',
+                                    action: 'click'
                                 });
                             }
                             this.setState({ isOpen: ( isOpen ) ? false : true, isClosed: ( isOpen ) ? true : false });

@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import emitter from '../../../shared/utils/mrEmitter';
 import { Helmet } from 'react-helmet';
+import ReactGA from 'react-ga';
 
 import layout from '../../../shared/styles/Layout.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -192,6 +193,10 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
+                                            ReactGA.event({
+                                                category: 'services_request_button',
+                                                action: 'click'
+                                            });
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -239,6 +244,10 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
+                                            ReactGA.event({
+                                                category: 'services_request_button',
+                                                action: 'click'
+                                            });
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -285,6 +294,10 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
+                                            ReactGA.event({
+                                                category: 'services_request_button',
+                                                action: 'click'
+                                            });
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -331,6 +344,10 @@ class Services extends React.Component {
                                         e.preventDefault();
                                         if ( isOpen ) {
                                             emitter.emit( 'request' );
+                                            ReactGA.event({
+                                                category: 'services_request_button',
+                                                action: 'click'
+                                            });
                                         } else {
                                             this.setState({
                                                 isRemoveOverlay: false,
@@ -362,6 +379,10 @@ class Services extends React.Component {
                         <Button label={'get a free quote'} onClick={( e ) => {
                             e.preventDefault();
                             emitter.emit( 'request' );
+                            ReactGA.event({
+                                category: 'services_request_button',
+                                action: 'click'
+                            });
                             this.setState({
                                 isModalActive: '',
                             });

@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import Input from 'muicss/lib/react/input';
 import Textarea from 'muicss/lib/react/textarea';
 import { Helmet } from 'react-helmet';
+import ReactGA from 'react-ga';
 
 import styles from './Contact.css';
 import bgStyles from '../../../shared/styles/Background.css';
@@ -69,6 +70,10 @@ class Contact extends React.Component {
                     position: toast.POSITION.TOP_RIGHT
                 });
             } else {
+                ReactGA.event({
+                    category: 'contact_form',
+                    action: 'send'
+                });
                 request.post( '/send-request' )
                     .set( 'Content-Type', 'application/json' )
                     .send( formData )

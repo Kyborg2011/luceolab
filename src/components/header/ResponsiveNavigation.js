@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import emitter from '../shared/utils/mrEmitter';
 import styles from './ResponsiveNavigation.css';
 import Button from '../button/Button';
@@ -51,6 +52,10 @@ class ResponsiveNavigation extends React.Component {
                         e.preventDefault();
                         setTimeout(() => {
                             emitter.emit( 'request' );
+                            ReactGA.event({
+                                category: 'request_button',
+                                action: 'click'
+                            });
                         }, 250 );
                     }} />
                 </nav>

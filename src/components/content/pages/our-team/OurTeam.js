@@ -59,7 +59,7 @@ class OurTeam extends React.Component {
                             <div className={styles.hidden}>
                                 <div className={styles.memberInfoWrap}>
                                     <span className={styles.memberName}>Anton Babinin</span>
-                                    <span className={styles.memberPosition}>Founder, CEO</span>
+                                    <span className={styles.memberPosition}>CEO & Founder</span>
                                     <ul className={styles.memberSocialLinks}>
                                         <li>
                                             <a href="mailto:anton.babinin@luceolab.com" title="Mail" target="_blank">
